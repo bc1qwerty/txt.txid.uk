@@ -87,7 +87,7 @@ function renderBlock(lines) {
       continue;
     }
 
-    // unordered list
+    // unordered list (with GFM task list support)
     if (/^[-*+]\s+/.test(line)) {
       const items = [];
       while (i < lines.length && /^[-*+]\s+/.test(lines[i])) {
@@ -95,7 +95,18 @@ function renderBlock(lines) {
         i++;
       }
       out.push(
-        '<ul>' + items.map((it) => `<li>${renderInline(it)}</li>`).join('') + '</ul>'
+        '<ul>' +
+          items
+            .map((it) => {
+              // GFM task list: "- [x] done" or "- [ ] todo"
+              const checked = it.match(/^\[[xX]\]\s+(.*)/);
+              if (checked) return `<li>☑ ${renderInline(checked[1])}</li>`;
+              const unchecked = it.match(/^\[ \]\s+(.*)/);
+              if (unchecked) return `<li>☐ ${renderInline(unchecked[1])}</li>`;
+              return `<li>${renderInline(it)}</li>`;
+            })
+            .join('') +
+          '</ul>'
       );
       continue;
     }
