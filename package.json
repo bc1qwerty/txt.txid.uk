@@ -11,7 +11,8 @@
     "build": "node src/build.mjs",
     "clean": "rm -rf dist",
     "dev": "node src/build.mjs && echo 'Serve dist/ with any static server'",
-    "deploy": "npm run build && npx wrangler pages deploy dist --project-name=txt-txid-uk --branch=main && notify-deploy.sh txt.txid.uk"
+    "health": "node src/health-check.mjs",
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name=txt-txid-uk --branch=main && npm run health && notify-deploy.sh txt.txid.uk"
   },
   "dependencies": {}
 }

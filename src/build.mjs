@@ -144,6 +144,7 @@ ${tagsHtml}
         canonical: p.canonicalUrl,
         lang: 'en',
         body,
+        ogType: 'article',
       })
     );
   }
@@ -243,6 +244,7 @@ ${bodyHtml}
             canonical: p.canonicalUrl,
             lang,
             body,
+            ogType: 'article',
           })
         );
       }
