@@ -85,6 +85,14 @@ function newsPostPath(p) {
   return `/news/post/${p.slug}/`;
 }
 
+function tagSlug(tag) {
+  return encodeURIComponent(String(tag).toLowerCase().trim());
+}
+
+function tagPath(tag) {
+  return `/news/tag/${tagSlug(tag)}/`;
+}
+
 function learnPostPath(p) {
   return `/learn/${p.lang}/${p.section}/${encodeURIComponent(p.slug)}/`;
 }
@@ -125,12 +133,18 @@ ${posts
     const bodyHtml = renderMarkdown(p.content);
     const tagsHtml =
       p.tags && p.tags.length
-        ? `<p class="meta">Tags: ${p.tags.map((t) => esc(t)).join(', ')}</p>`
+        ? `<p class="meta">Tags: ${p.tags
+            .map((t) => `<a href="${tagPath(t)}">${esc(t)}</a>`)
+            .join(', ')}</p>`
+        : '';
+    const lastModStr =
+      p.lastModified && fmtDate(p.lastModified) !== fmtDate(p.date)
+        ? ` · updated ${fmtDate(p.lastModified)}`
         : '';
     const body = `
 ${fullSiteBanner(p.canonicalUrl)}
 <h1>${esc(p.title)}</h1>
-<p class="meta">${fmtDate(p.date)}${p.category ? ' · ' + esc(p.category) : ''}${p.author ? ' · by ' + esc(p.author) : ''}</p>
+<p class="meta">${fmtDate(p.date)}${lastModStr}${p.category ? ' · ' + esc(p.category) : ''}${p.author ? ' · by ' + esc(p.author) : ''}</p>
 ${p.summary ? `<p><em>${esc(p.summary)}</em></p><hr>` : ''}
 ${bodyHtml}
 ${tagsHtml}
@@ -150,6 +164,81 @@ ${tagsHtml}
   }
 
   return { count: posts.length };
+}
+
+// ── News tag pages ──
+async function buildNewsTags(feed) {
+  if (!feed) return { count: 0 };
+  const posts = feed.posts || [];
+
+  // Collect tag -> posts map
+  const tagMap = new Map();
+  for (const p of posts) {
+    for (const tag of p.tags || []) {
+      const key = String(tag).toLowerCase().trim();
+      if (!key) continue;
+      if (!tagMap.has(key)) tagMap.set(key, { display: tag, posts: [] });
+      tagMap.get(key).posts.push(p);
+    }
+  }
+
+  // Tag index page — all tags with post counts
+  const sortedTags = [...tagMap.entries()].sort(
+    ([a], [b]) => tagMap.get(b).posts.length - tagMap.get(a).posts.length || a.localeCompare(b)
+  );
+
+  const indexBody = `
+${fullSiteBanner('https://news.txid.uk', 'View news.txid.uk')}
+<h1>News tags</h1>
+<p class="meta">${tagMap.size} unique tags across ${posts.length} posts.</p>
+<ul>
+${sortedTags
+  .map(
+    ([key, { display, posts: items }]) =>
+      `<li><a href="${tagPath(display)}">${esc(display)}</a> (${items.length})</li>`
+  )
+  .join('\n')}
+</ul>`;
+
+  await emit(
+    'news/tag/index.html',
+    renderPage({
+      title: 'News tags — txt.txid.uk',
+      description: 'Browse news posts by tag',
+      canonical: 'https://news.txid.uk',
+      body: indexBody,
+    })
+  );
+
+  // Per-tag pages
+  for (const [, { display, posts: items }] of tagMap) {
+    const tagBody = `
+${fullSiteBanner('https://news.txid.uk', 'View news.txid.uk')}
+<h1>Tag: ${esc(display)}</h1>
+<p class="meta">${items.length} post${items.length === 1 ? '' : 's'}. <a href="/news/tag/">← all tags</a></p>
+<ul class="posts">
+${items
+  .map(
+    (p) => `<li>
+<div class="title"><a href="${newsPostPath(p)}">${esc(p.title)}</a></div>
+<div class="meta">${fmtDate(p.date)}${p.category ? ' · ' + esc(p.category) : ''}${p.summary ? ' — ' + esc(p.summary) : ''}</div>
+</li>`
+  )
+  .join('\n')}
+</ul>`;
+
+    await emit(
+      `news/tag/${tagSlug(display)}/index.html`,
+      renderPage({
+        title: `${display} — news tag — txt.txid.uk`,
+        description: `News posts tagged ${display}`,
+        canonical: 'https://news.txid.uk',
+        body: tagBody,
+      })
+    );
+  }
+
+  return { count: tagMap.size };
 }
 
 // ── Learn pages ──
@@ -455,9 +544,10 @@ async function main() {
   ]);
 
   console.log('Generating pages...');
-  const [newsRes, learnRes] = await Promise.all([
+  const [newsRes, learnRes, tagRes] = await Promise.all([
     buildNews(newsFeed),
     buildLearn(learnFeed),
+    buildNewsTags(newsFeed),
   ]);
 
   await buildLanding(newsFeed, learnFeed);
@@ -467,7 +557,7 @@ async function main() {
   await build404();
 
   console.log(
-    `Done. ${newsRes.count} news + ${learnRes.count} learn pages, plus feed.xml, sitemap.xml, robots.txt, 404.html -> ${DIST}`
+    `Done. ${newsRes.count} news + ${learnRes.count} learn + ${tagRes.count} tag pages, plus feed.xml, sitemap.xml, robots.txt, 404.html -> ${DIST}`
   );
 }
 
