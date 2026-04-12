@@ -1,0 +1,17 @@
+{
+  "name": "txt.txid.uk",
+  "version": "0.1.0",
+  "description": "Text-only mirror of txid.uk family sites. Brutalist, HTML-first, zero-framework.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node src/build.mjs",
+    "clean": "rm -rf dist",
+    "dev": "node src/build.mjs && echo 'Serve dist/ with any static server'",
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name=txt-txid-uk --branch=main && notify-deploy.sh txt.txid.uk"
+  },
+  "dependencies": {}
+}
