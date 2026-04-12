@@ -25,6 +25,8 @@ nav.top a{margin-right:1em}
 .posts .title{font-size:1.1em;font-weight:600}
 footer{margin-top:3em;padding-top:1em;border-top:1px solid var(--rule);color:var(--muted);font-size:.85em}
 img{max-width:100%;height:auto}
+.full-site-banner{font-size:.85em;color:var(--muted);padding:.5em .75em;margin-bottom:1.25em;border:1px solid var(--rule);border-radius:4px}
+.full-site-banner a{color:var(--link)}
 `.trim();
 
 function nav() {
@@ -33,6 +35,11 @@ function nav() {
 
 function footer() {
   return `<footer><p>Text-only mirror of the txid.uk ecosystem. No CSS frameworks, no JavaScript, no tracking. See <a href="https://txid.uk">txid.uk</a> for the full experience.</p></footer>`;
+}
+
+export function fullSiteBanner(url, label = 'View on full site') {
+  if (!url) return '';
+  return `<p class="full-site-banner">Reading text-only. <a href="${esc(url)}">${esc(label)} →</a></p>`;
 }
 
 export function renderPage({ title, description, canonical, lang = 'en', body }) {

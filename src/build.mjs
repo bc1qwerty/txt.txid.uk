@@ -7,7 +7,7 @@ import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderMarkdown, esc } from './markdown.mjs';
-import { renderPage } from './template.mjs';
+import { renderPage, fullSiteBanner } from './template.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -81,6 +81,7 @@ async function buildNews(feed) {
 
   // Post list
   const listBody = `
+${fullSiteBanner('https://news.txid.uk', 'View news.txid.uk')}
 <h1>News</h1>
 <p class="meta">Text-only mirror of <a href="https://news.txid.uk">news.txid.uk</a>. ${posts.length} posts.</p>
 <ul class="posts">
@@ -112,6 +113,7 @@ ${posts
         ? `<p class="meta">Tags: ${p.tags.map((t) => esc(t)).join(', ')}</p>`
         : '';
     const body = `
+${fullSiteBanner(p.canonicalUrl)}
 <h1>${esc(p.title)}</h1>
 <p class="meta">${fmtDate(p.date)}${p.category ? ' · ' + esc(p.category) : ''}${p.author ? ' · by ' + esc(p.author) : ''}</p>
 ${p.summary ? `<p><em>${esc(p.summary)}</em></p><hr>` : ''}
@@ -163,6 +165,7 @@ async function buildLearn(feed) {
   }
 
   const learnIndexBody = `
+${fullSiteBanner('https://learn.txid.uk', 'View learn.txid.uk')}
 <h1>Learn</h1>
 <p class="meta">Text-only mirror of <a href="https://learn.txid.uk">learn.txid.uk</a>. ${posts.length} posts across ${byLang.size} languages.</p>
 ${langSections.join('\n')}`;
@@ -182,6 +185,7 @@ ${langSections.join('\n')}`;
     for (const [section, items] of sections) {
       // Section list
       const sectionBody = `
+${fullSiteBanner(`https://learn.txid.uk/${lang}/${section}/`, 'View on learn.txid.uk')}
 <h1>${esc(section)} (${esc(lang)})</h1>
 <p class="meta">${items.length} entries.</p>
 <ul class="posts">
@@ -209,6 +213,7 @@ ${p.summary ? `<div class="meta">${esc(p.summary)}</div>` : ''}
       for (const p of items) {
         const bodyHtml = renderMarkdown(p.content);
         const body = `
+${fullSiteBanner(p.canonicalUrl)}
 <h1>${esc(p.title)}</h1>
 <p class="meta">${fmtDate(p.date)}${p.section ? ' · ' + esc(p.section) : ''} · ${esc(p.lang)}</p>
 ${p.summary ? `<p><em>${esc(p.summary)}</em></p><hr>` : ''}
