@@ -82,7 +82,12 @@ function toRssDate(iso) {
 }
 
 function newsPostPath(p) {
+  if (p.section === 'digest') return `/news/digest/${p.slug}/`;
   return `/news/post/${p.slug}/`;
+}
+
+function isDigestPost(p) {
+  return p.section === 'digest';
 }
 
 function tagSlug(tag) {
@@ -99,14 +104,28 @@ function learnPostPath(p) {
 
 // ── News pages ──
 async function buildNews(feed) {
-  if (!feed) return { count: 0 };
-  const posts = feed.posts || [];
+  if (!feed) return { count: 0, digests: 0 };
+  const allEntries = feed.posts || [];
+  const posts = allEntries.filter((p) => !isDigestPost(p));
+  const digests = allEntries.filter((p) => isDigestPost(p));
 
   // Post list
   const listBody = `
 ${fullSiteBanner('https://news.txid.uk', 'View news.txid.uk')}
 <h1>News</h1>
-<p class="meta">Text-only mirror of <a href="https://news.txid.uk">news.txid.uk</a>. ${posts.length} posts.</p>
+<p class="meta">Text-only mirror of <a href="https://news.txid.uk">news.txid.uk</a>. ${posts.length} posts${digests.length ? ` + ${digests.length} daily digests` : ''}.</p>
+${digests.length ? `<h2>Daily digests</h2>
+<ul class="posts">
+${digests
+  .map(
+    (p) => `<li>
+<div class="title"><a href="${newsPostPath(p)}">${esc(p.title)}</a></div>
+<div class="meta">${fmtDate(p.date)} · digest</div>
+</li>`
+  )
+  .join('\n')}
+</ul>
+<h2>Articles</h2>` : ''}
 <ul class="posts">
 ${posts
   .map(
@@ -128,8 +147,8 @@ ${posts
     })
   );
 
-  // Individual posts
-  for (const p of posts) {
+  // Individual posts and digests
+  for (const p of allEntries) {
     const bodyHtml = renderMarkdown(p.content);
     const tagsHtml =
       p.tags && p.tags.length
@@ -150,8 +169,12 @@ ${bodyHtml}
 ${tagsHtml}
 <p class="meta">Read on the full site: <a href="${esc(p.canonicalUrl)}">${esc(p.canonicalUrl)}</a></p>`;
 
+    const relPath = isDigestPost(p)
+      ? `news/digest/${p.slug}/index.html`
+      : `news/post/${p.slug}/index.html`;
+
     await emit(
-      `news/post/${p.slug}/index.html`,
+      relPath,
       renderPage({
         title: `${p.title} — txt.txid.uk`,
         description: p.summary,
@@ -163,7 +186,7 @@ ${tagsHtml}
     );
   }
 
-  return { count: posts.length };
+  return { count: posts.length, digests: digests.length };
 }
 
 // ── News tag pages ──
@@ -171,9 +194,10 @@ async function buildNewsTags(feed) {
   if (!feed) return { count: 0 };
   const posts = feed.posts || [];
 
-  // Collect tag -> posts map
+  // Collect tag -> posts map (skip digests — they don't use tags meaningfully)
   const tagMap = new Map();
   for (const p of posts) {
+    if (isDigestPost(p)) continue;
     for (const tag of p.tags || []) {
       const key = String(tag).toLowerCase().trim();
       if (!key) continue;
@@ -557,7 +581,7 @@ async function main() {
   await build404();
 
   console.log(
-    `Done. ${newsRes.count} news + ${learnRes.count} learn + ${tagRes.count} tag pages, plus feed.xml, sitemap.xml, robots.txt, 404.html -> ${DIST}`
+    `Done. ${newsRes.count} news + ${newsRes.digests} digests + ${learnRes.count} learn + ${tagRes.count} tag pages, plus feed.xml, sitemap.xml, robots.txt, 404.html -> ${DIST}`
   );
 }
 
