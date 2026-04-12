@@ -1,0 +1,68 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build against live feeds
+        run: node src/build.mjs
+        env:
+          # Force live URLs on CI (no local file paths available).
+          NEWS_FEED_URL: https://news.txid.uk/txt-feed.json
+          LEARN_FEED_URL: https://learn.txid.uk/txt-feed.json
+
+      - name: Verify expected outputs
+        run: |
+          set -e
+          for f in \
+            dist/index.html \
+            dist/feed.xml \
+            dist/sitemap.xml \
+            dist/robots.txt \
+            dist/404.html \
+            dist/news/index.html \
+            dist/learn/index.html \
+            dist/news/tag/index.html; do
+            if [ ! -f "$f" ]; then
+              echo "::error file=$f::missing expected output $f"
+              exit 1
+            fi
+          done
+          echo "All expected files present."
+
+      - name: Smoke-check canonical link on a post
+        run: |
+          set -e
+          post=$(find dist/news/post -name index.html | head -1)
+          if [ -z "$post" ]; then
+            echo "::error::no news post pages generated"
+            exit 1
+          fi
+          if ! grep -q '<link rel="canonical" href="https://news.txid.uk/post/' "$post"; then
+            echo "::error::canonical link missing on $post"
+            exit 1
+          fi
+          echo "Canonical link verified on $post"
+
+      - name: Report stats
+        run: |
+          echo "HTML files: $(find dist -name '*.html' | wc -l)"
+          echo "Total size: $(du -sh dist | cut -f1)"
+          echo "Feed items: $(grep -c '<item>' dist/feed.xml)"
+          echo "Sitemap URLs: $(grep -c '<url>' dist/sitemap.xml)"
