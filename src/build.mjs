@@ -423,6 +423,7 @@ ${learnPreview}
 <h3>IPFS (content-addressed)</h3>
 <pre><code>https://ipfs.io/ipns/k51qzi5uqu5djaf06lbcq4kmw5hzrhkhrvpuqvpynq0jlgeic8kq1mzmt0mhb2/</code></pre>
 <p class="meta">This mirror is also pinned to <a href="https://ipfs.tech/">IPFS</a>. Every byte is addressed by its content hash — no central authority can alter or take down a specific version. The IPNS link above tracks the latest build; a <a href="https://docs.ipfs.tech/concepts/ipfs-gateway/#public-gateways">public gateway</a> fetches from any peer that has the content. For direct peer access, run <code>ipfs</code> locally and use the same path.</p>
+<p class="meta">The Gemini gemtext mirror is also pinned at <code>https://ipfs.io/ipns/k51qzi5uqu5djaf06lbcq4kmw5hzrhkhrvpuqvpynq0jlgeic8kq1mzmt0mhb2/gemini/</code> — content-addressed Gemini access without a Gemini server.</p>
 
 <h2>About this mirror</h2>
 <p>Every page here has a <code>&lt;link rel="canonical"&gt;</code> pointing back to the original. Search engines should index the originals; this mirror is a companion, not a replacement.</p>

@@ -4,6 +4,7 @@
 set -e
 
 DIST="$(dirname "$0")/../dist"
+DIST_GEMINI="$(dirname "$0")/../dist-gemini"
 VPS_STAGE="/tmp/ipfs-stage"
 IPNS_NAME="k51qzi5uqu5djaf06lbcq4kmw5hzrhkhrvpuqvpynq0jlgeic8kq1mzmt0mhb2"
 
@@ -12,8 +13,15 @@ if [ ! -d "$DIST" ]; then
   exit 1
 fi
 
-echo "[ipfs-sync] rsync dist/ -> vps:${VPS_STAGE}/"
-rsync -a --delete "${DIST}/" "vps:${VPS_STAGE}/"
+echo "[ipfs-sync] rsync dist/ -> vps:${VPS_STAGE}/ (HTML at root)"
+rsync -a --delete --exclude='gemini/' "${DIST}/" "vps:${VPS_STAGE}/"
+
+if [ -d "$DIST_GEMINI" ]; then
+  echo "[ipfs-sync] rsync dist-gemini/ -> vps:${VPS_STAGE}/gemini/ (gemtext under /gemini/)"
+  rsync -a --delete "${DIST_GEMINI}/" "vps:${VPS_STAGE}/gemini/"
+else
+  echo "[ipfs-sync] dist-gemini/ not found — skipping gemtext pin"
+fi
 
 echo "[ipfs-sync] ipfs add -rQ (quiet)"
 CID=$(ssh vps "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs ipfs add -rQ ${VPS_STAGE}")
