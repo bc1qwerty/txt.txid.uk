@@ -27,14 +27,46 @@ function stripInline(text) {
 }
 
 const WRAP = 70;
+const CJK_RE = /[\u3000-\u9FFF\uAC00-\uD7AF\uFF00-\uFFEF]/;
 
-function wrap(text, width = WRAP) {
+function visualWidth(s) {
+  let w = 0;
+  for (const ch of s) w += CJK_RE.test(ch) ? 2 : 1;
+  return w;
+}
+
+function wrapCJK(line, width) {
+  // CJK lines: break at character boundary, counting CJK as width 2
+  const out = [];
+  let buf = '';
+  let vw = 0;
+  for (const ch of line) {
+    const cw = CJK_RE.test(ch) ? 2 : 1;
+    if (vw + cw > width && buf) {
+      out.push(buf);
+      buf = ch;
+      vw = cw;
+    } else {
+      buf += ch;
+      vw += cw;
+    }
+  }
+  if (buf) out.push(buf);
+  return out;
+}
+
+export function wrap(text, width = WRAP) {
   const out = [];
   for (const rawLine of text.split('\n')) {
-    if (rawLine.length <= width) {
+    if (visualWidth(rawLine) <= width) {
       out.push(rawLine);
       continue;
     }
+    if (CJK_RE.test(rawLine)) {
+      for (const chunk of wrapCJK(rawLine, width)) out.push(chunk);
+      continue;
+    }
+    // ASCII: word wrap
     const words = rawLine.split(/\s+/);
     let line = '';
     for (const w of words) {
@@ -77,12 +109,14 @@ export function markdownToGopherText(md) {
       const text = stripInline(h[2]);
       if (level === 1) {
         out.push('');
-        out.push(text.toUpperCase());
-        out.push('='.repeat(Math.min(WRAP, text.length)));
+        const wrapped = wrap(text.toUpperCase(), WRAP).split('\n');
+        for (const w of wrapped) out.push(w);
+        out.push('='.repeat(WRAP));
       } else if (level === 2) {
         out.push('');
-        out.push(text);
-        out.push('-'.repeat(Math.min(WRAP, text.length)));
+        const wrapped = wrap(text, WRAP).split('\n');
+        for (const w of wrapped) out.push(w);
+        out.push('-'.repeat(WRAP));
       } else {
         out.push('');
         out.push('## ' + text);

@@ -7,7 +7,7 @@ import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { markdownToGopherText } from './markdown-to-gophertext.mjs';
+import { markdownToGopherText, wrap } from './markdown-to-gophertext.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -92,11 +92,12 @@ function isDigest(p) {
 function postText(p) {
   const body = markdownToGopherText(p.content || '');
   let doc = '';
-  doc += p.title + '\n';
-  doc += '='.repeat(Math.min(70, p.title.length)) + '\n\n';
+  const wrappedTitle = wrap(p.title, 70);
+  doc += wrappedTitle + '\n';
+  doc += '='.repeat(70) + '\n\n';
   const meta = [fmtDate(p.date), p.category, p.author && `by ${p.author}`, p.lang].filter(Boolean).join(' | ');
   if (meta) doc += meta + '\n\n';
-  if (p.summary) doc += p.summary + '\n\n';
+  if (p.summary) doc += wrap(p.summary, 70) + '\n\n';
   doc += body;
   if (p.tags && p.tags.length) doc += '\nTags: ' + p.tags.join(', ') + '\n';
   if (p.canonicalUrl) doc += '\nRead on full site: ' + p.canonicalUrl + '\n';
