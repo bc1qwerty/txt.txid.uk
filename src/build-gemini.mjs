@@ -94,7 +94,7 @@ async function buildNews(feed) {
   if (digests.length) {
     list += '## Daily digests\n\n';
     for (const p of digests) {
-      list += `=> ${newsPath(p).slice('/news'.length)} ${fmtDate(p.date)} — ${p.title}\n`;
+      list += `=> digest/${p.slug}.gmi ${fmtDate(p.date)} — ${p.title}\n`;
     }
     list += '\n';
   }
@@ -102,7 +102,7 @@ async function buildNews(feed) {
   list += '## Articles\n\n';
   for (const p of posts) {
     const date = fmtDate(p.date);
-    list += `=> ${newsPath(p).slice('/news'.length)} ${date} — ${p.title}\n`;
+    list += `=> post/${p.slug}.gmi ${date} — ${p.title}\n`;
   }
   list += '\n=> / Home\n';
   await emit('news/index.gmi', list);
@@ -120,8 +120,8 @@ async function buildNews(feed) {
     doc += body;
     if (tags) doc += `\n\nTags: ${tags}\n`;
     doc += `\n=> ${p.canonicalUrl} Read on full site (HTML)\n`;
-    doc += `=> ../../ News index\n`;
-    doc += `=> /  Home\n`;
+    doc += `=> ../ News index\n`;
+    doc += `=> / Home\n`;
 
     const rel = isDigest(p)
       ? `news/digest/${p.slug}.gmi`
