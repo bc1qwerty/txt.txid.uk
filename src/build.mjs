@@ -412,6 +412,11 @@ ${learnPreview}
 <li><a href="/feed.xml">RSS feed</a> — combined news and learn, latest 50 items</li>
 </ul>
 
+<h2>Censorship-resistant access</h2>
+<p>Also available as a Tor hidden service for readers in restricted environments:</p>
+<pre><code>http://3gtfnkxog3gymzodli5bzzr5uwahklap3jldaqohowldtdlhwfbcdeid.onion/</code></pre>
+<p class="meta">Open this URL in <a href="https://www.torproject.org/download/">Tor Browser</a>. The onion service mirrors the same content, JavaScript-free and tracker-free like the clearnet version. No CF Pages, no third-party CDN in the path — direct connection through the Tor network to a self-hosted reverse proxy.</p>
+
 <h2>About this mirror</h2>
 <p>Every page here has a <code>&lt;link rel="canonical"&gt;</code> pointing back to the original. Search engines should index the originals; this mirror is a companion, not a replacement.</p>
 <p>Rebuilds automatically whenever either source site redeploys.</p>
