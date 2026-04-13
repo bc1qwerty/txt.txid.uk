@@ -5,8 +5,14 @@
 function stripJsx(md) {
   md = md.replace(/^\s*import\s+[^;\n]+\s+from\s+['"][^'"]+['"];?\s*$/gm, '');
   md = md.replace(/^\s*import\s+['"][^'"]+['"];?\s*$/gm, '');
+  md = md.replace(/<Mermaid\b[\s\S]*?\/>/g, '');
+  md = md.replace(/<Mermaid\b[\s\S]*?<\/Mermaid>/g, '');
   md = md.replace(/<[A-Z][A-Za-z0-9]*\s*[^>]*\/>/g, '');
   md = md.replace(/<([A-Z][A-Za-z0-9]*)\s*[^>]*>[\s\S]*?<\/\1>/g, '');
+  md = md.replace(/<br\s*\/?>/gi, '\n');
+  md = md.replace(/<\/?(?:details|summary)[^>]*>/gi, '');
+  // Known HTML tags only — preserve placeholder notation like <pubKeyHash>, <sig>
+  md = md.replace(/<\/?(?:div|span|p|em|strong|i|b|u|a|ul|ol|li|h[1-6]|table|tr|td|th|tbody|thead|tfoot|pre|blockquote|section|article|nav|aside|header|footer|main|figure|figcaption|sub|sup|small|code|kbd|mark|hr|img|dl|dt|dd)\b[^>]*>/gi, '');
   md = md.replace(/<!--[\s\S]*?-->/g, '');
   return md;
 }

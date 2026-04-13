@@ -16,9 +16,18 @@ function stripJsx(md) {
   // ESM imports at top of MDX files: `import X from '@components/...';`
   md = md.replace(/^\s*import\s+[^;\n]+\s+from\s+['"][^'"]+['"];?\s*$/gm, '');
   md = md.replace(/^\s*import\s+['"][^'"]+['"];?\s*$/gm, '');
-  // JSX self-closing and paired tags
+  // Mermaid JSX components have `-->` arrows inside props; match up to /> or </Mermaid>
+  md = md.replace(/<Mermaid\b[\s\S]*?\/>/g, '');
+  md = md.replace(/<Mermaid\b[\s\S]*?<\/Mermaid>/g, '');
+  // JSX self-closing and paired tags (PascalCase components)
   md = md.replace(/<[A-Z][A-Za-z0-9]*\s*[^>]*\/>/g, '');
   md = md.replace(/<([A-Z][A-Za-z0-9]*)\s*[^>]*>[\s\S]*?<\/\1>/g, '');
+  // HTML inline tags that leak through MDX: details/summary/br
+  md = md.replace(/<br\s*\/?>/gi, '\n');
+  md = md.replace(/<\/?(?:details|summary)[^>]*>/gi, '');
+  // Known HTML tags only — preserve placeholder notation like <pubKeyHash>, <sig>
+  md = md.replace(/<\/?(?:div|span|p|em|strong|i|b|u|a|ul|ol|li|h[1-6]|table|tr|td|th|tbody|thead|tfoot|pre|blockquote|section|article|nav|aside|header|footer|main|figure|figcaption|sub|sup|small|code|kbd|mark|hr|img|dl|dt|dd)\b[^>]*>/gi, '');
+  // HTML comments
   md = md.replace(/<!--[\s\S]*?-->/g, '');
   return md;
 }
