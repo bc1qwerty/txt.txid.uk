@@ -25,6 +25,9 @@ ssh vps "rm -rf ${VPS_STAGE}"
 echo "[ipfs-sync] publish IPNS (background — offline OK)"
 ssh vps "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs ipfs name publish --allow-offline /ipfs/${CID}" 2>&1 | tail -2
 
+echo "[ipfs-sync] pin replica on Dell (fetches from VPS peer, best-effort)"
+ssh swd@dell "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs timeout 180 ipfs pin add -r ${CID}" 2>&1 | tail -2 || echo "  (dell pin failed — not fatal, VPS is still source of truth)"
+
 echo "[ipfs-sync] done"
 echo "  CID:  ${CID}"
 echo "  IPNS: ${IPNS_NAME}"
