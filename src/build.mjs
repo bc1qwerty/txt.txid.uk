@@ -420,6 +420,9 @@ ${learnPreview}
 <h3>Gemini protocol</h3>
 <pre><code>gemini://gemini.txid.uk/</code></pre>
 <p class="meta">The entire mirror is also served over the <a href="https://geminiprotocol.net/">Gemini protocol</a> — a minimalist alternative to HTTP. No HTML, no CSS, no JavaScript, no cookies, no tracking. Requires a Gemini browser such as <a href="https://gmi.skyjake.fi/lagrange/">Lagrange</a> (desktop), <a href="https://github.com/makeworld-the-better-one/amfora">Amfora</a> (terminal), or <a href="https://ariane.app/">Ariane</a> (Android).</p>
+<h3>IPFS (content-addressed)</h3>
+<pre><code>https://ipfs.io/ipns/k51qzi5uqu5djaf06lbcq4kmw5hzrhkhrvpuqvpynq0jlgeic8kq1mzmt0mhb2/</code></pre>
+<p class="meta">This mirror is also pinned to <a href="https://ipfs.tech/">IPFS</a>. Every byte is addressed by its content hash — no central authority can alter or take down a specific version. The IPNS link above tracks the latest build; a <a href="https://docs.ipfs.tech/concepts/ipfs-gateway/#public-gateways">public gateway</a> fetches from any peer that has the content. For direct peer access, run <code>ipfs</code> locally and use the same path.</p>
 
 <h2>About this mirror</h2>
 <p>Every page here has a <code>&lt;link rel="canonical"&gt;</code> pointing back to the original. Search engines should index the originals; this mirror is a companion, not a replacement.</p>
