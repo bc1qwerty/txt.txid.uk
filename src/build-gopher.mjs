@@ -255,6 +255,9 @@ async function main() {
   ]);
   await buildRoot(newsStats, learnStats);
 
+  // robots.txt — allow Veronica-2 and all Gopher crawlers
+  await emit('robots.txt', 'User-agent: *\nAllow: /\n\nUser-agent: veronica\nAllow: /\n');
+
   console.log(
     `Done. ${newsStats.count} news + ${newsStats.digests} digests + ${learnStats.count} learn plain-text files -> ${DIST}`
   );

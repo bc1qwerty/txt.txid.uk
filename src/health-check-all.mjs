@@ -17,7 +17,7 @@ import { createConnection } from 'node:net';
 const SITE = 'https://txt.txid.uk';
 const GEMINI_HOST = 'gemini.txid.uk';
 const GEMINI_PORT = 1965;
-const GOPHER_HOST = '158.180.91.252'; // VPS IP until DNS A for gopher.txid.uk lands
+const GOPHER_HOST = 'gopher.txid.uk'; // DNS A -> 158.180.91.252 (Oracle VPS)
 const GOPHER_PORT = 70;
 const IPNS = 'k51qzi5uqu5djaf06lbcq4kmw5hzrhkhrvpuqvpynq0jlgeic8kq1mzmt0mhb2';
 const ONION = '3gtfnkxog3gymzodli5bzzr5uwahklap3jldaqohowldtdlhwfbcdeid.onion';

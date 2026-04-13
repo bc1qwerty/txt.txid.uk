@@ -5,6 +5,7 @@ set -e
 
 DIST="$(dirname "$0")/../dist"
 DIST_GEMINI="$(dirname "$0")/../dist-gemini"
+DIST_GOPHER="$(dirname "$0")/../dist-gopher"
 VPS_STAGE="/tmp/ipfs-stage"
 IPNS_NAME="k51qzi5uqu5djaf06lbcq4kmw5hzrhkhrvpuqvpynq0jlgeic8kq1mzmt0mhb2"
 
@@ -14,13 +15,20 @@ if [ ! -d "$DIST" ]; then
 fi
 
 echo "[ipfs-sync] rsync dist/ -> vps:${VPS_STAGE}/ (HTML at root)"
-rsync -a --delete --exclude='gemini/' "${DIST}/" "vps:${VPS_STAGE}/"
+rsync -a --delete --exclude='gemini/' --exclude='gopher/' "${DIST}/" "vps:${VPS_STAGE}/"
 
 if [ -d "$DIST_GEMINI" ]; then
   echo "[ipfs-sync] rsync dist-gemini/ -> vps:${VPS_STAGE}/gemini/ (gemtext under /gemini/)"
   rsync -a --delete "${DIST_GEMINI}/" "vps:${VPS_STAGE}/gemini/"
 else
   echo "[ipfs-sync] dist-gemini/ not found — skipping gemtext pin"
+fi
+
+if [ -d "$DIST_GOPHER" ]; then
+  echo "[ipfs-sync] rsync dist-gopher/ -> vps:${VPS_STAGE}/gopher/ (plain text under /gopher/)"
+  rsync -a --delete "${DIST_GOPHER}/" "vps:${VPS_STAGE}/gopher/"
+else
+  echo "[ipfs-sync] dist-gopher/ not found — skipping gopher pin"
 fi
 
 echo "[ipfs-sync] ipfs add -rQ (quiet)"
