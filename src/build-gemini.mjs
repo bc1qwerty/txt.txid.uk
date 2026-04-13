@@ -69,6 +69,48 @@ function isDigest(p) {
   return p.section === 'digest';
 }
 
+function escapeXml(str) {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+function buildAtomFeed(posts) {
+  const updated = posts[0]?.date
+    ? new Date(posts[0].date).toISOString()
+    : new Date().toISOString();
+  const entries = posts
+    .slice(0, 30)
+    .map((p) => {
+      const url = `${SITE_URL}${newsPath(p)}`;
+      const date = p.date ? new Date(p.date).toISOString() : updated;
+      const summary = p.summary || p.title;
+      return `  <entry>
+    <title>${escapeXml(p.title)}</title>
+    <link href="${escapeXml(url)}" rel="alternate" />
+    <id>${escapeXml(url)}</id>
+    <updated>${date}</updated>
+    <published>${date}</published>
+    <summary>${escapeXml(summary)}</summary>
+  </entry>`;
+    })
+    .join('\n');
+  return `<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>txt.txid.uk news (Gemini mirror)</title>
+  <link href="${SITE_URL}/news/" rel="alternate" />
+  <link href="${SITE_URL}/news/atom.xml" rel="self" />
+  <id>${SITE_URL}/news/</id>
+  <updated>${updated}</updated>
+  <author><name>bc1qwerty</name></author>
+${entries}
+</feed>
+`;
+}
+
 function newsPath(p) {
   return isDigest(p) ? `/news/digest/${p.slug}.gmi` : `/news/post/${p.slug}.gmi`;
 }
@@ -89,7 +131,8 @@ async function buildNews(feed) {
   list += `Text-only Gemini mirror of news.txid.uk. ${posts.length} posts`;
   if (digests.length) list += ` + ${digests.length} daily digests`;
   list += '.\n\n';
-  list += `=> ${CLEARNET_URL}/news/ View on clearnet (HTML)\n\n`;
+  list += `=> ${CLEARNET_URL}/news/ View on clearnet (HTML)\n`;
+  list += `=> atom.xml Atom feed (for aggregators)\n\n`;
 
   if (digests.length) {
     list += '## Daily digests\n\n';
@@ -106,6 +149,13 @@ async function buildNews(feed) {
   }
   list += '\n=> / Home\n';
   await emit('news/index.gmi', list);
+
+  // Atom feed for CAPCOM / Spacewalk aggregators
+  const sortedAll = [...allEntries].sort((a, b) => new Date(b.date) - new Date(a.date));
+  await emit('news/atom.xml', buildAtomFeed(sortedAll));
+
+  // robots.txt — let Gemini crawlers (Kennedy etc.) freely index us
+  await emit('robots.txt', 'User-agent: *\nAllow: /\n');
 
   // Individual posts
   for (const p of allEntries) {
@@ -207,6 +257,7 @@ async function buildLanding(newsFeed, learnFeed) {
   doc += `=> /news/ News — ${newsCount} posts`;
   if (digestCount) doc += ` + ${digestCount} digests`;
   doc += '\n';
+  doc += `=> /news/atom.xml News Atom feed\n`;
   doc += `=> /learn/ Learn — ${learnCount} entries (en, ko, ja)\n\n`;
   doc += '## Other access methods\n\n';
   doc += `=> https://txt.txid.uk/ Clearnet text-only mirror (HTML)\n`;
