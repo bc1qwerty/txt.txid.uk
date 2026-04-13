@@ -413,9 +413,13 @@ ${learnPreview}
 </ul>
 
 <h2>Censorship-resistant access</h2>
-<p>Also available as a Tor hidden service for readers in restricted environments:</p>
+<p>Also available via two protocol-level alternatives:</p>
+<h3>Tor hidden service (v3 onion)</h3>
 <pre><code>http://3gtfnkxog3gymzodli5bzzr5uwahklap3jldaqohowldtdlhwfbcdeid.onion/</code></pre>
-<p class="meta">Open this URL in <a href="https://www.torproject.org/download/">Tor Browser</a>. The onion service mirrors the same content, JavaScript-free and tracker-free like the clearnet version. No CF Pages, no third-party CDN in the path — direct connection through the Tor network to a self-hosted reverse proxy.</p>
+<p class="meta">Open in <a href="https://www.torproject.org/download/">Tor Browser</a>. Self-hosted reverse proxy fronted by Tor, no third party in the anonymity path.</p>
+<h3>Gemini protocol</h3>
+<pre><code>gemini://gemini.txid.uk/</code></pre>
+<p class="meta">The entire mirror is also served over the <a href="https://geminiprotocol.net/">Gemini protocol</a> — a minimalist alternative to HTTP. No HTML, no CSS, no JavaScript, no cookies, no tracking. Requires a Gemini browser such as <a href="https://gmi.skyjake.fi/lagrange/">Lagrange</a> (desktop), <a href="https://github.com/makeworld-the-better-one/amfora">Amfora</a> (terminal), or <a href="https://ariane.app/">Ariane</a> (Android).</p>
 
 <h2>About this mirror</h2>
 <p>Every page here has a <code>&lt;link rel="canonical"&gt;</code> pointing back to the original. Search engines should index the originals; this mirror is a companion, not a replacement.</p>
