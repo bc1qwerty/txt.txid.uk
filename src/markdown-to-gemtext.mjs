@@ -49,7 +49,18 @@ function convertParagraph(paraLines) {
   const joined = paraLines.join(' ');
   const { text, links } = extractLinks(joined);
   const clean = stripInlineFormatting(text);
-  const out = [clean];
+  const out = [];
+
+  // If the paragraph reduces to just the labels of its links (no other prose),
+  // skip the inline text and only emit the `=> url` lines. This avoids the
+  // verbose duplication seen with patterns like `[→ Source](url)` standing alone.
+  const labelsConcat = links.map((l) => l.label).join(' ').trim();
+  const onlyLinks = links.length > 0 && clean.replace(/[\s→·•|,.]/g, '') === labelsConcat.replace(/[\s→·•|,.]/g, '');
+
+  if (!onlyLinks) {
+    out.push(clean);
+  }
+
   // Deduplicate URLs (same URL mentioned multiple times)
   const seenUrls = new Set();
   for (const { label, url } of links) {
