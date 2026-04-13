@@ -1,0 +1,118 @@
+Thinkers Who Defended Freedom and the Market
+============================================
+
+2026-03-05 | en
+
+A bird's-eye view of 200 years of the Austrian School's intellectual lineage - from Bastiat to Rothbard, including Böhm-Bawerk and Hazlitt.
+
+Why the Intellectual Lineage Matters
+------------------------------------
+
+Austrian Economics is not a discipline created from textbooks. It is
+an intellectual tradition accumulated over 200 years, as one
+generation of thinkers passed core insights to the next. Learning
+individual theories without understanding this tradition is like
+seeing only the trees while missing the forest.
+
+In the introductory course, you encountered concepts like Subjective
+Value Theory [/ideas/subjective-value/], Marginal Utility
+[/ideas/marginal-utility/], and Business Cycle Theory [/ideas/abct/].
+In this intermediate course, you will meet the people who created
+those concepts in chronological order. By tracing who first proposed
+what and how the next thinker built on it, you can finally understand
+why each theory took the shape it did.
+
+200 Years of Intellectual Lineage
+---------------------------------
+
+## Bastiat: See the Unseen
+
+Frédéric Bastiat (1801-1850) [/people/frederic-bastiat/] was a French
+economist who preceded the Austrian School but is considered its
+intellectual ancestor. In his essay "That Which Is Seen, and That
+Which Is Not Seen," Bastiat argued that when evaluating economic
+policy, we must consider not just visible effects but also the unseen
+opportunity costs. This insight forms the methodological foundation of
+the Austrian School.
+
+## Menger: The Birth of a School
+
+Carl Menger (1840-1921) [/people/carl-menger/] founded the Austrian
+School with the publication of Principles of Economics in 1871. His
+central contribution was the Subjective Value Theory: the value of a
+thing does not reside in the thing itself but arises from the
+subjective judgment of the individual using it. This was a revolution
+that fundamentally overturned the labor theory of value.
+
+## Böhm-Bawerk: Capital and Time
+
+Eugen von Böhm-Bawerk (1851-1914) [/people/eugen-bohm-bawerk/] was a
+student of Menger who extended the Subjective Value Theory into a
+theory of capital and interest. He explained the essence of capital
+through the concept of roundabout production and revealed the source
+of interest through Time Preference. He is also famous for his
+decisive critique of Marx's exploitation theory. Mises emerged from
+his Vienna seminar, making him the critical bridge between Menger and
+Mises.
+
+## Mises: Completing the System
+
+Ludwig von Mises (1881-1973) [/people/ludwig-von-mises/] expanded
+Menger's Subjective Value Theory into the vast framework of praxeology
+[/ideas/praxeology/] - deriving all economic laws deductively from the
+axiom that "humans act." He also demonstrated through the Economic
+Calculation Problem [/ideas/economic-calculation/] that socialism is
+fundamentally unable to function.
+
+## Hayek: Knowledge and Order
+
+Friedrich Hayek (1899-1992) [/people/friedrich-hayek/] was a student
+of Mises who added the decisive insight of "dispersed knowledge." The
+knowledge required for an economy is so widely dispersed that no
+central authority can collect it; only the price mechanism can
+transmit this knowledge efficiently. Through the concept of
+Spontaneous Order [/ideas/spontaneous-order/], he explained the
+principle by which markets, language, and law form order without
+design.
+
+## Rothbard: Integrating Ethics and Economics
+
+Murray Rothbard (1926-1995) [/people/murray-rothbard/] integrated
+Mises's economics with natural rights ethics to create the coherent
+system of anarcho-capitalism [/ideas/anarcho-capitalism/]. He argued
+that the very existence of the state violates the Non-Aggression
+Principle [/ideas/non-aggression-principle/], pushing libertarianism
+to its most logical conclusion.
+
+Key Figures
+-----------
+
+* Frédéric Bastiat [/people/frederic-bastiat/] - Pioneer who taught us
+how to see the unseen
+* Carl Menger [/people/carl-menger/] - Founded the Austrian School
+with the Subjective Value Theory
+* Eugen von Böhm-Bawerk [/people/eugen-bohm-bawerk/] -
+Second-generation figure who solidified the School's foundations with
+capital and interest theory
+* Ludwig von Mises [/people/ludwig-von-mises/] - The giant who
+completed the praxeological system
+* Friedrich Hayek [/people/friedrich-hayek/] - Theorist of dispersed
+knowledge and Spontaneous Order
+* Henry Hazlitt [/people/henry-hazlitt/] - Journalist who brought
+Austrian Economics to the general public
+* Murray Rothbard [/people/murray-rothbard/] - Anarcho-capitalist who
+integrated ethics and economics
+
+Go Deeper
+---------
+
+* Subjective Value Theory [/ideas/subjective-value/] - The revolution
+Menger started
+* Economic Calculation Problem [/ideas/economic-calculation/] -
+Mises's decisive argument
+* Spontaneous Order [/ideas/spontaneous-order/] - Hayek's central
+insight
+
+Tags: Austrian Economics
+
+Read on full site: https://learn.txid.uk/en/ideas/thinkers/

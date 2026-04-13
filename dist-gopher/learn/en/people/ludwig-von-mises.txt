@@ -1,0 +1,182 @@
+Ludwig von Mises
+================
+
+2026-03-09 | en
+
+The greatest economist of the 20th century who established the system of praxeology.
+
+The Uncompromising Economist
+----------------------------
+
+Ludwig von Mises (1881-1973) was one of the most important economists
+of the 20th century. He theoretically demonstrated why socialism must
+inevitably fail, re-established the foundations of economics through a
+methodology called praxeology [/ideas/praxeology/], and identified the
+cause of business cycles in central bank credit expansion.
+
+Mises's life itself exemplifies intellectual courage. Despite academic
+orthodoxy, political pressure, and two world wars, he never once
+compromised his principles.
+
+Life: From Vienna to New York
+-----------------------------
+
+## Vienna Years (1881-1934)
+
+Mises was born in Lemberg (present-day Lviv, Ukraine) in the
+Austro-Hungarian Empire to a Jewish family. He studied law and
+economics at the University of Vienna and carried on the Austrian
+School tradition through participation in Eugen von Böhm-Bawerk's
+[/people/eugen-bohm-bawerk/] seminar.
+
+In 1912, at age 31, Mises published The Theory of Money and Credit. In
+this work, he applied Menger's subjective theory of value to monetary
+theory and presented the original form of the Austrian Business Cycle
+Theory (ABCT) [/ideas/abct/].
+
+In 1920, he published the paper "Economic Calculation in the Socialist
+Commonwealth," proving that rational economic calculation is
+impossible in a socialist system. This marks the beginning of the
+famous Socialist Calculation Debate.
+
+During his Vienna years, Mises worked as an economic advisor to the
+Vienna Chamber of Commerce and operated a private seminar
+(Privatseminar). This seminar produced the next generation's
+outstanding economists, including Hayek, Fritz Machlup, Oskar
+Morgenstern, and Gottfried Haberler.
+
+## Exile: Geneva and New York (1934-1973)
+
+As the threat of Nazism grew, Mises relocated to Geneva, Switzerland
+in 1934. In 1940, as Nazis took control of Europe, he fled to the
+United States. All papers and books in his Vienna apartment were
+seized by the Nazis (these materials were taken by Soviet forces and
+only discovered in the 1990s).
+
+In the United States, Mises lectured as a visiting professor at New
+York University (NYU). His failure to obtain an official position was
+due to his uncompromising free-market stance being unwelcome in an
+academia dominated by Keynesianism. His salary was paid by private
+foundations rather than the university.
+
+Yet in this unfavorable environment, Mises completed his greatest
+work. Human Action, published in 1949, is a masterpiece exceeding
+1,000 pages and a monumental work that completed the system of
+praxeology.
+
+Core Ideas
+----------
+
+## Praxeology
+
+Mises's most fundamental contribution was re-establishing the
+methodological foundations of economics. Mises argued that economics
+should not imitate the methods of natural science (experimentation,
+statistics).
+
+The starting point of economics is a self-evident axiom: "Man acts."
+Humans have purposes and choose means to achieve those purposes.
+According to Mises, all laws of economics can be derived through
+logical deduction from this axiom-this is praxeology.
+
+This approach is fundamentally different from mainstream economics'
+mathematical modeling. For Mises, economics is the study of the
+logical structure of human action, not the search for statistical
+correlations.
+
+## The Economic Calculation Problem
+
+The argument Mises raised in his 1920 paper is one of the most
+powerful arguments in 20th-century intellectual history.
+
+The core: In a socialist system, since the means of production are
+state-owned, there are no market transactions between means of
+production. Without market transactions, prices cannot form. Without
+prices, there is no way to calculate efficient resource allocation.
+
+This is not a moral problem with socialism but an epistemological
+impossibility. No matter how well-intentioned a planner, without
+market prices, one cannot determine whether steel or aluminum is
+better suited for bridge construction. The chronic inefficiency of the
+Soviet Union and North Korea historically validated Mises's theory.
+
+## Austrian Business Cycle Theory (ABCT)
+
+Mises developed the theories of Menger and Böhm-Bawerk
+[/people/eugen-bohm-bawerk/] and located the cause of business cycles
+in artificial credit expansion by central banks.
+
+When a central bank artificially lowers interest rates below market
+equilibrium, entrepreneurs receive false signals. Although savings are
+actually insufficient, low interest rates make it appear that savings
+are abundant. Consequently, unsustainable investments (malinvestments)
+occur on a massive scale, and when this bubble bursts, recession
+ensues.
+
+Boom is the cause of recession. Recession is a healthy market process
+of liquidating mistaken investments, and government stimulus merely
+delays this liquidation.
+
+Students and Influence
+----------------------
+
+Two particularly important students emerged from Mises's Vienna and
+New York seminars:
+
+* Friedrich Hayek - Developed Mises's business cycle theory and won
+the Nobel Prize
+* Murray Rothbard - Combined Mises's system with liberal ethics to
+develop anarcho-capitalism
+
+Major Works
+-----------
+
+* The Theory of Money and Credit (1912)
+* Socialism (1922) - The most comprehensive critique of socialism
+* Bureaucracy (1944)
+* Human Action (1949) - Mises's masterpiece and the pinnacle of
+Austrian economics
+
+Famous Quotes
+-------------
+
+| "There is no middle ground. One must choose either market economy or
+socialism. No third system exists."
+
+| "Socialism fails not because of people's selfishness, but because of
+socialism's inherent flaws."
+
+| "When government causes inflation while blaming rising prices, it is
+like an arsonist becoming a firefighter."
+
+| "Economics is a theoretical science. It does not tell you what you
+ought to do. It merely tells you what the consequences of your actions
+will be."
+
+Legacy
+------
+
+Mises was not recognized by mainstream academia during his lifetime.
+However, time was on his side. The collapse of the Soviet Union,
+repeated failures of Keynesian policies, the 2008 financial crisis,
+and the rise of Bitcoin - all these support Mises's theories.
+
+Bitcoin is a currency Mises might have dreamed of: beyond government
+control, voluntarily adopted by the market, unable to be artificially
+inflated - sound money [/ideas/sound-money/].
+
+Related Concepts
+----------------
+
+* Economic Calculation Problem [/ideas/economic-calculation/] -
+Mises's most famous argument
+* Austrian Business Cycle Theory [/ideas/abct/] - Mises's explanation
+of business cycles
+* Time Preference [/ideas/time-preference/] - A core concept of
+Misesian economics
+* Sound Money [/ideas/sound-money/] - The monetary principle Mises
+advocated
+
+Tags: Austrian Economics
+
+Read on full site: https://learn.txid.uk/en/people/ludwig-von-mises/

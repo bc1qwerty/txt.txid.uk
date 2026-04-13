@@ -1,0 +1,452 @@
+Bitcoin vs Ethereum: The Fundamental Differences
+================================================
+
+2026-03-19 | en
+
+A deep comparison of Bitcoin and Ethereum - exploring philosophy, consensus mechanisms, monetary policy, decentralization, and why sound money principles matter.
+
+Few questions in the cryptocurrency space generate more heat and less
+light than "Bitcoin vs Ethereum." Supporters of each project often
+talk past each other because they're evaluating fundamentally
+different things by fundamentally different criteria. Bitcoin aims to
+be sound money - a neutral, censorship-resistant monetary base layer.
+Ethereum aims to be a decentralized computing platform - a "world
+computer" that can execute arbitrary programs.
+
+These are not competing visions for the same thing. They are entirely
+different projects with different goals, different architectures,
+different security models, and different tradeoffs. Understanding
+these differences is essential for anyone navigating the digital asset
+space, and this analysis will examine them through the lens of
+monetary theory, computer science, and Austrian economics.
+
+Philosophical Foundations
+-------------------------
+
+## Bitcoin: Digital Sound Money
+
+Bitcoin was born from the 2008 financial crisis with a singular
+purpose: to create a form of money that no government, corporation, or
+individual could control, debase, or censor. Satoshi Nakamoto's
+whitepaper was titled "Bitcoin: A Peer-to-Peer Electronic Cash System"
+- not a computing platform, not a token-issuance machine, but a cash
+system.
+
+The philosophical roots of Bitcoin run deep into Austrian economics,
+particularly the works of Ludwig von Mises, Friedrich Hayek, and
+Murray Rothbard. Mises's regression theorem explains how money emerges
+from commodity trading. Hayek's "The Denationalization of Money"
+envisions competing private currencies. Bitcoin realizes Hayek's
+vision through technology rather than politics.
+
+From an Austrian perspective, the most important property of money is
+that its supply cannot be arbitrarily expanded. The Austrian business
+cycle theory demonstrates that artificial credit expansion - made
+possible by elastic money supplies - causes the boom-bust cycles that
+devastate economies. Bitcoin's fixed 21 million supply cap is a direct
+technological solution to this economic problem.
+
+For more on sound money principles, see our post on why sound money
+matters [/en/articles/sound-money/].
+
+## Ethereum: The World Computer
+
+Ethereum was proposed in 2013 by Vitalik Buterin with a fundamentally
+different goal: to create a general-purpose blockchain that could
+execute arbitrary code through "smart contracts." Where Bitcoin asks
+"how do we create uncensorable money?", Ethereum asks "how do we
+create uncensorable computation?"
+
+Ethereum's philosophy prioritizes expressiveness and flexibility. It
+aims to be a platform on which developers can build decentralized
+applications (dApps) - from decentralized finance (DeFi) to
+non-fungible tokens (NFTs) to decentralized autonomous organizations
+(DAOs). The monetary component (ETH) serves primarily as "gas" - fuel
+for computation - rather than as a monetary end in itself.
+
+This philosophical difference is not merely academic. It drives every
+design decision in both protocols and explains why they make radically
+different tradeoffs.
+
+Consensus Mechanism: Proof of Work vs Proof of Stake
+----------------------------------------------------
+
+## Bitcoin's Proof of Work
+
+Bitcoin uses Proof of Work (PoW) as its consensus mechanism. Miners
+expend real-world energy - currently around 150 TWh annually - to
+solve cryptographic puzzles and earn the right to add blocks to the
+chain. For a detailed explanation, see our post on how Proof of Work
+functions [/en/articles/proof-of-work/].
+
+PoW has several critical properties:
+
+Unforgeable costliness: Creating a valid block requires consuming real
+resources (electricity, hardware). This cost cannot be faked or
+shortcut. It anchors the digital realm to physical reality, creating
+what Nick Szabo calls "unforgeable costliness" - the same property
+that makes gold valuable as money.
+
+Objective consensus: Any node can independently verify that a block
+required the claimed amount of work by checking a single hash. There
+is no subjectivity in determining the valid chain - it's always the
+one with the most cumulative proof of work.
+
+Permissionless participation: Anyone with electricity and hardware can
+begin mining. No permission, registration, or existing stake is
+required.
+
+Thermodynamic security: Reversing Bitcoin's blockchain requires
+re-doing all the work. As of 2026, this would require controlling more
+than 700 EH/s of hash power - an investment measured in tens of
+billions of dollars and requiring dedicated semiconductor fabrication.
+
+## Ethereum's Proof of Stake
+
+In September 2022, Ethereum transitioned from Proof of Work to Proof
+of Stake (PoS) in an event called "The Merge." Under PoS, validators
+lock up (stake) ETH as collateral and are randomly selected to propose
+and attest to blocks. Validators who act dishonestly risk having their
+staked ETH "slashed" (partially confiscated).
+
+PoS has different properties:
+
+Capital-based security: Instead of energy, PoS uses locked capital as
+its security mechanism. As of 2026, approximately 34 million ETH
+(about 28% of total supply) is staked.
+
+Energy efficiency: PoS consumes approximately 99.95% less energy than
+PoW. This is frequently cited as an advantage, but it also means the
+security model is fundamentally different - it relies on economic
+incentives within the system rather than external physical costs.
+
+Subjective consensus: Unlike PoW, where the valid chain is always
+objectively determinable, PoS introduces elements of subjectivity. New
+nodes joining the network need a "checkpoint" from a trusted source to
+determine the valid chain (this is called "weak subjectivity"). This
+is a meaningful trust assumption absent from Bitcoin.
+
+Concentration dynamics: In PoS, the rich get richer. Staking rewards
+go to those who already have the most stake, and there's no equivalent
+of the external costs (electricity, hardware depreciation) that
+prevent PoW miners from endlessly accumulating. As of 2026, three
+entities - Lido, Coinbase, and Kraken - control approximately 50% of
+staked ETH.
+
+## The Austrian Economics Perspective on Consensus
+
+From an Austrian economics perspective, the consensus mechanism choice
+has profound implications for money.
+
+Carl Menger, the founder of the Austrian school, emphasized that
+economic value ultimately derives from subjective human valuations
+grounded in real-world scarcity. Proof of Work creates a direct
+connection between Bitcoin and physical scarcity - producing Bitcoin
+requires consuming scarce real-world resources. This is analogous to
+how gold derives its monetary properties partly from the real cost of
+mining it.
+
+Proof of Stake, by contrast, creates a self-referential loop: the
+security of the system depends on the value of its own token, and the
+value of the token depends on the security of the system. This
+circularity means that PoS security is ultimately based on social
+consensus about value rather than on unforgeable physical costs. From
+the Misesian perspective, this makes PoS more similar to fiat currency
+- where value is maintained by collective belief - than to commodity
+money.
+
+Monetary Policy: Fixed vs Flexible
+----------------------------------
+
+## Bitcoin's Absolute Scarcity
+
+Bitcoin's monetary policy is the simplest and most rigid in all of
+finance: there will never be more than 21 million Bitcoin. The
+issuance schedule is programmatically fixed, with block rewards
+halving approximately every four years. For more on this mechanism,
+see Bitcoin halving explained [/en/articles/bitcoin-halving/].
+
+This policy cannot be changed through any governance mechanism. Even
+if 99% of miners, developers, and users wanted to increase the supply,
+they would need to fork the network and convince everyone to switch -
+effectively creating a new cryptocurrency. The original Bitcoin with
+its 21 million cap would continue to exist.
+
+Key monetary properties:
+
+* Total supply: 21,000,000 BTC (exactly)
+* Current inflation rate: ~0.84% annually (after the 2024 halving)
+* Final Bitcoin mined: Approximately 2140
+* Supply change mechanism: None - impossible by design
+
+This fixed monetary policy is what Austrian economists would recognize
+as a hard money standard, comparable to (but superior to) the
+classical gold standard. Unlike gold, Bitcoin's supply schedule is
+perfectly predictable and verifiable by anyone running a node.
+
+## Ethereum's Evolving Monetary Policy
+
+Ethereum's monetary policy has changed multiple times and can change
+again through governance:
+
+* 2015 launch: ~5 ETH per block, ~10% annual inflation
+* 2017 Byzantium: Reduced to 3 ETH per block
+* 2019 Constantinople: Reduced to 2 ETH per block
+* 2021 EIP-1559: Introduced fee burning, making supply partially
+deflationary
+* 2022 The Merge: Reduced issuance by ~90% by switching to PoS
+
+Currently, Ethereum's net issuance fluctuates between slightly
+inflationary and slightly deflationary depending on network usage.
+When the network is busy (high gas fees), more ETH is burned than
+issued, making it deflationary. When the network is quiet, issuance
+exceeds burning, making it inflationary.
+
+Ethereum proponents call this "ultrasound money" - a reference to
+Bitcoin's "sound money" narrative. But from an Austrian economics
+perspective, this framing reveals a fundamental misunderstanding.
+
+Sound money is not about having a decreasing supply - it's about
+having a predictable and unchangeable supply policy. The fact that
+Ethereum's monetary policy has been changed multiple times through
+social governance, and can be changed again, means it shares the
+critical flaw of fiat currency: a small group of people decide the
+monetary policy. Whether they choose inflation or deflation is less
+important than the fact that they choose at all. As Hayek argued, the
+problem with centrally managed money is not that central bankers
+always make wrong decisions, but that no small group of humans has the
+knowledge to make right ones.
+
+Decentralization: Degrees and Tradeoffs
+---------------------------------------
+
+## Bitcoin's Decentralization
+
+Bitcoin prioritizes decentralization above all else, including
+features, performance, and expressiveness. This is a deliberate design
+choice, not a limitation.
+
+Node count and accessibility: Running a Bitcoin full node requires
+modest hardware - a Raspberry Pi with a 1TB drive is sufficient. This
+low barrier ensures that tens of thousands of nodes operate worldwide,
+with a significant portion run by individuals at home. For a practical
+guide, see how to run a Bitcoin full node
+[/en/articles/how-to-run-bitcoin-node/].
+
+Development decentralization: Bitcoin Core has hundreds of
+contributors, and changes require extensive peer review and community
+consensus. Controversial changes (like the block size debate) are
+resolved through user-activated soft forks - users, not developers or
+miners, have the final say.
+
+Mining decentralization: While mining pools introduce some
+centralization, the underlying miners can switch pools freely, and the
+ASIC manufacturing landscape has diversified from Bitmain's
+near-monopoly to include multiple manufacturers.
+
+## Ethereum's Decentralization Challenges
+
+Ethereum's greater complexity introduces several centralization
+pressures:
+
+Node requirements: Running a full Ethereum node requires significantly
+more resources - hundreds of gigabytes of SSD storage, substantial
+RAM, and high-bandwidth internet. An Ethereum archive node requires
+several terabytes. This higher bar means fewer individuals run their
+own nodes.
+
+Validator centralization: As noted above, a small number of liquid
+staking providers and exchanges control a majority of staked ETH. Lido
+alone controls approximately 29% of all staked ETH - well above the
+33% threshold at which a single entity could theoretically halt the
+chain.
+
+Development centralization: The Ethereum Foundation and a relatively
+small group of core developers drive the protocol's direction. The
+transition to PoS, the monetary policy changes, and the roadmap
+(sharding, Danksharding) were decided by this group.
+
+MEV and builder centralization: Maximum Extractable Value (MEV) has
+created a sophisticated ecosystem of block builders and searchers. As
+of 2026, a small number of block builders produce the vast majority of
+Ethereum blocks, introducing a layer of centralization in transaction
+ordering.
+
+## Why Decentralization Matters
+
+Decentralization is not a goal in itself - it is the mechanism through
+which censorship resistance is achieved. A monetary system is only
+"unstoppable" to the degree that no small group can alter its rules or
+censor its users.
+
+Bitcoin's willingness to sacrifice features for decentralization is
+often criticized as technological conservatism. But this conservatism
+serves a purpose: it makes Bitcoin extremely difficult for any
+government, corporation, or coordinated group to capture, alter, or
+shut down. For a digital monetary system meant to last centuries, this
+conservatism is a feature, not a bug.
+
+For more on Bitcoin's governance model, see how Bitcoin governance
+works [/en/articles/bitcoin-governance/].
+
+Smart Contracts and Programmability
+-----------------------------------
+
+## Ethereum's Turing-Complete Smart Contracts
+
+Ethereum's main technical innovation is its Turing-complete virtual
+machine (EVM), which can execute arbitrary programs called smart
+contracts. This enables:
+
+* DeFi: Decentralized exchanges, lending protocols, synthetic assets
+* NFTs: Non-fungible tokens for digital art, gaming items, identity
+* DAOs: Organizations governed by code rather than legal structures
+* Token issuance: Creating new tokens with arbitrary rules
+
+This expressiveness is powerful but introduces significant risks.
+Smart contract bugs have led to billions of dollars in losses. The
+2016 DAO hack ($60 million), the 2022 Wormhole hack ($320 million),
+and numerous other exploits demonstrate that complex code on an
+immutable blockchain creates permanent, irrecoverable vulnerabilities.
+The more complex the system, the larger the attack surface.
+
+## Bitcoin's Deliberate Simplicity
+
+Bitcoin uses a deliberately limited scripting language called Script.
+It is not Turing-complete - it cannot execute arbitrary programs. This
+is a design choice, not a limitation.
+
+Bitcoin Script can express:
+
+* Simple transfers: Standard pay-to-public-key-hash transactions
+* Multisignature: Requiring multiple keys to spend (e.g., 2-of-3
+multisig)
+* Time locks: Coins that can't be spent until a certain block height
+or time
+* Hash locks: Coins that require revealing a secret to spend (used in
+Lightning channels)
+* Taproot scripts: More complex conditions that remain private unless
+triggered
+
+Bitcoin's approach to programmability is to keep the base layer simple
+and push complexity to higher layers. The Lightning Network
+[/en/articles/lightning-network-intro/] enables instant, low-cost
+payments. Discreet Log Contracts (DLCs) enable financial contracts.
+Fedimint creates federated custodial communities. These solutions use
+Bitcoin's simple scripting primitives as building blocks without
+adding complexity to the base layer.
+
+The Austrian economist Hayek warned about the "fatal conceit" - the
+belief that complex systems can be designed and managed from the top
+down. Bitcoin's layered approach echoes this humility: keep the
+monetary base layer as simple and robust as possible, and let higher
+layers innovate without risking the foundation.
+
+Security Model Comparison
+-------------------------
+
+## Attack Costs
+
+The cost to attack Bitcoin (51% attack) requires accumulating more
+hash power than the rest of the network combined. As of 2026, this
+would require:
+
+* Manufacturing or acquiring millions of ASICs
+* Securing enormous power supply contracts
+* Sustaining the attack indefinitely (it only works as long as you
+maintain majority hash power)
+* Estimated cost: tens of billions of dollars, with no guarantee of
+success
+
+The cost to attack Ethereum (33% attack) requires accumulating
+one-third of all staked ETH:
+
+* As of 2026, this means acquiring approximately 11 million ETH
+* Current market cost: approximately $30-40 billion
+* However, attempting to buy this much would dramatically move the
+market, making the actual cost much higher
+* Slashing mechanisms mean the attacker would lose their stake
+
+Both systems have formidable economic security, but the nature of the
+security differs. Bitcoin's security is anchored in physical reality
+(energy and hardware). Ethereum's security is anchored in the token's
+own value - a self-referential system.
+
+## Bug Surface Area
+
+Bitcoin's simpler design means a dramatically smaller attack surface.
+Bitcoin Core's consensus-critical code is approximately 30,000 lines.
+Ethereum's execution layer plus consensus layer represents hundreds of
+thousands of lines of consensus-critical code, plus the EVM and all
+the complexity of smart contract interaction.
+
+History reflects this difference. Bitcoin has had one major consensus
+bug in its history (the 2010 value overflow incident, fixed within
+hours). Ethereum has had multiple consensus-level issues, including
+bugs that required emergency hard forks.
+
+The Investment Thesis
+---------------------
+
+## Bitcoin as Digital Gold
+
+Bitcoin's investment thesis is straightforward: it is the hardest
+money ever created. In a world of perpetual currency debasement, a
+monetary asset with an absolutely fixed supply and no central control
+represents a paradigm shift. Bitcoin competes with gold, sovereign
+bonds, and real estate as a store of value.
+
+Bitcoin's value proposition doesn't depend on adoption of any
+particular application or platform. It depends on one thing: the
+continued operation of a decentralized, censorship-resistant network
+with a fixed supply. This simplicity is an advantage - there are fewer
+things that can go wrong.
+
+For more on this perspective, see why Bitcoin matters
+[/en/articles/why-bitcoin-matters/] and Bitcoin vs gold
+[/en/articles/bitcoin-vs-gold/].
+
+## Ethereum as Technology Platform
+
+Ethereum's investment thesis is different: ETH captures value as the
+currency of a decentralized computing platform. As more applications
+are built on Ethereum, demand for ETH (to pay gas fees) increases,
+potentially increasing its value.
+
+This makes ETH more similar to a tech stock than a monetary asset. Its
+value depends on Ethereum's continued adoption as a computing
+platform, the growth of its DeFi and NFT ecosystems, competition from
+alternative platforms (Solana, Avalanche, etc.), and continued
+innovation by its development team.
+
+Conclusion: Different Tools for Different Purposes
+--------------------------------------------------
+
+Bitcoin and Ethereum are not competing solutions to the same problem.
+Bitcoin is money - or more precisely, it is the most credible
+candidate for a global, neutral, digital monetary base layer. Ethereum
+is a computing platform that happens to have a native token.
+
+From an Austrian economics perspective, the distinction matters
+enormously. Sound money is the foundation of a functioning economy.
+Without reliable money, price signals become distorted, capital gets
+misallocated, and boom-bust cycles become inevitable. Bitcoin's
+singular focus on being the best possible money - with its fixed
+supply, PoW security, and radical decentralization - makes it the only
+credible digital candidate for this role.
+
+Ethereum may succeed brilliantly as a computing platform. But its
+changing monetary policy, PoS consensus, and willingness to sacrifice
+decentralization for features mean it is not, and cannot be, sound
+money. Understanding this distinction is the key to evaluating both
+projects honestly.
+
+The question is not "Bitcoin or Ethereum?" The question is: "What are
+you trying to achieve?" If you want sound money that no one controls,
+Bitcoin is the only answer. If you want a platform for decentralized
+applications, Ethereum is one of several options. Conflating these two
+use cases leads to confusion, and confusion leads to poor decisions.
+
+Tags: Bitcoin
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-vs-ethereum/

@@ -1,0 +1,172 @@
+The Structural Problems of Fiat Money
+=====================================
+
+2026-02-22 | en
+
+An analysis with concrete data of how the fiat money system has destroyed purchasing power since 1971, the hidden mechanisms of debt-based currency, and the consequences of unlimited money printing.
+
+What cost $1 to buy in 1971 now costs about $8. The Korean won tells
+an even more dramatic story. A bowl of 자장면 cost 1,000 won in the early
+1990s, but in 2026 you need to pay an average of 7,500 won. The face
+value of money has not changed, yet what it can buy keeps shrinking.
+Many people accept this as a natural economic phenomenon, but it is
+not natural at all. It is the result of a specific system - fiat
+currency - operating exactly as designed.
+
+The Birth of Fiat Money: The 1971 Nixon Shock
+---------------------------------------------
+
+The word "fiat" in fiat money comes from Latin, meaning "let it be
+done." It refers to currency that becomes money because the government
+declares, "This is money." It maintains its value not through the
+backing of a physical asset like gold or silver, but solely through
+the authority of the government and the trust of its people.
+
+The 1944 Bretton Woods Agreement pegged the dollar to gold. One ounce
+of gold was $35, and other countries' currencies were pegged to the
+dollar. This system imposed a physical limit on currency issuance.
+Governments could not print money beyond the amount of gold they held.
+This served as a natural constraint on inflation.
+
+But on August 15, 1971, President Richard Nixon unilaterally suspended
+the convertibility of the dollar into gold, and everything changed. As
+U.S. gold reserves were depleted by the cost of the Vietnam War, Nixon
+had no choice but to abandon the gold standard. From that moment on,
+every major currency in the world became pure fiat money, unbacked by
+any physical asset.
+
+Fifty-five years have passed since then. What have the consequences
+been? The dollar has lost 87% of its purchasing power compared to
+1971. The Korean won, the Japanese yen, the British pound, and the
+euro have all followed similar trajectories. This is no coincidence.
+
+The Temptation of Unlimited Issuance: A Monetary System Without
+Constraints
+----------------------------------------------------------------------
+
+Under the gold standard, if the government wanted to issue more
+currency, it had to acquire more gold. This was a process that took
+time and money. The fiat money system eliminated this constraint
+entirely. Governments and central banks can theoretically issue
+currency without limit. There are no physical constraints. All that
+remains is political will.
+
+History clearly shows how this power has been used. The United States
+spent approximately $8 trillion on the wars in Iraq and Afghanistan.
+Most of this was funded not through tax increases but through currency
+issuance and government bonds. Raising taxes provokes public
+resistance, but printing money hides the pain in the short term.
+
+After the 2008 global financial crisis, the Federal Reserve issued
+approximately $4.5 trillion of new money under the banner of
+Quantitative Easing (QE). The purpose was to bail out banks on the
+verge of failure and prop up asset prices. Rather than allowing the
+market to self-correct, the central bank printed money to intervene in
+the market.
+
+Then came the COVID-19 pandemic in 2020. In just two years, the United
+States issued approximately 40% of all the dollars that had ever
+existed in history. The M2 money supply surged from $15 trillion at
+the start of 2020 to over $21 trillion by the end of 2021. More than
+$6 trillion was created in just 20 months.
+
+Korea was no exception. According to the Bank of Korea, the M2 money
+supply increased from approximately 2,900 trillion won in 2019 to
+approximately 3,800 trillion won in 2023. That is 900 trillion won - a
+31% increase - in four years. During the same period, Korea's real GDP
+growth rate averaged only about 2% per year. Money supply grew far
+faster than the economy.
+
+If more money is printed but the total quantity of real goods and
+services in the economy does not increase proportionally, the value of
+each currency unit inevitably falls. This is a matter of arithmetic.
+
+Inflation: Taxation Without Legislation
+---------------------------------------
+
+When the government raises taxes, people get angry and resist. But
+when it dilutes the purchasing power of existing currency by printing
+money, most people do not perceive it as a tax. Economist Milton
+Friedman called inflation "taxation without legislation."
+
+Let's look at a concrete example. Suppose you deposited 100 million
+won in a bank. If the interest rate is 2% per year and inflation runs
+at 3-5% (Korea's recent average inflation has been 2-3%, but the
+inflation rate that people actually feel is higher), after one year
+your nominal balance is 102 million won. But your real purchasing
+power has shrunk to approximately 97 million won. You received 2
+million won in nominal interest, but you lost 5 million won in
+purchasing power to inflation. The real loss is 3 million won.
+
+Over 10 years, approximately 30 million won in purchasing power
+vanishes. Over 20 years, approximately 50 million won disappears. You
+spent nothing, yet half your savings evaporated. Who takes it? The
+government and banks that issued the new currency. They receive the
+new money first and purchase goods and services before prices have
+risen. This is known as the Cantillon Effect.
+
+The cruelty of inflation lies in the direction of wealth
+redistribution. The hardest hit are those who saved in cash and
+deposits - the diligent and frugal. Meanwhile, those who hold assets
+(real estate, stocks, businesses) or who carry low-interest debt
+benefit from inflation. This is a structure that punishes hard work
+and thrift while rewarding consumption and speculation.
+
+The Structural Instability of a Debt-Based Monetary System
+----------------------------------------------------------
+
+Another fundamental problem with the fiat money system is that
+currency itself is created through debt. In the modern banking system,
+new money is born through lending. When a bank issues a loan, new
+money is created; when the loan is repaid, that money disappears.
+
+This structure can only be sustained when the economy is perpetually
+growing and debt is continuously expanding. If growth stops or debt
+repayments pile up all at once, the money supply contracts sharply and
+an economic crisis erupts. The 2008 global financial crisis was
+precisely this mechanism exploding. As mortgage loans turned toxic,
+cascading defaults followed, and central banks had to issue trillions
+of new dollars to stop it.
+
+Korea's situation is no exception. Korean household debt exceeded
+approximately 100% of GDP as of 2024 - one of the highest levels among
+developed countries. Households that took on massive loans to purchase
+real estate during the era of low interest rates face severe burdens
+the moment rates rise. This is how the structural vulnerability of the
+fiat money system affects individual lives.
+
+The Double-Edged Sword of Fiat Money's Flexibility
+--------------------------------------------------
+
+Of course, the fiat money system has its advantages. It allows rapid
+response through monetary policy during recessions, and central banks
+can act as lenders of last resort to prevent financial panics.
+However, the lesson that history repeatedly teaches is that this
+flexibility ultimately leads to abuse.
+
+The Exit Bitcoin Offers
+-----------------------
+
+Bitcoin is a technical response to all of these problems with the fiat
+money system.
+
+Its supply is mathematically fixed, making unlimited issuance
+impossible. No government and no central bank can print additional
+Bitcoin. Through the halving mechanism, the amount of newly issued
+Bitcoin decreases over time, and after the last bitcoin is mined
+around the year 2140, new issuance ceases completely.
+
+It is not created through debt. Bitcoin is issued only through mining
+and is not connected to any lending contract. Bitcoin does not vanish
+when a loan is repaid.
+
+Understanding the problems of fiat money is not merely an academic
+exercise in economics. It is understanding the structural reasons why
+your savings lose purchasing power each year, and why money you worked
+hard to save makes you poorer than someone who bought real estate.
+That understanding is the starting point for seeing Bitcoin not as a
+simple investment asset but as an exit from the system.
+
+Tags: Economics
+
+Read on full site: https://learn.txid.uk/en/articles/fiat-money-problems/

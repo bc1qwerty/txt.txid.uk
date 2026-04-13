@@ -1,0 +1,203 @@
+The CLARITY Act Could Give Crypto Its First Real Rulebook
+=========================================================
+
+2026-03-26 | politics | by txid | en
+
+A bipartisan deal on stablecoin yield could deliver crypto's first market structure law. Senate Banking Committee markup targeted for late April.
+
+The Digital Asset Market Clarity Act has been stalled for months over
+a single issue: whether crypto exchanges should be permitted to pay
+interest on stablecoin holdings. That impasse may be over. Senator
+Thom Tillis (R-NC) and Senator Angela Alsobrooks (D-MD) have reached a
+tentative bipartisan deal that bars rewards on passive stablecoin
+balances — a concession to banking interests — while preserving the
+broader market structure framework the crypto industry has spent years
+pursuing.
+
+The deal, described by people familiar with the negotiations as "99%
+of the way to resolution," clears the path for Senate Banking
+Committee markup in late April. If that timeline holds, the CLARITY
+Act could reach a full Senate vote before summer. This is the
+legislation that defines what a digital asset is, which agency
+regulates it, and how companies can legally operate in the United
+States. Everything else in crypto regulation flows downstream from
+these foundational questions.
+
+The Gap the CLARITY Act Fills
+-----------------------------
+
+Understanding the bill requires understanding what already exists and
+what does not. The GENIUS Act — signed into law on July 18, 2025,
+after passing the Senate 68-30 and the House 308-122 — established a
+federal licensing framework for stablecoin issuers, reserve
+requirements, and redemption rights. Those margins, roughly two-thirds
+in both chambers, reflected genuine bipartisan consensus on the narrow
+question of stablecoin regulation.
+
+But the GENIUS Act answered only one question. As of March 2026, the
+United States still lacks a statutory answer to the most fundamental
+issue in digital asset regulation: is a given token a security, a
+commodity, or something else entirely? The SEC has argued through
+enforcement actions that most tokens are securities. The CFTC has
+claimed jurisdiction over tokens that function as commodities. Courts
+have produced inconsistent rulings. Market participants operate in a
+compliance gray zone where the rules depend on which agency decides to
+act and which legal theory a particular judge finds persuasive.
+
+The CLARITY Act proposes to resolve this by establishing a statutory
+classification framework — a set of criteria that determines
+jurisdiction based on a token's characteristics and use, not based on
+ad hoc enforcement decisions. It would create the second pillar of a
+comprehensive regulatory architecture, alongside the GENIUS Act's
+stablecoin rules.
+
+The Yield Fight That Nearly Killed the Bill
+-------------------------------------------
+
+The provision that almost sank the CLARITY Act touches one of the most
+politically charged boundaries in financial regulation: where banking
+ends and crypto begins.
+
+The question is straightforward. If a bank can pay interest on dollar
+deposits, should a crypto platform be able to pay yield on stablecoin
+holdings? The crypto industry says obviously yes — the technology
+differs, the economic function is the same. The banking lobby says
+obviously no — paying interest on deposits is a core banking function
+that comes with FDIC insurance, capital requirements, and federal
+examination. Allowing crypto platforms to replicate that function
+without the obligations creates regulatory arbitrage.
+
+The political alignment cut across the usual crypto-friendly versus
+crypto-skeptical divide. Several pro-crypto senators were sympathetic
+to banking concerns on yield, while some moderate Democrats who had
+reservations about the bill's overall scope were willing to support it
+if the yield provision was restricted. The result was a stalemate that
+persisted for months: broad support in principle, no path to a vote.
+
+The Tillis-Alsobrooks Compromise
+--------------------------------
+
+The breakthrough came from an unlikely pairing. Tillis, a Republican
+with a pro-business record from a state with a significant financial
+services industry, and Alsobrooks, a first-term Democrat from
+Maryland, negotiated a deal that threads the needle.
+
+The core: passive stablecoin balances held at exchanges or custodians
+may not earn rewards. A user who holds USDC in a Coinbase account
+would not earn interest simply for holding it. But the accord
+preserves the ability for stablecoin issuers to offer yield through
+mechanisms requiring active participation — staking in DeFi protocols,
+lending, or other activities where the holder takes on risk.
+
+The distinction between "passive" and "active" yield is the legal
+innovation that makes the deal work. It gives banks comfort that
+crypto platforms will not replicate the core deposit-taking function,
+while giving the crypto industry a path to yield-bearing products that
+require user action beyond simply holding a balance.
+
+The compromise is imperfect. The definition of "passive" will
+inevitably be litigated. A platform that requires users to click a
+single button to "opt in" to a yield program could argue the balance
+is no longer passive. But political compromises are not designed to be
+perfect. They are designed to be sufficient — to give enough to each
+side that the legislation can advance.
+
+What Remains Unresolved
+-----------------------
+
+The stablecoin yield resolution removes the largest obstacle but not
+the only one. DeFi treatment is the most technically challenging
+question still on the table. Decentralized protocols operate without a
+central entity — there is no company to register, no officer to hold
+accountable, no jurisdiction in which the protocol is domiciled. The
+current draft reportedly includes a "sufficient decentralization" test
+that, if met, exempts a protocol from certain registration
+requirements. The details of that test are among the most contested
+provisions in the bill.
+
+Ethics provisions have become a condition for some Democratic
+senators' support, reflecting concerns about legislators and their
+families holding digital asset investments. And the jurisdictional
+line between the SEC and CFTC, while partially addressed, remains a
+source of inter-agency tension. The CLARITY Act would effectively
+transfer authority over certain assets from the SEC to the CFTC — a
+reallocation of power the SEC has resisted. Agencies fight hard to
+preserve jurisdiction, and the SEC has a larger budget, more staff,
+and more political influence than the CFTC.
+
+| Key Issue | Status | Risk to Timeline |
+|---|---|---|
+| Stablecoin yield | Tentatively resolved (Tillis-Alsobrooks) | Low |
+| DeFi treatment | Unresolved | High |
+| Ethics provisions | Unresolved | Medium |
+| SEC/CFTC jurisdiction | Partially resolved | Medium |
+
+Senator Cynthia Lummis has confirmed the markup target: late April,
+after Congress returns from Easter recess on April 13. Chairman Tim
+Scott is pushing for passage, and committee staff have been working
+through the recess to prepare. But the path from markup to
+presidential signature involves months of procedural steps and
+potential amendments. The GENIUS Act took roughly eight months from
+markup to signature. If the CLARITY Act follows a similar pace, final
+enactment comes in late 2026 or early 2027 — assuming no major
+disruptions from the Hormuz crisis, the presidential campaign cycle,
+or general congressional dysfunction.
+
+Legislation not signed before this Congress expires in January 2027
+dies and must be reintroduced from scratch.
+
+Why It Matters Beyond Crypto Twitter
+------------------------------------
+
+The absence of a market structure framework has concrete economic
+consequences the industry measures in lost business, legal costs, and
+offshore migration. Without a statutory classification system, every
+digital asset project faces a fundamental question it cannot
+definitively answer: are we a security or not? Legal fees for crypto
+startups routinely exceed those of comparable traditional finance
+startups because compliance must be navigated without a map.
+Institutional investors — pension funds, endowments, insurance
+companies — remain largely on the sidelines because their compliance
+departments cannot determine whether a given asset meets applicable
+regulations.
+
+The CLARITY Act would replace the current system, where classification
+depends on enforcement discretion, with a framework where it depends
+on objective criteria. Combined with the GENIUS Act, it would give the
+United States the most comprehensive digital asset regulatory
+architecture in any major economy — more detailed than the EU's MiCA
+regulation and more permissive than many Asian frameworks. Clear rules
+attract capital, talent, and institutional participation in ways that
+regulatory ambiguity cannot.
+
+The Political Reality
+---------------------
+
+The Tillis-Alsobrooks accord is a significant step, but it is a step,
+not the finish line. Described as "99% of the way to resolution," it
+leaves 1% unresolved — and in legislative negotiations, the final 1%
+often contains the issues most politically sensitive and most
+difficult to compromise on. The remaining friction is described as
+"political" rather than substantive, which in Washington means it
+relates to credit, timing, and electoral positioning rather than
+policy substance. These are not trivial considerations. They have
+killed legislation before.
+
+The GENIUS Act demonstrated that bipartisan crypto legislation can
+pass with large margins when conditions align. Whether those
+conditions can be replicated for a broader, more contentious market
+structure bill in 2026 is the open question. The stablecoin yield
+issue was the largest obstacle, and it appears cleared. The remaining
+issues are significant but negotiable. The timeline is tight but
+achievable.
+
+The next six weeks will determine whether this optimism is justified.
+The markup in late April will reveal whether the accord holds, whether
+DeFi and ethics provisions can be resolved, and whether the committee
+can produce a bill commanding bipartisan support. The crypto industry
+has been waiting years for a market structure law. The wait may soon
+be over — or it may extend once again.
+
+Tags: CLARITY Act, stablecoin, regulation, Congress, SEC, CFTC, GENIUS Act
+
+Read on full site: https://news.txid.uk/post/clarity-act-stablecoin-law

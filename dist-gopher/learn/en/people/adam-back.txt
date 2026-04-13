@@ -1,0 +1,147 @@
+Adam Back
+=========
+
+2026-03-21 | en
+
+Inventor of Hashcash and CEO of Blockstream, whose proof-of-work system is cited in Bitcoin's whitepaper.
+
+The Man Behind Proof of Work
+----------------------------
+
+Adam Back is a British cryptographer and computer scientist whose
+invention, Hashcash, provided the proof-of-work mechanism that became
+a core component of Bitcoin. He is one of only two people cited in
+Satoshi Nakamoto [/people/satoshi-nakamoto/]'s Bitcoin whitepaper --
+the other being Wei Dai [/people/wei-dai/]. Today, he serves as CEO
+and co-founder of Blockstream, one of the most influential companies
+in Bitcoin development.
+
+Back's career represents a direct line from the cypherpunk movement of
+the 1990s to the modern Bitcoin ecosystem. He didn't just theorize
+about digital cash -- he built one of its essential building blocks.
+
+Hashcash: The Foundation of Digital Scarcity
+--------------------------------------------
+
+In 1997, Adam Back invented Hashcash, a proof-of-work system
+originally designed to combat email spam and prevent denial-of-service
+attacks. The concept was elegantly simple: to send an email, the
+sender's computer must first solve a computational puzzle. The
+solution is easy to verify but requires real computational effort to
+produce.
+
+For legitimate email senders, the cost is trivial -- a fraction of a
+second per message. For spammers sending millions of emails, the
+cumulative computational cost becomes prohibitive.
+
+But Hashcash's significance extends far beyond spam prevention. Back
+recognized that computational work could serve as a form of digital
+cost -- that burning CPU cycles to solve a puzzle creates something
+analogous to the physical effort required to mine gold. This insight
+became the intellectual foundation for proof of work
+[/ideas/proof-of-work/] as a mechanism for digital scarcity.
+
+When Satoshi designed Bitcoin, Hashcash was explicitly cited as the
+basis for Bitcoin's mining mechanism. The first reference in the
+Bitcoin whitepaper reads:
+
+| "To implement a distributed timestamp server on a peer-to-peer
+basis, we will need to use a proof-of-work system similar to Adam
+Back's Hashcash."
+
+Academic Background and Early Career
+------------------------------------
+
+Back earned his PhD in computer science from the University of Exeter,
+focusing on distributed systems and cryptography. His academic work
+gave him a rigorous foundation in the mathematical principles that
+would later inform his contributions to digital currency.
+
+During the 1990s, Back was an active participant in the cypherpunks
+mailing list, where he engaged with other visionaries like Hal Finney
+[/people/hal-finney/], Nick Szabo [/people/nick-szabo/], and Wei Dai
+[/people/wei-dai/]. The cypherpunks shared a conviction that
+cryptography was the essential tool for preserving individual liberty
+in the digital age. Back's Hashcash was one of the most practical and
+enduring contributions to emerge from this community.
+
+Blockstream and Bitcoin Development
+-----------------------------------
+
+In 2014, Back co-founded Blockstream, a company dedicated to building
+infrastructure for the Bitcoin network. Blockstream has been
+instrumental in developing several key technologies:
+
+* Liquid Network -- a Bitcoin sidechain for faster, more confidential
+transactions between exchanges and traders
+* Satellite network -- broadcasting Bitcoin blockchain data from
+space, enabling access in regions without reliable internet
+* Core development support -- funding and employing Bitcoin Core
+developers
+
+Blockstream's mission aligns with Back's long-held belief that
+Bitcoin's base layer should prioritize security and decentralization
+above all else. This philosophy has sometimes placed him at the center
+of heated debates within the Bitcoin community, particularly during
+the block size wars of 2015--2017.
+
+Back has consistently argued that Bitcoin's value proposition depends
+on keeping the base layer simple, secure, and accessible to ordinary
+users running full nodes. Scaling, in his view, should happen on
+higher layers like the Lightning Network, rather than by increasing
+the block size.
+
+Advocate for Sovereignty and Privacy
+------------------------------------
+
+Throughout his career, Back has been a vocal advocate for individual
+sovereignty and financial privacy. He views Bitcoin not merely as a
+technology but as a tool for human freedom -- a way for individuals to
+hold and transfer value without requiring permission from any
+government or corporation.
+
+| "Bitcoin is the first time we have a digital system where the money
+can't be inflated, seized, or censored."
+
+This conviction traces directly back to the cypherpunk ethos that
+shaped his early career. For Back, Bitcoin represents the culmination
+of decades of work toward a world where cryptography protects
+individuals from institutional overreach.
+
+Historical Significance
+-----------------------
+
+Adam Back occupies a unique position in Bitcoin's history. His
+Hashcash is not merely an influence on Bitcoin -- it is directly
+embedded in Bitcoin's design, cited in the whitepaper, and operational
+in every block that is mined. Without proof of work, Bitcoin's
+trustless consensus mechanism would not exist.
+
+The fact that one of only two citations in the Bitcoin whitepaper
+points to his work underscores his contribution. While many people
+contributed ideas that led to Bitcoin, Back's Hashcash provided the
+specific, implemented, working mechanism that Satoshi adapted for
+mining.
+
+From a cypherpunk experimenting with anti-spam tools to the CEO of a
+major Bitcoin infrastructure company, Back's journey mirrors Bitcoin's
+own evolution -- from a niche cryptographic curiosity to a global
+monetary network.
+
+Connected Concepts
+------------------
+
+* Satoshi Nakamoto [/people/satoshi-nakamoto/] -- Cited Back's
+Hashcash in the Bitcoin whitepaper
+* Wei Dai [/people/wei-dai/] -- The only other person cited in the
+Bitcoin whitepaper
+* Hal Finney [/people/hal-finney/] -- Extended Back's proof-of-work
+concept with RPOW
+* Proof of Work [/ideas/proof-of-work/] -- The mechanism Back invented
+with Hashcash
+* What is Bitcoin? [/ideas/bitcoin/] -- The system built on Back's
+proof-of-work foundation
+
+Tags: Bitcoin, Cypherpunk
+
+Read on full site: https://learn.txid.uk/en/people/adam-back/

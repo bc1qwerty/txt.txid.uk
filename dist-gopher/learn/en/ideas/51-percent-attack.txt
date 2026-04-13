@@ -1,0 +1,175 @@
+51% Attack
+==========
+
+2026-03-18 | en
+
+What happens when one entity controls majority hashrate - theoretically possible, practically impossible on Bitcoin.
+
+In any democratic system, the question arises: what happens if someone
+gains majority control? For Bitcoin, this translates to a specific
+threat - what if a single entity controls more than 50% of the
+network's total mining power? This scenario, known as a 51% attack, is
+one of the most discussed security considerations in cryptocurrency.
+Understanding why it is theoretically possible but practically
+impossible on Bitcoin reveals the elegant game theory underlying the
+network.
+
+How a 51% Attack Works
+----------------------
+
+Bitcoin's consensus mechanism follows a simple rule: the longest valid
+chain wins. Miners compete to add blocks, and the chain with the most
+accumulated proof of work [/ideas/proof-of-work/] is accepted by all
+nodes as the true history.
+
+An attacker who controls more than 50% of the total network hashrate
+could, in theory:
+
+* Double spend: Send bitcoin to a merchant, receive goods, then
+secretly mine an alternative chain that excludes that transaction -
+effectively spending the same coins twice
+* Censor transactions: Refuse to include specific transactions in
+blocks they mine, delaying or preventing certain payments
+* Prevent confirmations: Block other miners' blocks from being
+accepted by always building a longer chain that excludes them
+* Disrupt mining: Monopolize block rewards by consistently outpacing
+honest miners
+
+However, even a 51% attacker cannot:
+
+* Create bitcoin out of thin air (nodes verify supply rules)
+* Steal coins from other people's wallets (private keys are still
+required)
+* Change the block reward amount (consensus rules are enforced by
+every node)
+* Alter historical transactions buried deep in the chain (the energy
+cost becomes astronomical)
+
+The Economics of Impossibility
+------------------------------
+
+Understanding why a 51% attack on Bitcoin is practically impossible
+requires looking at the numbers.
+
+## The Cost
+
+As of recent estimates, the Bitcoin network's total hashrate exceeds
+800 exahashes per second. To acquire 51% of this, an attacker would
+need:
+
+* Hardware: Hundreds of thousands of next-generation ASIC miners -
+these have multi-year waiting lists and limited global supply
+* Electricity: Power consumption rivaling that of medium-sized
+countries
+* Infrastructure: Massive data centers with cooling systems,
+networking, and maintenance staff
+* Capital: Tens of billions of dollars in upfront investment
+
+The total cost would likely exceed $20-50 billion, with ongoing
+operational expenses of millions per day.
+
+## The Self-Defeating Logic
+
+Here is the critical game theory insight: a successful 51% attack
+destroys the value of the very asset being attacked.
+
+If an entity invested $30 billion to gain majority hashrate and then
+attempted to double spend or censor transactions, the market would
+immediately detect it. Bitcoin's price would plummet. The attacker's
+own bitcoin holdings - and their massive hardware investment that can
+only mine Bitcoin - would become worthless. They would spend tens of
+billions to gain control of something they simultaneously destroyed.
+
+This is why game theorists call Bitcoin's incentive structure
+incentive compatible. The most profitable strategy for anyone with
+significant hashrate is always to mine honestly. The reward for
+cooperation vastly exceeds the potential gain from attack.
+
+## Nation-State Threat?
+
+Could a government fund such an attack? Technically, perhaps. But
+consider: any government capable of mustering this level of resources
+would be better served by simply buying bitcoin on the open market. A
+hostile attack would destroy their investment, while purchasing would
+give them a strategic reserve of an appreciating asset. The game
+theory holds even for nation-states.
+
+Real 51% Attacks on Smaller Chains
+----------------------------------
+
+While a 51% attack on Bitcoin remains theoretical, smaller
+proof-of-work networks have not been so fortunate:
+
+* Ethereum Classic (2019-2020): Suffered multiple 51% attacks
+resulting in millions of dollars of double spends. The network's
+relatively low hashrate made it economically feasible to rent enough
+mining power from services like NiceHash.
+* Bitcoin Gold (2018): An attacker gained majority hashrate and
+executed double spends totaling over $18 million against exchanges.
+* Vertcoin (2018): Experienced repeated 51% attacks due to its small
+network size.
+
+These incidents illustrate an important point: security scales with
+hashrate. A network with low mining power is vulnerable because the
+cost of attack is low. Bitcoin's enormous hashrate - orders of
+magnitude larger than any other proof-of-work chain - is precisely
+what makes it secure.
+
+Mining Pool Concentration
+-------------------------
+
+A common concern is that large mining pools sometimes approach or
+temporarily exceed 50% of total hashrate. However, mining pools are
+fundamentally different from a single attacker:
+
+* A pool is a coalition of independent miners who can leave at any
+time
+* If a pool attempted malicious behavior, individual miners would
+immediately switch to other pools
+* Pool operators don't control the miners' hardware - they only
+coordinate work distribution
+* The Bitcoin community actively monitors pool distribution and
+historically applies social pressure to pools that grow too large
+
+In 2014, the GHash.io pool briefly exceeded 50% of hashrate. The
+community response was swift - miners voluntarily left the pool, and
+it never happened again with the same pool. This demonstrated that the
+human layer of governance works alongside the technical layer.
+
+Stratum V2: Further Decentralization
+------------------------------------
+
+The development of Stratum V2, an upgraded mining protocol, gives
+individual miners the power to select which transactions go into their
+blocks, rather than delegating this choice to pool operators. This
+further reduces the risk of pool-based censorship and reinforces
+decentralization at the protocol level.
+
+Significance for Bitcoin
+------------------------
+
+The 51% attack is often cited by critics as a fundamental
+vulnerability. In reality, it demonstrates Bitcoin's strength. The
+fact that security can be reduced to a simple economic calculation -
+"the cost of attack far exceeds any possible gain" - is more robust
+than complex trust-based systems. Banks can be hacked by a single
+insider. Bitcoin requires outspending the entire network. As hashrate
+continues to grow, this gap only widens, making Bitcoin's security an
+ever-strengthening wall of energy.
+
+Related Concepts
+----------------
+
+* Proof of Work [/ideas/proof-of-work/] - The consensus mechanism that
+makes attacking Bitcoin prohibitively expensive
+* Difficulty Adjustment [/ideas/difficulty-adjustment/] - The
+mechanism that ensures consistent block times regardless of hashrate
+changes
+* Node [/ideas/node/] - Independent verifiers that reject invalid
+blocks even from majority miners
+* What is Bitcoin? [/ideas/bitcoin/] - The full picture of Bitcoin's
+security model
+
+Tags: Bitcoin, Technical
+
+Read on full site: https://learn.txid.uk/en/ideas/51-percent-attack/

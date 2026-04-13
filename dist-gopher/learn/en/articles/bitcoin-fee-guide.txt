@@ -1,0 +1,192 @@
+Bitcoin Transaction Fee Calculation: A Practical Guide
+======================================================
+
+2026-03-11 | en
+
+Learn the real mechanics of Bitcoin transaction fees with practical examples. Covers sat/vbyte units, virtual byte calculation, how to estimate the right fee, and strategies to avoid overpaying.
+
+Set a Bitcoin fee too low and your transaction can sit unconfirmed for
+hours. Set it too high and you waste money. This guide teaches you the
+underlying mechanics of fee calculation so you can always set the
+right fee for any situation.
+
+Fees Are Based on Size, Not Amount
+----------------------------------
+
+This is the most important principle. Bitcoin fees have nothing to do
+with the amount you are sending. Sending 1 BTC or 0.001 BTC in the
+same-sized transaction costs the same fee.
+
+Fees are proportional to the transaction's data size in bytes. Miners
+have limited block space, so they prioritize transactions that pay
+more per byte.
+
+The Unit: sat/vbyte
+-------------------
+
+The unit for fee rates is sat/vbyte (satoshis per virtual byte).
+
+* sat (satoshi): The smallest unit of bitcoin. 1 BTC = 100,000,000 sat
+* vbyte (virtual byte): The unit used for transaction size after the
+SegWit upgrade
+
+Before SegWit, simple bytes were used. SegWit introduced a discount
+for witness (signature) data, which led to the concept of virtual
+bytes:
+
+    vbyte = transaction weight / 4
+    transaction weight = non-witness data × 4 + witness data × 1
+
+In practice, wallet software computes vbytes automatically. You just
+need the concept.
+
+Calculating Transaction Size
+----------------------------
+
+Transaction size depends on the number of inputs and outputs and the
+address types used.
+
+## Size by Address Type (vbytes)
+
+| Component | P2PKH (Legacy) | P2SH-P2WPKH | P2WPKH (SegWit) | P2TR
+(Taproot) |
+|-----------|---------------|-------------|-----------------|----------------|
+| Per input | 148 | 91 | 68 | 57.5 |
+| Per output | 34 | 32 | 31 | 43 |
+| Base overhead | 10 | 10 | 10 | 10 |
+
+## Formula
+
+Transaction size (vbytes) = overhead + (inputs × input size) +
+(outputs × output size)
+    Total fee = size (vbytes) × fee rate (sat/vbyte)
+
+## Example 1: Standard Send (SegWit Wallet)
+
+Conditions: Sending from a SegWit address to 1 recipient, with change
+output
+* 1 input (P2WPKH): 68 vbytes
+* 2 outputs (recipient + change): 31 × 2 = 62 vbytes
+* Overhead: 10 vbytes
+* Total: 140 vbytes
+
+At a fee rate of 10 sat/vbyte:
+
+    Fee = 140 × 10 = 1,400 sat ≈ 0.000014 BTC
+
+## Example 2: Consolidating 5 Small UTXOs
+
+Conditions: Spending 5 small UTXOs to send to 1 recipient, no change
+* 5 inputs: 68 × 5 = 340 vbytes
+* 1 output: 31 vbytes
+* Overhead: 10 vbytes
+* Total: 381 vbytes
+
+At 10 sat/vbyte:
+
+    Fee = 381 × 10 = 3,810 sat - roughly 2.7× more than Example 1
+
+As explored in the UTXO Model Guide [/en/articles/utxo-model/], the
+number of inputs drives fee costs sharply upward.
+
+Choosing the Right Fee Rate
+---------------------------
+
+The optimal fee rate changes in real time based on how congested the
+mempool (the queue of unconfirmed transactions) is.
+
+## Checking Current Fee Rates
+
+mempool.space provides live recommended fee rates:
+
+| Target Confirmation | Fee Rate (example) |
+|--------------------|-------------------|
+| Next block (~10 min) | High fee rate |
+| Within ~30 min | Medium fee rate |
+| 1+ hour acceptable | Low fee rate |
+
+Fee rates can range from 1 sat/vbyte when the network is quiet to
+hundreds of sat/vbyte during congestion. During the 2024 Bitcoin
+halving, rates spiked to several hundred sat/vbyte.
+
+txid.uk [https://txid.uk/] also shows current mempool status and
+recommended fees.
+
+## When You're Not in a Hurry
+
+For peer-to-peer transfers or sends to your own address, submitting at
+a low fee rate and waiting is a valid strategy. During quiet periods -
+often on weekends or in UTC morning hours - the mempool clears and
+even low-fee transactions confirm.
+
+Fee Reduction Strategies
+------------------------
+
+## 1. Use SegWit or Taproot Addresses
+
+Switching from legacy (1) to SegWit (bc1q) or Taproot (bc1p) reduces
+transaction size dramatically. One P2PKH input costs 148 vbytes; one
+P2WPKH input costs only 68 vbytes - roughly 54% savings.
+
+## 2. Minimize Change Outputs
+
+Transactions with no change output (where the input amount perfectly
+equals the recipient amount plus fee) are called optimal transactions.
+Batch processing - combining multiple payments into one transaction -
+is another efficient approach used heavily by exchanges.
+
+## 3. Transact During Low-Congestion Windows
+
+Submitting during quiet mempool periods lets you get confirmed at a
+low fee rate.
+
+## 4. Use RBF (Replace-By-Fee)
+
+Submit a transaction at a low fee first. If confirmation is taking too
+long, replace it with a higher-fee version. Most modern wallets
+support RBF.
+
+Dust Limit
+----------
+
+A UTXO whose value is less than the fee required to spend it is
+economically unspendable. These are called dust UTXOs.
+
+The dust threshold depends on address type and current fee rates, but
+generally UTXOs worth only a few hundred satoshis qualify during
+high-fee environments.
+
+Example:
+Fee rate: 50 sat/vbyte, P2WPKH input: 68 vbytes
+
+    Cost to spend = 68 × 50 = 3,400 sat
+
+Any UTXO below 3,400 sat is dust at this fee rate.
+
+Fee Calculator Tools
+--------------------
+
+* mempool.space fee calculator: Enter input/output counts and address
+types for automatic size and fee calculation
+* Sparrow Wallet: Displays transaction size and fee in real time as
+you build a transaction
+* Bitcoin Core: The estimatesmartfee RPC command returns the
+recommended fee rate for a target confirmation block count
+
+Summary
+-------
+
+Bitcoin fees scale with transaction data size, not with the amount
+sent. Using SegWit addresses, minimizing UTXOs, and timing
+transactions during low-congestion windows are the most effective ways
+to reduce costs. Understanding sat/vbyte and checking the current
+mempool state are core habits of a practical Bitcoin user.
+
+Related:
+* Understanding the UTXO Model [/en/articles/utxo-model/]
+* What Is a Bitcoin Wallet Address?
+[/en/articles/bitcoin-wallet-address/]
+
+Tags: Bitcoin, Technical
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-fee-guide/

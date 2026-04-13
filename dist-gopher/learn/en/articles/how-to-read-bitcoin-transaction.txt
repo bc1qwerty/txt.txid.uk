@@ -1,0 +1,282 @@
+How to Read a Bitcoin Transaction
+=================================
+
+2026-03-09 | en
+
+Learn how to break down and read the internal structure of a Bitcoin transaction. Interpret the version, inputs, outputs, and locktime fields one by one, understand fee calculation and what confirmations mean, then practice by looking up a real transaction on txid.uk.
+
+The Bitcoin blockchain is a continuous chain of transactions. A block
+is merely a container for transactions, and an address is simply an
+identifier that appears in a transaction's inputs and outputs. If you
+can read a single transaction, you understand most of how Bitcoin
+works. This article breaks down the internal structure of a
+transaction and examines the meaning of each field.
+
+Overall Transaction Structure
+-----------------------------
+
+A Bitcoin transaction is composed of four core fields.
+
+| Field | Description |
+|-------|-------------|
+| version | Transaction format version. Currently most are 1 or 2 |
+| inputs | List of previous outputs (UTXOs) to spend |
+| outputs | List of new outputs to create (locking script + amount) |
+| locktime | Minimum block height or time at which the transaction
+becomes valid |
+
+A simplified representation of raw transaction data looks like this:
+
+    {
+      "version": 2,
+      "inputs": [ ... ],
+      "outputs": [ ... ],
+      "locktime": 0
+    }
+
+version indicates the set of rules the transaction follows. Version 2
+supports BIP 68 (relative time locks). A locktime of 0 means the
+transaction is immediately valid; if a specific block height is set,
+the transaction can only be included after that block. The heart of
+the matter lies in the inputs and outputs. These two fields carry the
+information about "who sent how much to whom."
+
+0.5 BTC<br/>(with signature)"]
+        I2["UTXO #2<br/>0.3 BTC<br/>(with signature)"]
+    end
+    subgraph Transaction
+        TX["Bitcoin<br/>Transaction"]
+    end
+    subgraph Outputs
+        O1["Recipient<br/>0.7 BTC"]
+        O2["Change Address<br/>0.0999 BTC"]
+    end
+    I1 --> TX
+    I2 --> TX
+    TX --> O1
+    TX --> O2
+    FEE["Fee: 0.0001 BTC<br/>(Sum of Inputs - Sum of Outputs)"]
+    TX -.-> FEE
+    style TX fill:#f7931a,stroke:#f7931a,color:#000
+    style FEE fill:none,stroke:none,color:#8b949e`} />
+
+Reading Inputs
+--------------
+
+An input specifies "where the bitcoin is coming from." Each input
+references and spends a specific output from a previous transaction.
+
+The structure of a single input looks like this:
+
+    {
+      "txid": "a1b2c3d4...previous transaction ID",
+      "vout": 0,
+      "scriptSig": "signature data (legacy)",
+      "witness": ["signature data (SegWit)"],
+      "sequence": 4294967295
+    }
+
+Here is what each field means:
+
+| Field | Description |
+|-------|-------------|
+| txid | The ID (hash) of the previous transaction that created the
+UTXO being spent |
+| vout | The index indicating which output from the previous
+transaction. Starts at 0 |
+| scriptSig | The unlocking script containing the signature and public
+key in legacy transactions |
+| witness | The area that holds signature data in SegWit transactions.
+Used instead of scriptSig |
+| sequence | Default value 0xFFFFFFFF. Used for RBF (Replace-By-Fee)
+or relative time locks |
+
+The core principle is simple: it is a declaration that "I will spend
+the output at index vout of the previous transaction txid." The
+scriptSig or witness then proves "I have the authority to spend this
+output."
+
+If the sequence value is 0xFFFFFFFE or lower, RBF is enabled, meaning
+the unconfirmed transaction can be replaced by one offering a higher
+fee.
+
+Reading Outputs
+---------------
+
+An output defines "where the bitcoin is going." Each output consists
+of an amount and a locking script.
+
+    {
+      "value": 0.01500000,
+      "scriptPubKey": {
+        "type": "witness_v0_keyhash",
+        "address": "bc1q..."
+      }
+    }
+
+| Field | Description |
+|-------|-------------|
+| value | The bitcoin amount (in BTC; internally stored as an integer
+in satoshis) |
+| scriptPubKey | The locking script. This output can only be spent
+when specific conditions are met |
+
+The type of scriptPubKey varies depending on the address format.
+
+| Address Type | Prefix | Script Type | Description |
+|-------------|--------|-------------|-------------|
+| P2PKH | 1... | pubkeyhash | Legacy. Locked to a public key hash |
+| P2SH | 3... | scripthash | Locked to a script hash. Used for
+multisig, etc. |
+| P2WPKH | bc1q... | witness_v0_keyhash | SegWit. More size-efficient
+|
+| P2TR | bc1p... | witness_v1_taproot | Taproot. Improved privacy and
+efficiency |
+
+In a typical transfer transaction, there are two or more outputs. One
+goes to the recipient's address, and the rest go to the sender's
+change address. Because an input UTXO cannot be partially spent, any
+remaining amount must be sent back to the sender.
+
+How Fees Are Calculated
+-----------------------
+
+A Bitcoin transaction has no explicit field for fees. The fee is
+calculated implicitly.
+
+    Fee = Total inputs - Total outputs
+
+For example, if the input is 0.05 BTC and the total outputs are 0.0499
+BTC, the fee is 0.0001 BTC (10,000 sat). As long as the difference is
+not zero, the entire difference goes to the miner as revenue.
+
+This structure is error-prone. If you forget to include a change
+output, the entire difference is paid as a fee. In 2016, one user
+accidentally paid 291 BTC (over 100 million KRW at the time) as a fee.
+Modern wallet software includes warning features to prevent such
+mistakes.
+
+The relationship between fee rate (sat/vbyte) and transaction size is
+covered in detail in the Bitcoin Transaction Fee Calculation: A
+Practical Guide [/en/articles/bitcoin-fee-guide/].
+
+Confirmations
+-------------
+
+When a transaction is broadcast to the network, it enters the mempool.
+Once a miner includes the transaction in a block, it has 1
+confirmation. Each subsequent block that is added increases the
+confirmation count by one.
+
+| Confirmations | Status | Average Time |
+|--------------|--------|-------------|
+| 0 | Unconfirmed (waiting in mempool) | - |
+| 1 | Included in a block | ~10 minutes |
+| 3 | Generally sufficient for small amounts | ~30 minutes |
+| 6 | Conventionally regarded as "final" | ~1 hour |
+
+The 6-confirmation convention originates from Satoshi Nakamoto's white
+paper. The probability of an attacker reversing a block decreases
+exponentially with each additional confirmation, and at 6
+confirmations it converges to virtually zero. This is why most
+exchanges require 6 confirmations for deposits. For high-value
+transactions, even more confirmations may be awaited.
+
+Hands-On: Reading a Transaction on txid.uk
+------------------------------------------
+
+Let us apply what we have learned by looking up a real transaction. We
+will use the TXID of Bitcoin's famous "pizza transaction."
+
+    a1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d
+
+This transaction, from May 22, 2010, is the one in which programmer
+Laszlo Hanyecz sent 10,000 BTC in exchange for two pizzas -- the first
+time bitcoin was exchanged for a physical good.
+
+Steps:
+
+* Paste the TXID above into the search bar at txid.uk
+[https://txid.uk/].
+* Check the inputs -- Review the list of previous UTXOs this
+transaction spent, along with each input's previous TXID and vout
+index.
+* Check the outputs -- Review the recipient address and amount, and
+the change output. You can see that 10,000 BTC was sent to the
+recipient.
+* Check the fee -- Subtract the total outputs from the total inputs to
+get the fee. This early transaction had an extremely low fee.
+* Check the confirmation count -- Because this transaction was
+included in a block in 2010, it now has hundreds of thousands of
+confirmations. Reversing it is physically impossible.
+* Visualize -- Enter the same TXID on txid.uk [https://txid.uk/] to
+view the input/output relationships as a network graph. You can
+intuitively trace the flow of funds.
+* Decode the raw TX -- Decode the raw transaction data on tx.txid.uk
+[https://tx.txid.uk/] to examine every field -- version, inputs,
+outputs, locktime -- at the byte level.
+
+Special Transaction Types
+-------------------------
+
+Not every transaction is a standard transfer. Here are a few special
+types worth knowing.
+
+## Coinbase Transactions
+
+The first transaction in each block is the coinbase transaction. It
+does not reference any previous UTXO; instead, it creates the block
+reward (newly issued coins + fees) and sends it to the miner's
+address.
+
+Characteristics of a coinbase transaction:
+
+* The input's txid is all zeros (0000...0000)
+* The vout is 0xFFFFFFFF
+* The scriptSig field can contain arbitrary data entered by the miner
+(Satoshi's genesis block message was placed here)
+* Bitcoin generated by the output cannot be spent until 100 blocks
+later (the coinbase maturity rule)
+
+## Multisig Transactions
+
+Outputs that require a certain number of signatures from multiple
+private keys before they can be spent. In a "2-of-3 multisig," 2 out
+of 3 keys must sign. This is used for corporate treasury management
+and joint accounts. It is often implemented using P2SH (addresses
+starting with 3).
+
+## OP_RETURN Transactions
+
+If an output's script contains OP_RETURN, that output is unspendable.
+Instead, it allows up to 80 bytes of arbitrary data to be permanently
+recorded on the blockchain.
+
+    OP_RETURN 48656c6c6f20426974636f696e
+
+The example above is the string "Hello Bitcoin" encoded in
+hexadecimal. It is used for timestamp proofs, digital asset issuance
+protocols (such as Omni Layer), and more. The value of an OP_RETURN
+output is always 0.
+
+Summary
+-------
+
+A Bitcoin transaction is composed of four core fields: version,
+inputs, outputs, and locktime. Inputs reference and spend previous
+UTXOs, while outputs create new UTXOs. The fee is the difference
+between total inputs and total outputs, with no dedicated field.
+Confirmations are the number of blocks added after the block
+containing the transaction; at 6 confirmations, a transaction is
+conventionally regarded as final. Understanding this structure enables
+you to read and interpret any transaction on a blockchain explorer.
+
+Related articles:
+* What Is a TXID? [/en/articles/what-is-txid/]
+* Understanding the UTXO Model [/en/articles/utxo-model/]
+* Bitcoin Transaction Fee Calculation: A Practical Guide
+[/en/articles/bitcoin-fee-guide/]
+
+Tags: Bitcoin, Technical
+
+Read on full site: https://learn.txid.uk/en/articles/how-to-read-bitcoin-transaction/

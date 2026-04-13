@@ -1,0 +1,201 @@
+What Is a Bitcoin Wallet Address?
+=================================
+
+2026-03-13 | en
+
+A complete guide to Bitcoin wallet addresses: how they are generated, the different address types (P2PKH, P2SH, SegWit, Taproot), and best practices for safe use.
+
+When you first encounter Bitcoin, the long string of characters that
+constitutes an address can feel overwhelming. What does
+1A1zP1eP5QGefi2DMPTfTL5SLmv7Divfna actually mean, how is it created,
+and why does it take such a complex form? This article answers those
+questions.
+
+A Wallet Address Is Not a Bank Account Number
+---------------------------------------------
+
+In traditional finance, you share your account number to receive
+money. Bitcoin addresses serve the same purpose, but they work in a
+fundamentally different way.
+
+A bank account number is an identifier managed by a financial
+institution. If the bank disappears, so does the account. A Bitcoin
+address is different. It is a value generated mathematically,
+requiring no permission from any institution. You can create a valid
+address even without an internet connection - with nothing more than
+paper and a pencil.
+
+Key difference:
+* Bank account: issued and managed by an institution
+* Bitcoin address: generated mathematically by the individual, no
+permission required
+
+How Is an Address Created?
+--------------------------
+
+Bitcoin address generation follows three steps.
+
+## Step 1: Generate a Private Key
+
+First, a 256-bit random number - the private key - is generated. This
+number is one of 2²⁵⁶ possibilities, far more than the number of atoms
+in the observable universe. A properly generated private key cannot be
+guessed by anyone.
+
+    Example private key:
+    E9873D79C6D87DC0FB6A5778633389F4453213303DA61F20BD67FC233AA33262
+
+Never share your private key. Whoever knows the private key can spend
+the bitcoin at that address.
+
+## Step 2: Derive the Public Key
+
+Applying elliptic curve cryptography (ECDSA, secp256k1 curve) to the
+private key produces the public key. This is a one-way process: it is
+computationally infeasible to reverse a public key back to a private
+key.
+
+## Step 3: Derive the Address
+
+SHA-256 and RIPEMD-160 hash functions are applied sequentially to the
+public key, followed by Base58Check encoding, yielding the final
+address. This step is also irreversible.
+
+Private key → (elliptic curve) → Public key → (hash functions) →
+Address
+
+An outside observer who only knows your address cannot determine your
+public key or private key. This is the mathematical foundation of
+Bitcoin security.
+
+Address Types
+-------------
+
+As the Bitcoin protocol has evolved, so have address formats.
+
+## P2PKH (Legacy Address)
+
+Format: Starts with 1, 25-34 characters
+Example: 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2
+
+The oldest address format, used since Bitcoin's earliest days. Widely
+supported by exchanges and wallets, but transactions are relatively
+expensive in fees.
+
+## P2SH (Script Hash Address)
+
+Format: Starts with 3, 34 characters
+Example: 3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy
+
+Used for multisig transactions and complex locking scripts. Sending to
+a 3 address requires satisfying an internal script condition before
+funds can be spent.
+
+## Native SegWit (Bech32)
+
+Format: Starts with bc1q
+Example: bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq
+
+Introduced with the SegWit upgrade in 2017. The cheapest format in
+terms of transaction fees and offers superior error detection. Most
+modern wallets use this as their default.
+
+## Taproot (P2TR)
+
+Format: Starts with bc1p
+Example:
+bc1p5d7rjq7g6rdk2yhzks9smlaqtedr4dekq08ge8ztwac72sfr9rusxg3297
+
+The newest address format, introduced with the Taproot upgrade in
+2021. Improves privacy and efficiency. Adoption is growing rapidly.
+
+Address Reuse: Why You Should Avoid It
+--------------------------------------
+
+Bitcoin addresses can technically be reused. But reusing an address is
+strongly discouraged.
+
+Two reasons: First, reusing the same address makes it easy for
+outsiders to track your balance and transaction history. The Bitcoin
+blockchain is a public ledger - address balances are visible to
+anyone.
+
+Second, in some wallet implementations, reusing an address exposes
+your public key on the blockchain. While not a current security risk,
+it is inadvisable from a long-term perspective.
+
+Most modern wallets use HD (Hierarchical Deterministic) architecture,
+deriving millions of addresses from a single seed. A new address is
+generated automatically for each transaction, so you never need to
+worry about reuse.
+
+Precautions When Sending
+------------------------
+
+## Case Sensitivity
+
+Legacy addresses (starting with 1) and P2SH addresses (starting with
+3) are case-sensitive. 1ABC and 1abc are different addresses. Bech32
+addresses (bc1) are case-insensitive.
+
+## Avoid Typos
+
+Never type an address manually. Entering a 34-character string by hand
+invites errors. Use QR code scanning or copy-paste, and always
+visually verify the first and last few characters before sending.
+
+Base58Check and Bech32 include error-detection codes: a single changed
+character will cause wallet software to reject the address as invalid.
+That said, error detection is not perfect - always double-check
+visually.
+
+## Network Confusion: Bitcoin vs. Bitcoin Cash
+
+Bitcoin (BTC) and Bitcoin Cash (BCH) legacy addresses share the same
+1-prefix format. It is possible to accidentally send Bitcoin to a
+Bitcoin Cash address or vice versa. Always confirm your wallet
+software is set to the correct network (mainnet) before sending.
+
+Testnet addresses are also distinct from mainnet. Sending real bitcoin
+to a testnet address is unrecoverable.
+
+Verify Your Address on txid.uk
+------------------------------
+
+To confirm an address is valid and check its balance, use txid.uk
+[https://txid.uk/].
+
+Steps:
+* Go to txid.uk and enter a Bitcoin address in the search bar
+* View the address balance and full transaction history
+* Browse the UTXO (Unspent Transaction Output) details
+
+Searching an address does not put your funds at risk. Bitcoin
+addresses and transaction histories are public information - the
+lookup itself is completely safe.
+
+Address vs. Transaction ID
+--------------------------
+
+An address and a transaction ID (TXID) [/en/articles/bitcoin-wallets/]
+are easily confused but are entirely different concepts.
+
+* Address: An identifier that receives bitcoin. It can be the
+destination of multiple transactions.
+* TXID: A hash value that uniquely identifies a completed transaction.
+A new one is created each time a transaction occurs.
+
+Summary
+-------
+
+A Bitcoin address is a mathematically generated identifier requiring
+no institutional permission. The one-way derivation from private key
+to public key to address means that an address alone reveals nothing
+about the private key. Multiple formats exist - Legacy (1), P2SH (3),
+SegWit (bc1q), Taproot (bc1p) - with SegWit recommended today for its
+lower fees. Always avoid address reuse and visually verify addresses
+before every send.
+
+Tags: Bitcoin, Technical
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-wallet-address/

@@ -1,0 +1,125 @@
+4월 13, 2026
+===========
+
+2026-04-13 | digest | by txid | en
+
+Daily digest
+
+Quantum Computing Threat Compresses Timeline for Bitcoin Protocol
+Upgrades
+----------------------------------------------------------------------
+
+The Bitcoin Policy Institute released a brief warning that advances in
+quantum computing may bring forward the timeline for addressing
+cryptographic risks to Bitcoin's network. Developers are already
+working on fixes, but the accelerated threat requires faster protocol
+evolution than previously planned.
+
+Why it matters: Bitcoin's security foundation depends on cryptographic
+assumptions that quantum computers could threaten—proactive network
+upgrades preserve Bitcoin's core function as immutable,
+censorship-resistant sound money.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/bitcoin-policy-institute-warns-of-quantum]
+
+______________________________________________________________________
+
+Institutional Capital Surges Into Bitcoin: BlackRock Records $358M
+Inflow as Morgan Stanley Launches New ETF
+----------------------------------------------------------------------
+
+BlackRock's IBIT recorded a $358.1 million inflow surge while Morgan
+Stanley debuted its new MSBT spot Bitcoin ETF with strong early
+demand. The coordinated institutional adoption signals Wall Street's
+growing confidence in Bitcoin as a core portfolio allocation.
+
+Why it matters: Mainstream institutional validation of Bitcoin
+demonstrates growing recognition that cryptocurrency offers protection
+against government monetary debasement—converting sound money from
+fringe ideology to institutional necessity.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/blackrock-massive-bitcoin-etf-inflows]
+
+______________________________________________________________________
+
+Wall Street Analyst Initiates Bitcoin Treasury Coverage With $140K
+Price Target
+----------------------------------------------------------------------
+
+TD Cowen initiated research coverage on publicly-traded Bitcoin
+treasury companies, framing the sector as an investable equity
+category. The firm predicted Bitcoin will reach approximately $140,000
+this year, legitimizing corporate Bitcoin reserves as rational
+financial strategy.
+
+Why it matters: Mainstream analyst coverage validates corporate
+Bitcoin treasuries as an institutional hedge against inflation,
+signaling Bitcoin's maturation from speculative asset to recognized
+monetary alternative.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/td-cowen-initiates-coverage-on-bitcoin]
+
+______________________________________________________________________
+
+Geopolitical Escalation Sends Oil Spiking as U.S. Orders Blockade of
+Strait of Hormuz
+----------------------------------------------------------------------
+
+Peace negotiations between the U.S. and Iran collapsed in Pakistan,
+prompting President Trump to announce a naval blockade of the Strait
+of Hormuz. Oil futures jumped 7% on the news, while Bitcoin fell below
+$71,000 as markets repriced geopolitical and inflation risk from
+supply chain disruption.
+
+Why it matters: Naval blockades and energy disruptions remind why
+Bitcoin matters—it operates outside state military and monetary
+maneuvering, immune to supply shocks that drive inflation and currency
+debasement.
+
+→ CNBC
+[https://www.cnbc.com/2026/04/12/trump-iran-war-strait-of-hormuz.html]
+· → CoinDesk
+[https://www.coindesk.com/markets/2026/04/12/oil-futures-up-7-on-hyperliquid-as-trump-orders-naval-blockade-of-hormuz]
+
+______________________________________________________________________
+
+Bitcoin Miners Face Tightening Margins Heading Into 2028 Halving
+----------------------------------------------------------------
+
+Bitcoin miners are approaching the 2028 halving with shrinking profit
+margins, tightening power markets, and mounting capital discipline
+requirements. Rising competition and operating costs will likely
+consolidate mining power further among well-capitalized operators.
+
+Why it matters: Mining pressure threatens Bitcoin's decentralized
+security model—concentration of hash power among institutional miners
+undermines the grassroots consensus that makes Bitcoin resistant to
+censorship.
+
+→ Cointelegraph
+[https://cointelegraph.com/news/bitcoin-2028-halving-hits-the-halfway-point]
+
+______________________________________________________________________
+
+Privacy Advocate Reflects on Samourai Prosecution: "We Thought We Were
+on the Right Side of Law"
+----------------------------------------------------------------------
+
+Samourai Wallet co-founder Keonne Rodriguez opened up to Reason about
+his prosecution by the U.S. government for building the
+privacy-focused Bitcoin wallet. The case highlights the state's
+hostility toward financial tools that protect user sovereignty and
+resist government surveillance.
+
+Why it matters: Prosecuting privacy tool developers reveals what
+governments truly fear—tools that protect financial sovereignty
+threaten state monetary monopolies and total financial surveillance
+systems.
+
+→ Reason
+[https://reason.com/2026/04/12/this-bitcoiner-is-now-in-prison/]
+
+Read on full site: https://news.txid.uk/digest/2026-04-13

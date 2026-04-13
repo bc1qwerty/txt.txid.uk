@@ -1,0 +1,208 @@
+How Proof of Work Works
+=======================
+
+2026-03-01 | en
+
+Bitcoin's Proof of Work is not merely a consensus mechanism. It is the core of an innovation that uses the laws of physics to impose unforgeable cost on the digital world.
+
+Imagine sending money without a bank. Who maintains the ledger? Who
+prevents double spending? Who filters out fraudulent transactions? For
+thousands of years, this role belonged to a trusted central authority.
+Without that authority, the system collapsed. In 2008, Satoshi
+Nakamoto solved this problem with a single idea: Proof of Work (PoW).
+This mechanism is the technical foundation that has allowed Bitcoin to
+operate for over 15 years without a single hack.
+
+The Byzantine Generals Problem: Reaching Consensus in a Trustless
+World
+----------------------------------------------------------------------
+
+To understand Proof of Work, you first need to grasp the essence of
+the problem. In computer science, this is called the Byzantine
+Generals Problem. Formalized by Leslie Lamport in 1982, it captures a
+fundamental challenge of distributed systems.
+
+Multiple generals surround an enemy city. They can only win by
+attacking simultaneously. But there may be traitors among the
+generals, and messengers may deliver false messages. In a situation
+where no one can be trusted, how can everyone agree on the same
+decision?
+
+In digital currency, this problem is even more acute. Tens of
+thousands of computers scattered around the world must agree on "who
+has how much." There is no central server. There may be malicious
+actors among the participants. Because data is easily copied, attempts
+to spend the same coin in multiple places simultaneously (double
+spending) must be prevented.
+
+Previous attempts at digital currency before Bitcoin (DigiCash,
+e-gold, Liberty Reserve, etc.) all relied on a central authority, and
+when that authority was pressured by the government or hacked, the
+entire system collapsed. Before Bitcoin, solving this problem without
+central authority was considered impossible.
+
+How Proof of Work Operates: Building Trust Through Computation
+--------------------------------------------------------------
+
+The principle of Proof of Work is built on a surprisingly simple
+concept. Finding the answer is extremely difficult, but verifying that
+it's correct takes an instant. This is called an asymmetric puzzle.
+
+Here's specifically how it works:
+
+* Miners worldwide compete to create a new bundle of transactions (a
+block). Each block contains an average of 2,000-3,000 transactions.
+
+* To add a block to the chain, a hash value satisfying specific
+conditions must be found. As of 2026, this is an extremely rare
+combination like "a 64-digit hexadecimal hash value with 19 leading
+zeros." The probability is roughly 1/10^23 - about once in a trillion
+trillion attempts.
+
+* Due to the nature of the hash function (SHA-256), even a tiny change
+in the input completely changes the output, so there is no shortcut to
+finding the answer. The only option is to change the number called the
+"nonce" included in the block header by 1 at a time, randomly
+repeating billions and hundreds of billions of calculations.
+
+* The miner who first finds the answer submits the block to the
+network. Other nodes verify whether this hash value meets the
+conditions with a single calculation, in milliseconds.
+
+* If the verification passes, the block is added to the chain, and the
+miner receives the block reward (currently 3.125 BTC, approximately
+200 million won) plus transaction fees.
+
+By analogy, it's like throwing 100 dice simultaneously and trying to
+get all sixes. Finding the combination requires an astronomical number
+of attempts, but if someone shows you "they all came up six," you can
+verify it at a glance. Currently, the Bitcoin network performs
+approximately 700 EH/s (700,000,000,000,000,000,000 calculations per
+second) to find the answer.
+
+The 10-Minute Rhythm: The Precision of Difficulty Adjustment
+------------------------------------------------------------
+
+The Bitcoin network is designed so that one block is generated on
+average every 10 minutes. This number was not chosen arbitrarily. Ten
+minutes is a balanced interval - long enough for a block to propagate
+worldwide, yet not so long that transaction confirmation times become
+excessive.
+
+When more miners join and hash power increases, the problem
+automatically becomes harder; when miners leave, it becomes easier.
+This difficulty adjustment occurs automatically every 2,016 blocks
+(approximately every two weeks). The algorithm is straightforward. It
+measures how long it actually took to generate the most recent 2,016
+blocks, and if it was shorter than two weeks (20,160 minutes), the
+difficulty increases; if longer, it decreases.
+
+Thanks to this mechanism, no matter how powerful the computers
+invested, Bitcoin's issuance rate does not change. If you deploy more
+equipment at a gold mine, gold comes out faster - but Bitcoin doesn't
+work that way. Whether mining with CPUs in 2010 or with cutting-edge
+ASICs in 2026, the rhythm of one block every 10 minutes remains
+unchanged. This is the key device that makes Bitcoin's monetary policy
+predictable.
+
+The fourth halving in April 2024 is a case demonstrating this system's
+precision. The halving, which cuts the block reward in half every
+210,000 blocks (approximately 4 years), operates by block height and
+actually occurred at exactly the predicted block height (840,000). At
+the mathematically predetermined moment, without a second's deviation.
+No central bank, no government can fix its monetary policy this far
+into the future and execute it this precisely.
+
+The Core Problem Proof of Work Solves: Double Spending
+------------------------------------------------------
+
+The most fundamental reason Proof of Work is needed is to solve the
+double-spending problem.
+
+Digital files can be copied. When you send a JPEG image, the original
+remains. This is the nature of digital information. If digital
+currency could be copied like a file, the same money could be spent in
+multiple places simultaneously. This is the double-spending problem.
+
+In a centralized system, the bank solves this. The bank manages all
+transaction records, checks balances, and prevents already-spent money
+from being spent again. But this method requires a trusted central
+authority.
+
+Bitcoin solves this problem without a central authority through Proof
+of Work. Because adding a new block requires consuming massive
+computing power, it is economically impossible to simultaneously
+confirm two different transactions using the same Bitcoin. The moment
+one transaction is confirmed on the blockchain, the network
+automatically rejects any other transaction trying to spend the same
+Bitcoin.
+
+The 51% Attack: Proof of Work's Line of Defense
+-----------------------------------------------
+
+"What happens if someone controls 51% of the total hash rate?" This is
+the most frequently raised theoretical attack against Bitcoin.
+
+Securing 51% of the hash rate would theoretically allow reordering
+transactions or attempting double spends. But let's look at the
+numbers to see why this is infeasible in reality.
+
+As of 2026, the Bitcoin network's hash rate is approximately 700 EH/s
+(exahashes per second). To secure 51%, or 350 EH/s, would require
+millions of the latest ASIC units. Hardware costs alone would run into
+the tens of trillions of won, and electricity costs would be tens of
+millions of dollars per day. Even if you spent these enormous costs
+and succeeded in the attack, if trust in the Bitcoin network
+collapsed, Bitcoin's price would plummet and the attacker themselves
+would suffer losses. The cost of attack overwhelms the potential gain.
+
+This is the economic security of Proof of Work. It is designed so that
+following the rules is more economically advantageous than breaking
+them. This economic deterrent is effective against attackers motivated
+by financial gain. However, in a scenario where a nation-state attacks
+with the goal of destroying the Bitcoin network itself, they could
+absorb the economic losses - which is why the geographic distribution
+of hash rate is important.
+
+Energy Consumption: Cost or Investment
+--------------------------------------
+
+The strongest criticism of Bitcoin's Proof of Work is energy
+consumption. The electricity consumed by the Bitcoin network rivals
+the total power consumption of some small and mid-sized countries.
+
+But there is a counterargument that this criticism lacks context. The
+traditional financial system - bank branches, data centers, ATMs,
+vaults, employees' commutes - also consumes enormous energy. The same
+is true for gold mining and refining. The point of comparison should
+not be "a perfect system that uses no energy" but "existing financial
+infrastructure."
+
+What matters more is the question of what that energy consumption
+produces. Bitcoin's energy consumption goes toward securely operating
+a network worth tens of billions of dollars without any central
+authority. This security is real because it is backed by physical
+energy costs. It is not security fabricated from thin air.
+
+Proof of Work is not a mere technical choice. It is the oldest and
+most battle-tested mechanism enabling a decentralized digital currency
+that reaches consensus without trust. Its energy cost can be viewed as
+the operating expense of the first global monetary system in human
+history that works without a state.
+
+A frequently cited alternative to Bitcoin's Proof of Work is Proof of
+Stake (PoS). Ethereum transitioned to PoS in 2022, reducing energy
+consumption by over 99%. However, PoS has been criticized because its
+structure - where wealthier participants wield more influence -
+resembles the concentration of power in existing financial systems.
+The reason Bitcoin adheres to PoW is that by requiring the external
+cost of physical energy investment, it ensures no one can accumulate
+power at zero cost.
+
+Bitcoin's Proof of Work was directly inspired by Hashcash, proposed by
+Adam Back in 1997. Satoshi Nakamoto explicitly cited it in the Bitcoin
+white paper.
+
+Tags: Bitcoin, Mining
+
+Read on full site: https://learn.txid.uk/en/articles/proof-of-work/

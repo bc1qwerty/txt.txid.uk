@@ -1,0 +1,22 @@
+Step 5: Satoshis and Saving
+===========================
+
+2026-03-14 | en
+
+Learn about Bitcoin's tiny unit and why saving matters
+
+<div class="kids-page">
+
+What's a Satoshi? Let's hear a story!
+-------------------------------------
+
+## What did we learn?
+
+Bitcoin can be divided into very tiny units called satoshis. 1 Bitcoin
+equals 100,000,000 (one hundred million) satoshis! And saving means
+choosing to wait a little now so you can get something even better in
+the future. It's a smart choice!
+
+</div>
+
+Read on full site: https://learn.txid.uk/en/kids/5-savings/

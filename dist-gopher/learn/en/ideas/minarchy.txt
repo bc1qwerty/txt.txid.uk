@@ -1,0 +1,151 @@
+Minarchy - The Appropriate Scope of the State
+=============================================
+
+2026-03-07 | en
+
+Minarchism is the position that the state's role should be limited to the minimum functions necessary to protect individual rights.
+
+Minarchism is the position that the state's role should be limited to
+the minimum functions necessary to protect individual rights --
+police, courts, and national defense. Within the libertarian spectrum,
+minarchism is the logical conclusion of classical liberalism and the
+critical point of divergence from anarcho-capitalism.
+
+Nozick's Core Argument in "Anarchy, State, and Utopia"
+------------------------------------------------------
+
+Robert Nozick's 1974 work Anarchy, State, and Utopia is the most
+sophisticated philosophical justification for minarchism. In this
+book, Nozick pursues two arguments simultaneously: one showing
+anarchists that the minimal state is justified, and another showing
+that no extensive state going beyond the minimum can be justified.
+
+The core of Nozick's rights theory is "rights as side constraints."
+Individual rights function as absolute constraints that cannot be
+violated for any purpose. Sacrificing individual rights for "the
+greater good" is impermissible. This fundamentally opposes the
+utilitarian approach and is the political application of the Kantian
+principle that "individuals are ends in themselves, not means."
+
+The Invisible Hand Explanation: From Protective Agencies to the
+Minimal State
+----------------------------------------------------------------------
+
+Nozick's most original contribution is his "invisible hand
+explanation" showing how a minimal state emerges from anarchy. This
+process unfolds in stages.
+
+In the first stage, individuals in a Lockean state of nature naturally
+form protective agencies because of the difficulty of self-protection.
+These are voluntary associations that protect the rights of their
+members.
+
+In the second stage, competition among multiple protective agencies
+leads, through the natural dynamics of the market, to the emergence of
+a single dominant protective agency in a given territory. This is not
+the result of deliberate conquest but of a market process in which the
+agency providing superior service attracts clients.
+
+In the third stage, the dominant protective agency prohibits dangerous
+private enforcement by independents -- those who have not joined any
+protective agency -- within its jurisdiction. Here Nozick makes his
+critical claim: the dominant protective agency, in prohibiting
+independents' private enforcement, must in return provide protective
+services to the independents as well. This is the minimal state.
+Nozick argues that no one's rights have been violated in this process.
+
+History of the Night-Watchman State Concept
+-------------------------------------------
+
+The concept of the minimal state has a long history predating Nozick.
+The term "night-watchman state" (Nachtwachterstaat) was originally
+used by the German socialist Ferdinand Lassalle to mock liberals. But
+liberals embraced the term positively.
+
+The ideal of the night-watchman state is that the state performs only
+the role of protecting citizens from thieves, fraudsters, and external
+aggressors. All other functions -- education, healthcare, welfare,
+roads, communications -- should be left to the voluntary order of the
+market. This tradition runs from John Locke through the American
+founding fathers (especially Jefferson and Madison) and the classical
+liberals down to Nozick.
+
+Core Arguments and Grounds of Minarchists
+-----------------------------------------
+
+Minarchists advance the following core arguments.
+
+The necessity of the state: The threat of violence and fraud in human
+society is inevitable, and an ultimate coercive power (legitimate
+monopoly on force) is needed to deter it. The market provides most
+services efficiently, but enforcement of law requires an ultimate
+authority.
+
+The illegitimacy of the extensive state: Every state function beyond
+the minimum violates individual rights. Redistributive taxation is
+equivalent to forced labor. In Nozick's famous argument, "forcing
+someone to work n hours for another person" and "forcibly taking the
+earnings of n hours of labor" are structurally identical.
+
+Market vs state: Most services provided by the state -- education,
+healthcare, pensions, roads -- can be provided more efficiently and
+innovatively by the private sector. State monopoly means the absence
+of competition, and the absence of competition results in
+inefficiency, high costs, and low quality.
+
+The Anarcho-Capitalist Rebuttal: Rothbard's Critique of Nozick
+--------------------------------------------------------------
+
+Anarcho-capitalists, particularly Murray Rothbard, strongly rebut
+Nozick's minarchism.
+
+Rothbard criticizes Nozick's "invisible hand explanation" as logically
+unsuccessful. The dominant protective agency's prohibition of
+independents' private enforcement is itself a violation of
+independents' rights. Even if protective services are provided to
+independents as compensation, this amounts to coercively imposing
+services on them. It is akin to taking a neighbor's property and
+giving them something else in return while claiming "I have not
+violated your rights."
+
+More fundamentally, Rothbard argues that the monopoly on force itself
+is the problem. Monopoly -- whether in the market or the state --
+always produces inefficiency and abuse. The domain of law and security
+cannot be exempt from this principle. The anarcho-capitalist position
+is that competition among private protective agencies would provide
+law and security superior to a state monopoly.
+
+Bitcoin and the Replacement of the State's Monetary Function
+------------------------------------------------------------
+
+Bitcoin provides interesting practical implications for minarchism.
+Currency issuance has traditionally been regarded as one of the core
+functions of the state. But Bitcoin has demonstrated that a sound
+monetary system can operate without state involvement.
+
+This raises an important question for minarchists: if money can
+function without the state, should currency be included in the list of
+the state's "minimal functions"? Furthermore, if law and security
+could also be provided in a decentralized manner, like Bitcoin, does
+the very rationale for the minimal state disappear?
+
+Bitcoin shows that market replacement of state functions is not a
+theoretical possibility but a reality. In this sense, Bitcoin is both
+a practical tool of minarchism and, simultaneously, a challenge to
+minarchism itself.
+
+Related Concepts
+----------------
+
+* Non-Aggression Principle [/ideas/non-aggression-principle/] - The
+foundational libertarian principle prohibiting violations against
+others' bodies and property
+* Anarcho-capitalism [/ideas/anarcho-capitalism/] - A more radical
+libertarian position calling for the complete abolition of the state
+* What is Libertarianism? [/ideas/libertarianism/] - An introduction
+to the political philosophy centered on individual freedom and
+voluntary cooperation
+
+Tags: Liberty
+
+Read on full site: https://learn.txid.uk/en/ideas/minarchy/

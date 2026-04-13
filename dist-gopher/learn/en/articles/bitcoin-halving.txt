@@ -1,0 +1,184 @@
+Everything About the Bitcoin Halving
+====================================
+
+2026-02-23 | en
+
+Why does Bitcoin's price move every four years? A complete dissection from the halving mechanism to analysis of the past four cycles, mining economics, and the next halving.
+
+2012, 2016, 2020, 2024. Something happened in the Bitcoin market in
+each of these years. Every time, the new supply was cut exactly in
+half, and over the following 12-18 months, the price set a new
+all-time high. Coincidence? No. This is the result of the Halving
+mechanism that Satoshi Nakamoto inscribed into Bitcoin's code in 2009.
+No government, no central bank, and not even Bitcoin's developers can
+arbitrarily alter this schedule. In this article, we examine what the
+halving is, why it matters, and what impact it has had historically -
+with concrete figures.
+
+What Is the Halving: Scarcity Written in Code
+---------------------------------------------
+
+The Bitcoin network generates a new block approximately every 10
+minutes. The miner who creates this block receives a block reward in
+exchange for verifying transactions and recording them on the
+blockchain. The halving is the event in which this block reward is cut
+exactly in half every 210,000 blocks. In terms of time, 210,000 blocks
+translates to roughly four years.
+
+When Bitcoin first launched in 2009, the block reward was 50 BTC.
+After the first halving it became 25 BTC, then 12.5 BTC, then 6.25
+BTC. Following the fourth halving in April 2024, the current block
+reward is 3.125 BTC. This process repeats approximately 33 times and
+continues until the last bitcoin is mined around the year 2140. The
+final total supply is fixed at exactly 21 million.
+
+This mechanism cannot be changed. While modifying the code is
+technically possible, it would require the agreement of a majority of
+the tens of thousands of node operators worldwide. Who would agree to
+a change that dilutes the value of the Bitcoin they hold? In practice,
+the halving is a monetary policy that is unalterable, protected by
+mathematics and incentives.
+
+Four Halvings: Historical Patterns Through Data
+-----------------------------------------------
+
+Bitcoin has experienced four halvings so far. A distinct pattern has
+emerged with each cycle.
+
+First Halving (November 28, 2012, Block Height 210,000)
+* Block reward: 50 BTC → 25 BTC
+* Price at halving: approximately $12
+* Peak price 18 months later: approximately $1,100 (November 2013)
+* Increase: approximately 9,000%
+
+At the time, Bitcoin was virtually unknown. Its market cap was only
+$150 million, and there were only a handful of exchanges. But after
+the halving, the supply shock combined with interest from early
+adopters produced an explosive rally.
+
+Second Halving (July 9, 2016, Block Height 420,000)
+* Block reward: 25 BTC → 12.5 BTC
+* Price at halving: approximately $650
+* Peak price 18 months later: approximately $19,700 (December 2017)
+* Increase: approximately 3,000%
+
+This period coincided with the ICO (Initial Coin Offering) craze, when
+cryptocurrency became known to the general public. Interest in
+blockchain technology exploded, and institutional investors began
+seriously examining Bitcoin for the first time.
+
+Third Halving (May 11, 2020, Block Height 630,000)
+* Block reward: 12.5 BTC → 6.25 BTC
+* Price at halving: approximately $8,700
+* Peak price 18 months later: approximately $69,000 (November 2021)
+* Increase: approximately 690%
+
+During the COVID-19 pandemic, central banks around the world began
+unlimited monetary expansion. In this context, Bitcoin's value
+proposition - supply mathematically limited - became all the more
+compelling. Companies like Tesla and MicroStrategy began holding
+Bitcoin as a treasury asset.
+
+Fourth Halving (April 2024, Block Height 840,000)
+* Block reward: 6.25 BTC → 3.125 BTC
+* Price at halving: approximately $64,000
+* Cycle outcome: in progress
+
+Following the fourth halving in April 2024, the market has shown a
+trajectory similar to past patterns, though there is no guarantee that
+past patterns will necessarily repeat.
+
+The pattern is clear. The percentage gain diminishes each time (9,000%
+→ 3,000% → 690%), but the absolute price increase grows larger. The
+$1,088 increase in the first cycle is dwarfed by the $60,300 increase
+in the third cycle. This is a natural phenomenon as the market matures
+in scale.
+
+The Economic Principles Behind the Halving's Price Impact
+---------------------------------------------------------
+
+The halving's price impact is explained by basic supply-and-demand
+dynamics. Let's look at concrete figures.
+
+Before the third halving, miners produced approximately 900 BTC per
+day (12.5 BTC × roughly 144 blocks per day). After the halving, this
+figure dropped to approximately 450 BTC. Annualized, that is a supply
+reduction of about 164,000 BTC. Assuming a Bitcoin price of $30,000,
+that represents approximately $4.9 billion in selling pressure that
+has disappeared.
+
+Miners are a major selling force in the Bitcoin market. They must
+regularly sell the BTC they mine to cover the costs of mining
+equipment, electricity, and operations. When their income is halved by
+the halving, the new supply entering the market simultaneously
+decreases.
+
+On the demand side, trends such as Bitcoin ETFs, corporate treasury
+allocations, and individual investor inflows have driven continuously
+rising demand. When spot Bitcoin ETFs were approved in the United
+States in January 2024, institutional investor demand surged
+significantly. The world's largest asset managers, including BlackRock
+and Fidelity, launched Bitcoin ETFs, drawing billions of dollars in
+inflows in the first month alone. This created a structure in which
+supply decreases and demand increases simultaneously.
+
+The Stock-to-Flow Model: The Mathematics of Bitcoin Scarcity
+------------------------------------------------------------
+
+Frequently mentioned in halving analysis, the Stock-to-Flow (S2F)
+model is the ratio of the existing stock divided by the annual new
+production.
+
+In the case of gold, approximately 200,000 tons currently exist above
+ground, and roughly 3,000 tons are newly mined each year. The S2F
+ratio is approximately 60-67. This is the mathematical reason gold has
+functioned as a store of value for thousands of years. It means it
+would take over 60 years to mine the same amount that already exists,
+so supply increases cannot easily dilute the value of existing
+holders.
+
+Bitcoin's S2F doubles with each halving. Before the third halving, it
+was approximately 27, and after the halving it rose to approximately
+56 - a level similar to gold's. After the fourth halving (2024), it
+reached approximately 112, twice that of gold. Mathematically, Bitcoin
+becomes a scarcer asset than gold with each successive halving.
+
+PlanB (an anonymous Dutch institutional investor) popularized this
+model and argued that the S2F ratio has a strong correlation with
+market value. However, the S2F model's predictions diverged
+significantly during the 2022-2023 bear market, revealing its
+limitations. Critics note that S2F only reflects the supply side and
+fails to account for demand fluctuations. Nonetheless, it continues to
+be referenced as an intuitive framework for explaining the
+relationship between supply scarcity and value.
+
+Myths and Realities Surrounding the Halving
+-------------------------------------------
+
+Several misconceptions about the halving deserve clarification.
+
+The simplification that "prices always go up after a halving" is
+dangerous. While historical patterns exist, countless variables -
+macroeconomic conditions, regulatory trends, technological
+developments, market sentiment - influence price. Immediately after
+the 2024 halving, Bitcoin's price did not instantly skyrocket, and the
+market moved amid a balance of complex factors.
+
+There is also the concern that "if mining becomes unprofitable after
+the halving and miners quit, Bitcoin will collapse." But Bitcoin's
+difficulty adjustment mechanism automatically compensates for this. If
+miners leave, the difficulty decreases, and the remaining miners can
+find blocks more easily while still turning a profit. The network has
+a self-correcting mechanism built in.
+
+The true importance of the halving is not short-term price movements.
+The halving proves every four years that Bitcoin's monetary policy
+cannot be altered by any external power, any crisis, or any
+temptation. No central bank in the world has ever locked its monetary
+policy into code for the next 100 years. Bitcoin has accomplished what
+seemed impossible, and the halving is a recurring ceremony that
+reaffirms this fact.
+
+Tags: Bitcoin, Mining
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-halving/

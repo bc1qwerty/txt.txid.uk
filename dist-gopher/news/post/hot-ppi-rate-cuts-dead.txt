@@ -1,0 +1,191 @@
+Hot PPI, Cold Reality: Why Rate Cuts May Be Dead for 2026
+=========================================================
+
+2026-03-27 | macro | by txid | en
+
+February PPI surged 0.7% MoM — more than double expectations. Core wholesale inflation hit 3.9%. The March FOMC dot plot now projects just one cut in 2026.
+
+The February Producer Price Index rose 0.7% month-over-month. That
+number landed like a grenade in a market still clinging to the hope of
+multiple rate cuts this year. Economists had expected roughly half
+that. What they got was the clearest signal yet that the inflation
+fight is far from over — and that the Federal Reserve knows it.
+
+Within days, the March FOMC meeting confirmed what the data implied.
+The updated dot plot now projects just one rate cut for 2026, down
+from two in December. Futures markets, which tend to be less
+diplomatic than central bankers, have pushed the implied timing of the
+next cut to at least December. Some desks are pricing the first cut as
+a 2027 event.
+
+The "higher for longer" narrative that dominated 2023 and seemed to be
+fading by late 2025 has returned — this time armed with data that is
+harder to dismiss and a geopolitical backdrop that makes the inflation
+problem structurally worse.
+
+Anatomy of a Hot Print
+----------------------
+
+Producer prices measure inflation at the wholesale level — what
+businesses pay for inputs before those costs reach consumers. PPI is a
+leading indicator for CPI and, by extension, for the Personal
+Consumption Expenditures price index the Fed treats as its primary
+gauge. When PPI runs hot, consumer inflation follows.
+
+The February numbers were bad across the board. Headline PPI doubled
+consensus. Core wholesale inflation hit 3.9% annually, well above the
+Fed's comfort zone. But the services component — up 0.5%
+month-over-month — deserves the most attention, because services
+inflation tells you something goods inflation does not.
+
+Goods prices spike on supply disruptions and retreat when supply
+normalizes. Oil is the obvious current example. Services inflation is
+different. It reflects labor costs, rent, healthcare, insurance —
+categories where prices are set by contracts and wages that adjust
+slowly and almost never decline. A 0.5% monthly increase in services
+costs indicates that inflationary pressure has migrated from the
+volatile energy sector into the structural core of the economy.
+
+This is the scenario the Fed fears most: a supply shock becoming
+embedded through wage demands and contract renegotiations. Workers see
+their gasoline and grocery bills rise, so they demand higher wages.
+Businesses facing higher labor costs raise prices for services. The
+initial shock becomes self-reinforcing. The February PPI provides
+evidence that this embedding process is underway.
+
+The FOMC Response: One Cut, Maybe
+---------------------------------
+
+The March 18 FOMC vote to hold at 3.50-3.75% surprised nobody. What
+mattered was the Summary of Economic Projections and Chair Powell's
+press conference.
+
+| FOMC Projection | December 2025 | March 2026 | Shift |
+|---|---|---|---|
+| Median year-end rate | 3.15% (two cuts) | 3.4% (one cut) | Hawkish |
+| Core PCE forecast | 2.5% | 2.7% | Upward |
+| Members expecting 2+ cuts | Majority | Minority | Fewer doves |
+
+The core PCE revision from 2.5% to 2.7% is the number that matters
+most. Core PCE strips out food and energy, meaning the Fed now
+believes that even excluding the direct impact of the oil crisis,
+underlying inflation will be higher than previously thought. The
+second-round effects — energy costs feeding into services,
+transportation, and wage demands — are already baked into the baseline
+forecast.
+
+Powell's press conference reinforced the message. He cited
+tariff-related price hikes and the energy shock as factors behind the
+revision. The language was measured, but the subtext was unmistakable:
+the conditions for cutting rates do not currently exist, and the
+committee requires significantly more data before reconsidering.
+
+Futures Say December — or Never
+-------------------------------
+
+Futures markets process information faster and with fewer diplomatic
+constraints than central bankers. As recently as January, traders were
+pricing two to three cuts by year-end with high confidence. That
+expectation has collapsed. June is priced at near zero. September sits
+below 15%. December is roughly a coin flip. A growing share of
+probability extends into 2027.
+
+The practical consequence is that monetary policy remains restrictive
+by historical standards. A federal funds rate above 3.5% with
+inflation running above target translates to a real rate that
+constrains credit growth, mortgage activity, and corporate investment.
+The economy is functioning under this constraint, but it is not
+thriving — and it is certainly not generating the conditions under
+which risk assets typically produce their strongest returns.
+
+Cash, ironically, has become one of the most attractive asset classes.
+Money market funds yielding above 3.5% with zero duration risk
+represent a genuine alternative to risk assets in a way that was not
+true during the zero-rate era. That competition for capital is yet
+another headwind for everything from growth stocks to Bitcoin.
+
+The Oil Accelerant
+------------------
+
+The PPI report cannot be read in isolation from the Hormuz crisis. Oil
+above $100 per barrel is the primary accelerant, and it operates
+through channels far beyond the gasoline pump — diesel, freight,
+petrochemical inputs, and eventually wages as workers demand
+compensation for higher living costs.
+
+The direct energy contribution to the February PPI is estimated at
+roughly 0.3 percentage points of the 0.7% monthly increase. That
+arithmetic matters: even if oil prices magically returned to $70
+overnight, the remaining 0.4% would still be well above the pace
+consistent with the Fed's inflation target. Oil is the catalyst, but
+it is no longer the only driver. The inflationary impulse has
+broadened, and the services component is rising independently of
+energy prices.
+
+The current situation bears uncomfortable parallels to the 1970s, when
+oil supply shocks triggered extended periods of elevated inflation
+resistant to monetary policy. The magnitude differs — the 2026 shock
+is far less severe than the 1973 embargo — but the mechanism is
+identical. A supply shock creates inflation that monetary policy
+cannot directly address, forcing the central bank to hold a
+restrictive stance for longer than the economy can comfortably
+tolerate.
+
+What Would Change the Picture
+-----------------------------
+
+Three developments could alter the trajectory. A Hormuz resolution
+that returns oil to the $70-80 range would remove the most acute
+pressure, potentially allowing a September cut — but that depends on
+geopolitical outcomes no economic model can predict. A deteriorating
+labor market would pressure the Fed to cut regardless of inflation,
+but current employment data shows no such weakness. And if core
+services inflation moderates despite elevated energy costs, the Fed
+could argue the pass-through is contained — though the February PPI
+makes that scenario less plausible.
+
+The Bitcoin Angle
+-----------------
+
+Before the PPI release, Bitcoin was trading around $74,000. It dropped
+to $69,500 in the days that followed. The move was not about Bitcoin
+specifically — it was about the repricing of every asset sensitive to
+liquidity expectations. The macro case for Bitcoin requires either
+abundant liquidity or a collapse in faith in sovereign currencies.
+Neither condition exists. The Fed is holding rates high, the dollar is
+strengthening on safe-haven flows, and inflation, while elevated, is
+nowhere near the level that drives capital flight into alternative
+monetary systems.
+
+Bitcoin is range-bound between $68,000 and $74,000, and it will likely
+stay there until the rate outlook changes. That change is not coming
+soon.
+
+The Bottom Line
+---------------
+
+The February PPI at +0.7% is not an outlier. It is a data point
+consistent with an inflation regime structurally altered by the Hormuz
+crisis, persistent tariff effects, and a labor market still generating
+wage pressure. The March FOMC response — one projected cut, core PCE
+revised to 2.7% — is the institutional acknowledgment that the
+inflation fight is not over.
+
+The higher-for-longer era that began with the Fed's initial tightening
+in 2022 was supposed to end in 2025. It did not — one cut in December
+was the totality of easing delivered. It was supposed to accelerate in
+2026. It will not. The question now is whether 2027 will be any
+different, and the honest answer is that nobody knows, because the
+answer depends on a strait in the Persian Gulf and a set of
+geopolitical variables that lie entirely outside the Federal Reserve's
+control.
+
+PPI at +0.7%. Core wholesale inflation at 3.9%. Services costs at
++0.5%. These are not numbers that produce rate cuts. They are numbers
+that produce patience, caution, and the extended maintenance of
+restrictive monetary policy. The market is adjusting to that reality,
+one repriced expectation at a time.
+
+Tags: PPI, inflation, Federal Reserve, interest rates, FOMC, dot plot, bonds
+
+Read on full site: https://news.txid.uk/post/hot-ppi-rate-cuts-dead

@@ -1,0 +1,131 @@
+4월 10, 2026
+===========
+
+2026-04-10 | digest | by txid | en
+
+Daily digest
+
+Bitcoin Breaks $72,000 as Ceasefire Reduces Geopolitical Risk Premium
+---------------------------------------------------------------------
+
+Bitcoin surged above $72,000 this week as markets priced in a fragile
+U.S.-Iran ceasefire following days of missile attacks that sent oil
+markets into chaos. The rally persisted despite warning signs of U.S.
+economic weakness, signaling institutional accumulation continues even
+as traditional recession fears mount. Crypto equities like Circle
+faced analyst downgrades, reflecting ongoing volatility within the
+digital asset ecosystem.
+
+Why it matters: Bitcoin's strength amid geopolitical chaos validates
+its function as a hedge against state-driven instability and the
+currency debasement that inevitably follows.
+
+→ CoinDesk
+[https://www.coindesk.com/markets/2026/04/09/bitcoin-tops-usd72-000-but-circle-and-bullish-drop-sharply-after-downgrades]
+· → Cointelegraph
+[https://cointelegraph.com/news/bitcoin-rally-extends-toward-73k-despite-concerning-us-economic-data]
+
+______________________________________________________________________
+
+Federal Leaders Unite to Push Congress on Crypto Clarity Act
+------------------------------------------------------------
+
+SEC Chair Paul Atkins, Treasury Secretary Scott Bessent, and White
+House advisor David Sacks jointly urged Congress to pass the Clarity
+Act, legislation that would finally establish clear regulatory
+parameters for cryptocurrency platforms and blockchain development.
+Their unprecedented alignment signals that regulatory certainty—rather
+than continued ambiguity—has become a bipartisan priority among
+finance leadership.
+
+Why it matters: Regulatory clarity removes the existential uncertainty
+that prevents institutions from holding Bitcoin, while protecting
+against the retroactive enforcement that has plagued the industry.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/congress-crypto-market-structure-bill]
+
+______________________________________________________________________
+
+Strategy Holdings Establishes Bitcoin as the New Corporate Treasury
+Standard
+----------------------------------------------------------------------
+
+Strategy Holdings, led by Bitcoin advocate Michael Saylor, is driving
+the overwhelming majority of corporate Bitcoin accumulation,
+establishing a treasury model where companies use equity to acquire
+and hold bitcoin as balance-sheet reserves rather than cash. The
+approach is reshaping corporate finance philosophy, even as
+competitors struggle to justify their own Bitcoin strategies against
+Strategy's aggressive acquisition pace.
+
+Why it matters: As corporations abandon cash-heavy treasuries for
+Bitcoin reserves, they're implicitly rejecting fiat currency's
+stability and embracing sound-money principles in their financial
+architecture.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/strategys-bitcoin-ambition-is-reshaping]
+
+______________________________________________________________________
+
+Bitcoin Protocol May Become Quantum-Resistant Without Hard Fork
+---------------------------------------------------------------
+
+Researchers have proposed a pathway for Bitcoin to defend against
+quantum computing threats without requiring contentious protocol
+changes, instead leveraging existing cryptographic flexibility within
+the network's design. The approach allows Bitcoin to upgrade its
+defenses as quantum threats mature, while preserving the
+consensus-driven governance model that protects the network from
+centralized control.
+
+Why it matters: Bitcoin's ability to evolve defenses against
+existential threats without centralized authority demonstrates the
+resilience of decentralized protocol design.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/bitcoin-could-be-quantum-safe]
+
+______________________________________________________________________
+
+Iran's Attacks on Saudi Oil Infrastructure Reignite Inflation Fears
+Across Energy Markets
+----------------------------------------------------------------------
+
+Iran launched strikes on Saudi Arabia's critical East-West pipeline
+and oil production facilities, slashing the kingdom's output and
+deepening global energy supply disruptions. The escalation compounds
+prior damage from Iranian attacks on shipping in the Strait of Hormuz,
+sending crude prices and broader commodity costs higher as inflation
+pressures resurface in a fragile economic landscape.
+
+Why it matters: Geopolitically-driven energy shocks expose how
+state-dependent monetary systems amplify inflation
+volatility—underscoring why sound-money advocates champion Bitcoin's
+fixed supply as a hedge against currency debasement.
+
+→ CNBC
+[https://www.cnbc.com/2026/04/09/iran-war-oil-saudi-arabia-east-west-pipeline.html]
+
+______________________________________________________________________
+
+Treasury Department Expands Surveillance Reach Into Crypto Industry
+-------------------------------------------------------------------
+
+The U.S. Treasury announced it is expanding cybersecurity intelligence
+sharing directly to cryptocurrency platforms, positioning government
+as an embedded observer within digital asset infrastructure under the
+banner of national security. The initiative represents another layer
+of state monitoring authority over crypto exchanges and platforms,
+raising questions about financial privacy for users.
+
+Why it matters: Government expansion into crypto
+surveillance—justified as security necessity—illustrates precisely why
+Bitcoin's peer-to-peer design and self-custody tooling remain
+essential to individual financial sovereignty.
+
+→ Cointelegraph
+[https://cointelegraph.com/news/us-treasury-cybersecurity-intel-crypto]
+
+Read on full site: https://news.txid.uk/digest/2026-04-10

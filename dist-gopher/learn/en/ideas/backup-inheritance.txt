@@ -1,0 +1,108 @@
+Backup & Inheritance Planning
+=============================
+
+2026-03-10 | en
+
+Strategies for safely storing seed phrases and transferring assets upon owner death or incapacity. The final puzzle of Bitcoin self-sovereignty.
+
+"Not your keys, not your coins" is Bitcoin security's first principle.
+But this principle comes with an uncomfortable follow-up question:
+What happens to my keys if I'm gone?
+
+According to Chainalysis estimates, approximately 3-4 million BTC are
+permanently inaccessible. A significant portion of these losses stem
+from storage failures and the absence of inheritance plans. Bitcoin's
+self-sovereignty comes with responsibility.
+
+Seed Phrase Backup Strategy
+---------------------------
+
+## Choosing a Medium
+
+| Medium | Pros | Cons |
+|--------|------|------|
+| Paper | Simple, free | Vulnerable to fire, flood, fading |
+| Steel plate | Fire-proof, water-proof, corrosion-resistant | Costs
+involved |
+| Digital (USB/cloud) | Easy to duplicate | Exposed to hacking and
+malware |
+
+Recommended: Engrave on a steel plate + keep one paper copy at a
+separate location. Avoid digital storage as a rule, even when
+encrypted.
+
+## Distributed Storage
+
+Storing a seed phrase in only one place creates a single point of
+failure:
+* Physical distribution: Store in at least two geographically
+separated locations
+* Shamir's Secret Sharing: Split the seed into multiple shares,
+requiring a threshold to reconstruct (e.g., 3-of-5)
+* Passphrase (25th word): Even if the seed phrase is leaked, funds
+remain inaccessible without the passphrase
+
+Inheritance Planning
+--------------------
+
+Bitcoin inheritance is fundamentally different from traditional
+assets. A bank account can be accessed with a death certificate, but
+no court order can open a Bitcoin wallet without the keys.
+
+## Designing an Inheritance Structure
+
+* Designate trusted individuals: Those who will receive access to the
+seed phrase (spouse, children, lawyer)
+* Separation of information principle: Never give all information to
+one person
+   * Person A: Location of the seed phrase
+   * Person B: The passphrase
+   * Person C: Recovery procedure guide
+* Use Multisig [/ideas/multisig/]: A 2-of-3 setup allows two heirs to
+move funds by consensus
+
+## Practical Checklist
+
+* [ ] A trusted person knows the physical location of the seed phrase
+* [ ] Recovery procedures are documented in non-technical language
+* [ ] The wallet software used is recorded
+* [ ] Backup integrity is verified at least once a year
+* [ ] Digital asset provisions are included in the will
+
+## Timelock Mechanisms
+
+Technical inheritance methods using Bitcoin Script also exist:
+* nLockTime: Pre-sign transactions that can only execute after a
+specific point in time
+* Inheritance transactions: Automatically transfer to a designated
+address after a period of inactivity
+* These methods require high technical expertise and professional
+assistance
+
+Common Mistakes
+---------------
+
+* "I'll do it later": Storing large amounts without backup, then
+losing everything to device failure
+* Taking photos: Photographing the seed phrase with a smartphone →
+automatic cloud sync → hacking exposure
+* Email transmission: "It should be safe if I send it to myself" →
+email hack leads to theft
+* Single storage: Keeping everything in one safe, then losing it all
+to fire
+* Not telling family: In a sudden accident, heirs don't even know the
+Bitcoin exists
+
+Related Concepts
+----------------
+
+* Bitcoin Wallet Guide [/ideas/wallet-guide/] - Security
+characteristics and selection guide by wallet type
+* Multisig [/ideas/multisig/] - Eliminating single points of failure
+through multiple signatures
+* Node [/ideas/node/] - Verifying your transactions independently
+without third parties
+
+Tags: Bitcoin, Security
+
+Read on full site: https://learn.txid.uk/en/ideas/backup-inheritance/

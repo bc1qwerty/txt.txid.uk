@@ -1,0 +1,415 @@
+Ordinals and Inscriptions
+=========================
+
+2026-03-19 | en
+
+Ordinal theory assigns unique numbers to each satoshi, while Inscriptions permanently record data on the Bitcoin blockchain. The new use case that has shaken the Bitcoin ecosystem since 2023.
+
+In January 2023, an image was etched onto the Bitcoin blockchain. It
+was a small piece of pixel art, but the event threw the Bitcoin
+community into one of its most heated debates since the Blocksize War.
+Some hailed it as Bitcoin's renaissance; others condemned it as spam
+that defiled the protocol's sacred purpose. At the center of this
+storm are Ordinals and Inscriptions.
+
+The idea that Bitcoin could serve as a permanent data medium beyond
+simple value transfer, and that individual satoshis could carry unique
+identities, challenges fundamental assumptions about what Bitcoin is
+and what it should become. These are not merely technical questions.
+They are philosophical ones that strike at the heart of Bitcoin's
+social contract.
+
+What Is Ordinal Theory?
+-----------------------
+
+Ordinal theory is a system proposed by software developer Casey
+Rodarmor in January 2023 that assigns unique serial numbers to
+individual satoshis, the smallest unit of bitcoin (1 BTC = 100,000,000
+satoshis).
+
+The Bitcoin protocol itself does not distinguish between satoshis. One
+satoshi in your wallet is identical to one satoshi in anyone else's.
+This property is called fungibility, and it is a cornerstone of money.
+A dollar bill is a dollar bill regardless of its serial number.
+
+What Rodarmor demonstrated is that it is possible to artificially
+impose an ordering on these fungible units. By numbering each satoshi
+according to the order in which it was mined, and tracking those
+numbers through transactions using a first-in-first-out (FIFO) rule,
+every satoshi can be individually identified.
+
+The name "ordinal" comes from mathematics. An ordinal number indicates
+position in a sequence: first, second, third. Ordinal theory applies
+this sequential numbering to satoshis.
+
+## The Numbering Scheme
+
+The rules for assigning numbers to satoshis are remarkably simple.
+
+Creation rule: When a new block is mined, the satoshis in the coinbase
+reward are numbered sequentially. The genesis block (block 0) produced
+satoshis numbered 0 through 4,999,999,999. Block 1 produced satoshis
+starting at 5,000,000,000, and so on.
+
+Transfer rule: When a transaction spends inputs and creates outputs,
+the satoshis from inputs flow into outputs in first-in-first-out
+order. The satoshis from the first input fill the first output, then
+the second output, and so on. Once the first input's satoshis are
+exhausted, the second input's satoshis continue the sequence.
+
+The critical insight is that this numbering does not happen inside the
+Bitcoin protocol. Ordinal theory is an interpretive lens applied to
+existing blockchain data. It requires no protocol changes. It is a
+social layer, a convention, a shared agreement to treat satoshis as if
+they have individual identities.
+
+Inscriptions: Writing Data onto Bitcoin
+---------------------------------------
+
+If ordinal theory gives satoshis identity, inscriptions are the
+mechanism for permanently attaching data to those identified satoshis.
+
+The core idea is to embed arbitrary data - images, text, audio, video,
+HTML, even executable code - into the witness data section of a
+Bitcoin transaction. This data is permanently recorded on the Bitcoin
+blockchain and cannot be deleted or altered by anyone, as long as the
+Bitcoin network exists.
+
+Technically, inscriptions work as follows:
+
+* A special transaction is created that includes data within a Taproot
+script.
+* The data is wrapped in an OP_FALSE OP_IF ... OP_ENDIF structure.
+This creates dead code that does not affect the transaction's validity
+but is permanently recorded on the blockchain.
+* The data envelope includes a content type (MIME type) and the actual
+content bytes.
+* When this transaction is included in a block, the data is considered
+"inscribed" onto a specific satoshi.
+
+The result: a particular satoshi gains both a unique number and
+attached data. This is, effectively, an NFT on the Bitcoin blockchain.
+
+Why SegWit and Taproot Made This Possible
+-----------------------------------------
+
+Inscriptions became feasible because of two major Bitcoin protocol
+upgrades that were designed for entirely different purposes.
+
+## SegWit (2017)
+
+Segregated Witness, activated in 2017, separated transaction signature
+data into a separate area called the witness. The crucial detail is
+that witness data receives a 75% fee discount compared to regular
+transaction data. One byte of witness data costs only 0.25 weight
+units, versus 1 weight unit for non-witness data.
+
+This "weight unit" system effectively expanded the block size limit
+from 1MB to a theoretical maximum of 4MB, but only if the block
+consists almost entirely of witness data.
+
+## Taproot (2021)
+
+Taproot, activated in November 2021, removed the practical size limit
+on scripts that can be placed in the witness area. Before Taproot,
+individual script elements were limited to 520 bytes. Taproot's
+tapscript eliminated this constraint.
+
+Combined, these two upgrades create the perfect conditions for
+inscriptions: Taproot allows large data payloads in the witness area,
+and SegWit's discount structure makes storing that data relatively
+cheap. Inscriptions exploit this unintended synergy.
+
+Neither SegWit nor Taproot was designed with blockchain-based image
+storage in mind. SegWit aimed to fix transaction malleability and
+improve scalability. Taproot aimed to enhance privacy and smart
+contract flexibility. The fact that inscriptions emerged from these
+upgrades is a case study in how complex systems produce emergent
+behaviors that their designers never anticipated.
+
+BRC-20 Tokens
+-------------
+
+Once inscriptions proved viable, an anonymous developer known as
+@domodata pushed the concept further in March 2023. Using
+JSON-formatted inscriptions, they proposed a standard for issuing
+fungible tokens on Bitcoin. This became BRC-20.
+
+The name is borrowed from Ethereum's ERC-20 token standard, but the
+mechanism is fundamentally different. Ethereum's ERC-20 uses smart
+contracts to manage token balances and transfers on-chain. BRC-20
+simply records JSON text as inscriptions.
+
+    {
+      "p": "brc-20",
+      "op": "deploy",
+      "tick": "ordi",
+      "max": "21000000",
+      "lim": "1000"
+    }
+
+The above inscription deploys a token called "ordi" with a maximum
+supply of 21 million and a per-mint limit of 1,000. Users then create
+"mint" inscriptions to claim tokens and "transfer" inscriptions to
+send them.
+
+The defining characteristic - and limitation - of BRC-20 is its
+dependence on off-chain indexers. The Bitcoin protocol does not
+interpret this JSON. Separate indexer software scans the blockchain,
+reads BRC-20 inscriptions, and computes token balances. Different
+indexers could theoretically reach different conclusions, making the
+consensus mechanism less robust than Bitcoin itself.
+
+Despite this limitation, BRC-20 exploded in popularity. In May 2023,
+the majority of Bitcoin network transactions were BRC-20-related,
+driving fees to levels that priced out ordinary transfers. It was a
+real-time experiment in what happens when new sources of demand
+compete for limited block space.
+
+The Bitcoin Community Debate
+----------------------------
+
+Ordinals and inscriptions triggered one of the fiercest debates in
+Bitcoin's history, rivaling the Blocksize War of 2015-2017 in its
+intensity and ideological depth.
+
+## Arguments in Favor
+
+New utility and ecosystem growth: Ordinals give Bitcoin value beyond
+money. Digital art, collectibles, gaming items, and domain names can
+now exist on the most secure blockchain in the world. This attracts
+new users and developers to the Bitcoin ecosystem who might otherwise
+have gravitated toward alternative chains.
+
+Increased miner fee revenue: Bitcoin's block subsidy halves
+approximately every four years. In the long run, miner income must
+come from transaction fees. Inscriptions have dramatically increased
+demand for block space. On several occasions since 2023, daily fee
+revenue has exceeded the block subsidy - a positive signal for
+Bitcoin's long-term security budget.
+
+Free market for block space: Bitcoin is a permissionless network.
+Anyone who pays the fee can use block space. Deciding which uses are
+"legitimate" contradicts Bitcoin's core philosophy. The market sets
+the price, and users compete freely. If someone is willing to pay $50
+to inscribe an image, that is the market speaking.
+
+On-chain permanence: Unlike many Ethereum NFTs that store images on
+external servers (IPFS or centralized hosts), Bitcoin inscriptions
+contain the data itself on-chain. As long as a single Bitcoin node
+exists, the data persists. There are no broken links, no disappeared
+images, no rug-pulled metadata.
+
+## Arguments Against
+
+Block space waste: Bitcoin's block space is an extraordinarily scarce
+resource. With a capacity of roughly 7 transactions per second, using
+this space to store JPEG images is wasteful. This space should serve
+the economic freedom of billions - value transfer, not data storage.
+
+Fee escalation: Competition for block space from inscriptions drives
+up fees for everyone. During May 2023, when average transaction fees
+exceeded $30, small-value users in El Salvador and other developing
+countries were effectively priced out of the network. Bitcoin's
+promise as "a bank for the unbanked" is undermined when a remittance
+costs more than the amount being sent.
+
+Fungibility erosion: Assigning numbers to satoshis and claiming some
+are more "valuable" than others undermines Bitcoin's fungibility. For
+Bitcoin to function as money, 1 sat must equal 1 sat. The existence of
+"special" satoshis erodes this principle and could eventually create
+regulatory complications if certain satoshis are deemed to carry
+tainted data.
+
+Identity crisis: Is Bitcoin sound money or a general-purpose data
+store? Embracing ordinals dilutes Bitcoin's core narrative. Bitcoin
+should be a protocol that does one thing exceptionally well, following
+the Unix philosophy of simplicity. Adding cultural layers of NFTs and
+tokens creates noise that distracts from the monetary mission.
+
+OP_RETURN vs Inscriptions
+-------------------------
+
+Recording data on the Bitcoin blockchain is not new. Since 2014, the
+OP_RETURN opcode has allowed small amounts of data to be attached to
+transactions.
+
+| Property | OP_RETURN | Inscriptions |
+|----------|-----------|-------------|
+| Maximum size | 80 bytes | ~4MB (block weight limit) |
+| Storage location | Output script | Witness data |
+| UTXO set impact | None (prunable) | None (witness area) |
+| Fee weight | 1x (standard cost) | 0.25x (witness discount) |
+| Typical use | Timestamps, hash commitments | Images, text, media |
+
+OP_RETURN was intentionally limited to 80 bytes to constrain
+non-monetary blockchain usage. This was a deliberate design decision
+to prevent the blockchain from becoming a data storage platform.
+Inscriptions circumvent this philosophy by leveraging the witness
+discount and Taproot's relaxed script size limits to store megabytes
+of data.
+
+It is worth noting that OP_RETURN itself was controversial when
+introduced. The same argument - "Bitcoin is not a data store" - was
+made in 2014. The pragmatic conclusion then was that people would
+embed data regardless, so providing a method that does not bloat the
+UTXO set was the lesser evil. The ordinals debate is, in many ways, a
+replay of this same tension at a much larger scale.
+
+Rare Satoshis (Rare Sats)
+-------------------------
+
+Ordinal theory goes beyond simple numbering to classify certain
+satoshis into rarity tiers. This mirrors the world of coin collecting,
+where coins from specific years or with minting errors command
+premiums.
+
+* Common: Any satoshi that is not the first in its block
+* Uncommon: The first satoshi of each block (~6,929,999 possible)
+* Rare: The first satoshi of each difficulty adjustment period (~3,437
+possible)
+* Epic: The first satoshi of each halving epoch (4 so far, maximum 32)
+* Legendary: The first satoshi of a block where difficulty adjustment
+and halving coincide (theoretically possible, none yet)
+* Mythic: The first satoshi of the genesis block (exactly 1, but
+locked in an unspendable coinbase)
+
+This rarity system is entirely based on social consensus. The Bitcoin
+protocol has no awareness of these classifications. Yet a collector
+market has formed, with "epic" satoshis trading for thousands of
+dollars. This is a fascinating social experiment that reveals how
+humans instinctively assign value to scarcity, even when that scarcity
+is based purely on convention.
+
+Bitcoin NFTs vs Ethereum NFTs
+-----------------------------
+
+Inscriptions are often called "Bitcoin NFTs," but they differ from
+Ethereum-based NFTs in fundamental ways.
+
+## Data Storage
+
+The majority of Ethereum NFTs use off-chain metadata. The token
+contract stores only a URL pointing to the image, which is hosted on
+IPFS or a centralized server. If that server goes down, the NFT's
+image disappears. On-chain art like Autoglyphs exists on Ethereum, but
+storing large data on-chain is prohibitively expensive due to gas
+costs.
+
+Bitcoin inscriptions contain the complete data on the blockchain.
+Every byte of the image is recorded in a Bitcoin block. As long as one
+Bitcoin node exists anywhere in the world, the data survives.
+
+## Ownership Model
+
+Ethereum NFT ownership is managed by smart contract state. Trading
+happens through specialized marketplaces (OpenSea, Blur) and complex
+contract calls with approval mechanisms.
+
+Bitcoin inscription ownership is tied to the satoshi itself -
+specifically, to whoever controls the UTXO containing that satoshi.
+Transfer the satoshi, and the inscription moves with it. This model is
+simpler but carries the risk of accidentally spending a "valuable"
+satoshi as transaction fees.
+
+## Smart Contract Functionality
+
+Ethereum NFTs can incorporate automatic royalty payments, auctions,
+fractional ownership, and complex programmable logic. Bitcoin
+inscriptions have none of this. They are simply data attached to
+satoshis with no automated logic. Some view this as a feature: less
+complexity means a smaller attack surface and fewer exploits.
+
+Impact and the Future
+---------------------
+
+## Structural Changes to the Fee Market
+
+Inscriptions have permanently altered Bitcoin's fee market dynamics.
+Before 2023, fees were driven primarily by network congestion during
+price rallies. Now, inscription demand creates a new baseline for
+fees. Popular inscription project mints can spike fees dramatically,
+directly affecting regular transaction users.
+
+In the long term, this could be part of the answer to Bitcoin's
+security budget question. As the block subsidy approaches zero over
+the coming decades, can fees alone provide sufficient incentive for
+miners to secure the network? Inscriptions create a new source of
+demand for block space, contributing to fee revenue that helps sustain
+network security.
+
+## Cultural Shift
+
+Ordinals have added a new cultural dimension to Bitcoin. "Sat hunters"
+- collectors who track and trade rare satoshis - have emerged as a
+distinct subculture. A Bitcoin art scene has developed, with artists
+choosing to inscribe their work on the most secure and permanent
+blockchain in existence.
+
+Whether one celebrates or laments this shift, it has broadened the
+entry points to Bitcoin. Someone who has no interest in monetary
+theory might discover Bitcoin through digital art, and from there
+learn about sound money, self-custody, and financial sovereignty.
+
+## Relationship with Layer 2
+
+The relationship between inscriptions and Bitcoin's Layer 2 solutions,
+particularly the Lightning Network, is complex. Higher base-layer fees
+driven by inscriptions increase the cost of opening Lightning
+channels, but simultaneously reinforce the case for why Layer 2
+scaling is essential.
+
+Some argue that ordinals functionality should migrate to Layer 2. The
+base layer should remain an efficient settlement layer for high-value
+transactions, while data storage and token issuance belong on higher
+layers. Projects like Stacks, RGB, and Liquid are building
+programmable layers on top of Bitcoin that could absorb this demand.
+
+## The Censorship Debate
+
+Some Bitcoin miners and node operators have attempted to filter
+inscription transactions. Alternative node software like Bitcoin Knots
+classifies inscriptions as "spam" and offers options to refuse
+relaying them.
+
+This approach collides directly with Bitcoin's core value of
+censorship resistance. If Bitcoin begins discriminating between types
+of valid transactions, it ceases to be a truly censorship-resistant
+network. A valid transaction is a valid transaction, whether it
+transfers value or records data. The moment subjective judgments about
+"acceptable" uses enter the protocol, Bitcoin loses its most powerful
+property.
+
+The market is providing its own answer. Inscription transactions pay
+fees and comply with all rules of valid Bitcoin transactions. The
+price mechanism of block space allocates resources, and this
+market-based approach is gradually recognized as a more Bitcoin-native
+solution than censorship.
+
+Conclusion
+----------
+
+Ordinals and inscriptions have demonstrated that Bitcoin remains a
+living protocol capable of evolving in unexpected directions. When
+Satoshi Nakamoto designed Bitcoin in 2009, it is unlikely they
+imagined that fourteen years later people would be etching digital art
+onto the blockchain.
+
+Whether this phenomenon is ultimately beneficial or harmful to Bitcoin
+remains an open question. What is certain is that competition for the
+scarce resource of block space is making Bitcoin's economic model more
+sophisticated, and the debate itself demonstrates the health of
+Bitcoin's governance. In a centralized system, an administrator would
+decide whether to permit inscriptions. In Bitcoin, tens of thousands
+of node operators, miners, developers, and users each make their own
+choices, and the network's direction emerges from their collective
+decisions.
+
+Bitcoin is not controlled by any single vision. It evolves through
+code, economic incentives, and the consensus of its participants.
+Ordinals are the most recent - and most dramatic - chapter in that
+ongoing evolution.
+
+Tags: Bitcoin, Technical
+
+Read on full site: https://learn.txid.uk/en/articles/ordinals/

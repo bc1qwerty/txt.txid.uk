@@ -1,0 +1,35 @@
+Intellectual Lineage of Thinkers: Intermediate Course
+=====================================================
+
+2026-03-05 | en
+
+Tracing the intellectual lineage of the Austrian School in chronological order - from Bastiat to Rothbard, the thinkers who defended freedom and the market.
+
+Ideas don't appear out of thin air. Every breakthrough in economics
+and political philosophy was built on what came before - a student
+reading a teacher's work, disagreeing with half of it, and pushing the
+rest further than anyone thought possible.
+
+The Austrian School is the product of exactly that process: a chain of
+thinkers passing insights from one generation to the next for over 200
+years. Bastiat saw through the state's tricks. Menger redefined value.
+Mises proved socialism couldn't calculate. Hayek explained why no
+planner could ever know enough. Rothbard took it all and asked: what
+if we don't need the state at all?
+
+1801-1850"] --> M["Menger<br/>1840-1921"]
+    M --> BB["Böhm-Bawerk<br/>1851-1914"]
+    BB --> MI["Mises<br/>1881-1973"]
+    MI --> H["Hayek<br/>1899-1992"]
+    MI --> R["Rothbard<br/>1926-1995"]
+    style B fill:#21262d,stroke:#f7931a,color:#e6edf3
+    style M fill:#21262d,stroke:#f7931a,color:#e6edf3
+    style MI fill:#f7931a,stroke:#f7931a,color:#000
+    style H fill:#f7931a,stroke:#f7931a,color:#000
+    style R fill:#f7931a,stroke:#f7931a,color:#000`} />
+
+This course follows that lineage in chronological order. By the end,
+you won't just know the names - you'll understand how each generation
+inherited, challenged, and extended the work before it.
+
+Read on full site: https://learn.txid.uk/en/learn/thinkers/

@@ -1,0 +1,201 @@
+China's Digital Yuan Now Pays Interest. Bitcoin Doesn't Care.
+=============================================================
+
+2026-03-26 | opinion | by txid | en
+
+China's digital yuan became the first interest-bearing CBDC on Jan 1. With 230M wallets, the e-CNY is no longer digital cash — it's programmable state-surveilled money.
+
+On January 1, 2026, the People's Bank of China did something that
+central bankers around the world had spent years arguing should never
+be done. It began paying interest on digital yuan wallets.
+
+The e-CNY — China's central bank digital currency, the most advanced
+CBDC deployment on Earth, with 230 million wallets and 16.7 trillion
+yuan in cumulative transactions — crossed a line that the European
+Central Bank, the Federal Reserve, and the Bank for International
+Settlements had all explicitly warned against. The consensus among the
+world's monetary authorities had been clear: CBDCs should function as
+digital cash, not digital deposits. Paying interest would compete with
+commercial banks, risk triggering digital bank runs, and give central
+banks a direct transmission mechanism into household finances that no
+democracy had authorized and no autocracy had yet attempted.
+
+China attempted it anyway. And the implications extend far beyond
+China's borders — because the e-CNY now represents the fullest
+expression of state monetary power that technology currently permits.
+It is, in every meaningful sense, the opposite of Bitcoin. That
+contrast is the point.
+
+What Changed
+------------
+
+The policy was embedded in the PBOC's "Action Plan for Strengthening
+Digital Yuan Management and Financial Infrastructure" — a bureaucratic
+title for a document that fundamentally altered what the e-CNY is.
+
+Before January 1, the digital yuan was designed as a replacement for
+M0 — base money, physical cash, the coins and notes in your pocket. It
+was explicitly non-interest-bearing. This was deliberate. The PBOC
+understood that paying interest on CBDC would blur the line between
+central bank money and commercial bank deposits, and it initially
+chose to maintain that distinction.
+
+The new policy reverses that choice. Verified wallets now accrue
+interest at demand deposit rates — approximately 0.2% — with quarterly
+settlement. The eligibility restriction matters: interest applies only
+to verified wallets, categories 1 through 3 for individuals plus
+corporate accounts, on a tiered identity verification model. Category
+4 wallets require only a phone number and have low transaction limits.
+Category 1 wallets require full verification including an in-person
+bank visit.
+
+By restricting interest to verified wallets, the PBOC has created a
+system where anonymity has a measurable price. Before January 1, a
+user who preferred privacy could use a low-tier wallet and simply
+accept the transaction limits. Now, the cost of privacy includes
+forgoing interest income. The state subsidizes identification.
+
+Why the Rest of the World Said No
+---------------------------------
+
+The argument against interest-bearing CBDCs rests on three pillars,
+and understanding them is essential to grasping what China has done.
+
+The first is financial stability. If a CBDC pays interest comparable
+to bank deposits, rational consumers move money from commercial bank
+accounts to the CBDC. Banks fund their lending through deposits. A
+mass migration would reduce their ability to lend, tighten credit, and
+in a crisis could trigger a digital bank run of unprecedented speed.
+When moving money from a bank to the CBDC requires only a tap on a
+phone, the traditional frictions that slow bank runs — queuing at
+branches, processing withdrawal requests — disappear entirely.
+
+The second is the concentration of monetary power. An interest-bearing
+CBDC gives the central bank a direct tool to influence household
+behavior, bypassing commercial banks entirely. Raise the rate to
+incentivize saving. Lower it to encourage spending. The intermediation
+of commercial banks is not a bug in the monetary system — it is a
+buffer between state policy and individual financial decisions.
+Removing that buffer concentrates power in ways most economists
+consider dangerous.
+
+The third is political. A central bank that pays interest directly to
+citizens has a direct financial relationship with those citizens.
+Should the rate be raised during an election year? Lowered to
+encourage spending on government-preferred activities? The potential
+for politicization increases dramatically when the central bank has a
+direct channel to every wallet holder.
+
+The BIS published multiple papers between 2021 and 2025 arguing CBDCs
+should remain digital cash. The ECB's digital euro design explicitly
+excludes interest. The Fed's research consistently modeled
+non-interest-bearing designs. The US went further — the Trump
+administration prohibited the Federal Reserve from pursuing a retail
+CBDC entirely. China broke that consensus unilaterally.
+
+The Surveillance Architecture
+-----------------------------
+
+No analysis of the e-CNY is complete without the surveillance
+dimension. The digital yuan operates under "controllable anonymity" —
+a term that deserves scrutiny, because the two words are in tension.
+
+Small transactions on low-tier wallets have some degree of privacy.
+The counterparty does not see the payer's identity; the data is
+encrypted in transit. In theory, only the PBOC and the issuing bank
+can access the full record. Large transactions on verified wallets —
+the same wallets now incentivized by interest payments — are fully
+traceable. The PBOC has access to complete transaction histories,
+balance information, and identity data for every verified wallet
+holder.
+
+The interest mechanism transforms the privacy trade-off into a
+financial calculation. And this matters in a country with an active
+social credit system, a surveillance apparatus among the world's most
+extensive, and a government that has demonstrated willingness to
+restrict financial access for political dissidents and disfavored
+groups. The interest-bearing e-CNY does not create surveillance
+capability that did not exist before. It increases participation in
+the most surveilled tier by attaching economic incentives to identity
+verification.
+
+The Bitcoin Contrast
+--------------------
+
+The e-CNY's evolution throws into relief exactly what Bitcoin is — and
+what it is not. The comparison is not rhetorical. It illuminates
+fundamental design choices about money, privacy, and state power.
+
+Bitcoin has no interest rate because it is not a deposit and has no
+issuer. Its "yield," if the word applies at all, comes from scarcity:
+a fixed supply of 21 million coins against potentially growing demand.
+This is a property of the protocol, immutable by design — not a
+feature that can be adjusted by committee.
+
+The e-CNY's interest rate, by contrast, is a policy tool. It can be
+raised to attract deposits, lowered to encourage spending, set to zero
+to revert to the previous design, or — in a scenario no Chinese
+official has discussed publicly but the architecture permits — set to
+negative, effectively taxing holdings to stimulate activity. Negative
+interest rates on physical cash are impractical because people can
+withdraw paper money. Negative rates on a digital currency are
+trivially enforceable.
+
+This is the power Bitcoin was designed to make impossible. Not the
+power to issue currency — any government can do that — but the power
+to reach into every wallet, adjust the terms of holding, and program
+money to behave according to state objectives. China has already
+experimented with expiring e-CNY: stimulus payments distributed with
+an expiration date, forcing recipients to spend within a defined
+window. The infrastructure that pays interest quarterly is the same
+infrastructure that could restrict spending to approved merchants,
+limit purchases of specific goods, or adjust terms based on a holder's
+social credit score.
+
+None of these scenarios have been implemented beyond the expiring
+stimulus. But the capability exists. The architecture permits it. And
+the institution controlling the architecture has not committed to
+restrictions on its use.
+
+The Global Divergence
+---------------------
+
+China's decision widens an already significant split in how the
+world's major economies approach digital money. More than 130
+countries are exploring CBDCs in some form, but "exploring" covers a
+spectrum from China's fully operational system to the ECB's multi-year
+consultation to dozens of countries with preliminary research and no
+clear deployment path. The gap between China's operational reality and
+everyone else's theoretical frameworks is measured in years.
+
+The divergence raises the defining question for the next decade of
+monetary policy: does China's first-mover advantage represent the
+future other countries will eventually adopt, or a path that
+democracies will deliberately refuse to follow?
+
+What This Means
+---------------
+
+The interest-bearing CBDC is not a technical innovation. It is a
+political one. And the political question it raises — who should
+control the terms on which money is held and spent — is precisely the
+question Bitcoin was created to answer.
+
+The 230 million wallets are real. The 16.7 trillion yuan in
+transactions are real. The interest payments are real. And the
+surveillance architecture is real. For anyone who has wondered why
+Bitcoin matters when existing payment systems work perfectly well,
+China's digital yuan provides an answer: because existing payment
+systems work perfectly well for the institutions that control them,
+and the question is whether that should be sufficient.
+
+Every feature that makes the e-CNY attractive to a central banker —
+programmability, surveillance, direct monetary transmission — is a
+feature that makes it threatening to an individual who values
+financial privacy and autonomy. The e-CNY is the monetary future that
+Bitcoin was designed to prevent. Whether enough people care about that
+distinction to act on it remains, as always, an open question.
+
+Tags: CBDC, digital yuan, e-CNY, China, bitcoin, surveillance, monetary policy
+
+Read on full site: https://news.txid.uk/post/china-ecny-interest-cbdc

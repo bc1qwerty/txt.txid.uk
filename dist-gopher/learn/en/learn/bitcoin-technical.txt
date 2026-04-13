@@ -1,0 +1,22 @@
+Bitcoin Technical Deep Dive
+===========================
+
+2026-03-10 | en
+
+A deep understanding of Bitcoin protocol internals - from hash functions to Ordinals in 10 steps.
+
+"Don't trust, verify." You'll hear this phrase a lot in Bitcoin
+circles. But what does verification actually look like inside the
+protocol? How does a network with no CEO, no headquarters, and no
+customer support line manage to process billions of dollars in
+transactions without anyone cheating?
+
+The answer is engineering - elegant, battle-tested engineering. Every
+piece of the Bitcoin protocol exists for a reason, and understanding
+those pieces transforms Bitcoin from "magic internet money" into
+something you can reason about with confidence.
+
+This course opens the hood, one component at a time - from full nodes
+and difficulty adjustment to SegWit and the Lightning Network.
+
+Read on full site: https://learn.txid.uk/en/learn/bitcoin-technical/

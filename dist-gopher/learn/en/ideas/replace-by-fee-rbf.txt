@@ -1,0 +1,441 @@
+Replace-By-Fee (RBF): Bumping Bitcoin Transaction Fees
+======================================================
+
+2026-03-20 | en
+
+A technical deep-dive into Bitcoin's Replace-By-Fee mechanism - BIP-125 opt-in RBF, full RBF, wallet usage, mempool dynamics, and merchant implications.
+
+You have just sent a Bitcoin transaction. You checked the mempool, saw
+that fees were relatively low, and set a fee rate of 5 sat/vB. But in
+the ten seconds between clicking "send" and your transaction being
+broadcast, a popular exchange initiated a massive consolidation -
+thousands of transactions at 8-12 sat/vB flooded the mempool. Your 5
+sat/vB transaction now sits at the bottom of the priority queue. At
+the current block production rate, it might not confirm for hours. Or
+days. Or - if the mempool stays congested - it could be dropped
+entirely after the default 336-hour expiration.
+
+This is the problem that Replace-By-Fee (RBF) solves. RBF allows you
+to create a new version of your unconfirmed transaction with a higher
+fee, effectively "bumping" it to a higher priority position in miners'
+transaction selection algorithms. It is one of the most practically
+important features in Bitcoin, yet it remains widely misunderstood.
+
+What RBF Actually Does
+----------------------
+
+At its core, RBF is simple: it permits a transaction's sender to
+replace an unconfirmed transaction in the mempool with a new
+transaction that spends the same inputs but pays a higher fee. The
+replacement transaction invalidates the original - both cannot be
+confirmed because they spend the same UTXOs (Unspent Transaction
+Outputs).
+
+When a node receives a replacement transaction, it:
+
+* Verifies that the replacement spends at least one of the same inputs
+as the original.
+* Checks that the replacement pays a strictly higher absolute fee than
+the original.
+* Checks that the replacement pays a sufficiently higher fee rate to
+cover the bandwidth cost of relaying the replacement (the incremental
+relay fee, typically 1 sat/vB of the replacement's size).
+* Verifies that the replacement does not introduce any new unconfirmed
+inputs that were not present in the original (to prevent pinning
+attacks).
+* Checks that the number of original transactions being replaced
+(including descendants) does not exceed 100.
+
+If all conditions are met, the node evicts the original transaction
+from its mempool and accepts the replacement.
+
+The History: BIP-125 and the Opt-In Debate
+------------------------------------------
+
+Bitcoin's original implementation by Satoshi Nakamoto actually
+included a rudimentary replacement mechanism - transactions had a
+nSequence field that was intended to allow replacements. However, this
+feature was disabled early on because it was trivially exploitable: an
+attacker could replace transactions an unlimited number of times
+without paying additional fees, effectively DoS-attacking the
+network's mempool relay.
+
+## BIP-125: Opt-In RBF (2015)
+
+In February 2016, BIP-125 was implemented in Bitcoin Core 0.12.0. It
+introduced opt-in RBF: a transaction signals that it is replaceable by
+setting any input's nSequence value to less than 0xFFFFFFFE
+(4294967294). Specifically:
+
+* nSequence < 0xFFFFFFFE → Transaction signals opt-in RBF
+(replaceable)
+* nSequence = 0xFFFFFFFE → Transaction signals relative time lock (not
+RBF)
+* nSequence = 0xFFFFFFFF → Final transaction (not RBF, not
+time-locked)
+
+The "opt-in" design was a political compromise. Many in the Bitcoin
+community - particularly merchants and payment processors who relied
+on zero-confirmation (zero-conf) transactions - opposed unrestricted
+replacement because it made double-spending trivially easy. By making
+RBF opt-in, the argument went, merchants could distinguish between
+replaceable and non-replaceable transactions.
+
+In practice, this distinction was always somewhat illusory. A miner is
+economically incentivized to include whichever transaction pays the
+highest fee, regardless of any opt-in signal. The opt-in flag is a
+relay policy enforced by nodes, not a consensus rule enforced by the
+blockchain. A miner running modified software could (and some did)
+accept replacement transactions regardless of the nSequence signal.
+
+## Full RBF (2022-2023)
+
+Bitcoin Core 25.0, released in May 2023, introduced the mempoolfullrbf
+option (defaulting to false), allowing node operators to accept
+replacement transactions regardless of the opt-in signal. By Bitcoin
+Core 28.0 (late 2024), full RBF became the default behavior.
+
+The transition to full RBF was significant for several reasons:
+
+* Honesty in the protocol: It acknowledged the reality that opt-in RBF
+was never a true security guarantee. Any miner could always replace
+transactions; the opt-in signal merely affected relay policy on most
+nodes.
+* Simplified mental model: Users no longer need to worry about whether
+their transaction is "signaling" RBF. All unconfirmed transactions are
+potentially replaceable. This is a more accurate representation of
+reality.
+* Improved fee market efficiency: Full RBF ensures that the
+highest-fee-paying transactions are always prioritized, improving the
+efficiency of Bitcoin's fee market.
+
+How to Use RBF in Practice
+--------------------------
+
+## In Bitcoin Core
+
+Bitcoin Core's wallet has supported RBF since version 0.12.0. To send
+an RBF-enabled transaction:
+
+    # Send with RBF enabled (default in recent versions)
+    bitcoin-cli sendtoaddress "bc1q..." 0.01
+    
+    # Bump the fee of an unconfirmed transaction
+    bitcoin-cli bumpfee "txid_of_original_transaction"
+
+The bumpfee command creates a replacement transaction that:
+* Spends the same inputs as the original
+* Sends the same amount to the same recipient
+* Reduces the change output to pay for the higher fee
+* If the change output would be too small (dust), it may add
+additional inputs
+
+## In Sparrow Wallet
+
+Sparrow Wallet provides an intuitive RBF interface:
+
+* Navigate to the Transactions tab.
+* Right-click the unconfirmed transaction.
+* Select "Increase Fee" (or "Cancel Transaction" to send the funds
+back to yourself).
+* Use the fee slider to set the new fee rate.
+* Sign and broadcast the replacement.
+
+## In Electrum
+
+* Right-click the unconfirmed transaction in the History tab.
+* Select "Increase fee".
+* Set the new fee rate.
+* Sign and broadcast.
+
+## In Mobile Wallets
+
+* Blue Wallet: Tap the unconfirmed transaction → "Bump Fee"
+* Muun: Automatically handles fee bumping through a submarine swap
+mechanism (not traditional RBF, but achieves the same effect)
+* Phoenix (Lightning-focused): Uses fee bumping for on-chain anchor
+transactions
+
+When You Need RBF
+-----------------
+
+## Scenario 1: Fee Estimation Failure
+
+Fee estimation is inherently imperfect because it requires predicting
+future mempool conditions. Even the best fee estimators can
+underestimate when sudden demand spikes occur - exchange withdrawals,
+airdrop claims, NFT mints (on protocols built on Bitcoin like
+Ordinals), or coordinated buying during market events.
+
+RBF is your safety net. You can start with a conservative (lower) fee
+rate and bump it only if the transaction is not confirming within your
+desired timeframe. This strategy often saves money compared to always
+overpaying for "fast" confirmation.
+
+## Scenario 2: Time-Sensitive Payments
+
+You are paying for a time-limited purchase (concert tickets, a limited
+sale). Your transaction is stuck in the mempool. Without RBF, you
+would need to wait - potentially missing the purchase window. With
+RBF, you bump the fee to the current fast-confirmation rate and get
+mined in the next block.
+
+## Scenario 3: Consolidation During Low Fees
+
+Experienced users consolidate small UTXOs during low-fee periods. If
+you batch-consolidate at 1 sat/vB and fees suddenly rise, RBF lets you
+bump the consolidation without abandoning it and re-creating it at a
+higher fee (which would cost more due to creating a new transaction
+from scratch).
+
+## Scenario 4: Correcting Mistakes
+
+You sent 0.1 BTC to Alice but realized you meant to send 0.1 BTC to
+Bob. If the transaction is still unconfirmed, you can create an RBF
+replacement that sends 0.1 BTC to Bob instead. The original
+transaction to Alice will never confirm.
+
+Important caveat: This only works while the original transaction is
+unconfirmed. Once a transaction has been mined into a block, it is
+final and irreversible - there is no RBF for confirmed transactions.
+
+RBF and Zero-Confirmation Security
+----------------------------------
+
+The most contentious aspect of RBF has always been its implications
+for zero-confirmation transactions - transactions that are broadcast
+to the network but not yet included in a block.
+
+## The Merchant's Dilemma
+
+Some businesses, particularly brick-and-mortar stores and
+point-of-sale merchants, relied on zero-conf transactions for speed. A
+customer broadcasts a transaction, the merchant sees it in their
+mempool, and immediately provides the goods or services - without
+waiting for a block confirmation (which averages 10 minutes but can
+take over an hour).
+
+The argument against RBF was that it made double-spending against
+merchants trivially easy: a customer could broadcast a transaction to
+the merchant, receive their goods, then immediately broadcast an RBF
+replacement that redirects the funds back to their own wallet.
+
+## Why Zero-Conf Was Never Truly Safe
+
+The reality is that zero-conf was never a strong security guarantee,
+even before RBF:
+
+* Any miner could accept a conflicting transaction, regardless of
+relay policy.
+* Race attacks (broadcasting conflicting transactions to different
+parts of the network simultaneously) were always possible.
+* Finney attacks (a miner pre-mining a block with a conflicting
+transaction) were theoretically feasible.
+
+The honest assessment: for transactions above trivial amounts, waiting
+for at least one confirmation (approximately 10 minutes on average)
+has always been the recommended practice. For high-value transactions,
+3-6 confirmations provide strong probabilistic finality.
+
+For businesses that need instant payment confirmation, the Lightning
+Network provides genuine instant finality with cryptographic security
+guarantees - making it a fundamentally better solution than zero-conf
+on-chain transactions.
+
+Mempool Dynamics and RBF
+------------------------
+
+Understanding RBF requires understanding the mempool - the queue of
+unconfirmed transactions that each Bitcoin node maintains
+independently.
+
+## How Miners Select Transactions
+
+Miners construct blocks by selecting transactions from their mempool
+to maximize fee revenue within the block size limit (approximately 4
+million weight units, or ~1.5-2.5 MB of actual data). They use an
+algorithm that considers:
+
+* Fee rate (satoshis per virtual byte): Higher fee rate = higher
+priority.
+* Ancestor fee rate: If a transaction depends on unconfirmed parents,
+the miner evaluates the combined fee rate of the entire ancestor
+package.
+* Transaction size: Larger transactions consume more block space per
+unit of fee.
+
+RBF directly interacts with this selection process. When you bump a
+fee, you are moving your transaction higher in this priority queue.
+
+## The Mempool as a Fee Market
+
+The mempool functions as a real-time auction for block space. At any
+moment, you can observe the current "going rate" for block inclusion
+by examining the fee rates of transactions at the top of the mempool
+(those likely to be included in the next block).
+
+Tools like mempool.space provide real-time visualizations of the
+mempool, showing:
+
+* Current fee rates for different confirmation time targets
+* The total size of the mempool in virtual bytes
+* A histogram of fee rate distribution
+* Historical fee rate trends
+
+RBF allows you to participate rationally in this auction. If you
+initially bid too low, you can raise your bid. This is analogous to
+how any auction works - and from an Austrian Economics perspective, it
+is a beautifully pure free-market mechanism. Block space is a scarce
+resource, and the fee market is the price discovery mechanism that
+allocates it efficiently without any central authority dictating
+prices.
+
+## Fee Rate Calculation
+
+When bumping a fee with RBF, you need to understand the units:
+
+    Fee Rate = Total Fee (satoshis) / Transaction Size (virtual bytes)
+
+A typical single-input, two-output SegWit transaction is approximately
+141 vBytes. If you want a fee rate of 20 sat/vB:
+
+    Total Fee = 20 × 141 = 2,820 satoshis ≈ 0.00002820 BTC
+
+At a Bitcoin price of $95,000 (approximate as of early 2026), this is
+roughly $2.68. For the same transaction at 100 sat/vB during high
+congestion: $13.40.
+
+## RBF Rule #3: The Incremental Relay Fee
+
+An important technical detail: each replacement must pay not just a
+higher absolute fee, but must also cover the incremental relay fee -
+an additional fee that compensates nodes for the bandwidth consumed by
+relaying the replacement transaction. The default incremental relay
+fee in Bitcoin Core is 1 sat/vB of the replacement transaction's size.
+
+This means you cannot simply bump from 5 sat/vB to 5.1 sat/vB. The
+minimum bump must cover the incremental relay fee. In practice, most
+wallets handle this automatically and bump to a meaningfully higher
+fee rate.
+
+CPFP: The Alternative to RBF
+----------------------------
+
+RBF is not the only way to accelerate a stuck transaction.
+Child-Pays-for-Parent (CPFP) is an alternative mechanism that works
+differently:
+
+Instead of replacing the original transaction, CPFP creates a new
+transaction (the "child") that spends an output of the stuck
+transaction (the "parent"). The child pays a sufficiently high fee to
+make the combined fee rate of the parent-child package attractive to
+miners. Because miners must include the parent to include the child,
+both get confirmed together.
+
+## When to Use CPFP vs. RBF
+
+| Scenario | Use RBF | Use CPFP |
+|----------|---------|----------|
+| You are the sender | Preferred | Possible (via change output) |
+| You are the recipient | Not possible | Preferred |
+| Transaction has many outputs | Works | Works (via any output) |
+| Transaction is not signaling RBF (older wallets) | May not relay on
+some nodes | Always works |
+
+The key difference: RBF is used by the sender, while CPFP can be used
+by either the sender (via the change output) or the recipient. This
+makes CPFP particularly valuable when you are waiting to receive a
+payment that is stuck - you can spend the incoming (unconfirmed)
+output with a high fee to accelerate the parent transaction.
+
+## Package Relay and Cluster Mempool
+
+Bitcoin Core development is actively improving how ancestor/descendant
+transaction packages are handled in the mempool. Package relay (being
+implemented in stages across Bitcoin Core versions) allows the mempool
+to evaluate groups of related transactions as a unit rather than
+individually. Cluster mempool (implemented in Bitcoin Core 28.0+)
+fundamentally restructures the mempool to use "clusters" of related
+transactions, improving eviction and selection decisions.
+
+These improvements make both RBF and CPFP more reliable and
+predictable.
+
+Security Implications
+---------------------
+
+## For Merchants
+
+With full RBF as the default, the practical security implications for
+merchants are clear:
+
+* Never accept zero-conf for amounts you cannot afford to lose. This
+was always true, but full RBF makes it impossible to ignore.
+* For in-person retail: Accept Lightning for instant settlement. For
+on-chain payments, wait for 1 confirmation for moderate amounts, 3+
+for large amounts.
+* For online commerce: Most online purchases have a fulfillment delay
+(shipping, digital delivery) that exceeds the average confirmation
+time. Wait for confirmation before fulfilling.
+
+## For Users
+
+RBF is purely beneficial for users:
+
+* It provides a safety net for fee estimation errors.
+* It enables rational participation in the fee market.
+* It allows transaction cancellation (by replacing with a transaction
+that sends funds back to yourself).
+* It reduces the cost of overpaying for fees, since you can start low
+and bump only if needed.
+
+## Transaction Pinning
+
+One sophisticated attack related to RBF is transaction pinning - an
+adversary creates a large, low-fee-rate descendant of a shared
+transaction (like a Lightning channel closing transaction), making it
+expensive to replace via RBF because the replacement must pay a higher
+absolute fee than the entire pinned package. Anti-pinning mechanisms
+including ephemeral anchors (introduced conceptually in v3 transaction
+relay policy) are being developed to mitigate this.
+
+Practical Tips
+--------------
+
+* Always enable RBF in your wallet settings. There is no downside. In
+modern Bitcoin Core (28.0+), all transactions are effectively
+replaceable via full RBF regardless.
+
+* Start with conservative fees during non-urgent transactions. Use
+mempool.space or similar tools to check current conditions. Set a fee
+rate at the low end of the current range, and bump with RBF if it does
+not confirm within your timeframe.
+
+* Understand fee rate vs. absolute fee. A common mistake is focusing
+on the total fee in BTC rather than the fee rate in sat/vB. A
+1,000-satoshi fee might be generous for a simple transaction but
+insufficient for a complex one with many inputs.
+
+* Batch transactions when possible. Sending to multiple recipients in
+a single transaction is more fee-efficient than individual
+transactions. If a batched transaction needs fee bumping, one RBF
+replacement covers all outputs.
+
+* Use RBF for "cancel" too. If you sent Bitcoin to the wrong address
+and the transaction is unconfirmed, immediately create an RBF
+replacement sending the full amount back to your own wallet (minus the
+fee).
+
+Related Resources
+-----------------
+
+* Bitcoin Fee Guide [/en/articles/bitcoin-fee-guide/] - understanding
+and optimizing Bitcoin transaction fees
+* What Is the Mempool? [/en/ideas/mempool/] - how the transaction
+waiting room works
+* Lightning Network [/en/ideas/lightning-network/] - instant, low-fee
+Bitcoin payments
+
+Tags: Bitcoin, Cryptography, Mining
+
+Read on full site: https://learn.txid.uk/en/ideas/replace-by-fee-rbf/

@@ -1,0 +1,178 @@
+CFTC Wants Perpetual Futures Back Onshore — and It Might Actually Happen
+======================================================================
+
+2026-03-28 | politics | by txid | en
+
+CFTC Chairman Selig moves to bring crypto perpetual futures — a $100B daily market that exists almost entirely offshore — back to regulated US exchanges.
+
+Perpetual futures are the most traded instrument in crypto. They are
+also, in the United States, essentially illegal.
+
+That contradiction has defined the American derivatives market for
+years. Perps — leveraged contracts that let traders hold positions
+indefinitely without expiration — generate over $100 billion in daily
+volume globally. Binance, Bybit, OKX, and a constellation of offshore
+platforms facilitate the vast majority of it. American traders
+participate anyway, routing through VPNs and non-KYC platforms. The
+CFTC knows this. Everyone knows this.
+
+Now, Chairman Michael Selig wants to end the charade.
+
+The Announcement
+----------------
+
+Speaking at the Milken Institute's Future of Finance conference in
+early March, Selig said the CFTC would create a regulatory framework
+for perpetual futures contracts "within weeks." The agency will
+establish rules covering leverage limits, margin requirements,
+liquidation procedures, and clearing mechanisms for contracts that, by
+design, never expire.
+
+This is not the first time a regulator has discussed bringing perps
+onshore. It is the first time one has attached a timeline.
+
+The move follows Selig's broader "Project Crypto" initiative,
+announced in January, which declared that "regulation by enforcement
+is dead" and positioned the CFTC as the primary regulator for digital
+commodity derivatives. The perpetual futures framework is the most
+concrete policy action to emerge from that initiative so far.
+
+Why Perps Matter
+----------------
+
+For anyone unfamiliar: a perpetual futures contract is a derivative
+that tracks the price of an underlying asset — Bitcoin, Ethereum,
+whatever — and allows traders to take leveraged long or short
+positions without an expiry date. Unlike traditional futures that
+settle monthly or quarterly, perps use a funding rate mechanism to
+keep the contract price tethered to the spot price.
+
+They dominate crypto trading for a reason. Perps offer leverage that
+spot markets cannot. They allow short selling without borrowing the
+underlying asset. They provide price discovery in a market that trades
+24/7. On most days, perpetual futures volume exceeds spot volume by a
+factor of three to five.
+
+The problem: this entire market has developed outside the United
+States. After the CFTC sued BitMEX in 2020 and Binance in 2023, the
+message to offshore platforms was clear — serve American customers at
+your own risk. The platforms responded by implementing IP blocks and
+KYC checks that were trivially easy to circumvent. American traders
+migrated to VPNs. The volume went offshore. The CFTC's enforcement
+actions didn't reduce American participation in perps markets — they
+just pushed it beyond the reach of American regulation.
+
+The Offshore Problem
+--------------------
+
+The scale of the offshore migration is staggering. By current
+estimates, more than 85% of global crypto derivatives volume occurs on
+platforms with no US regulatory oversight. These platforms set their
+own leverage limits — 100x or higher on some venues — their own
+liquidation rules, and their own standards for market manipulation
+prevention.
+
+When a whale manipulates the price on a thin offshore order book and
+triggers a cascade of liquidations, there is no regulator to
+investigate. When a platform goes down during a volatility spike and
+users cannot close positions, there is no recourse. When customer
+funds are commingled with exchange operating capital — the exact
+structure that destroyed FTX — there is no audit requirement that
+would catch it.
+
+The CFTC's current approach has produced the worst possible outcome:
+American traders are participating in a massive leveraged market with
+zero consumer protection.
+
+What Onshore Perps Would Look Like
+----------------------------------
+
+The emerging framework, based on Selig's public statements and CFTC
+staff discussions, is expected to address several key areas.
+
+Leverage limits. The CFTC is unlikely to permit the 50x–100x leverage
+available on offshore platforms. Expect initial limits in the range of
+5x–20x, consistent with existing futures margin requirements and
+recent proposals for retail crypto leverage.
+
+Clearing and settlement. Traditional futures clear through central
+counterparties like CME Clearing. Perpetual futures will need an
+equivalent mechanism — a clearing structure that can handle 24/7
+trading, continuous funding rate settlements, and the absence of a
+fixed expiry date.
+
+Liquidation procedures. Offshore platforms use auto-deleveraging
+systems that can liquidate positions instantly during volatility
+spikes, often at prices far worse than the bankruptcy price. A
+regulated framework would likely require more orderly liquidation
+mechanisms and insurance fund minimums.
+
+Market surveillance. Regulated exchanges would be subject to the same
+market manipulation and wash trading rules that apply to traditional
+commodity futures. This alone would represent a fundamental change
+from the offshore status quo.
+
+Who Benefits
+------------
+
+The obvious winners are CME Group and Coinbase Derivatives — the two
+US-regulated platforms best positioned to list perpetual contracts.
+CME already dominates regulated Bitcoin and Ethereum futures. Adding
+perps to its product suite would capture a segment of the market it
+has never been able to access. Coinbase has been building its
+derivatives infrastructure for over a year, and CEO Brian Armstrong
+has publicly lobbied for onshore perps regulation.
+
+The less obvious winner is the American trader who currently uses
+offshore platforms. Moving to a regulated venue means lower leverage —
+but it also means segregated customer funds, transparent pricing, and
+the knowledge that the platform won't vanish overnight with your
+deposits.
+
+Who Loses
+---------
+
+Offshore platforms lose their monopoly on American perp traders.
+Binance, Bybit, and OKX have built multi-billion dollar businesses
+partly on the back of American demand that technically shouldn't be on
+their platforms. A credible onshore alternative with reasonable
+leverage and institutional-grade infrastructure would siphon volume
+from these venues.
+
+DeFi perpetual protocols — dYdX, Hyperliquid, GMX — face a more
+ambiguous future. Selig's January speech included references to
+enabling derivatives "across both centralized and decentralized
+markets," but the practical mechanics of regulating a permissionless
+smart contract remain unresolved. The CFTC has indicated it will
+provide safe harbors for software developers and non-custodial
+wallets, but the line between a decentralized protocol and a regulated
+exchange is one that no jurisdiction has convincingly drawn.
+
+The Bigger Picture
+------------------
+
+The perps framework is part of a broader regulatory realignment. The
+SEC-CFTC joint guidance issued on March 17 classified Bitcoin and 15
+other crypto assets as digital commodities, giving the CFTC clear
+jurisdiction over their derivatives markets. The GENIUS Act has been
+signed into law. The enforcement-first era under previous CFTC and SEC
+leadership has formally ended.
+
+What's replacing it is still taking shape. But the direction is clear:
+the United States is moving from a posture of prohibition to one of
+regulated inclusion. Rather than banning instruments that traders will
+use regardless, the CFTC is building a framework to bring them under
+supervision.
+
+Whether that framework arrives in weeks, as Selig suggested, or
+months, as regulatory timelines typically demand, is an open question.
+What is no longer open is the policy direction. The world's largest
+derivatives market is coming to the world's most important financial
+jurisdiction.
+
+The only question left is how much volume the offshore platforms lose
+when it does.
+
+Tags: CFTC, perpetual futures, regulation, derivatives, Michael Selig, onshore, leverage
+
+Read on full site: https://news.txid.uk/post/cftc-perpetual-futures-onshore

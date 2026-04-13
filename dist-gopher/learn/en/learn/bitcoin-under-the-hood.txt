@@ -1,0 +1,13 @@
+Bitcoin Under the Hood
+======================
+
+en
+
+How Bitcoin actually works - from blockchain structure and proof of work to mining, halving, the UTXO model, and the mempool.
+
+Go deeper into Bitcoin's technical foundations. This course walks
+through the core components - blockchain structure, proof of work,
+mining economics, the halving cycle, UTXOs, and the mempool - giving
+you a solid understanding of how the system actually operates.
+
+Read on full site: https://learn.txid.uk/en/learn/bitcoin-under-the-hood/

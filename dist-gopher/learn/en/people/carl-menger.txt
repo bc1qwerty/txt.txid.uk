@@ -1,0 +1,183 @@
+Carl Menger
+===========
+
+2026-03-09 | en
+
+Founder of Austrian Economics. Revolutionized economics with subjective theory of value.
+
+Founder of the Austrian School
+------------------------------
+
+Carl Menger (1840-1921) is the founder of Austrian Economics. His 1871
+work Principles of Economics (Grundsätze der Volkswirtschaftslehre)
+changed the history of economics. Menger presented a revolutionary
+insight: value is not an objective property inherent in things, but
+arises from the subjective evaluation of human beings.
+
+From this single insight, everything in Austrian Economics begins.
+
+Life
+----
+
+Menger was born in Galicia (present-day southern Poland) in the
+Austro-Hungarian Empire to a family of lawyers. After studying law at
+the University of Prague and the University of Vienna, he began his
+career as a journalist.
+
+In 1871, at age 31, Menger published Principles of Economics. This
+book directly challenged the labor theory of value that dominated
+Classical economics at the time, laying the foundation for a new
+economics.
+
+Menger was subsequently appointed professor of economics at the
+University of Vienna and also served as a private tutor to Crown
+Prince Rudolf of the Habsburgs. After retiring from his professorship
+in 1903, he continued his research. He died in Vienna in 1921.
+
+Core Ideas: Subjective Theory of Value
+--------------------------------------
+
+## The Error of the Labor Theory of Value
+
+Before Menger, Classical economists - Adam Smith, David Ricardo, and
+Karl Marx - believed that the value of goods was determined by the
+amount of labor invested in producing them (the labor theory of
+value).
+
+The problem with this theory is obvious. A meaningless hole dug for 10
+hours and a beautiful piece of furniture made in 10 hours involve the
+same amount of labor but have completely different values. A cup of
+water in the desert has a completely different value than a cup of
+water beside a lake, even if both required the same labor to obtain.
+
+## Value is Subjective
+
+Menger's answer was simple yet revolutionary: value is the subjective
+importance that human beings assign to goods.
+
+Water is expensive not because it takes a lot of labor to produce.
+Water is precious to a thirsty person because that water satisfies
+their needs (desires). The same water has life-saving value to someone
+parched with thirst, but means little to someone who has already drunk
+their fill.
+
+This is the subjective theory of value [/ideas/subjective-value/].
+Value does not exist in things themselves, but arises in the
+relationship between things and human needs.
+
+## Marginal Utility Theory
+
+Menger solved the long-standing economic puzzle known as the
+"water-diamond paradox". Water is essential for survival, so why is it
+cheap? Diamonds are unnecessary for survival, so why are they
+expensive?
+
+Menger's answer: people do not evaluate the total quantity of goods,
+but rather the additional single unit (marginal unit). Water is
+abundant, so the value of an additional cup of water is low. Diamonds
+are scarce, so the value of an additional diamond is high.
+
+This is the concept of marginal utility [/ideas/marginal-utility/]. In
+the same year, England's William Stanley Jevons and France's Léon
+Walras independently reached similar concepts, which is why this shift
+is called the Marginal Revolution. However, Menger's approach, unlike
+the mathematical methodology of Jevons and Walras, was a qualitative
+analysis starting from the logic of human action. This methodological
+difference would later shape the Austrian School's distinct identity.
+
+The Origin of Money: An Institution Created by Markets
+------------------------------------------------------
+
+Another major contribution from Menger is his theory on the origin of
+money. This theory is crucial for understanding Bitcoin.
+
+The prevailing view of the time was that money was created by
+government decree (fiat). Menger directly refuted this.
+
+Menger's explanation: In a barter society, certain commodities were
+easier to exchange than others (high saleability, Absatzfähigkeit).
+Salt, livestock, metals, and other such commodities had this quality.
+People began accepting these commodities even without intending to
+consume them directly, so they could exchange them for other goods
+later.
+
+Over time, the most easily exchanged commodity became the universal
+medium of exchange, or money. This process required no government
+decree. Money was a spontaneous order [/ideas/spontaneous-order/] that
+emerged naturally from the market.
+
+This insight applies directly to Bitcoin. Bitcoin is also growing as
+money through voluntary market adoption, not government mandate.
+Menger's theory of money's origin is being replayed in real time in
+the digital world 150 years later.
+
+The Methodenstreit (Methodological Controversy)
+-----------------------------------------------
+
+In 1883, Menger published Research on the Method of Social Sciences,
+Particularly Political Economy, sparking an intense dispute with the
+German Historical School. This controversy became known as the
+Methodenstreit (Methodological Controversy).
+
+The German Historical School argued that economics should be
+inductively derived from the historical experiences of each nation.
+Menger countered that economics has universal theoretical laws that
+can be derived through logical deduction.
+
+Menger's methodological position in this controversy later developed
+into Mises' praxeology [/ideas/praxeology/] - the view that economics
+is a science deductively derived from the logical structure of human
+action.
+
+Major Works
+-----------
+
+* Principles of Economics (Grundsätze der Volkswirtschaftslehre, 1871)
+- The founding document of the Austrian School, presenting subjective
+theory of value and marginal utility theory
+* Research on the Method of Social Sciences (Untersuchungen über die
+Methode der Socialwissenschaften, 1883) - The starting point of the
+methodological controversy
+* On the Origins of Money (1892) - Explaining how money emerged
+spontaneously from the market
+
+Famous Quotes
+-------------
+
+| "Value is not an inherent property of goods. [...] Value is a
+judgment that the economic subject makes in regard to the importance
+of the goods at his disposal for the satisfaction of his wants."
+
+| "Money is not an invention of the state. [...] It is a social
+phenomenon, a natural product."
+
+Legacy
+------
+
+Menger is the "seed" of the Austrian School. Through his students
+Eugen von Böhm-Bawerk [/people/eugen-bohm-bawerk/] and Friedrich von
+Wieser, his ideas passed to the next generation, creating an
+intellectual tradition that continues through Mises and Hayek to the
+present day.
+
+Subjective value, marginal utility, money emerging spontaneously from
+the market - these concepts provide the deepest level of explanation
+for why Bitcoin works.
+
+Connected Concepts
+------------------
+
+* What is Austrian Economics? [/ideas/austrian-economics/] - An
+overview of the school founded by Menger
+* Sound Money [/ideas/sound-money/] - How Menger's theory of money's
+origin applies to Bitcoin
+* Spontaneous Order [/ideas/spontaneous-order/] - The voluntary
+emergence of money demonstrated by Menger
+* Subjective Theory of Value [/ideas/subjective-value/] - The
+revolutionary theory of value Menger created
+* Marginal Utility [/ideas/marginal-utility/] - The water-diamond
+paradox that Menger solved
+
+Tags: Austrian Economics
+
+Read on full site: https://learn.txid.uk/en/people/carl-menger/

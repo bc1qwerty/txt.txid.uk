@@ -1,0 +1,272 @@
+Cryptocurrency Regulation Worldwide: A Landscape of Contradictions
+==================================================================
+
+2026-03-17 | en
+
+From El Salvador's legal tender law to China's outright ban - how governments around the world are regulating Bitcoin and why understanding the regulatory landscape matters even for those who value permissionless money.
+
+On September 7, 2021, El Salvador made Bitcoin legal tender alongside
+the US dollar. On the very same day, China was in the final stages of
+implementing the most comprehensive cryptocurrency ban in history,
+declaring all crypto transactions illegal. Two governments, two
+diametrically opposite conclusions about the same technology. This
+contrast captures the essential reality of cryptocurrency regulation
+in the 2020s: there is no global consensus, no unified framework, and
+no clear direction. The regulatory landscape is a patchwork of
+contradictions, shaped by each nation's unique political economy,
+monetary sovereignty concerns, and relationship with financial
+innovation.
+
+For Bitcoiners - especially those who value Bitcoin precisely because
+it is permissionless and beyond government control - engaging with
+regulatory questions might feel unnecessary or even contradictory. But
+understanding regulation is not the same as endorsing it. The
+regulatory environment affects how you buy, sell, hold, and use
+Bitcoin. It determines your tax obligations, your access to on-ramps
+and off-ramps, and in some jurisdictions, your legal risk. Ignoring
+regulation does not make you free from it; it makes you unprepared.
+
+The Regulatory Spectrum
+-----------------------
+
+Cryptocurrency regulation exists on a broad spectrum. At one extreme,
+a handful of countries have embraced Bitcoin to varying degrees. At
+the other, some have banned it outright. The vast majority fall
+somewhere in the middle, attempting to regulate without fully
+understanding what they are regulating.
+
+El Salvador made history as the first country to adopt Bitcoin as
+legal tender under President Nayib Bukele. The government launched the
+Chivo wallet, bought Bitcoin for the national treasury, and required
+all businesses to accept it (though this requirement was later relaxed
+under pressure from the IMF). The results have been mixed - adoption
+among citizens has been slower than hoped, but the country has
+attracted Bitcoin-focused businesses and tourists, and its treasury
+holdings appreciated significantly during the 2023-2024 bull market.
+
+China sits at the opposite end. Beginning with a ban on financial
+institutions handling crypto in 2013, China progressively tightened
+restrictions, banning ICOs in 2017, cryptocurrency exchanges in
+2017-2018, and finally declaring all cryptocurrency transactions
+illegal in September 2021. The mining ban of mid-2021 forced a massive
+migration of Bitcoin mining operations to the United States,
+Kazakhstan, and other countries. Despite the ban, peer-to-peer Bitcoin
+trading continues in China, demonstrating the difficulty of
+prohibiting a protocol that operates on the internet.
+
+Between these extremes lie the approaches of major economies, each
+reflecting different priorities and institutional frameworks.
+
+The United States: Regulation by Enforcement
+--------------------------------------------
+
+The US approach to cryptocurrency regulation has been characterized by
+fragmentation and ambiguity. Multiple agencies claim jurisdiction, and
+the lack of comprehensive legislation has led to what critics call
+"regulation by enforcement" - agencies defining the rules through
+lawsuits rather than clear rulemaking.
+
+The SEC (Securities and Exchange Commission) has taken the position
+that many cryptocurrencies are securities under the Howey Test, a
+legal standard from a 1946 Supreme Court case. The SEC brought
+high-profile enforcement actions against Ripple (XRP), various DeFi
+projects, and crypto lending platforms. However, the SEC has generally
+treated Bitcoin itself as a commodity rather than a security, a
+position reinforced by the approval of spot Bitcoin ETFs in January
+2024.
+
+The CFTC (Commodity Futures Trading Commission) considers Bitcoin a
+commodity and regulates Bitcoin futures and derivatives markets. This
+classification means Bitcoin spot markets have less federal regulatory
+oversight than securities markets, creating what some see as a
+regulatory gap.
+
+The IRS treats cryptocurrency as property for tax purposes. Every
+sale, exchange, or use of Bitcoin to purchase goods or services is a
+taxable event. Capital gains tax applies, with the rate depending on
+how long you held the asset (short-term vs. long-term). Since 2020,
+the IRS has included a question about cryptocurrency transactions on
+the front page of Form 1040. The enforcement infrastructure has grown
+significantly - the IRS has obtained customer records from major
+exchanges through "John Doe" summonses and invested in blockchain
+analytics tools.
+
+Congressional efforts to create comprehensive cryptocurrency
+legislation have advanced slowly. The Financial Innovation and
+Technology for the 21st Century Act (FIT21) and similar bills have
+attempted to clarify which agency regulates which assets, but the
+legislative process remains ongoing.
+
+The European Union: MiCA and Regulatory Clarity
+-----------------------------------------------
+
+The EU's Markets in Crypto-Assets (MiCA) regulation, which came into
+full effect in December 2024, represents the most comprehensive
+cryptocurrency regulatory framework adopted by any major jurisdiction.
+MiCA provides a single licensing regime across all 27 EU member
+states, replacing the patchwork of national regulations.
+
+Key provisions include licensing requirements for crypto-asset service
+providers (CASPs), reserve requirements for stablecoin issuers, market
+abuse and insider trading prohibitions applied to crypto markets, and
+consumer protection rules including mandatory disclosures. MiCA
+notably exempts fully decentralized protocols and NFTs (with some
+exceptions) from its scope, acknowledging the difficulty of regulating
+code that runs autonomously.
+
+The regulation has been praised for providing legal clarity -
+companies now know the rules and can plan accordingly - but criticized
+for potentially stifling innovation through compliance costs that
+favor large, established players over startups.
+
+Japan: The Progressive Model
+----------------------------
+
+Japan has been a pioneer in cryptocurrency regulation, driven partly
+by necessity after the Mt. Gox collapse in 2014 exposed the need for
+exchange oversight. Japan recognized Bitcoin as legal property in 2016
+under the Payment Services Act and established a licensing regime for
+exchanges overseen by the Financial Services Agency (FSA).
+
+Japanese regulation requires exchanges to maintain segregated customer
+accounts (funds cannot be commingled with company assets), undergo
+regular audits, implement robust cybersecurity measures, and maintain
+cold storage for the majority of customer funds. These requirements
+might have prevented disasters like FTX had they been in place
+globally.
+
+Japan's approach demonstrates that regulation can coexist with a
+relatively vibrant crypto ecosystem. However, strict rules have also
+driven some activity to less regulated jurisdictions, illustrating the
+constant tension in crypto regulation.
+
+South Korea: Strict Controls, Active Market
+-------------------------------------------
+
+South Korea has one of the world's most active cryptocurrency markets
+relative to its population. The "kimchi premium" - where Bitcoin
+trades at prices 5-20% higher on Korean exchanges than global markets
+- became a well-known phenomenon during bull markets, reflecting
+intense domestic demand.
+
+The Virtual Asset User Protection Act, fully enforced from mid-2024,
+imposed significant requirements. All exchanges must register with the
+Korea Financial Intelligence Unit (KoFIU). Only exchanges partnered
+with real-name verified bank accounts can operate won-denominated
+trading pairs. Travel Rule compliance requires sharing sender and
+recipient information for transactions above a threshold. Token
+listing standards require exchanges to evaluate the legitimacy of
+assets before offering trading.
+
+South Korea also enforces strict taxation on cryptocurrency gains. The
+implementation was repeatedly delayed due to political pressure,
+reflecting the tension between a government wanting tax revenue and a
+population heavily invested in crypto assets. Tax on crypto gains
+exceeding 2.5 million won annually was set at 22% (including local
+tax), though enforcement and compliance remain works in progress.
+
+Tax Obligations: The Unavoidable Reality
+----------------------------------------
+
+Regardless of one's philosophical position on taxation, the practical
+reality is that most jurisdictions tax cryptocurrency gains, and the
+enforcement infrastructure is increasingly sophisticated.
+
+Common taxable events include selling Bitcoin for fiat currency,
+exchanging Bitcoin for other cryptocurrencies, using Bitcoin to
+purchase goods or services, receiving Bitcoin as payment for work, and
+earning Bitcoin through mining or staking. In most jurisdictions,
+simply buying and holding Bitcoin is not a taxable event. Moving
+Bitcoin between your own wallets is also generally not taxable.
+
+Record-keeping is essential. Every purchase should be logged with
+date, amount, price, and the exchange or platform used. This data
+determines your cost basis and, ultimately, your tax liability. Tools
+like Koinly, CoinTracker, and Bitcoin.tax can automate this process by
+importing transaction history from exchanges and wallets.
+
+Some jurisdictions offer favorable treatment. Germany exempts crypto
+gains from tax if the asset was held for more than one year. Portugal
+had a zero-tax policy on crypto until 2023. Singapore does not tax
+capital gains on cryptocurrency. These differences create incentives
+for jurisdictional arbitrage - moving to countries with more favorable
+tax treatment - though this strategy carries its own complexities and
+costs.
+
+KYC/AML and the Privacy Trade-Off
+---------------------------------
+
+Know Your Customer (KYC) and Anti-Money Laundering (AML) regulations
+represent perhaps the sharpest tension between Bitcoin's design
+philosophy and the regulatory state.
+
+Bitcoin was designed to enable peer-to-peer transactions without
+intermediaries. KYC requirements, which mandate that exchanges verify
+the identity of their customers through government-issued
+identification, effectively create a surveillance layer at the
+on-ramps and off-ramps between fiat currency and Bitcoin. Once your
+identity is linked to a Bitcoin address through a KYC exchange,
+blockchain analytics firms can potentially trace your subsequent
+transactions.
+
+The Financial Action Task Force (FATF) Travel Rule, adopted by most
+major jurisdictions, extends identity requirements further by
+mandating that exchanges share sender and recipient information for
+transfers above certain thresholds. This effectively recreates the
+surveillance infrastructure of the traditional banking system within
+the cryptocurrency ecosystem.
+
+Proponents argue that KYC/AML requirements are necessary to prevent
+money laundering, terrorism financing, and sanctions evasion. Critics
+counter that these rules disproportionately affect ordinary users -
+the vast majority of whom are not criminals - while sophisticated bad
+actors use methods that bypass regulated exchanges entirely. A 2024
+Chainalysis report found that illicit activity accounted for
+approximately 0.34% of total cryptocurrency transaction volume, a
+lower rate than estimated for the traditional financial system.
+
+The practical implications for Bitcoin holders: purchasing Bitcoin
+through KYC exchanges means your identity is linked to your holdings.
+This data can be (and has been) leaked through exchange data breaches,
+shared with tax authorities, and potentially used by future
+governments in ways that cannot be predicted today. Non-KYC
+acquisition methods exist - peer-to-peer platforms, Bitcoin ATMs with
+lower limits, earning Bitcoin for goods and services, mining - but
+they typically come with higher fees, less convenience, or both.
+
+The Fundamental Tension
+-----------------------
+
+At its core, the regulatory challenge of Bitcoin is that it is a
+protocol, not a company. You can regulate Coinbase. You can regulate
+banks. You can even regulate individual users. But you cannot regulate
+the Bitcoin protocol itself any more than you can regulate mathematics
+or the TCP/IP protocol that underlies the internet.
+
+This does not mean regulation has no effect. Regulations shape the
+ecosystem around Bitcoin - the exchanges, the wallets, the businesses
+that accept it, the banks that interact with it. They can make Bitcoin
+harder or easier to use in practice, even if they cannot prevent its
+use entirely. China's ban did not eliminate Bitcoin activity in China,
+but it certainly reduced its visibility and pushed it underground.
+
+The most thoughtful Bitcoiners recognize that engaging with regulatory
+discussions is not a betrayal of Bitcoin's principles. It is a
+pragmatic acknowledgment that Bitcoin exists in the real world, where
+laws affect real people. Understanding regulation allows you to
+navigate it intelligently - to comply where necessary, to advocate for
+change where possible, and to structure your holdings and activities
+in ways that protect both your legal standing and your financial
+sovereignty.
+
+Bitcoin's permissionless nature is its ultimate defense. No law can
+change the fact that anyone with an internet connection can run a
+node, generate a key pair, and participate in the network. Regulation
+can create friction, but it cannot create prohibition - not truly, not
+for a protocol that is global, decentralized, and secured by
+mathematics. That distinction - between friction and prohibition - is
+the key to understanding Bitcoin's regulatory future.
+
+Tags: Bitcoin, Liberty
+
+Read on full site: https://learn.txid.uk/en/articles/crypto-regulation/

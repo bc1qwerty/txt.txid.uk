@@ -1,0 +1,258 @@
+Q1 2026 Macro Scorecard: The Liquidity Pivot Nobody Expected
+============================================================
+
+2026-03-31 | macro | by txid | en
+
+Q1 2026: a Fed that refused to cut, a dollar that refused to weaken, and a global liquidity expansion that refused to wait for either. The quarter in full.
+
+Every quarter has a narrative. Q1 2026's narrative was supposed to be
+rate cuts. The Fed's December 2025 dot plot projected two cuts in the
+first half of 2026. Bond markets priced in March as the most likely
+start date. Risk assets rallied into year-end on that expectation.
+
+None of it happened.
+
+The Fed held rates at every meeting. The dot plot was revised
+hawkishly. The market repriced from two cuts to zero. And yet —
+paradoxically — global liquidity expanded anyway, driven not by
+central bank rate policy but by fiscal spending, Chinese credit
+easing, and the sheer momentum of a global financial system that
+generates liquidity whether the Fed cooperates or not.
+
+This is the story of Q1 2026: the quarter where the macro consensus
+was wrong about almost everything, and the things that mattered most
+were the ones nobody was watching.
+
+The Quarter in One Sentence
+---------------------------
+
+The Fed refused to cut, oil doubled the inflation problem, and every
+risk asset bled — except that, underneath it all, global liquidity
+quietly expanded by $2.6 trillion.
+
+That contradiction is Q1's entire story. The surface looked like
+tightening: rates held at 4.50%, the dollar climbed to 108, equities
+lost double digits, and Bitcoin gave back 27% of its value. But the
+plumbing told the opposite story. Global M2 grew 2.5% to $106.8
+trillion, driven by forces the Fed doesn't control — Chinese credit,
+European easing, and U.S. fiscal deficits that create deposits whether
+the central bank cooperates or not.
+
+Gold understood this first, rallying 17% to $3,080. Bitcoin, trapped
+in its risk-asset correlation, didn't. That gap — gold pricing the
+liquidity expansion while Bitcoin priced the tightening — is the
+single most important signal heading into Q2.
+
+Act I: The Fed's Hawkish Surprise
+---------------------------------
+
+The quarter began with markets pricing a 72% probability of a March
+rate cut. By the January meeting, that probability had dropped to 40%.
+By the March meeting, it was 8%.
+
+What changed was inflation. The December CPI report, released in
+mid-January, showed core inflation reaccelerating to 3.4%
+year-over-year. Services inflation — the component the Fed watches
+most closely — remained stubbornly above 4%. Shelter costs, which had
+been expected to normalize as new apartment supply hit the market,
+instead plateaued as insurance costs, property taxes, and maintenance
+expenses offset the rental decline.
+
+The January PPI report added fuel: producer prices rose 0.4%
+month-over-month, driven by energy and food costs that the Fed cannot
+directly influence. The "last mile" of disinflation — the journey from
+3% to 2% — proved to be exactly as difficult as the hawks had warned.
+
+Chair Powell's language shifted noticeably across the quarter. In
+January, the statement noted that inflation was "moving sustainably
+toward 2 percent." By March, that phrase was replaced with "progress
+toward 2 percent has slowed." The word "patient" appeared in every
+press conference. The market heard what it needed to hear: no cuts in
+Q1, likely no cuts in Q2, possibly no cuts at all in 2026.
+
+The bond market repriced accordingly. The 2-year yield rose from 4.10%
+to 4.45%, and the 10-year climbed to 4.58%. The yield curve remained
+inverted for the 45th consecutive month — the longest inversion in
+modern history — but began flattening as long-end rates rose to meet
+short-end expectations of higher-for-longer.
+
+Act II: Oil, Iran, and the Supply Shock Nobody Predicted
+--------------------------------------------------------
+
+If the Fed was Q1's expected antagonist, oil was the unexpected one.
+
+Brent crude entered January at $74 per barrel — a level consistent
+with adequate global supply and moderate demand. By the second week of
+March, it was above $112. The catalyst was the U.S.–Iran military
+conflict that began in late February, which brought the Strait of
+Hormuz — the chokepoint for roughly 20% of global daily oil supply —
+into the threat matrix for the first time since 2019.
+
+The oil spike transmitted through the economy with textbook
+efficiency. Gasoline prices rose. Airline stocks fell. Transportation
+costs climbed. And crucially for the Fed, energy-driven inflation
+pushed headline CPI higher just as the core reading was already
+running hot. The oil shock gave the Fed a second reason not to cut —
+not just sticky services inflation, but a new supply-side impulse that
+monetary policy cannot address.
+
+Ceasefire signals in late March brought Brent back below $100, but the
+damage was done. The quarter's average oil price was roughly 35% above
+Q4 2025 levels, and the pass-through into consumer prices will
+continue into Q2 regardless of what happens with Iran.
+
+For risk assets, the oil shock was a double negative. It tightened
+financial conditions (through higher input costs and inflation
+expectations) while simultaneously triggering a risk-off rotation
+(through geopolitical uncertainty). Bitcoin, equities, and credit all
+sold off together in the classic correlation-goes-to-one pattern that
+emerges during supply-driven shocks.
+
+Act III: The Dollar's Quiet Dominance
+-------------------------------------
+
+The DXY index climbed from 104.2 to 108.1 in Q1 — a move that didn't
+generate many headlines but shaped everything underneath.
+
+The dollar's strength was driven by rate differentials. While the Fed
+held firm, other major central banks eased. The ECB cut rates twice.
+The BOJ, despite exiting yield curve control, maintained an
+accommodative real rate. The PBOC cut reserve requirements and guided
+rates lower. The result was a widening gap between U.S. yields and the
+rest of the world, making dollar-denominated assets more attractive to
+global capital and pulling the dollar higher.
+
+A strong dollar is, mechanically, a tightening force for the global
+economy. Emerging markets with dollar-denominated debt face higher
+servicing costs. Commodity exporters receive fewer local-currency
+units per dollar of exports. And Bitcoin, which is priced in dollars
+and used most heavily in dollar-adjacent economies, faces a headwind
+as the unit of account it's measured against appreciates.
+
+The DXY-Bitcoin inverse correlation held throughout Q1 with a
+coefficient of roughly −0.72 on weekly data. Dollar up, Bitcoin down —
+the pattern that has defined every tightening period since 2022.
+
+Act IV: The Liquidity Pivot
+---------------------------
+
+Here is where the consensus narrative breaks down.
+
+If you only looked at the Fed, the dollar, and oil prices, Q1 was an
+unambiguous tightening quarter. But the global financial system is
+larger than any single central bank, and in Q1, the rest of the
+world's plumbing told a different story.
+
+Global M2 money supply — the broadest measure of liquidity across the
+Fed, ECB, BOJ, PBOC, and BOE — grew an estimated 2.5% during the
+quarter. The expansion was led by China (credit impulse accelerating
+to 8% YoY M2 growth), supported by European easing, and paradoxically
+boosted by U.S. fiscal deficits that create deposits regardless of the
+Fed's rate stance.
+
+This is the number that macro tourists miss. They see Fed funds rate
+unchanged and conclude that liquidity is flat. But the Fed is one
+input in a global system. Chinese bank lending creates M2. European
+rate cuts create M2. U.S. Treasury issuance, financed by money market
+funds and bank deposits, creates M2. The aggregate expanded in Q1 even
+as the Fed did nothing — and the aggregate is what Bitcoin's price
+history says matters.
+
+The M2-Bitcoin relationship has a historical lag of two to six months.
+If the Q1 liquidity expansion follows that pattern, its price effect
+should begin materializing between Q2 and Q3 2026. The market may
+already be discounting this through the whale accumulation and
+exchange outflow patterns visible in on-chain data — but it has not
+yet appeared in price.
+
+The Asset Map
+-------------
+
+Q1 split the world into two clean camps: things that benefit from
+chaos, and things that don't.
+
+Gold led everything, up 17%, because it sits at the intersection of
+every Q1 theme — geopolitical hedge, inflation store, and monetary
+debasement play. Oil's 32% surge was the shock that drove the macro
+story, but it was an input cost, not an investable signal. The dollar,
+rising 3.7%, was the mechanism through which tightening transmitted
+globally — and the reason emerging market equities fell harder than
+developed ones.
+
+On the losing side, the damage was proportional to risk exposure. The
+S&P 500 fell 11% as multiples compressed under higher discount rates.
+Bitcoin fell 27% — not because the thesis weakened, but because it
+remains correlated to equities during liquidity shocks. It sold with
+the Nasdaq, not with gold. That correlation is Bitcoin's short-term
+identity. Whether it persists into Q2 depends entirely on which story
+the market decides to price next.
+
+The divergence between gold and Bitcoin is the quarter's most telling
+data point. In previous cycles — 2020, 2023 — gold led the initial
+move by weeks or months, and Bitcoin followed with a larger magnitude
+once risk appetite returned. If the pattern holds, gold's Q1 rally is
+the preview, not the main event.
+
+What Q2 Inherits
+----------------
+
+Q2 begins with a macro environment that is simultaneously tighter and
+looser than it appears.
+
+Tighter: The Fed is on hold with no cut in sight. Oil remains
+elevated. The dollar is strong. Credit spreads have widened. Consumer
+sentiment has deteriorated.
+
+Looser: Global M2 is expanding. China is stimulating. Europe is
+easing. U.S. fiscal deficits are injecting liquidity directly into the
+deposit base. The plumbing is filling even as the faucet appears
+closed.
+
+This tension — visible tightening, invisible loosening — is what
+creates the setup for a repricing event. The market is positioned for
+the world it can see (the Fed, oil, the dollar). It has not yet
+positioned for the world being built underneath (M2, credit impulse,
+fiscal liquidity).
+
+Three catalysts could resolve the tension in Q2:
+
+Iran resolution. A ceasefire or de-escalation would take $15–25 off
+Brent, ease inflation pressures, and remove the geopolitical bid from
+the dollar. This alone could shift Fed rhetoric toward accommodation.
+
+Fed language shift. The Fed doesn't need to cut rates to move markets.
+A shift from "patient" to "prepared to act" — acknowledging that
+growth is slowing and the labor market is softening — would reprice
+the entire rate curve and weaken the dollar.
+
+M2 transmission. If the 80-day lag holds, global liquidity expansion
+should begin pulling risk assets higher by mid-to-late Q2. Bitcoin, as
+the highest-beta play on M2 growth, would be expected to lead the
+recovery in magnitude — just as it led the decline.
+
+The Verdict
+-----------
+
+Q1 2026 was a quarter where the obvious story — no rate cuts, strong
+dollar, falling stocks — obscured the important one. Global liquidity
+expanded while everyone watched the Fed. China eased while everyone
+watched oil. The monetary base grew while the price of money stayed
+the same.
+
+This is not a contradiction. It is how the modern financial system
+works. Central bank rate policy is one lever. Fiscal policy, credit
+creation, and global capital flows are others. In Q1, the non-rate
+levers pulled harder than the rate lever — and the result is an
+expansion in the denominator of every asset priced in fiat currency.
+
+Bitcoin fell 27% this quarter because it traded as a risk asset in a
+risk-off environment. That is a short-term identity. Its long-term
+identity — a fixed-supply asset in a world of expanding money supply —
+was reinforced, not undermined, by Q1's macro data.
+
+The scorecard says tightening. The liquidity data says otherwise. One
+of them is wrong. History says bet on the liquidity.
+
+Tags: Q1 2026, macro, Fed, interest rates, DXY, oil, M2, liquidity, quarterly review, bitcoin, geopolitics
+
+Read on full site: https://news.txid.uk/post/q1-macro-scorecard

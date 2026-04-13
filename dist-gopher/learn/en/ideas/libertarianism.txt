@@ -1,0 +1,77 @@
+What Is Libertarianism?
+=======================
+
+2026-03-05 | en
+
+Understanding libertarianism - the political philosophy centered on individual freedom and property rights.
+
+Libertarianism in One Sentence
+------------------------------
+
+Libertarianism is a political philosophy that regards individual
+freedom and property rights as the most fundamental values. All human
+relationships must be based on voluntary consent, and coercion cannot
+be justified.
+
+Core Principles
+---------------
+
+## Self-Ownership
+Every person is the owner of their own body and labor. This is the
+starting point of libertarianism.
+
+## Non-Aggression Principle
+The use of force against another person's body or property is
+illegitimate. This principle applies equally to relationships between
+individuals and to the relationship between the state and individuals.
+
+## Voluntary Exchange
+All transactions and relationships must be based on the voluntary
+consent of both parties. Coerced transactions (taxes, conscription,
+regulations) violate this principle.
+
+## Private Property Rights
+Property rights are the foundation of freedom. An individual's right
+to legitimately acquired property cannot be violated by any majority
+vote.
+
+Key Figures
+-----------
+
+* John Locke - The philosopher who laid the foundations of natural
+rights theory
+* Frédéric Bastiat [/people/frederic-bastiat/] - Author of The Law.
+Critic of government's legalized plunder
+* Murray Rothbard [/people/murray-rothbard/] - Integration of
+libertarian ethics and economics
+* Hans-Hermann Hoppe [/people/hans-hermann-hoppe/] - Justification of
+libertarianism through argumentation ethics
+
+Libertarianism and Bitcoin
+--------------------------
+
+Bitcoin is the technological embodiment of libertarian philosophy:
+
+* Self-Ownership → Direct control of one's property through a private
+key
+* Non-Aggression Principle → Censorship-resistant transactions prevent
+forced confiscation of property
+* Voluntary Exchange → Permissionless P2P transactions
+* Private Property Rights → Ownership mathematically guaranteed
+
+Go Deeper
+---------
+
+* What Is Spontaneous Order? [/ideas/spontaneous-order/]
+* Sound Money and Freedom [/ideas/sound-money/]
+
+Recommended Reading
+-------------------
+
+* The Law (Frédéric Bastiat) - A short, powerful classic
+* The Ethics of Liberty (Murray Rothbard) - A systematic libertarian
+ethics
+
+Tags: Libertarianism
+
+Read on full site: https://learn.txid.uk/en/ideas/libertarianism/

@@ -1,0 +1,154 @@
+Why Bitcoin Blocks Are Limited to 4 Million Weight Units - And What That Actually Means
+======================================================================
+
+2026-04-05 | en
+
+Bitcoin's block weight limit explained: from the 1MB block size war to SegWit's 4M weight units. How block weight works, why it matters, and its impact on fees, scaling, and network security.
+
+Every 10 minutes, Bitcoin produces a block. That block has a size
+limit. Exceed it, and the network rejects it. This limit is arguably
+the most contentious design decision in Bitcoin's history - it
+triggered a multi-year civil war, split the community, and spawned
+rival forks. And most people still get the number wrong.
+
+Bitcoin blocks are not limited to 1 MB. Not since August 2017. The
+actual limit is 4,000,000 weight units - a measurement system
+introduced by Segregated Witness (SegWit) that replaced the old
+byte-based limit with something more nuanced.
+
+The Old Limit: 1 MB
+-------------------
+
+Satoshi Nakamoto added a 1 MB block size limit in 2010. The original
+motivation was anti-spam: prevent attackers from flooding the network
+with enormous blocks that would be expensive to store and propagate.
+
+At the time, blocks were nearly empty. 1 MB was overkill. Nobody
+expected Bitcoin to grow to a point where this limit would matter.
+
+By 2015, it mattered. Blocks were filling up. Transactions competed
+for limited space, and fees began to spike during peak demand. The
+community fractured into two camps:
+
+* Big blockers: Increase the block size to 2 MB, 8 MB, or more.
+Simple, immediate capacity boost.
+* Small blockers: Keep blocks small to maintain decentralization
+(larger blocks = harder to run a full node). Scale through second
+layers like Lightning [/en/articles/lightning-network-intro/].
+
+This debate - the "Block Size War" - lasted years and produced Bitcoin
+Cash (BCH) as a fork in August 2017. The same month, SegWit activated
+on Bitcoin.
+
+The New Limit: Weight Units
+---------------------------
+
+SegWit did not simply increase the block size. It changed how block
+space is measured.
+
+Instead of counting raw bytes, SegWit introduced weight units (WU).
+The formula:
+
+Weight = (non-witness data x 4) + (witness data x 1)
+
+The block weight limit is 4,000,000 WU (4 MWU).
+
+What this means in practice:
+
+* Non-witness data (inputs, outputs, amounts, script logic) counts at
+full weight - 4 WU per byte
+* Witness data (signatures, public keys) gets a 75% discount - 1 WU
+per byte
+
+Why the discount? Signatures are the largest part of a transaction but
+are only needed for validation, not for determining who owns what. By
+making signature data cheaper, SegWit incentivizes a more efficient
+transaction format without changing the core economic model.
+
+Why Not Just Say "4 MB"?
+------------------------
+
+Because a 4 MB block is only possible if the block contains nothing
+but witness data - which never happens in practice. Real blocks
+contain a mix of witness and non-witness data.
+
+A typical modern block:
+* Total size on disk: ~1.5-2.2 MB
+* Weight: ~3.0-3.9 MWU
+* Transaction count: ~2,000-4,000
+
+The effective capacity increase from SegWit is roughly 1.7-2.3x
+compared to the old 1 MB limit - not 4x.
+
+Virtual Bytes (vBytes)
+----------------------
+
+You will see fees quoted in sat/vB (satoshis per virtual byte).
+Virtual bytes are simply weight divided by 4:
+
+vBytes = weight / 4
+
+A transaction weighing 560 WU = 140 vBytes. If the fee rate is 20
+sat/vB, the fee is 2,800 satoshis.
+
+This unit exists so that fee calculations remain comparable to the
+pre-SegWit era, where fees were quoted in sat/byte.
+
+How Block Weight Affects Fees
+-----------------------------
+
+Block weight is the reason Bitcoin fees fluctuate. When demand for
+block space exceeds supply (4 MWU per 10 minutes), transactions
+compete by offering higher fees. Miners select transactions that
+maximize the total fee within the weight limit.
+
+During quiet periods, you can get confirmed at 1-2 sat/vB. During
+spikes - NFT mints, Runes launches, market panics - fees can hit 200+
+sat/vB because everyone is competing for the same 4 million weight
+units.
+
+This is by design. The limited block space creates a fee market that
+funds network security as the block subsidy decreases
+[/en/articles/bitcoin-halving/] with each halving.
+
+The Decentralization Tradeoff
+-----------------------------
+
+Why not just make blocks bigger? Because block size has direct
+consequences for decentralization:
+
+Storage: Larger blocks mean the blockchain grows faster. At ~2 MB per
+block, Bitcoin adds roughly 100 GB per year. At 10 MB per block, that
+would be 500 GB per year - making it progressively harder for
+individuals to run full nodes [/en/articles/bitcoin-node/].
+
+Bandwidth: Blocks must propagate across the global network in seconds.
+Larger blocks take longer to propagate, giving advantage to miners
+with better connectivity and creating centralization pressure.
+
+Validation: Every full node must validate every transaction in every
+block. Larger blocks mean more computation, more memory, and more
+time.
+
+Bitcoin chose the conservative path: keep the base layer constrained,
+scale through layers on top. Lightning Network
+[/en/articles/lightning-network-intro/] can process millions of
+transactions that settle on-chain in compact SegWit transactions,
+effectively multiplying Bitcoin's capacity without touching the weight
+limit.
+
+Summary
+-------
+
+Bitcoin's block weight limit of 4,000,000 WU is not an arbitrary
+number. It is a carefully negotiated boundary between throughput and
+decentralization - the product of years of debate, a community split,
+and the elegant engineering of SegWit.
+
+Every transaction you send competes for space within that limit.
+Understanding weight, vBytes, and the fee market they create is
+understanding how Bitcoin actually works under the hood.
+
+Tags: Bitcoin, Technical
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-block-weight-limit/

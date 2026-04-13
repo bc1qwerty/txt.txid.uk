@@ -1,0 +1,78 @@
+What Is Bitcoin?
+================
+
+2026-03-05 | en
+
+Understanding the basics of Bitcoin - uncensorable digital Sound Money.
+
+Think about the money in your bank account right now. Someone - a
+central banker, a committee, a politician - can decide to create more
+of it tomorrow. When they do, every unit you hold quietly loses a
+sliver of its purchasing power. You did nothing wrong; you just saved.
+And yet you got poorer.
+
+Bitcoin was built to fix that. In 2009, an anonymous figure called
+Satoshi Nakamoto [/people/satoshi-nakamoto/] released software that
+does something no money has ever done before: it removes human
+discretion from the money supply. There will only ever be 21 million
+bitcoin - not because a government promised, but because the math
+enforces it.
+
+What makes Bitcoin different?
+-----------------------------
+
+No government, bank, or corporation is in charge. The network is
+maintained by thousands of independent computers around the world,
+each checking everyone else's work. The result is money that is:
+
+* Capped - 21 million coins, forever. No one can print more.
+* Permissionless - Anyone can send money to anyone, anywhere, without
+asking for approval.
+* Verifiable - You don't have to trust anyone's word. You can audit
+the entire history yourself.
+
+How it works - the short version
+--------------------------------
+
+Blocks and chains. Transactions are bundled into blocks, and each
+block is cryptographically chained to the one before it. Altering an
+old transaction would mean re-doing all the work since - practically
+impossible.
+
+Mining. Creating a new block requires burning real-world energy to
+solve a mathematical puzzle. This is Proof of Work
+[/ideas/proof-of-work/] - the mechanism that makes Bitcoin secure
+without a central authority.
+
+Halving. Roughly every four years, the reward miners receive is cut in
+half. New supply enters the system more and more slowly, making
+Bitcoin's scarcity increase over time. The halving [/ideas/halving/]
+is Bitcoin's built-in monetary policy - and no committee can override
+it.
+
+TXID. Every Bitcoin transaction gets a unique identifier called a
+Transaction ID - or TXID. It's an immutable receipt that proves
+exactly what happened, when, and between whom. (It's also the name of
+this site.)
+
+Go Deeper
+---------
+
+* What Is Sound Money? [/ideas/sound-money/] - The properties that
+make money trustworthy
+* The Meaning of Proof of Work [/ideas/proof-of-work/] - Why burning
+energy is not waste
+* Time Preference and Bitcoin [/ideas/time-preference/] - How sound
+money changes the way people think about the future
+
+Recommended Reading
+-------------------
+
+* The Bitcoin Standard (Saifedean Ammous) - The essential case for
+Bitcoin as sound money
+* Bitcoin Whitepaper (Satoshi Nakamoto) - Satoshi's original 9-page
+design document
+
+Tags: Bitcoin
+
+Read on full site: https://learn.txid.uk/en/ideas/bitcoin/

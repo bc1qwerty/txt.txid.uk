@@ -1,0 +1,185 @@
+How to Save with Bitcoin
+========================
+
+2026-02-28 | en
+
+In an era where bank deposits erode purchasing power, we explain why Bitcoin is a powerful savings vehicle - covering fixed supply, DCA strategy, and historical data with a practical focus.
+
+If you had saved 50 million won in a bank in 2016, by 2026 it would
+have grown to roughly 61 million won - the result of earning 2% annual
+interest over ten years. But the numbers only grew on paper; your real
+purchasing power actually shrank. Over the same period, the average
+price of a 서울 아파트 more than doubled, and while university tuition
+remained nearly frozen, the felt cost of housing, groceries, and
+everyday expenses rose far faster, with actual living costs far
+exceeding official inflation figures. We have entered an era where
+those who diligently save end up worse off. To escape this structure,
+we need to rethink the very concept of saving from the ground up.
+
+Why Traditional Savings Have Collapsed
+--------------------------------------
+
+For our parents' generation, bank savings were a reliable way to grow
+wealth. In the 1990s, Korean bank fixed-deposit rates exceeded 10-15%
+per year. Even accounting for inflation, real interest rates were
+positive, and simply leaving money in the bank made your assets
+genuinely grow. Saving was a virtue - and a rewarded one.
+
+The situation in 2026 is entirely different. Fixed-deposit rates at
+major Korean banks hover around 3-4%. The official consumer price
+index increase announced by the Bank of Korea runs at 2-3%, but the
+inflation people actually feel is far higher. The rates of increase
+for core living expenses - housing, education, healthcare -
+significantly exceed official statistics. The result is that bank
+deposits grow in nominal terms but quietly melt away in real
+purchasing power year after year.
+
+This is not the individual's fault. The fiat currency system itself is
+designed to disadvantage savers. Central banks continuously expand the
+money supply in the name of stimulating economic growth. After the
+2008 financial crisis, major central banks printed tens of trillions
+of dollars through quantitative easing (QE). The pandemic response in
+2020 brought yet another round of massive currency issuance. When the
+total amount of money increases, the value of each individual currency
+unit is diluted. This is the essence of inflation.
+
+The Wealth Redistribution Created by Inflation
+----------------------------------------------
+
+Inflation is not a neutral phenomenon. There are clear winners and
+losers. When inflation occurs, asset prices rise and the value of cash
+falls. Here is what that means:
+
+Asset holders benefit. People who own real assets - real estate,
+stocks, businesses, precious metals - see the nominal value of their
+assets rise with inflation. Those who took out loans to buy assets
+benefit even more, because the real value of their debt shrinks over
+time.
+
+Those dependent on cash lose out. People who live on wages and save
+through bank deposits lose purchasing power. If nominal income fails
+to keep up with the pace of inflation, real income declines. The cash
+that someone worked hard to accumulate buys less and less over time.
+
+Comparing the distribution of household assets in Korea between 2015
+and 2025 reveals this gap clearly. The asset share of the top 10% has
+continued to increase, while the real assets of the bottom 50% have
+stagnated or even declined. This is not a difference in individual
+effort - it is a structural outcome produced by the monetary system.
+The structure rewards those who bought assets early over those who
+worked hard and saved cash.
+
+There are two ways to escape this structure: hold assets that outpace
+inflation, or hold a currency that is not affected by inflation in the
+first place. Bitcoin possesses both of these characteristics.
+
+Three Reasons Bitcoin Is a Powerful Savings Vehicle
+---------------------------------------------------
+
+Using Bitcoin as a savings vehicle is not merely an investment
+strategy - it is a choice to change the monetary system itself. The
+reasons Bitcoin serves as a powerful savings vehicle stem from three
+structural characteristics.
+
+First, the supply is absolutely fixed. Bitcoin can never exceed 21
+million coins. This is not a promise or a policy - it is a
+mathematical fact written in code. No government, no corporation, no
+hacker can change this number. Even more important is the halving
+mechanism. The amount of newly issued Bitcoin is cut in half
+approximately every four years. After the fourth halving in 2024, the
+annual issuance rate dropped to about 0.8%. This is lower than gold's
+annual production growth rate of roughly 1.5%. If demand remains
+constant, a decrease in supply naturally leads to an increase in
+value.
+
+Second, storage costs are virtually zero. Using gold as a savings
+vehicle requires safe-deposit fees, insurance, and shipping costs.
+Real estate continuously incurs acquisition taxes, property taxes,
+maintenance fees, and repair costs. With Bitcoin, you only need to
+securely store 12 (or 24) seed words. You can write them on paper and
+put them in a safe, engrave them on a steel plate, or even memorize
+them. There are no physical assets to declare at customs when crossing
+borders, and no constraints of weight or volume. All you need is an
+internet connection to access your Bitcoin from anywhere in the world.
+
+Third, it is infinitely divisible. The smallest unit of Bitcoin is the
+satoshi, which is one hundred-millionth of a BTC (0.00000001 BTC). No
+matter how high the price of Bitcoin goes, you can start saving with a
+small amount. It is entirely possible to accumulate Bitcoin by
+automatically purchasing 30,000 won or 50,000 won worth each month.
+Buying and storing 0.00001 grams of gold is practically impossible,
+but Bitcoin has no such constraint.
+
+A Practical Strategy for Bitcoin Savings: Dollar-Cost Averaging
+---------------------------------------------------------------
+
+Bitcoin's price volatility is undeniable. In 2017, the price exceeded
+20 million won before falling below 4 million won by the end of 2018.
+In 2021, it surpassed 80 million won before crashing to the 20 million
+won range in 2022. Because of this volatility, some argue that Bitcoin
+cannot be considered a savings vehicle.
+
+However, the most proven method for using Bitcoin as a savings vehicle
+is a strategy that mitigates the impact of this volatility:
+Dollar-Cost Averaging (DCA) - systematic, periodic purchases at fixed
+amounts.
+
+DCA is a strategy of buying a fixed amount at regular intervals
+regardless of price. It means automatically buying 50,000 won worth of
+Bitcoin every Monday, or 200,000 won worth on the first of every
+month. The core of this strategy is simple: you buy less when the
+price is high and more when the price is low, so your average purchase
+price naturally decreases over time.
+
+Let's look at concrete numbers. If you had DCA'd 100,000 won per month
+into Bitcoin for 48 months from January 2020 to January 2024, your
+total investment of 4.8 million won would have been worth over
+approximately 15 million won as of early 2024. Of course, past
+performance does not guarantee future results. But DCA eliminates the
+risk of investing your entire fortune at the peak and removes the
+unnecessary stress of trying to time the market.
+
+Practical Considerations You Must Know When Saving in Bitcoin
+-------------------------------------------------------------
+
+Bitcoin can be a powerful savings vehicle, but unconditionally
+recommending investment would be irresponsible. The following
+principles must be considered.
+
+A long-term perspective is essential. Bitcoin has experienced drops of
+over 50% on multiple occasions in the short term. Looking at a one- or
+two-year horizon, you could see significant losses. Historically,
+Bitcoin has produced positive returns for holders of four years or
+more regardless of when they bought, but this does not guarantee the
+future. You should save with funds you will not need for at least four
+years, and ideally ten or more.
+
+Do not hold living expenses and emergency funds in Bitcoin. An
+emergency fund equivalent to six months of living expenses should be
+kept in a readily accessible form (cash or bank deposits). A situation
+where you suddenly need a large sum of money could arise at the very
+moment Bitcoin's price is crashing.
+
+You must learn self-custody. Bitcoin held on an exchange shares the
+risks of that exchange. The FTX bankruptcy in 2022 caused countless
+Korean investors to lose their assets. If you are saving a significant
+amount in Bitcoin, you should purchase a hardware wallet and learn how
+to self-custody. Safely storing your seed phrase is more important
+than a bank safe-deposit box.
+
+Saving is the act of sacrificing the present for your future self. In
+a structure where decades of diligent savings are eroded by inflation,
+Bitcoin can be a serious alternative. However, if you choose that
+alternative, you must also accept the responsibility of enduring
+volatility, maintaining a long-term perspective, and taking on the
+duty of self-custody.
+
+One final point deserves mention. Past returns do not guarantee future
+gains, and tax regulations on virtual assets differ by country - you
+must always check the latest tax laws in your jurisdiction. Since
+Korea is set to implement virtual asset taxation, you must factor in
+the impact of taxes on your returns when saving in Bitcoin.
+
+Tags: Bitcoin, Economics
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-and-savings/

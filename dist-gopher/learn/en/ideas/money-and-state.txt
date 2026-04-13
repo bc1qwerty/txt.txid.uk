@@ -1,0 +1,103 @@
+Why Did Money Become a Tool of the State?
+=========================================
+
+2026-03-05 | en
+
+An overview of how money became entangled with state power and why that is a problem.
+
+Two Origin Stories of Money
+---------------------------
+
+There are two opposing narratives about the birth of money.
+
+One is the story that the state created money. Kings minted coins and
+designated them as the means of paying taxes - and thus money was
+born. In this story, money is a state creation from the very
+beginning.
+
+The other is the story proposed by Carl Menger [/people/carl-menger/]:
+money was born spontaneously in the marketplace. To overcome the
+inconvenience of barter, people began using the most easily
+exchangeable goods (salt, shells, gold) as a medium of exchange, and
+that naturally became money.
+
+Austrian Economics supports the second story. And from there, the
+crucial question follows: what happens when the state seizes money
+that the market created?
+
+How the State Seized Money
+--------------------------
+
+Historically, the process by which the state seized control of money
+can be summarized in three stages.
+
+Stage 1: Monopoly on minting. The state monopolizes the minting of
+gold and silver coins - and quietly begins reducing the precious metal
+content. The Roman Empire's silver denarius started with a 95% silver
+content, which had fallen to below 5% by the third century.
+
+Stage 2: Convertible currency. Paper notes appeared bearing the
+promise: "Bring this note to the bank and we will exchange it for
+gold." Initially genuinely exchangeable for gold, but governments
+always succumb to the temptation to issue more notes than they promise
+to back.
+
+Stage 3: Fiat money. Money completely severed from gold. Value is
+granted solely by government decree (fiat). The Nixon Shock
+[/ideas/nixon-shock/] of 1971 was the decisive turning point into this
+final stage.
+
+The Consequences of Seizure: Three Mechanisms
+---------------------------------------------
+
+When the state seizes money, it gains three powerful tools.
+
+## An Invisible Tax
+
+When the government issues money, the purchasing power of existing
+money declines. This is an invisible tax recorded nowhere in the tax
+code. Tax increases face political resistance, but inflation faces
+less resistance because most citizens fail to identify the cause.
+
+## Institutionalized Moral Hazard
+
+When a lender of last resort - the central bank - exists, large
+financial institutions act under asymmetric incentives: "heads I win,
+tails someone else loses." The 2008 financial crisis was the product
+of this moral hazard [/ideas/moral-hazard/].
+
+## Unfair Redistribution of Wealth
+
+Newly issued money does not reach everyone simultaneously. Governments
+and financial institutions spend the new money first; by the time it
+reaches ordinary citizens, prices have already risen. This is the
+Cantillon Effect [/ideas/cantillon-effect/].
+
+What This Course Covers
+-----------------------
+
+This course dissects the relationship between money and the state:
+
+* Moral Hazard [/ideas/moral-hazard/] - The destructive incentives
+created by bailouts
+* Nixon Shock [/ideas/nixon-shock/] - The pivotal event that launched
+the modern fiat era
+* Inflation Tax [/ideas/inflation-tax/] - The mechanism by which an
+unlegislated tax steals wealth
+* Hoppe's Critique [/people/hans-hermann-hoppe/] - The most
+fundamental questions about democracy and the state
+* Bitcoin's Alternative - An attempt to fix a broken monetary system
+
+Go Deeper
+---------
+
+* What Is Fiat Money? [/ideas/fiat-money/] - The structure of the
+current monetary system
+* Sound Money [/ideas/sound-money/] - The conditions a good money must
+meet
+* Business Cycle Theory [/ideas/abct/] - The boom-bust cycle created
+by monetary manipulation
+
+Tags: Bitcoin, Austrian Economics
+
+Read on full site: https://learn.txid.uk/en/ideas/money-and-state/

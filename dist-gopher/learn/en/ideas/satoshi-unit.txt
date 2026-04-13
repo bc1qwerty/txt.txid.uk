@@ -1,0 +1,122 @@
+Satoshi (Satoshi) - The Smallest Unit of Bitcoin
+================================================
+
+2026-02-18 | en
+
+Satoshi (sat) is the smallest unit of bitcoin, where 1 BTC = 100 million satoshis (100,000,000 sats).
+
+Satoshi (sat) is the smallest unit of bitcoin, where 1 BTC = 100
+million satoshis (100,000,000 sats). It is the smallest transferable
+amount on the Bitcoin network and reflects a fundamental design
+principle of the Bitcoin protocol.
+
+Technical Background: 1 BTC = 100,000,000 sats
+----------------------------------------------
+
+In the Bitcoin source code, all amounts are represented as integers in
+satoshi units. A constant COIN = 100,000,000 is defined internally,
+and 1 BTC corresponds to this integer value. Because floating-point
+arithmetic is never used, the rounding errors and precision loss
+common in financial systems are eliminated by design. For example,
+traditional software produces results like 0.1 + 0.2 =
+0.30000000000000004 due to floating-point errors, but Bitcoin avoids
+this entirely by using only integer arithmetic. The
+eight-decimal-place precision (10^8) was deliberately chosen to
+accommodate even the smallest micropayments far into the future.
+
+Origin of the Name: Satoshi Nakamoto
+------------------------------------
+
+The unit name "satoshi" derives from Satoshi Nakamoto, the
+pseudonymous creator of Bitcoin. The term gained organic community
+consensus around 2011 through discussions on the BitcoinTalk forum.
+Notably, Satoshi Nakamoto did not propose this name; the community
+adopted it as a tribute to the founder. The abbreviation "sat" became
+increasingly widespread thereafter and is now used officially across
+exchanges and wallet applications.
+
+Millisatoshi: The Lightning Network's Sub-Unit
+----------------------------------------------
+
+While 1 satoshi is the smallest unit on the Bitcoin base layer, the
+Lightning Network employs an even smaller unit called the millisatoshi
+(msat), where 1 sat = 1,000 msat. The Lightning Network uses
+millisatoshis for precise routing fee calculations within payment
+channels. However, when channels are settled on-chain, amounts must be
+rounded to whole satoshis. The existence of millisatoshis enables
+micropayments and streaming payments, forming the foundation for novel
+business models such as content subscriptions and per-API-call
+billing.
+
+Evolution of Notation and the Push to Standardize "sat"
+-------------------------------------------------------
+
+In Bitcoin's early days, various sub-unit notations were tried
+alongside the base BTC unit, including millibitcoin (mBTC, 0.001 BTC)
+and microbitcoin (uBTC, 0.000001 BTC). These notations lacked
+intuitive clarity and never gained widespread traction. Around 2019,
+"sat" or "sats" emerged as the de facto standard within the community,
+with the "#StackingSats" hashtag movement on Twitter (now X) playing a
+significant role in popularization. Discussions on standardizing sat
+notation have also taken place at the BIP (Bitcoin Improvement
+Proposal) level.
+
+Unit Psychology: The Difference in User Experience
+--------------------------------------------------
+
+"0.00005 BTC" and "5,000 sats" represent the same amount, but the
+cognitive experience for the user differs significantly. A
+five-decimal-place notation is hard to parse intuitively and is prone
+to errors from accidentally adding or omitting digits. By contrast,
+the integer representation "5,000 sats" allows immediate recognition
+of magnitude. This is not merely a convenience issue -- it is
+connected to a psychological shift that reframes bitcoin from
+"something too expensive to buy" to "something you accumulate." Seeing
+0.00005 BTC triggers the feeling that "Bitcoin is too expensive and I
+can only afford a tiny fraction," whereas seeing 5,000 sats produces
+the positive sensation of "I own 5,000 units."
+
+Bitcoin Price Appreciation and the Sat Adoption Trend
+-----------------------------------------------------
+
+As Bitcoin's price rises, BTC-denominated amounts for everyday
+transactions extend further and further past the decimal point,
+highlighting the practical value of the sat unit. As Bitcoin has
+surpassed tens of thousands of dollars per coin, sats have become the
+de facto default unit for small payments and tipping culture. The
+expression "stacking sats" refers to the strategy of steadily
+accumulating small amounts of bitcoin, and combined with DCA
+(Dollar-Cost Averaging), it has become a core concept in Bitcoin
+investment culture.
+
+Sat Denomination Support in Wallets and Exchanges
+-------------------------------------------------
+
+Major Bitcoin wallets and exchanges now support sat-denominated
+displays. Wallets such as Sparrow Wallet, BlueWallet, and Muun display
+balances and transaction amounts in sats either by default or through
+a settings toggle. Among exchanges, Kraken was relatively early in
+introducing sat-denominated trading, and Cash App also allows
+purchasing bitcoin in sat units. Lightning Network-based payment apps
+predominantly use sats as their default unit. This trend demonstrates
+that the satoshi is evolving beyond a mere technical sub-unit into the
+base monetary unit of the Bitcoin economy.
+
+| "1 sat = 1 sat" -- An expression used by bitcoiners to convey their
+determination not to be shaken by fluctuations in fiat currency
+prices. It embodies the philosophy that Bitcoin's value lies in the
+properties of the network itself, not in its fiat exchange rate.
+
+Related Concepts
+----------------
+
+* Halving [/ideas/halving/] - A periodic event that cuts the bitcoin
+issuance in half
+* What is Bitcoin? [/ideas/bitcoin/] - The basic concepts and
+mechanics of bitcoin
+* Satoshi Nakamoto [/people/satoshi-nakamoto/] - The anonymous founder
+who designed and implemented bitcoin
+
+Tags: Bitcoin
+
+Read on full site: https://learn.txid.uk/en/ideas/satoshi-unit/

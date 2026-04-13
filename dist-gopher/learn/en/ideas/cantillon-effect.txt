@@ -1,0 +1,199 @@
+Cantillon Effect
+================
+
+2026-03-09 | en
+
+Newly issued money does not reach everyone simultaneously. This is the mechanism that creates inequality.
+
+What is the Cantillon Effect?
+-----------------------------
+
+The Cantillon Effect refers to the phenomenon where newly issued
+currency does not spread uniformly throughout the economy, but is
+transferred sequentially along specific pathways, causing a
+redistribution of wealth. This concept was first systematically
+explained by Richard Cantillon, an 18th-century Irish-French
+economist, in his work "An Essay on the Nature of Commerce in General"
+(Essai sur la Nature du Commerce en Général, 1755).
+
+Cantillon's insight is remarkably simple. When new money enters the
+economy, that money does not appear in everyone's wallet
+simultaneously. Someone receives it first, and someone else receives
+it later. This time difference is the key.
+
+Money Creation"]
+    BANK["🏛️ Financial Institutions<br/>First Recipients"]
+    ASSET["📈 Asset Markets<br/>Stocks & Real Estate Rise"]
+    BIZ["🏢 Large Corporations<br/>Low-Interest Loans"]
+    PEOPLE["👥 General Public<br/>Last to Receive"]
+    PRICE["💰 Price Increase<br/>Purchasing Power Decline"]
+    CB --> BANK
+    BANK --> ASSET
+    BANK --> BIZ
+    ASSET --> PEOPLE
+    BIZ --> PEOPLE
+    PEOPLE --> PRICE
+    style CB fill:#f85149,stroke:#f85149,color:#000
+    style BANK fill:#f7931a,stroke:#f7931a,color:#000
+    style PEOPLE fill:#21262d,stroke:#30363d,color:#8b949e
+    style PRICE fill:#21262d,stroke:#f85149,color:#f85149`} />
+
+Mechanism: Following the Flow of Money
+--------------------------------------
+
+Let's examine step-by-step how new currency enters the economy.
+
+## Stage 1: Central Bank Money Creation
+
+The central bank creates new currency through quantitative easing (QE)
+and other means. This money first reaches large financial institutions
+and commercial banks. They can purchase assets at prices before
+inflation rises.
+
+## Stage 2: Expansion Through the Financial Sector
+
+Banks and financial institutions use these funds for loans and
+investments. Large corporations, hedge funds, real estate developers,
+and other entities close to the financial system and the wealthy
+obtain low-interest loans to purchase stocks, real estate, bonds, and
+other assets. Asset prices begin to rise at this point.
+
+## Stage 3: Transmission to the Real Economy
+
+The effects of rising asset prices slowly seep into the real economy.
+Companies increase investment, employment expands, and wages begin to
+rise. However, at this point, prices have already risen significantly.
+
+## Stage 4: Reaching the General Public
+
+Finally, the effects of the new currency are reflected in the wages
+and income of ordinary citizens. However, the purchasing power of the
+money they receive has already declined dramatically. Wage increases
+always lag behind price increases.
+
+This is the crux of the Cantillon Effect. Those who receive money
+first (early receivers) purchase goods and assets at prices that have
+not yet risen, while those who receive money later (late receivers)
+must pay prices that have already risen.
+
+The Cantillon Effect is Regressive Redistribution
+-------------------------------------------------
+
+Inflation is commonly called an "invisible tax." However,
+understanding the Cantillon Effect reveals that inflation is not
+simply a tax, but rather a regressive wealth redistribution mechanism.
+
+Ordinary taxes are at least transparent. You know how much you pay,
+and it becomes the subject of public debate. However, redistribution
+through the Cantillon Effect remains invisible. Most people are not
+even aware that their real purchasing power is declining.
+
+More importantly, the direction of this redistribution. Money always
+flows from those close to the financial system (the wealthy, asset
+holders) to those far from it (wage workers, fixed-income earners). In
+other words, wealth is transferred from the poor to the rich.
+
+The Cantillon Effect in the Real World
+--------------------------------------
+
+## Quantitative Easing After the 2008 Financial Crisis
+
+After the 2008 financial crisis, the U.S. Federal Reserve conducted
+approximately $4.5 trillion in quantitative easing. This capital first
+reached financial institutions on Wall Street, and the results were
+clear:
+
+* S&P 500 Index: Rose more than 500% from its 2009 low
+* Housing Prices: Rose beyond pre-crisis levels
+* Real Wages: Nearly stagnated or saw minimal increases
+
+Those holding assets accumulated enormous wealth, while those living
+on wages without assets became relatively poorer. It is no coincidence
+that global asset inequality reached historical levels.
+
+## 2020 Pandemic Response
+
+During the COVID-19 pandemic, governments and central banks worldwide
+conducted unprecedented monetary expansion. The United States alone
+injected trillions of dollars into the economy, and the Bank of Korea
+also lowered its base rate to a record low.
+
+The results were exactly as Cantillon predicted:
+
+* Stock and real estate prices surged during the pandemic period
+* Bitcoin and cryptocurrency markets also experienced explosive growth
+* Prices of food and necessities rose, making ordinary people's lives
+more difficult
+* The neologism "asset inflation" became everyday terminology
+
+## South Korea's Real Estate Problem
+
+In South Korea, the Cantillon Effect is particularly evident in the
+real estate market. In a low-interest environment, newly released
+liquidity first flows into the real estate market. Those already
+holding real estate benefit from rising asset values, but younger
+generations and those without homes face ever-rising barriers to
+entry.
+
+The popularity of the expression "영끌" (borrowing with one's
+soul-taking on maximum debt to purchase property) is itself evidence
+of the Cantillon Effect. People intuitively felt that "if I don't buy
+assets now, I'll be left behind forever," and that intuition was
+completely rational from the perspective of the Cantillon Effect.
+
+Why This Matters
+----------------
+
+Understanding the Cantillon Effect solves many puzzles in modern
+economics:
+
+* Why hasn't life improved despite increased productivity? - The
+fruits of productivity gains are concentrated among asset holders
+through the Cantillon Effect
+* Why do asset prices keep rising? - Newly issued currency flows first
+into asset markets
+* Why is wealth inequality widening? - The fiat money
+[/ideas/fiat-money/] system itself is structurally an upward wealth
+redistribution engine
+
+Most political debates focus on the consequences of redistribution -
+we need more welfare, we need higher taxes. However, the Cantillon
+Effect points to the cause of the problem. If the monetary issuance
+system itself is an engine generating inequality, redistribution
+policies can never catch up to that engine.
+
+Bitcoin and the Cantillon Effect
+--------------------------------
+
+Bitcoin offers a fundamental alternative to the Cantillon Effect.
+
+* Issuance rules are transparent: New Bitcoin supply is issued
+predictably and transparently through proof of work
+[/ideas/proof-of-work/]
+* No privileged beneficiaries: Newly issued Bitcoin goes to miners,
+and anyone can participate in mining
+* Fixed total supply: There is a cap of 21 million, making infinite
+monetary expansion impossible
+* Decentralization: No central authority can have the privilege of
+"receiving money first"
+
+Bitcoin's design makes the Cantillon Effect technologically
+impossible. This is why Bitcoin is not merely an investment asset, but
+a proposal for a more equitable monetary system.
+
+Connected Concepts
+------------------
+
+* Fiat Money [/ideas/fiat-money/] - The foundation on which the
+Cantillon Effect operates
+* Sound Money [/ideas/sound-money/] - The monetary property that
+eliminates the Cantillon Effect
+* Austrian Business Cycle Theory [/ideas/abct/] - The mechanism of
+artificial economic fluctuations that operates together with the
+Cantillon Effect
+* Moral Hazard [/ideas/moral-hazard/] - The institutional
+irresponsibility created by the Cantillon Effect
+
+Tags: Economics
+
+Read on full site: https://learn.txid.uk/en/ideas/cantillon-effect/

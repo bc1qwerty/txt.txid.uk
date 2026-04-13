@@ -1,0 +1,226 @@
+Bitcoin vs Real Estate: The Asset Your Landlord Doesn't Want You to Know About
+======================================================================
+
+2026-04-03 | en
+
+A data-driven comparison of Bitcoin and real estate across returns, liquidity, costs, and accessibility - with concrete numbers that challenge conventional wisdom about property investment.
+
+"Buy property - they're not making any more land." It is perhaps the
+most repeated investment advice in history. And for generations, it
+was sound. Real estate built family wealth, survived wars, and
+provided shelter and income simultaneously. But the world that
+produced that advice - one of stable currencies, growing populations,
+and limited financial alternatives - is not the world we live in
+anymore.
+
+Since 2015, Bitcoin has returned over 26,000%. Over the same period,
+US residential real estate returned roughly 70-80%. The S&P 500
+managed 200-250% including dividends. These are not marginal
+differences. They represent fundamentally different asset dynamics
+that deserve serious examination rather than dismissal.
+
+This is not a polemic against real estate. Property remains a useful
+asset for specific purposes. But the assumptions baked into "real
+estate always goes up" deserve scrutiny - especially now that a
+digital alternative with radically different properties exists.
+
+The Numbers: A Decade of Divergence
+-----------------------------------
+
+Let's start with what actually happened.
+
+If you had invested $10,000 into Bitcoin in early 2015, when the price
+hovered around $300, your position would be worth approximately
+$3.6-4.3 million by late 2025. That is enough to buy 8-10 median US
+homes outright.
+
+If you had put the same $10,000 as a down payment on a $200,000 home,
+your property would be worth roughly $340,000-360,000 today. A solid
+return - but you would still owe most of the mortgage, have paid tens
+of thousands in interest, and spent years on maintenance, taxes, and
+insurance.
+
+The volatility gap is real and important. Bitcoin's annualized
+volatility has historically been around 54%, though it has been
+declining - reaching roughly 23% in 2025. Real estate appears stable
+by comparison, but this stability is partly an illusion created by
+infrequent pricing. Your home's value fluctuates daily; you simply do
+not see a ticker.
+
+The Hidden Costs That Eat Returns
+---------------------------------
+
+Real estate's headline returns obscure a cascade of ongoing costs that
+erode actual wealth accumulation.
+
+Maintenance and repairs consume 1-5% of property value annually. A
+$400,000 home requires $4,000-20,000 per year just to maintain. Roofs,
+plumbing, HVAC systems, and appliances do not care about your
+investment thesis - they degrade on their own schedule.
+
+Property taxes add another 1.1% annually on average in the US -
+approximately $4,400 on a median-priced home. This is a perpetual
+cost. You never finish paying property taxes, even after the mortgage
+is gone.
+
+Transaction costs are brutal. Selling a home involves 5-6% in real
+estate agent commissions plus 2-4% in closing costs. On a $400,000
+home, that is $28,000-40,000 that evaporates when you sell. Bitcoin's
+transaction costs are negligible by comparison.
+
+Opportunity cost of illiquidity. The average US home takes 86 days
+from listing to closing. During a financial crisis - exactly when you
+might need liquidity - that timeline stretches dramatically. Bitcoin
+settles in minutes and trades 24/7/365.
+
+Mortgage interest. Most real estate purchases involve leverage. On a
+30-year mortgage at 7%, you pay roughly $2.40 for every $1 borrowed. A
+$320,000 mortgage on a $400,000 home costs approximately $766,000 over
+its lifetime - nearly double the purchase price.
+
+The Rental Yield Argument
+-------------------------
+
+"But real estate generates income." This is true, and it is the
+strongest argument for property investment. US gross rental yields
+average 6.56%, while South Korean yields average 4.31% in Seoul.
+
+However, gross yield is not net yield. After property management
+(8-12%), maintenance, vacancies, insurance, and taxes, net rental
+returns typically fall to 3-4%. And managing rental property is a job
+- tenant disputes, regulatory compliance, midnight plumbing
+emergencies. It is a small business, not a passive investment.
+
+Bitcoin generates no income. This is a genuine disadvantage. But
+Bitcoin compensates with something real estate cannot match: price
+appreciation velocity. Over a 5-10 year horizon, Bitcoin's price
+appreciation has historically dwarfed decades of accumulated rental
+income. The investor must decide which tradeoff better suits their
+time horizon and risk tolerance.
+
+Real Estate as an Inflation Hedge - Does It Actually Work?
+----------------------------------------------------------
+
+The conventional wisdom says real estate is the ultimate inflation
+hedge. The data is more nuanced.
+
+From 1967 to 2026, US home prices grew at approximately 4.22%
+annually, slightly outpacing CPI inflation at 3.94%. During the
+high-inflation period of 1975-1981, home values nearly doubled. So
+far, so good.
+
+But real estate fails as an inflation hedge in two critical scenarios:
+stagflation (rising prices + falling economy) and credit crunches
+(when mortgage rates spike, reducing demand regardless of inflation).
+In 2022-2023, inflation hit 9% while home sales collapsed as mortgage
+rates surged - prices held in nominal terms but declined in real
+terms.
+
+Bitcoin's inflation hedge thesis is simpler and more robust: a fixed
+supply of 21 million units, enforced by mathematics, with no central
+authority capable of creating more. No maintenance. No taxes. No
+geographic dependency. When the money printer runs, there is no
+Bitcoin printer that runs alongside it.
+
+Accessibility: The Great Divide
+-------------------------------
+
+Perhaps the most consequential difference is who can participate.
+
+To buy real estate, you need a credit history, a down payment of
+$20,000-100,000 or more, proof of stable income, a bank willing to
+lend, and a permanent legal presence in the country. In South Korea, a
+median Seoul apartment costs 1.4 billion KRW - roughly 15 years of the
+median household income.
+
+To buy Bitcoin, you need a phone. You can start with $10. There is no
+credit check, no income verification, no geographic restriction, and
+no minimum investment. A 22-year-old in Lagos has the same access as a
+portfolio manager in New York.
+
+Real estate concentrates wealth among those who already have wealth.
+Bitcoin does not discriminate.
+
+The South Korea Problem
+-----------------------
+
+South Korea illustrates why the real estate model is breaking down for
+younger generations.
+
+Seoul apartment prices averaged 1.4 billion KRW in 2025, rising 8.7%
+in a single year - the fastest pace in nearly two decades. Meanwhile,
+the traditional jeonse deposit system is collapsing. Jeonse fraud
+losses between 2022 and 2024 totaled 2.28 trillion KRW, affecting
+30,400 victims. Monthly rentals now account for 64.6% of new Seoul
+leases, up from a historical average below 40%.
+
+A generation priced out of homeownership, watching their jeonse
+deposits evaporate in fraud, might reasonably conclude that the social
+contract around property has broken. For this generation, Bitcoin is
+not a speculative gamble. It is a logical response to a system that
+has failed them.
+
+When Real Estate Wins
+---------------------
+
+Intellectual honesty requires acknowledging where real estate
+maintains clear advantages.
+
+Leverage. No legitimate platform lets you buy Bitcoin with 80%
+borrowed money at 7% interest. Real estate's unique access to cheap
+leverage amplifies returns when prices rise. This is a genuine
+structural advantage - though it equally amplifies losses.
+
+Utility. You can live in a house. You cannot live in a Bitcoin.
+Shelter has irreducible value independent of price appreciation.
+
+Stability. For risk-averse investors, real estate's lower volatility
+and steady rental income provide psychological comfort that Bitcoin
+cannot. Not every investor can stomach a 60% drawdown, even if
+long-term returns are superior.
+
+Track record. Five thousand years vs. fifteen years. Bitcoin has not
+yet survived a prolonged global depression, a world war, or a
+technological disruption to its own network. Real estate has survived
+all of these.
+
+The Portfolio Question
+----------------------
+
+The most sophisticated approach is not "either/or" but "how much of
+each." Modern portfolio theory suggests that adding a small Bitcoin
+allocation (1-5%) to a traditional portfolio that includes real estate
+consistently improves risk-adjusted returns. The Sharpe ratio of a
+blended portfolio exceeds that of either asset held alone.
+
+The question for 2026 is not whether Bitcoin is better than real
+estate. It is whether your portfolio is optimally allocated across
+both - and whether the assumptions inherited from your parents'
+generation still hold in a world of digital scarcity, declining
+populations, and infinite monetary expansion.
+
+The Fundamental Question
+------------------------
+
+Real estate derives value from location, zoning, local economy, and
+population growth. Change any of these, and value evaporates - as
+residents of Detroit, rural Japan, and countless other declining
+regions have discovered.
+
+Bitcoin derives value from mathematical scarcity, network effects, and
+a consensus protocol that no government or corporation controls. These
+properties are location-independent, politically neutral, and immune
+to demographic decline.
+
+Both are legitimate stores of value. But one requires ongoing effort,
+carries hidden costs, and depends on local conditions. The other sits
+in your memory, costs nothing to maintain, and works anywhere on
+Earth.
+
+The 20th century was the century of real estate. The 21st may belong
+to a different kind of property - one that exists everywhere and
+nowhere at once.
+
+Tags: Bitcoin, Economics
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-vs-real-estate/

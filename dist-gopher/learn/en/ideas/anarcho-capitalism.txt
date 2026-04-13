@@ -1,0 +1,175 @@
+Anarcho-Capitalism
+==================
+
+2026-03-10 | en
+
+Anarcho-capitalism is a philosophy that advocates for the complete abolition of the state, with all services including law, security, and national defense entrusted to free market competition.
+
+Anarcho-Capitalism is a philosophy that advocates for the complete
+abolition of the state, with all services including law, security, and
+national defense entrusted to free market competition. As the most
+radical yet logically consistent form of libertarian thought, it takes
+individual liberty and private property rights as absolute principles
+and denies the legitimacy of the institution of the state itself.
+
+Rothbard's Systematization: The Core Argument of "The Ethics of
+Liberty"
+----------------------------------------------------------------------
+
+Murray Rothbard laid the most systematic philosophical foundation for
+anarcho-capitalism in The Ethics of Liberty (1982). Rothbard's
+argument starts from the single axiom of self-ownership.
+
+Every person holds absolute ownership over their own body. There are
+only two alternatives to this premise: some people own others
+(slavery), or everyone owns a share of everyone else (universal
+communal ownership). The former is manifestly immoral, and the latter
+is unworkable (since no one could act without everyone else's
+permission, humanity would perish). Therefore, self-ownership is the
+only rational and moral principle.
+
+From self-ownership follows ownership of one's labor; from
+labor-mixing follows property rights; from voluntary exchange follows
+the transfer of ownership. But the state forcibly extracts property
+through taxation, forcibly uses bodies through conscription, and
+obstructs voluntary exchange through regulation. Every act of the
+state is a violation of self-ownership and property rights; therefore,
+the state is by its nature a criminal institution. This is the core of
+Rothbard's argument.
+
+Dispute Resolution Organizations (DROs) and Polycentric Law
+-----------------------------------------------------------
+
+The most common objection to anarcho-capitalism is: "Without the
+state, who enforces law and resolves disputes?" The answer lies in
+Dispute Resolution Organizations (DROs) and the system of polycentric
+law.
+
+In an anarcho-capitalist society, multiple private protective agencies
+and dispute resolution institutions provide services competitively.
+Individuals contract with the protective agency of their choice, and
+when disputes arise, they are resolved through arbitration agencies
+agreed upon in advance. When a dispute arises between clients of
+different protective agencies, a third-party arbitration institution
+agreed upon by both agencies adjudicates.
+
+The critical advantage of this system is competition. State courts are
+monopolies and therefore inefficient, slow, and costly. In a
+competitive dispute resolution market, agencies that provide fair,
+swift, and affordable service attract clients, while those that render
+unjust verdicts lose them. Law itself becomes subject to competition,
+and more rational and efficient legal systems evolve spontaneously.
+
+Historical Examples: Medieval Iceland and the Lex Mercatoria
+------------------------------------------------------------
+
+Anarcho-capitalism is not mere theory. Historical examples exist of
+law and order being maintained without a state.
+
+Medieval Iceland (930-1262): Analyzed in detail by David Friedman, the
+Icelandic Commonwealth survived for over 300 years without centralized
+administrative power. Law enforcement depended on private mechanisms,
+and disputes were resolved through inter-clan negotiation and
+arbitration. Legal rights were transferable, which effectively meant
+legal protection as private property.
+
+Lex Mercatoria (Law Merchant): Medieval European merchants developed
+their own system of commercial law independent of state law. The Law
+Merchant was based on custom and agreement, and merchant courts
+resolved disputes. This system was enforced without state coercion,
+through reputation and commercial exclusion, and became the foundation
+of modern commercial law.
+
+Standard Objections and Rebuttals
+---------------------------------
+
+Let us examine the standard objections to anarcho-capitalism and the
+rebuttals to each.
+
+The warlord problem: "Without the state, wouldn't armed groups create
+lawless domination?" The rebuttal proceeds as follows. First, the
+state itself is the most powerful "warlord." The death toll
+attributable to states in the 20th century is of a scale no private
+violence can match. Second, a competitive system of armed citizens and
+private protective agencies deters the abuse of force more effectively
+than a single monopoly (the state). Third, war can only be waged on a
+large scale because of the state's monopolistic capabilities
+(taxation, conscription); in a market-based protection system,
+consumers bear the cost of war directly, eliminating the incentive for
+large-scale warfare.
+
+The public goods problem: "Can the market provide public goods like
+national defense or law enforcement?" As noted above, many so-called
+"public goods" have historically been provided privately. Moreover,
+the "free-rider problem" that underlies public goods theory is
+theoretically exaggerated, and various market mechanisms -- club
+goods, bundling, contractual solutions -- offer diverse remedies.
+
+The national defense problem: "How do you respond to foreign
+invasion?" Historically, militias and guerrilla tactics have often
+been effective against regular armies. Furthermore, an
+anarcho-capitalist society has low value as a target for conquest.
+There is no centralized decision-making system, so there is no
+government to "surrender," and controlling an entire armed citizenry
+is far more difficult than defeating a regular army.
+
+Friedman vs Rothbard: Consequentialism vs Natural Rights
+--------------------------------------------------------
+
+Within the anarcho-capitalist camp, there is an important
+methodological divide. David Friedman (son of Milton Friedman), in The
+Machinery of Freedom, takes a consequentialist approach. Friedman
+argues that anarcho-capitalism should be preferred not because it is
+morally right but because it produces practically superior results.
+His core argument is the economic analysis showing that a competitive
+legal system would provide more efficient, fairer, and more innovative
+law and protection than a monopolistic state.
+
+Rothbard, in contrast, takes a natural rights approach. The state is
+inherently immoral regardless of outcomes. Taxation is robbery even if
+the proceeds are used efficiently; regulation is an infringement of
+liberty even if well-intentioned. Whether the results are good or bad,
+the state's exercise of coercion is a violation of self-ownership and
+property rights and therefore morally impermissible.
+
+These two approaches converge in their conclusions but differ in their
+foundations. Friedman's approach is potentially refutable by empirical
+evidence, whereas Rothbard's approach is principled but may face the
+criticism that it is "morally correct but impractical."
+
+Bitcoin: The Realization of Anarcho-Capitalist Money
+----------------------------------------------------
+
+Bitcoin is the case that proves in reality -- in the monetary domain
+-- the core anarcho-capitalist claim that "the functions of the state
+can be better performed by the market."
+
+Bitcoin operates without state permission. There is no central bank,
+no monetary policy, no legal tender mandate. The rules of monetary
+supply are predetermined by code, and no individual or group can alter
+them. Disputes are resolved by the protocol's consensus mechanism, and
+network security is maintained by miners' economic incentives.
+
+This is the realization of "market-provided money" that Rothbard
+envisioned theoretically and Friedman analyzed economically. The
+success of Bitcoin provides a powerful precedent suggesting that other
+anarcho-capitalist proposals -- private dispute resolution,
+competitive legal systems, private protection services -- may also be
+feasible.
+
+Related Concepts
+----------------
+
+* Non-Aggression Principle [/ideas/non-aggression-principle/] - The
+fundamental libertarian principle prohibiting aggression against
+others' bodies and property
+* Self-Ownership [/ideas/self-ownership/] - The premise that every
+individual possesses absolute ownership of their own body and labor
+* Free Market [/ideas/free-market/] - An economic system operating
+through voluntary exchange without government intervention
+* Murray Rothbard [/people/murray-rothbard/] - An economist and
+thinker who systematically established anarcho-capitalism
+
+Tags: Liberty
+
+Read on full site: https://learn.txid.uk/en/ideas/anarcho-capitalism/

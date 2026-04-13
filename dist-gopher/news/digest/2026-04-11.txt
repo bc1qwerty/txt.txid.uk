@@ -1,0 +1,130 @@
+4월 11, 2026
+===========
+
+2026-04-11 | digest | by txid | en
+
+Daily digest
+
+Bitcoin's Quantum Computing Timeline Accelerates: Developers Propose
+Solutions
+----------------------------------------------------------------------
+
+Advances in quantum computing are compressing the timeline for Bitcoin
+network upgrades, but the Bitcoin Policy Institute and researchers say
+the protocol could achieve quantum resistance without core rule
+changes. A new proposal suggests Bitcoin transactions could be
+inherently resistant to quantum attacks through cryptographic
+innovation rather than hard forks.
+
+Why it matters: Quantum computing poses an existential threat to
+Bitcoin's security model, but the decentralized network's flexibility
+allows developers to upgrade defenses without forcing
+consensus-breaking changes.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/bitcoin-policy-institute-warns-of-quantum]
+· → Bitcoin Magazine
+[https://bitcoinmagazine.com/news/bitcoin-could-be-quantum-safe]
+
+______________________________________________________________________
+
+Institutional Bitcoin Wave Accelerates: BlackRock Surge, Morgan
+Stanley Entry, TD Cowen Coverage
+----------------------------------------------------------------------
+
+BlackRock's IBIT saw massive inflows of $358.1 million this week,
+while Morgan Stanley debuted its new MSBT fund with strong early
+demand, signaling continued Wall Street adoption. TD Cowen initiated
+equity coverage on Bitcoin treasury companies and projects Bitcoin
+reaching approximately $140,000 by year-end.
+
+Why it matters: Institutional investors treating Bitcoin as a
+strategic asset class—and framing corporate Bitcoin holdings as an
+investable equity category—validates sound money as a core portfolio
+diversification strategy.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/blackrock-massive-bitcoin-etf-inflows]
+· → Bitcoin Magazine
+[https://bitcoinmagazine.com/news/td-cowen-initiates-coverage-on-bitcoin]
+
+______________________________________________________________________
+
+Japan Upgrades Bitcoin to Financial Instrument Status
+-----------------------------------------------------
+
+Japan plans to reclassify cryptocurrencies as financial products under
+the Financial Instruments and Exchange Act, shifting Bitcoin from a
+payment-based framework to one aligned with traditional securities
+regulation. The move signals stronger institutional integration and
+regulatory clarity in a major economic power.
+
+Why it matters: Major economies formalizing Bitcoin as a legitimate
+financial instrument removes regulatory uncertainty and enables
+institutional participation previously blocked by speculative asset
+treatment.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/japan-moves-to-classify-bitcoin-and-crypto]
+
+______________________________________________________________________
+
+Iran Explores Bitcoin Tolls for Strait of Hormuz Amid Geopolitical
+Breakdown
+----------------------------------------------------------------------
+
+As Middle East tensions escalate, Iran may demand oil tankers pay
+Bitcoin tolls to transit the Strait of Hormuz, signaling an
+unprecedented geopolitical use case for cryptocurrency as nations
+bypass Western-controlled payment systems. The proposal reflects how
+Bitcoin enables monetary sovereignty in a fractured global order.
+
+Why it matters: Governments are discovering Bitcoin's utility as a
+sanctions-resistant settlement layer independent of SWIFT and U.S.
+dollar hegemony—validating decentralized money's core thesis.
+
+→ Cointelegraph
+[https://cointelegraph.com/news/iran-bitcoin-strait-of-hormuz-oil-tolls]
+
+______________________________________________________________________
+
+March Inflation Surge Validates Bitcoin's Fixed Supply Model
+------------------------------------------------------------
+
+The Iran conflict has driven March 2026 inflation higher across
+gasoline, airline fares, and broader consumer prices, intensifying
+pressure on savers and workers dependent on fixed incomes. Central
+banks' inability to contain supply-driven inflation underscores
+structural economic fragility.
+
+Why it matters: Recurring inflation shocks demonstrate why Bitcoin's
+algorithmic scarcity and 21-million-coin cap provide protection
+against monetary debasement eroding individual purchasing power.
+
+→ CNBC
+[https://www.cnbc.com/2026/04/10/cpi-inflation-march-2026-breakdown.html]
+
+______________________________________________________________________
+
+Tax Burden Reaches Breaking Point as Federal Spending Explodes Beyond
+$2.5 Trillion
+----------------------------------------------------------------------
+
+Nearly 6 in 10 Americans (59%) say their taxes are too high—a
+five-year high—while President Trump's total 2027 national security
+spending will exceed $2.5 trillion, far exceeding the stated $1.5
+trillion military budget. The fiscal asymmetry reveals government
+spending continues accelerating regardless of political
+administrations.
+
+Why it matters: Exploding federal spending and persistent taxation
+above citizens' tolerance threshold demonstrate the mathematical
+inevitability of monetary debasement—the core economic argument for
+Bitcoin as inflation insurance outside government control.
+
+→ The Hill
+[https://thehill.com/business/5826304-americans-poll-taxes-high/] · →
+Mises Institute
+[https://mises.org/notes-margin/trumps-total-2027-national-security-spending-will-exceed-25-trillion]
+
+Read on full site: https://news.txid.uk/digest/2026-04-11

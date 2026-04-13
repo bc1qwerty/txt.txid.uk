@@ -1,0 +1,197 @@
+Miners Lose $19K Per Coin. The Industry Pivots to AI.
+=====================================================
+
+2026-03-25 | bitcoin | by txid | en
+
+Bitcoin miners lose ~$19K on every BTC produced as costs of $88K exceed market price. Difficulty dropped 7.76% as public miners pivot facilities to AI data centers.
+
+The economics of Bitcoin mining have turned hostile. As of March 24,
+2026, the fully loaded cost to produce one bitcoin for a typical
+public mining company sits at approximately $88,000. The market price
+is roughly $71,000. That is a loss of $19,000 on every coin mined — a
+deficit that no amount of operational trimming can close.
+
+The response from publicly traded miners has been twofold and
+decisive: liquidate existing bitcoin reserves to fund operations, and
+convert mining infrastructure to serve the artificial intelligence
+industry. Both moves carry deep implications for Bitcoin's network
+security, its supply dynamics, and the future identity of
+proof-of-work mining itself.
+
+A Perfect Storm
+---------------
+
+The convergence of factors behind this crisis is unusually broad. The
+April 2025 halving cut block rewards from 6.25 to 3.125 BTC, instantly
+halving revenue per block. Network difficulty remained near record
+levels through most of early 2026. Energy costs spiked as the Middle
+East conflict pushed oil above $100 per barrel, raising electricity
+prices even for miners with fixed-rate contracts now rolling over at
+higher rates. And the bitcoin price has failed to deliver the
+post-halving appreciation that previous cycles provided within the
+same 11-month window.
+
+The hashprice — the revenue a miner earns per petahash per second per
+day — tells the story most concisely. At $33.30/PH/s/day on the Luxor
+Index, it sits at or below breakeven for most public operators. This
+is the number that determines whether a machine stays on or gets
+unplugged.
+
+On March 21, at block 941,472, Bitcoin's mining difficulty fell 7.76%
+to 133.79 trillion — the second-largest single-adjustment decline of
+2026. A drop of that magnitude means a substantial volume of hashrate
+went offline in the preceding two-week epoch. This is not noise. It is
+the network registering economic distress in the most direct way it
+can.
+
+The network hashrate has retreated to approximately 920-943 EH/s, down
+from the record 1 zetahash briefly achieved in 2025. That retreat
+represents billions of dollars of mining hardware sitting idle or
+running at a loss. The difficulty relief does improve margins for
+surviving miners — a 7.76% drop translates to roughly a 7.76%
+reduction in energy required per coin. But when the gap between cost
+and price is $19,000, a single-digit improvement in efficiency slows
+the bleeding. It does not stop it.
+
+The Great Liquidation
+---------------------
+
+When miners cannot cover costs through operations, they sell reserves.
+The pattern is now visible across every major public mining company.
+
+| Company | Action | Strategic Direction |
+|---|---|---|
+| Core Scientific | Sold ~1,900 BTC ($175M) in January | Plans to sell
+"substantially all" reserves |
+| MARA Holdings | Holds 53,822 BTC (all-time high) | Softened HODL
+policy; selling newly mined BTC |
+| Bitdeer | Selling reserves | Dual pivot: ASIC manufacturing + AI |
+| Riot Platforms | Selling reserves | Exploring AI co-location |
+| Bitfarms | Selling reserves | Operational restructuring |
+
+Core Scientific has been the most aggressive seller, generating
+roughly $175 million from January sales alone. Management disclosed
+plans to monetize "substantially all" remaining bitcoin reserves —
+language that signals a strategic exit from bitcoin as a treasury
+asset, not a temporary liquidity measure.
+
+MARA Holdings presents the most nuanced case. Its 53,822 BTC treasury
+is an all-time high for a public miner, making it the largest
+corporate bitcoin holder in the sector. But MARA has quietly softened
+its long-standing HODL policy. Rather than accumulating every coin it
+mines, the company is now selling newly produced bitcoin to cover
+operating expenses. The treasury number is high because of past
+accumulation; the current flow has reversed.
+
+The aggregate selling pressure from public miners adds meaningful
+supply to a market already absorbing 450 BTC per day of new issuance.
+In a period where price is range-bound between $68,000 and $73,000,
+this incremental supply acts as a persistent headwind.
+
+The AI Pivot
+------------
+
+The most consequential response to the mining crisis is not selling
+bitcoin. It is converting mining infrastructure into AI data centers.
+
+The logic is straightforward. Bitcoin mining facilities possess three
+assets that the AI industry desperately needs: high-density power
+infrastructure capable of handling hundreds of megawatts, large
+physical footprints with industrial cooling, and — most critically —
+grid interconnection agreements that can take three to six years to
+obtain from scratch. A bitcoin mine running at 200 megawatts with
+immersion cooling and direct utility connections is, with
+modifications, an AI training or inference facility.
+
+Core Scientific has emerged as the defining case study. The company,
+which emerged from Chapter 11 bankruptcy in early 2024, signed a
+12-year hosting agreement with CoreWeave carrying projected cumulative
+revenue of $8.7 billion — a figure that dwarfs anything bitcoin mining
+could generate at current prices. It secured a $1 billion credit
+facility from Morgan Stanley for data center conversion. And its
+shareholders rejected a roughly $9 billion acquisition offer from
+CoreWeave in October 2025 — an offer made not for Core Scientific's
+bitcoin or mining rigs, but for its power contracts, physical
+facilities, and grid connections.
+
+The economics explain why the pivot is happening industry-wide. AI
+data center hosting generates gross margins of 60-90% on contracted,
+multi-year revenue. Bitcoin mining in the current environment
+frequently generates negative margins. Revenue per megawatt is three
+to five times higher for AI workloads. Revenue predictability is
+incomparably superior — contracted versus spot. If a megawatt of power
+generates negative returns pointed at bitcoin but positive returns
+pointed at AI, the rational economic decision is obvious.
+
+The Network Adapts
+------------------
+
+The pivot raises a question the Bitcoin community has been reluctant
+to confront directly: what happens to network security when mining
+becomes a secondary business for its largest operators?
+
+The immediate risk is limited. Bitcoin's difficulty adjustment ensures
+the network remains functional regardless of hashrate level. At
+920-943 EH/s, the cost to execute a 51% attack remains in the tens of
+billions of dollars — economically irrational by any measure.
+
+The longer-term question is subtler. If public miners — who currently
+operate roughly 25-30% of total network hashrate — reallocate the
+majority of their power capacity to AI, the hashrate lost will not
+return when bitcoin's price recovers. AI hosting contracts are
+multi-year. Facilities retrofitted for GPU racks will not be converted
+back to ASIC farms. This is structural, not cyclical, hashrate loss.
+
+The counterargument is that this is precisely how Bitcoin was designed
+to function. Miners are profit-seeking entities that allocate capital
+to the highest available return. When mining is unprofitable, hashrate
+leaves. When it becomes profitable again, new entrants arrive. The
+difficulty adjustment ensures equilibrium is always restored,
+regardless of who the specific miners are.
+
+The industry is splitting into two categories. The first: large,
+publicly traded companies with diversified energy infrastructure that
+will increasingly derive the majority of their revenue from AI
+hosting, maintaining some mining capacity as a secondary line. The
+second: lean, private operations in jurisdictions with structurally
+cheap electricity — hydroelectric regions in Latin America, stranded
+gas operations in the Middle East — with cost structures that allow
+profitable mining even at depressed prices. The first group will
+dominate headlines. The second group will quietly secure the network.
+
+What Resolves the Crisis
+------------------------
+
+Three variables will determine how the mining industry evolves over
+the next twelve months.
+
+First, the bitcoin price. A sustained move above $90,000 would restore
+profitability for most public miners and reduce the urgency of the AI
+pivot. The post-halving price cycle has historically delivered this
+kind of appreciation, but never on a guaranteed timeline.
+
+Second, next-generation hardware. ASICs below 10 joules per terahash,
+expected in late 2026 or early 2027, would meaningfully narrow the
+$19,000 cost-price gap. But new hardware requires capital expenditure
+that struggling miners may not be able to fund.
+
+Third, the AI infrastructure market. If demand for converted mining
+space continues at current rates, the economic pull toward AI will
+strengthen regardless of bitcoin's price. The CoreWeave deal — $8.7
+billion over 12 years — sets a benchmark that is difficult for any
+mining revenue scenario to match.
+
+The most probable outcome is that all three forces act simultaneously.
+The mining industry that emerges from this crisis will look
+fundamentally different from the one that entered it: not a collection
+of companies that mine bitcoin exclusively, but a network of energy
+infrastructure operators that allocate compute across mining, AI, and
+whatever workload generates the highest return at any given moment.
+
+The network will adapt. The difficulty adjustment guarantees it. But
+the miners on the other side of this adjustment will be running a
+different kind of business than the ones who came before.
+
+Tags: bitcoin, mining, AI, hashrate, difficulty, Core Scientific, MARA
+
+Read on full site: https://news.txid.uk/post/miners-crisis-ai-pivot

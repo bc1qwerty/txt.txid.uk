@@ -1,0 +1,193 @@
+Lightning Is Fast, But Is It Private?
+=====================================
+
+2026-03-26 | opinion | by txid | en
+
+Controlling just 2% of Lightning nodes is enough to deanonymize payments. As adoption accelerates, Lightning's privacy model deserves honest scrutiny.
+
+The Lightning Network is fast. Payments settle in seconds. Fees are
+measured in fractions of a cent. The user experience, on the best
+wallets, approaches the simplicity of tapping a credit card. If the
+only question is whether Lightning works as a payment system, the
+answer is unambiguously yes.
+
+But speed is not the only property that matters. For a growing number
+of Lightning users — activists, journalists, dissidents, ordinary
+people in jurisdictions where financial surveillance is a tool of
+political control — the more important question is whether Lightning
+is private. The honest answer is uncomfortable: it is not nearly as
+private as most users assume. And overstating that privacy puts real
+people at real risk.
+
+The 2% Problem
+--------------
+
+The most significant finding in Lightning privacy research is the 2%
+threshold. An adversary operating approximately 2% of the network's
+nodes — roughly 300 to 340 out of the current 15,000 to 17,000 public
+nodes — can position itself to observe a substantial fraction of
+payment traffic and deanonymize participants.
+
+The attack exploits how Lightning routes payments. When a sender pays
+a receiver, the payment travels through intermediate nodes. Each node
+sees only the previous hop and the next hop — onion routing, the same
+principle behind Tor. No single intermediate node sees the complete
+path. Against a passive observer with one node, this provides
+meaningful privacy.
+
+But an adversary operating multiple nodes throughout the network can
+correlate observations. If two of the adversary's nodes appear in the
+same payment route — one near the sender, one near the receiver — the
+adversary links the endpoints with high probability. The correlation
+is based on timing (the payment passes through both nodes within
+milliseconds), amount (minus routing fees, consistent across hops),
+and under the current HTLC mechanism, the payment hash, which is
+identical at every hop in the route.
+
+Operating 300 well-connected nodes costs tens of thousands of dollars
+in channel liquidity. This is a trivial budget for any nation-state
+intelligence agency and well within the means of private surveillance
+companies. The barrier to meaningful surveillance is not 50% of nodes
+or 20%. It is 2%. That is a low bar.
+
+Beyond Routing: The Full Attack Surface
+---------------------------------------
+
+The 2% routing attack is not the only vulnerability. Lightning
+payments leak information through multiple channels, and a
+sophisticated adversary combines them all.
+
+Node IP addresses are publicly visible in the network graph by
+default. An adversary who knows a node's IP can correlate it with a
+physical location and, through ISP records, with an identity. Running
+a node over Tor mitigates this, but the majority of public nodes do
+not use Tor, and even Tor-connected nodes can be deanonymized through
+traffic analysis by a sufficiently resourced adversary.
+
+Payment metadata extends beyond the payment itself: timing, channels
+used, fee structure, and error messages from failed attempts. Failed
+payments are particularly revealing — they probe the network for
+viable routes, and each probe leaks information about the sender's
+channel balances and connectivity. An adversary can even actively
+probe channels by sending payments designed to fail, mapping the flow
+of funds without making any genuine transactions.
+
+And then there is the structural problem that dwarfs all the technical
+ones: custodial wallets. A substantial fraction of Lightning users do
+not run their own nodes. They use custodial services where the
+provider has complete visibility into every transaction — amount,
+counterparty, time, frequency. A subpoena, a data breach, or a
+cooperative arrangement with a surveillance agency gives the adversary
+access to everything. From a privacy perspective, a custodial
+Lightning wallet is functionally equivalent to PayPal.
+
+The privacy promise of Lightning — ephemeral routing data, no public
+ledger, onion routing protection — applies only to self-custodial
+users operating their own nodes. For everyone else, it is marketing.
+
+Chainalysis Is Already Watching
+-------------------------------
+
+This is not a theoretical concern for the distant future. Chainalysis
+has offered Lightning Network monitoring through its KYT (Know Your
+Transaction) product since 2022. The company does not publicly detail
+its methods, but the attack vectors described above are not secret —
+they are documented in academic papers freely available online. Any
+surveillance firm with competent engineers can implement them.
+
+The threat model matters because Lightning adoption is accelerating.
+Square is enabling Lightning payments by default across four million
+merchants. The network is no longer an experiment used by a few
+thousand technically sophisticated Bitcoiners. It is becoming
+infrastructure that ordinary people use for ordinary transactions —
+including people in jurisdictions where financial surveillance is a
+tool of political repression.
+
+A human rights activist in Hong Kong receiving Lightning donations
+faces a fundamentally different threat model than a podcast listener
+in Portland tipping 500 sats. The technology is the same. The
+consequences of deanonymization are not.
+
+The Fix Is Coming — Slowly
+--------------------------
+
+The Lightning development community is aware of these limitations and
+is building mitigations. Three protocol-level improvements matter
+most.
+
+BOLT 12 offers replace the current invoice system with reusable
+payment offers that reduce information exposed about the recipient.
+More importantly, offers support blinded paths — routes where the
+final hops to the receiver are encrypted, preventing the sender and
+intermediate nodes from learning who received the payment. This breaks
+the routing observation attack for the receiver's side.
+
+PTLCs (Point Time Locked Contracts) would replace the current HTLC
+mechanism's identical payment hash with a cryptographic point that
+changes at each hop, making cross-hop correlation impossible. This
+addresses the most exploitable property of the current routing
+protocol.
+
+The problem is deployment. BOLT 12 is implemented in CLN (Core
+Lightning) but not yet in LND, which powers approximately 91% of the
+network's routing capacity. PTLCs require Taproot adoption and remain
+in development. The timeline for full deployment of both improvements
+across the majority of the network is measured in years, not months.
+
+In the interim, the network operates with the privacy properties it
+has today — properties that are insufficient against a motivated,
+state-level adversary.
+
+The Uncomfortable Asymmetry
+---------------------------
+
+Lightning's privacy limitations do not affect all users equally. For
+the vast majority — people buying coffee, tipping creators, paying for
+VPN subscriptions — the privacy provided is more than adequate. No
+adversary will operate 300 nodes to trace a 5,000-sat podcast payment.
+The cost of the attack vastly exceeds the value of the information.
+
+But for high-value targets — activists receiving donations,
+whistleblowers receiving payments, individuals in authoritarian
+regimes conducting transactions the state would punish — the calculus
+inverts. The value of deanonymization is high, the adversary's
+resources are substantial, and the consequences of identification are
+severe.
+
+This creates the worst possible outcome: the users who need privacy
+least have plenty of it, and the users who need it most do not. More
+dangerous still is the false sense of security — a dissident who
+believes Lightning payments are untraceable because "Lightning is
+private" may take risks they would not take if they understood the
+actual threat model.
+
+An Argument for Honesty, Not Pessimism
+--------------------------------------
+
+This publication has written optimistically about Lightning, and that
+optimism is warranted. The Lightning economy is real and growing. The
+use cases — micropayments, remittances, creator economics — are
+solving real problems for real people. None of that changes the fact
+that the privacy model is weaker than most users believe.
+
+The path forward is clear: deploy BOLT 12, blinded paths, and PTLCs as
+rapidly as possible. Reduce dependence on custodial wallets through
+better self-custodial UX. Encourage Tor usage for node operators. And
+above all, stop telling users that Lightning is private without
+qualification.
+
+Lightning is fast. Lightning is cheap. Lightning is increasingly easy
+to use. Lightning is not private against a motivated, state-level
+adversary — not yet. When the protocol improvements in development are
+fully deployed, the picture will improve substantially. Until then,
+users who face serious surveillance threats should understand what
+Lightning can and cannot protect them from, and plan accordingly.
+
+The strength of open protocols is that their weaknesses can be
+identified, documented, and fixed in public. The weakness of marketing
+claims is that they cannot. Lightning deserves the former treatment,
+not the latter.
+
+Tags: Lightning Network, privacy, surveillance, BOLT 12, Bitcoin, security
+
+Read on full site: https://news.txid.uk/post/lightning-privacy-fast-not-private

@@ -1,0 +1,195 @@
+Bitcoin vs Gold: A Generational Shift in Store of Value
+=======================================================
+
+2026-02-21 | en
+
+Scarcity, portability, verifiability - an analysis with concrete figures and historical examples of how Bitcoin is redefining the store-of-value throne that gold has held for 5,000 years.
+
+On August 15, 1971, the day President Nixon announced the suspension
+of gold convertibility, one ounce of gold was $35. If you had
+exchanged $1,000 for gold at that time, the value of that gold in 2026
+would be approximately $75,000. A 75x increase over 55 years - an
+average annual return of about 8%. Not bad. But over the same period,
+the dollar's real purchasing power evaporated by more than 87%. In
+other words, gold barely kept pace with the decline in currency value
+- it did not achieve genuine "real value growth."
+
+For more than 5,000 years, humanity has regarded gold as the ultimate
+store of value. From the pharaohs of ancient Egypt to 21st-century
+central banks, gold has been the core asset preserving civilization's
+wealth. Then in 2009, a digital currency created by an anonymous
+developer named Satoshi Nakamoto issued a challenge to those 5,000
+years of history. Bitcoin is not merely a speculative asset - it is a
+new form of store of value that implements gold's essential properties
+more purely in the digital world. Is gold's throne truly safe?
+
+Why Gold Was Chosen for 5,000 Years
+-----------------------------------
+
+It is no coincidence that gold has survived as a store of value from
+the Bronze Age to the present. Among all 118 elements on the periodic
+table, gold earned the status of money for clear reasons.
+
+First, gold is extremely chemically stable. It does not corrode, does
+not oxidize, and does not deteriorate. The golden mask of Tutankhamun,
+crafted in 1323 BC, retains the same luster today, 3,300 years later.
+This is the ability to preserve value across time.
+
+Second, gold is scarce - but not too scarce. The total amount of gold
+humanity has mined throughout history is estimated at about 200,000
+tons, which could fill roughly four Olympic swimming pools.
+Approximately 3,000 tons of new gold are mined each year, representing
+only 1.5-2% of existing stock. This low stock-to-flow ratio (stock /
+annual production) prevents the value of existing holders from being
+rapidly diluted.
+
+Third, gold is divisible, homogeneous, and difficult to counterfeit.
+Whether it is 10 grams of gold or 1 kilogram, it is essentially the
+same material, and its properties do not change when melted and
+recast. These attributes combined to make gold a natural medium of
+exchange and measure of value.
+
+From the 19th century through the early 20th century, most major
+nations adopted the gold standard. Governments could only issue
+currency in proportion to their gold holdings, which served as a
+natural form of fiscal discipline. Gold was not merely an ornament or
+investment vehicle - it was the economic foundation of civilization
+itself.
+
+Bitcoin Reconstructs Gold's DNA in Digital Form
+-----------------------------------------------
+
+People encountering Bitcoin for the first time often ask: "Why should
+a digital code with no physical substance have value?" But this
+question misses the point. Gold's value does not come from the fact
+that it is a metal - it comes from the properties mentioned above:
+scarcity, durability, divisibility, and verifiability. Bitcoin
+implements these properties more purely in the digital realm.
+
+Absolute scarcity: A number that cannot increase, not even in outer
+space
+
+Gold's scarcity is relative. While approximately 200,000 tons of gold
+are estimated to exist on Earth, nobody knows the exact total. The
+bigger problem is future supply. What if deep-sea mining technology
+advances, or companies like SpaceX succeed in asteroid mining? In
+fact, NASA estimates that the asteroid Psyche 16 contains metals worth
+approximately $700 quintillion (7 × 10^19 dollars). However, Psyche 16
+is primarily composed of iron and nickel, with gold making up only a
+tiny fraction. Still, if asteroid mining becomes reality, the scarcity
+premise of precious metals could be fundamentally shaken.
+
+Bitcoin is different. The 21 million supply cap is mathematically
+embedded in the source code. This number does not change no matter how
+far mining technology advances - or even if extraterrestrial
+civilizations are discovered. The quantum computing threat pertains to
+Bitcoin's cryptographic security, not its issuance cap. If SHA-256 or
+ECDSA are threatened, an upgrade to quantum-resistant cryptography
+would be needed, and the Bitcoin community is conducting research in
+preparation for this. The Bitcoin network generates a new block
+approximately every 10 minutes and issues Bitcoin, with a "halving"
+mechanism that cuts the issuance in half every 210,000 blocks (roughly
+four years). Starting at 50 BTC per block in 2009, it was reduced to
+25 BTC in 2012, 12.5 BTC in 2016, 6.25 BTC in 2020, and 3.125 BTC in
+2024. As of 2026, approximately 19.6 million have been mined, and the
+last satoshi is scheduled to be mined around the year 2140.
+
+This is the first asset in human history to possess absolute scarcity.
+If gold's scarcity is constrained by the limits of the physical world,
+Bitcoin's scarcity is constrained by mathematical law.
+
+Instant verifiability: A structure immune to counterfeiting
+
+In 2012, a shocking incident occurred at a well-known precious metals
+shop in New York. Counterfeit gold bars - tungsten cores plated in
+gold - were discovered. Tungsten and gold have nearly identical
+densities (19.3 g/cm³ vs. 19.32 g/cm³), making them indistinguishable
+by weight alone. Even experts could not tell them apart with the naked
+eye without X-ray fluorescence analysis or ultrasonic testing. Such
+counterfeit gold bars are repeatedly discovered in the international
+gold market. Verifying the authenticity of physical gold takes time
+and costs money.
+
+Bitcoin is instantly verified through software alone. Every node in
+the network mathematically confirms the authenticity of received
+Bitcoin. This verification, based on the SHA-256 hash function and the
+Elliptic Curve Digital Signature Algorithm (ECDSA), is impossible to
+fake. Counterfeit Bitcoin simply cannot exist.
+
+Portability and borderlessness. Gold worth 10 billion won weighs
+approximately 60 kilograms. Transporting it across a border involves
+customs declarations, physical logistics, and storage challenges. The
+same amount in Bitcoin can be carried by memorizing 12 words. And
+those words can restore the Bitcoin from anywhere in the world. When
+refugees cross borders, when companies make international payments,
+when individuals emigrate - Bitcoin's portability is a strength gold
+can never match.
+
+Divisibility. In practice, dividing gold into units smaller than 1
+gram is difficult. Using gold for small transactions is impractical.
+Bitcoin's smallest unit, the satoshi, is 0.00000001 BTC. Even if 1 BTC
+is worth 100 million won, one satoshi is a mere 0.01 won. In theory,
+transactions of less than one won are possible with Bitcoin, and the
+Lightning Network makes this a reality.
+
+Areas Where Gold Still Leads
+----------------------------
+
+While Bitcoin surpasses gold in many attributes, there are areas where
+gold retains an advantage.
+
+Proven history. Gold has 5,000 years of history. Countless empires
+have risen and fallen, wars and revolutions have repeated, yet gold
+has always maintained its value. Bitcoin was born in 2009 and has
+barely more than 15 years of history. It has yet to survive a major
+war, a deep recession, or decades of political upheaval.
+
+Physical independence. Gold needs no electricity, no internet, and no
+software. Even in an extreme civilizational collapse scenario, gold
+retains its value. Bitcoin requires internet infrastructure, a power
+supply, and an operational node network. While this is not a practical
+risk, it is cited as a theoretical vulnerability.
+
+Industrial demand. Beyond investment demand, gold has industrial uses
+in electronics, medical devices, and aerospace, providing a price
+floor. Bitcoin has no such industrial demand, and its value depends
+entirely on network effects and monetary demand.
+
+Improved accessibility. Modern gold ETFs (such as GLD) have
+significantly compensated for gold's portability and divisibility
+limitations. However, these rely on trust in intermediaries, which is
+fundamentally different from Bitcoin's self-custody capability.
+
+Psychological acceptance. Central banks around the world hold
+approximately 36,000 tons of gold. Institutional investors,
+individuals, and governments all understand and accept gold. While
+institutional acceptance of Bitcoin is growing rapidly, it has not yet
+achieved the universal trust that gold enjoys.
+
+Comparison at a Glance
+----------------------
+
+Digital Gold, and Something More
+--------------------------------
+
+Many people call Bitcoin "digital gold." This is not a simple
+metaphor. Bitcoin performs the role that gold has fulfilled for
+thousands of years - preserving value across time - more efficiently
+and with greater censorship resistance.
+
+But Bitcoin also does things gold can never do. It can be transmitted
+instantly, permissionlessly, and to anywhere in the world via the
+internet. This means that if gold was the store of value for the
+physical world, Bitcoin has the potential to become the store of value
+for the digital world.
+
+Gold and Bitcoin can also be viewed as complementary rather than
+competitive. Gold has built trust through thousands of years of
+history, while Bitcoin offers new attributes for the digital age.
+Regardless of which one you prefer, both share a common feature: they
+offer an alternative to fiat currencies that can be issued without
+limit.
+
+Tags: Bitcoin, Economics
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-vs-gold/

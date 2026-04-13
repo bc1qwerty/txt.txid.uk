@@ -1,0 +1,421 @@
+Taproot: Bitcoin's Biggest Upgrade
+==================================
+
+2026-03-19 | en
+
+Activated in 2021, Taproot introduced Schnorr signatures, MAST, and Tapscript - fundamentally improving Bitcoin's privacy, efficiency, and smart contract capabilities through a soft fork.
+
+On November 14, 2021, at block height 709,632, one of the most
+significant upgrades in Bitcoin's history quietly activated. There
+were no fireworks, no contentious hard fork debates. A new block was
+mined, and with it, a fundamental transformation of the Bitcoin
+protocol took effect. This was Taproot.
+
+The first major protocol upgrade since SegWit four years earlier,
+Taproot comprises three Bitcoin Improvement Proposals (BIPs): BIP 340
+(Schnorr Signatures), BIP 341 (Taproot), and BIP 342 (Tapscript).
+Together, these three proposals elevate Bitcoin's privacy, efficiency,
+and programmability to an entirely new level - laying the groundwork
+for Bitcoin's evolution from a simple digital currency into a
+sophisticated financial protocol.
+
+This article examines exactly what Taproot changed, why it matters,
+and what it means for Bitcoin's future.
+
+Bitcoin Before Taproot: What Were the Problems?
+-----------------------------------------------
+
+To understand Taproot, you first need to understand how Bitcoin worked
+before it.
+
+Every Bitcoin transaction is governed by conditions written in Script,
+a simple programming language. A typical condition reads: "To spend
+this bitcoin, provide a valid signature from Alice's private key." For
+simple transfers, this works fine. But real-world finance is far more
+complex.
+
+Consider a 3-of-5 multisig wallet managing corporate funds. Three out
+of five board members must sign to move money. In pre-Taproot Bitcoin,
+when such a multisig transaction was recorded on the blockchain, its
+entire complex structure was exposed. Anyone with a block explorer
+could see: "This address uses multisig, there are 5 possible signers,
+and 3 of them signed."
+
+This created two serious problems.
+
+First, a privacy problem. Whether multisig was used, how many
+participants were involved, and how many signed - all of this was
+public information. The mere fact that a large institution uses
+multisig could make it a target. Since simple transfers and complex
+smart contracts looked fundamentally different on-chain, chain
+analysis firms could infer a great deal about users simply from
+transaction types.
+
+Second, an efficiency problem. Multisig transactions had to include
+multiple signatures, making them larger. Larger data means higher
+fees. The more complex a transaction's conditions, the more block
+space it consumed, affecting the network's overall throughput.
+
+Taproot solves both problems simultaneously and elegantly.
+
+BIP 340: Schnorr Signatures - An Upgrade to the Cryptographic
+Foundation
+----------------------------------------------------------------------
+
+## From ECDSA to Schnorr
+
+When Bitcoin launched in 2009, Satoshi Nakamoto chose ECDSA (Elliptic
+Curve Digital Signature Algorithm) as the signature scheme. ECDSA was
+the most widely deployed, standardized, and patent-free algorithm
+available at the time. It was a reasonable choice.
+
+However, cryptographers had long known that Schnorr Signatures were
+mathematically more elegant and powerful. Invented by Claus-Peter
+Schnorr in 1991, the Schnorr scheme produces more compact signatures,
+has cleaner security proofs, and - most importantly - possesses an
+extraordinary mathematical property called linearity. The catch was
+that Schnorr signatures were protected by a patent until 2008. When
+Satoshi designed Bitcoin, there was legal risk involved, so ECDSA was
+the pragmatic choice.
+
+After the patent expired, Bitcoin developers began researching how to
+introduce Schnorr signatures into the protocol. The result was BIP
+340.
+
+## Linearity: Why Schnorr Is Revolutionary
+
+The key advantage of Schnorr signatures stems from their linearity.
+Mathematically, this means the following:
+
+Multiple public keys and signatures can be added together. Alice's
+signature + Bob's signature + Charlie's signature can be combined into
+a single aggregate signature that is indistinguishable from - and the
+same size as - a regular single signature.
+
+Consider the practical implications. In a 3-of-5 multisig, when three
+parties sign, ECDSA requires three separate signatures to be recorded
+on the blockchain. With Schnorr, these three signatures are combined
+into one that looks identical to a single-signer transaction. An
+outside observer cannot tell whether one person signed or a hundred.
+
+## Key Aggregation
+
+Schnorr's linearity enables key aggregation - combining multiple
+participants' public keys into a single public key. This combined key
+is indistinguishable from an ordinary public key.
+
+MuSig is the most prominent protocol leveraging this principle.
+MuSig2, the refined version, requires only two rounds of communication
+to produce a multi-signature, enabling practical n-of-n multisig. The
+resulting signature and public key appear on-chain as a perfectly
+ordinary single-key, single-signature transaction.
+
+## Batch Verification
+
+Another advantage of Schnorr signatures is batch verification. When a
+Bitcoin node receives a new block, it must verify all transaction
+signatures in that block. With ECDSA, each signature had to be
+verified individually - 100 signatures required 100 separate
+verification operations.
+
+Schnorr signatures can be verified in batches. Verifying 100
+signatures together requires roughly only 2-3 times the computation of
+a single verification, rather than 100 times. This dramatically speeds
+up block validation. The improvement is especially significant during
+Initial Block Download (IBD), when new nodes must rapidly verify
+hundreds of thousands of historical blocks.
+
+BIP 341: Taproot - Elegant Structural Design
+--------------------------------------------
+
+## The Core Insight: Cooperative and Non-Cooperative Paths
+
+Taproot's central insight is remarkably simple: Most complex contracts
+ultimately resolve with all participants agreeing.
+
+Consider a 2-of-3 multisig escrow involving a buyer, a seller, and an
+arbitrator. While various dispute scenarios are theoretically
+possible, in practice the vast majority of transactions conclude with
+mutual agreement between the parties. The complex fallback conditions
+- timelocks, arbitrator intervention - are rarely needed.
+
+Taproot exploits this observation. Every Taproot output has two
+spending paths:
+
+Key Path: When all participants agree, funds can be moved with a
+single Schnorr aggregate signature. On the blockchain, this looks
+exactly like an ordinary single-signature transaction. No trace of any
+complex conditions is revealed.
+
+Script Path: Used only when participants fail to agree. A specific
+condition is revealed and satisfied to move the funds. But even here,
+thanks to the MAST structure, only the executed condition is exposed -
+all other conditions remain hidden.
+
+## The Tweak: Binding Two Paths Into One
+
+Technically, these two paths are encoded into a single output using a
+cryptographic technique called a tweak. The participants' aggregate
+public key is combined with the Merkle root of the script tree to
+produce a tweaked public key. This tweaked key is what appears
+on-chain.
+
+When spending via the key path, a signature adjusted for the tweak is
+provided. When spending via the script path, the original public key,
+a Merkle proof, and the script to execute are revealed. Either way,
+from the outside, a Taproot output looks like a single public key -
+nothing more.
+
+MAST: Merklized Abstract Syntax Trees
+-------------------------------------
+
+## The Limitations of Legacy Scripts
+
+Before Taproot, implementing complex conditions in Bitcoin required
+P2SH (Pay-to-Script-Hash) or P2WSH (Pay-to-Witness-Script-Hash). The
+problem was that spending required revealing the entire script. Even
+if only one of five conditions was used, the other four were still
+exposed on the blockchain.
+
+This was both a privacy issue and an efficiency issue - users paid
+fees for the data space consumed by unused conditions.
+
+## How MAST Solves It
+
+MAST (Merklized Abstract Syntax Trees) solves this problem using a
+Merkle tree structure. Each condition (script) is placed as a leaf in
+a Merkle tree, and only the root hash is committed on-chain.
+
+When spending, the user provides only the relevant script and a Merkle
+proof - the path from that leaf to the root. Verifiers can confirm
+that the script was part of the original tree. All other conditions
+remain hidden behind their hash values, their contents never revealed.
+
+## Practical Benefits
+
+Consider a concrete scenario: designing a Bitcoin script for estate
+planning.
+
+* Condition 1: Owner's signature (everyday use)
+* Condition 2: Spouse's signature + 6-month timelock (if owner is
+incapacitated)
+* Condition 3: Lawyer + spouse + 2-of-3 children multisig + 1-year
+timelock (disaster scenario)
+* Condition 4: Lawyer's signature + 2-year timelock (last resort)
+
+Under the old system, even when using Condition 1 for everyday
+spending, the entire estate plan - the involvement of a spouse,
+lawyer, and children, the timelock periods - would be publicly
+visible. With MAST, only Condition 1's script is revealed; the other
+three conditions remain hidden behind hash values. The existence of
+the estate plan itself is undetectable on-chain.
+
+Combined with Taproot's key path, this becomes even more powerful. If
+Condition 1 (owner's signature) is set as the key path, everyday
+transactions look exactly like ordinary single-signature transfers.
+The very existence of an estate plan is invisible on the blockchain.
+
+BIP 342: Tapscript - Designing for the Future
+---------------------------------------------
+
+## An Updated Script Framework
+
+Tapscript is the updated scripting system used within Taproot's script
+path. Built on Bitcoin's existing Script, it introduces several
+important changes.
+
+OP_CHECKSIGADD: The legacy OP_CHECKMULTISIG and OP_CHECKMULTISIGVERIFY
+opcodes are replaced by OP_CHECKSIGADD. The old multisig opcodes used
+an inefficient "try one at a time" approach for signature
+verification. OP_CHECKSIGADD directly manages a signature counter,
+enabling more efficient multisig operations that are compatible with
+Schnorr signatures.
+
+Improved Signature Hashing: Tapscript uses an improved sighash
+algorithm. All input amounts and scripts are committed to in the
+signature, allowing hardware wallets to safely calculate fees. This
+was partially addressed by SegWit but is made more complete in
+Tapscript.
+
+## Future Upgrade Flexibility
+
+Tapscript's most important feature is future extensibility. Unused
+opcodes (the OP_SUCCESS series) are reserved for adding new
+functionality through future soft forks. Combined with SegWit's
+versioning system, this makes adding new features to the Bitcoin
+protocol far cleaner than before.
+
+This design has opened a clear path for subsequently proposed opcodes
+like OP_CHECKTEMPLATEVERIFY (CTV), OP_CAT, and OP_VAULT to be
+naturally incorporated within the Tapscript framework. Taproot is not
+just an improvement for today - it is a platform for Bitcoin's future
+evolution.
+
+The Privacy Revolution: All Transactions Look the Same
+------------------------------------------------------
+
+The most fundamental change Taproot brings is in privacy.
+
+Before Taproot, transaction types were visually distinguishable. P2PKH
+(legacy), P2SH (script hash), P2WPKH (SegWit single-sig), P2WSH
+(SegWit script) - each had a distinct on-chain footprint. Chain
+analysis firms exploited these differences to trace fund flows and
+profile users.
+
+With Taproot, all transactions spent via the key path look identical.
+Single-signature, 10-of-15 multisig, complex timelock conditions,
+Lightning channel opens - when spent via the key path, all record
+identical data on the blockchain.
+
+This dramatically improves Bitcoin's fungibility. When all bitcoins
+look the same on-chain, it becomes much harder to discriminate against
+specific coins based on their history. This is a critical property for
+Bitcoin to function as true money.
+
+Fee Savings and Efficiency
+--------------------------
+
+Taproot reduces transaction sizes - and therefore fees - in several
+ways.
+
+Key aggregation effect: In n-of-n multisig, n signatures compress into
+a single signature. For a 3-of-3 multisig, signature data is reduced
+by approximately 67%.
+
+MAST effect: In complex scripts, only the executed condition needs to
+be revealed, so unnecessary data is never recorded on-chain.
+
+Key path priority: The most common case (all parties agreeing)
+requires minimal data. A key path spend can be more efficient than
+even a legacy P2WPKH transaction.
+
+These efficiency gains reduce fees for individual users while
+effectively increasing the network's throughput - more transactions
+fit into the same block space.
+
+Expanding Smart Contract Possibilities
+--------------------------------------
+
+Taproot significantly expands Bitcoin's smart contract capabilities.
+
+## Lightning Network Improvements
+
+Lightning channel-open transactions are fundamentally 2-of-2 multisig.
+Before Taproot, these transactions were identifiable as multisig
+on-chain. After Taproot, channel opens are indistinguishable from
+regular transfers. This improves Lightning user privacy and reduces
+channel management costs.
+
+## DLC (Discreet Log Contracts)
+
+DLCs are conditional payment protocols using oracles. They enable
+bets, insurance contracts, and financial derivatives based on external
+data - sports results, asset prices - all built on Bitcoin. Taproot's
+Schnorr signatures and MAST structure make DLCs more efficient and
+private.
+
+## PTLC (Point Time Locked Contracts)
+
+Taproot lays the groundwork for replacing Lightning's existing HTLCs
+(Hash Time Locked Contracts) with PTLCs. PTLCs leverage Schnorr's
+adaptor signatures technique and offer superior privacy compared to
+HTLCs. With HTLCs, the same payment hash is used across every hop in
+the route, enabling correlation analysis. With PTLCs, each hop uses a
+different point, making route tracing significantly more difficult.
+
+The Activation Process: Speedy Trial and the LOT=true Debate
+------------------------------------------------------------
+
+The process of activating Taproot is as significant as its technical
+content - it stands as an important case study in Bitcoin governance.
+
+## Lessons from the SegWit Wars
+
+The 2017 SegWit activation was accompanied by fierce debate and
+conflict. When miners and a corporate coalition attempted to delay
+SegWit activation, the UASF (User Activated Soft Fork) movement
+emerged, ultimately leading to the Bitcoin Cash hard fork. This
+experience left deep scars on the Bitcoin community.
+
+When discussing Taproot activation, the community sought to apply
+these lessons. The central point of contention was the LOT (Lock-in On
+Timeout) parameter.
+
+## LOT=true vs LOT=false
+
+LOT=false: If the signaling period ends without sufficient miner
+support, the activation attempt simply fails. If miners don't signal,
+the upgrade doesn't activate.
+
+LOT=true: If miners haven't signaled by the end of the signaling
+period, activation is forced at timeout. This is essentially a
+built-in UASF.
+
+LOT=true advocates argued that miners should not have veto power over
+upgrades. LOT=false advocates countered that forced activation
+increased the risk of network splits.
+
+## The Speedy Trial Compromise
+
+Ultimately, Speedy Trial was adopted as a compromise. During a short
+signaling period (approximately 3 months), if more than 90% of miners
+signaled support, activation would be locked in. If the threshold
+wasn't met, the community would regroup and discuss next steps.
+
+The result was overwhelming support. Over 99% of miners signaled in
+favor during the signaling period. Taproot locked in during June 2021
+and activated in November. Unlike the painful SegWit wars, Taproot's
+activation was comparatively smooth - a testament to the broad
+community consensus on the upgrade's technical merit.
+
+After Taproot: Adoption Status and the Road Ahead
+-------------------------------------------------
+
+Taproot adoption has been gradual since activation. In 2023, the
+emergence of Ordinals and BRC-20 tokens caused Taproot transaction
+volumes to surge, though this was a somewhat unexpected use case
+relative to Taproot's original design intentions.
+
+Wallet and service support for Taproot continues to expand, with major
+hardware wallets now supporting Taproot addresses (bc1p...). Lightning
+Network implementations are working on Taproot channels, which are
+expected to significantly improve Lightning's privacy and efficiency.
+
+Technologies that can be built on top of Taproot include:
+
+* Cross-Input Signature Aggregation: Combining all input signatures in
+a single transaction into one. When implemented, this would
+dramatically reduce transaction sizes.
+* OP_CTV / OP_CAT: New opcodes enabling covenants, which would extend
+Bitcoin's programmability to another level.
+* MuSig2-based protocols: More sophisticated multi-signature schemes
+and practical implementations of threshold signatures.
+
+Why Taproot Is the Most Important Upgrade Since SegWit
+------------------------------------------------------
+
+If SegWit (2017) solved Bitcoin's scalability challenges and laid the
+foundation for the Lightning Network, Taproot (2021) raised the
+ceiling on Bitcoin's privacy and programmability.
+
+Where SegWit was born amid the gunfire of the block size wars, Taproot
+arrived quietly - but brought more fundamental changes. Schnorr
+signatures upgraded Bitcoin's cryptographic foundation. MAST
+transformed the paradigm for script privacy. Tapscript opened the door
+for future innovation.
+
+Bitcoin is often mischaracterized as a protocol that never changes.
+Taproot demonstrates that Bitcoin can evolve - with extreme caution,
+but with certainty. Years of research, hundreds of reviews, and
+community-wide consensus preceded its activation. Taproot stands as
+both a model of Bitcoin development and a textbook example of how a
+decentralized protocol can be upgraded.
+
+The full impact of Taproot has yet to unfold. As new wallets,
+protocols, and applications leverage Taproot's capabilities, Bitcoin
+will continue its evolution into a more private, more efficient, and
+more powerful financial protocol.
+
+Tags: Bitcoin, Technical
+
+Read on full site: https://learn.txid.uk/en/articles/taproot/

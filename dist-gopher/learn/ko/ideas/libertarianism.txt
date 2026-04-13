@@ -1,0 +1,65 @@
+자유주의란?
+======
+
+2026-03-01 | ko
+
+개인의 자유와 재산권을 핵심으로 하는 정치철학, 자유주의를 이해합니다.
+
+자유주의를 한 문장으로
+------------
+
+자유주의(Libertarianism)는 개인의 자유와 재산권을 가장 중요한 가치로 여기는 정치철학입니다. 모든 인간관계는
+자발적 동의에 기반해야 하며, 강제(coercion)는 정당화될 수 없습니다.
+
+핵심 원칙
+-----
+
+## 자기 소유권 (Self-Ownership)
+모든 사람은 자기 자신의 몸과 노동의 주인입니다. 이것이 자유주의의 출발점입니다.
+
+## 비침해 원칙 (Non-Aggression Principle)
+다른 사람의 신체나 재산에 대한 강제력 행사는 부당합니다. 이 원칙은 개인 간의 관계뿐만 아니라 정부와 개인의 관계에도
+동일하게 적용됩니다.
+
+## 자발적 교환 (Voluntary Exchange)
+모든 거래와 관계는 양측의 자발적 동의에 기반해야 합니다. 강제된 거래(세금, 징병, 규제)는 이 원칙에 위배됩니다.
+
+## 사유재산권 (Private Property Rights)
+재산권은 자유의 기초입니다. 정당하게 취득한 재산에 대한 개인의 권리는 어떤 다수결로도 침해할 수 없습니다.
+
+핵심 인물
+-----
+
+* 존 로크 (John Locke) - 자연권 사상의 기초를 놓은 철학자
+* 프레데릭 바스티아 (Frédéric Bastiat) [/ko/people/frederic-bastiat/] - "법"의
+저자. 정부의 합법적 약탈을 비판
+* 머레이 로스바드 (Murray Rothbard) [/ko/people/murray-rothbard/] - 자유주의 윤리학과
+경제학의 통합
+* 한스-헤르만 호페 (Hans-Hermann Hoppe) [/ko/people/hans-hermann-hoppe/] - 논증
+윤리학(argumentation ethics)을 통한 자유주의 정당화
+
+자유주의와 비트코인
+----------
+
+비트코인은 자유주의 철학의 기술적 구현입니다:
+
+* 자기 소유권 → 개인 키(private key)로 자신의 재산을 직접 통제
+* 비침해 원칙 → 검열 불가능한 거래로 강제적 재산 압수 방지
+* 자발적 교환 → 허가 없는(permissionless) P2P 거래
+* 사유재산권 → 수학적으로 보장되는 소유권
+
+더 깊이 들어가기
+---------
+
+* 자생적 질서란 무엇인가 [/ko/ideas/spontaneous-order/]
+* 건전화폐와 자유 [/ko/ideas/sound-money/]
+
+추천 자료
+-----
+
+* The Law (Frédéric Bastiat) - 짧고 강력한 고전
+* 자유의 윤리 (The Ethics of Liberty) (Murray Rothbard) - 자유주의 윤리학의 체계
+
+Tags: 자유주의
+
+Read on full site: https://learn.txid.uk/ko/ideas/libertarianism/

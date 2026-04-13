@@ -1,0 +1,176 @@
+The Economic Freedom Bitcoin Guarantees
+=======================================
+
+2026-02-26 | en
+
+From the Canadian account freezes to Venezuelan refugees - four ways the state controls your money and the true economic freedom that Bitcoin technically guarantees, illustrated through concrete examples.
+
+In February 2022, something happened in Canada that was hard to
+believe possible in a modern democracy. The bank accounts of
+approximately 280 citizens who supported the truckers' peaceful
+protests were frozen. Without a court order, without trial
+proceedings, without confirmed criminal charges. Even an ordinary
+citizen who donated five dollars to the protesters was not spared.
+People who woke up and tried to buy a cup of coffee only to have their
+cards declined discovered that their accounts had been frozen.
+
+This incident was a shocking example of how easily an individual's
+property can be placed under state control, even in a Western
+democracy. We believe that "the money in my bank account is mine," but
+is it really? Legally it is your money, but technically it is merely a
+digital record managed by the bank and accessible to the government at
+any time.
+
+No Freedom Is Complete Without Economic Freedom
+-----------------------------------------------
+
+When we discuss freedom, we often think of freedom of expression,
+freedom of movement, or freedom of religion. But at the foundation of
+all these freedoms lies economic freedom. Think about it. If you
+cannot freely spend the money you earn, can you live where you want?
+If overseas remittances are restricted, can you study or do business
+abroad? If your account is frozen, even buying groceries becomes
+impossible.
+
+Friedrich Hayek warned in The Road to Serfdom that economic control
+ultimately threatens all freedom. When the government completely
+controls an individual's economic activity, that individual has no
+choice but to depend on the government for survival, which in turn
+leads to the loss of political freedom. This is a lesson proven by the
+history of 20th-century totalitarian states.
+
+Economic freedom has become even more important in modern society. We
+use digital currency far more than physical currency. Cards, bank
+transfers, and mobile payments are part of daily life. Behind this
+convenience lies the fact that every transaction is recorded, tracked,
+and can be blocked if deemed necessary. Digital finance is the perfect
+infrastructure for control.
+
+Specific Ways the State Controls Your Money
+-------------------------------------------
+
+Modern states restrict individual economic freedom in various ways.
+This is not a problem limited to authoritarian regimes. It happens in
+democracies too - sometimes through legitimate legal procedures,
+sometimes under the banner of emergency measures.
+
+Capital controls are the most direct method. China prohibits citizens
+from taking more than $50,000 in foreign currency out of the country
+per year. This means that no matter how large one's assets, they
+cannot be freely moved across borders. Argentina once restricted
+dollar purchases to no more than $200 per month (foreign exchange
+regulations were significantly relaxed after the Milei government took
+office). The measure was intended to prevent the rapid depreciation of
+the domestic peso, but the result was that citizens lost the means to
+protect their wealth. According to IMF data, roughly 60% of the
+world's population experiences some form of capital control.
+
+Account freezing is an even more dramatic intervention. The U.S.
+Office of Foreign Assets Control (OFAC) places specific individuals
+and entities on sanctions lists, completely cutting them off from the
+U.S. financial system. As of 2021, more than approximately 6,300
+individuals and companies were on this list. China routinely freezes
+the accounts of dissidents and Uyghur activists. In Korea as well,
+accounts are seized for reasons such as tax delinquency or criminal
+investigation. In all of these cases, individuals are unable to access
+their own money.
+
+Inflation is the most insidious form of property confiscation. Since
+Nixon abolished the gold standard in 1971, the purchasing power of the
+U.S. dollar has fallen by approximately 87%. What $100 could buy in
+1971 now costs about $770. The same is true for the Korean won. The
+purchasing power of 1 million won in 1980 was equivalent to only about
+130,000-150,000 won in 2020. Every time a government issues currency,
+the value of existing currency is diluted. This is property
+confiscation carried out quietly, without a popular vote or consent.
+Economist Milton Friedman made it clear that "inflation is always and
+everywhere a monetary phenomenon" - and that it is a choice made by
+governments.
+
+Payment censorship is a new tool of control in the 21st century. When
+WikiLeaks published U.S. diplomatic cables in 2010, PayPal, Visa,
+Mastercard, and Bank of America blocked transactions to WikiLeaks.
+WikiLeaks had not been convicted of any crime, but it lost the means
+to receive donations. During the Russia-Ukraine war in 2022, major
+Russian banks were expelled from the SWIFT network, cutting millions
+of ordinary Russian citizens off from international transactions. The
+centralization of payment systems has become a powerful weapon capable
+of economically isolating anyone.
+
+The Technical Freedom Bitcoin Provides
+--------------------------------------
+
+Bitcoin is a technical response to these control mechanisms. It is not
+a political declaration or a philosophical ideal - it is concrete
+freedom provided by technology based on mathematics and cryptography.
+
+Permissionless transactions. To send a transaction on the Bitcoin
+network, you need no bank approval, no government permission, and no
+payment processor's consent. With an internet-connected device and a
+private key, you can transmit value to anyone in the world, in any
+amount, for any reason. When a Venezuelan doctor's lifelong savings
+crumbled under bolivar hyperinflation, those who had saved in Bitcoin
+preserved their wealth. When Turkey's lira plunged more than 44% in
+2021 alone, citizens holding Bitcoin were able to avoid much of the
+impact.
+
+Non-confiscable property. Bitcoin ownership depends on the private
+key. A private key is expressed as a seed phrase of 12 or 24 words,
+and it can exist only in the mind of the person who remembers it.
+Seizing Bitcoin through physical force - the way a government can
+break open a safe or freeze a bank account - is structurally
+impossible. When the Taliban seized Afghanistan in 2021, countless
+people lost access to their bank accounts overnight. But those who had
+self-custodied their Bitcoin maintained their assets intact even after
+crossing borders.
+
+Censorship-resistant payments. To block a specific person's
+transactions on the Bitcoin network would require the cooperation of a
+majority of the tens of thousands of miners and node operators
+distributed across the globe. This is practically impossible -
+technically, economically, and logistically. The case of WikiLeaks
+receiving Bitcoin donations after being blocked by PayPal and Visa is
+a prime example. Even if someone orders "block transactions to this
+address," the Bitcoin network has no central authority to carry out
+such a command. There is criticism that Bitcoin's censorship
+resistance applies equally to criminals. However, since the Bitcoin
+blockchain is a public ledger, it is actually easier to trace than
+cash, and there are numerous cases where blockchain analysis firms
+have contributed to criminal investigations. Immediately after China's
+mining ban, the hashrate dropped by roughly 50%, but it recovered
+within about six months as miners relocated to other countries.
+
+Borderless movement. Carrying 10 kilograms of gold across a border
+involves customs declarations, the risk of confiscation, and physical
+limitations. Bitcoin is different. A person who has memorized 24 words
+carries their wealth intact wherever they cross any border in the
+world. Customs declarations, seizure, border controls - none of these
+can stop thoughts inside someone's head. This is the first form of
+asset that renders capital controls inoperative.
+
+Technology for Freedom, but Not Perfect
+---------------------------------------
+
+It would be an exaggeration to declare Bitcoin a perfect tool of
+freedom. Purchasing Bitcoin on an exchange requires identity
+verification (KYC), and given the public nature of the blockchain, if
+an address is linked to a real identity, transaction tracking becomes
+possible. Attempts by states to collaborate with exchanges to surveil
+or control Bitcoin users are already underway in several countries.
+
+However, the direction of the technology is clear. Tools such as
+self-custody, the Lightning Network, and CoinJoin continue to
+strengthen Bitcoin's privacy and censorship resistance. What matters
+is that Bitcoin guarantees this freedom not through political promises
+but through protocol rules. Even if regimes change or laws are
+rewritten, Bitcoin's core properties remain unchanged within the code.
+
+Economic freedom is the foundation of all freedom. And Bitcoin has,
+for the first time in human history, created a means that technically
+guarantees economic freedom without the permission of any state. This
+is the civilizational significance of Bitcoin that goes far beyond
+being a mere investment asset.
+
+Tags: Bitcoin, Liberty
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-and-freedom/

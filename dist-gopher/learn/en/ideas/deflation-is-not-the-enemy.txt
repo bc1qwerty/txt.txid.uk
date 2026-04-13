@@ -1,0 +1,185 @@
+Deflation Is Not the Enemy
+==========================
+
+2026-04-01 | en
+
+Mainstream economics treats falling prices as a catastrophe. History and logic tell a different story - one where deflation often signals prosperity, not collapse.
+
+The Standard Narrative
+----------------------
+
+Open any macroeconomics textbook and you will find deflation - a
+sustained decline in the general price level - described as a grave
+economic threat. The reasoning goes like this: if prices are falling,
+consumers delay purchases (why buy today what will be cheaper
+tomorrow?), businesses see revenue shrink, workers face wage cuts or
+layoffs, and the economy spirals into depression. This story is told
+so often that it functions as a background assumption, rarely
+questioned and never tested against the full historical record.
+
+But the story has a problem. It does not match the evidence.
+
+The Nineteenth Century: A Deflationary Boom
+-------------------------------------------
+
+The most sustained period of deflation in modern Western history was
+the latter half of the nineteenth century. In the United States,
+prices fell by roughly 50% between 1870 and 1900. By the standard
+narrative, this should have been an era of stagnation and misery.
+
+Instead, it was one of the most productive periods in human history.
+
+Real wages rose dramatically. Railroad mileage expanded from 53,000 to
+193,000 miles. Steel production increased from 77,000 tons to over 11
+million tons. The telephone, electric light, and internal combustion
+engine all emerged during this deflationary period. Real GDP per
+capita roughly doubled.
+
+Prices were falling because productivity was rising. Entrepreneurs
+found better ways to produce goods, and competition passed those
+savings to consumers. A farmer's dollar bought more clothing, more
+tools, more food. This was not economic pain - it was economic
+progress made tangible.
+
+Two Kinds of Deflation
+----------------------
+
+The confusion arises because there are two entirely different
+phenomena called "deflation," and mainstream economics treats them as
+one.
+
+## Productivity-Driven Deflation (Benign)
+
+When technology and efficiency improve, the cost of producing goods
+falls. Producers can offer lower prices and still earn profits.
+Consumers benefit from cheaper goods. Real wealth increases across
+society. This is what happened in the nineteenth century, and it is
+what happens today with electronics - your phone is cheaper and better
+than last year's model, and nobody calls this a crisis.
+
+## Monetary Deflation (Potentially Painful)
+
+When the money supply contracts sharply - usually following an
+unsustainable credit boom - prices fall because there is less money
+chasing the same goods. Debtors, who borrowed expecting stable or
+rising prices, find their real debt burden increasing. This can
+trigger defaults, bank failures, and genuine economic contraction. The
+early years of the Great Depression exhibited this pattern.
+
+The intellectual error of mainstream economics is treating all price
+declines as if they were the second type. Friedrich Hayek
+[/en/people/friedrich-hayek/] and the Austrian economists
+[/en/ideas/austrian-economics/] recognized this distinction clearly.
+Hayek argued that monetary policy should maintain a stable money
+supply and allow prices to fall naturally as productivity increases.
+Attempting to prevent this natural deflation through money printing
+distorts price signals, encourages malinvestment, and sets the stage
+for the boom-bust cycles described by the Austrian Business Cycle
+Theory [/en/ideas/austrian-business-cycle-theory/].
+
+The Delayed Purchase Myth
+-------------------------
+
+The most common argument against deflation - that falling prices cause
+consumers to defer purchases indefinitely - collapses under basic
+scrutiny.
+
+The technology sector has experienced consistent price deflation for
+decades. A gigabyte of storage cost $10,000 in 1990, $1 in 2010, and
+fractions of a cent today. Has anyone stopped buying computers? Has
+Apple gone bankrupt because next year's iPhone will be better and
+cheaper?
+
+People buy things when they need them or when the utility of owning
+them now outweighs the benefit of waiting. A coat in winter, a meal
+when hungry, a home to live in - these purchases are not indefinitely
+deferrable regardless of price trends. Even discretionary purchases
+continue because humans have time preferences: we value having things
+now more than having slightly cheaper things later. Ludwig von Mises
+[/en/people/ludwig-von-mises/] formalized this observation as a
+fundamental axiom of human action - people always prefer present
+satisfaction to future satisfaction, other things being equal.
+
+What mild deflation does discourage is frivolous consumption fueled by
+the feeling that money sitting idle is losing value. Under an
+inflationary regime, the rational choice is to spend or invest
+quickly, because your cash is depreciating. This creates a bias toward
+consumption and speculation. Under mild deflation, the rational choice
+is to spend thoughtfully and save easily. The bias shifts toward
+prudence.
+
+Who Benefits From the Deflation Narrative?
+------------------------------------------
+
+If deflation is not the catastrophe it is claimed to be, why does the
+orthodoxy persist?
+
+Consider who benefits from the belief that prices must always rise.
+Governments with large debts benefit enormously from inflation - their
+obligations shrink in real terms while tax revenues increase with
+nominal prices. Central banks justify their existence by managing the
+money supply to hit inflation targets. The financial sector profits
+from an environment where holding cash is punished and everyone is
+forced into increasingly complex investments just to preserve
+purchasing power.
+
+The Cantillon Effect [/en/ideas/the-cantillon-effect/] compounds the
+injustice. New money enters the economy at specific points - typically
+through banks and financial institutions - and those closest to the
+money spigot benefit before prices rise. By the time the new money
+reaches wages and consumer prices, the purchasing power has already
+been diluted. Inflation is not a uniform tax. It is a transfer of
+wealth from those furthest from money creation to those closest.
+
+An economy where prices gently fall rewards savers, workers, and
+producers. An economy where prices must always rise rewards debtors,
+speculators, and money printers. The deflation narrative protects the
+interests of the latter group.
+
+Bitcoin and Deflation
+---------------------
+
+Bitcoin is designed to be mildly deflationary in the long run. Its
+supply is capped at 21 million coins. As the economy it serves grows,
+and as coins are inevitably lost, each remaining bitcoin will
+represent an increasing share of economic value. Prices denominated in
+bitcoin will tend to fall over time.
+
+This is often cited as a flaw. "How can Bitcoin work as money if
+prices keep falling?"
+
+The answer is: the same way money worked during the most productive
+century in modern history. The same way the technology sector works
+today. The same way any economy works when productivity gains are
+allowed to flow to consumers as lower prices instead of being absorbed
+by money supply expansion.
+
+Bitcoin does not promise stable prices. It promises a sound money
+[/en/ideas/sound-money/] supply - one that cannot be manipulated for
+political convenience. If the economy grows, your money buys more. You
+benefit from collective progress simply by holding your money. You do
+not need to become a stock market speculator or a real estate investor
+just to avoid losing purchasing power.
+
+The Bitcoin Standard [/en/books/the-bitcoin-standard/] argues that
+this was always how money was supposed to work. The century of
+persistent inflation we have experienced since the end of the gold
+standard [/en/articles/nixon-shock/] is the anomaly, not the norm.
+
+The Real Question
+-----------------
+
+The debate about deflation is ultimately a debate about who should
+benefit from economic progress.
+
+If productivity improvements are captured by money supply expansion,
+the benefits flow to those who control money creation. If productivity
+improvements are reflected in lower prices, the benefits flow to
+everyone who holds money - which is to say, everyone.
+
+Deflation is not the enemy. The inflation tax
+[/en/ideas/inflation-tax/] is.
+
+Tags: Economics, Bitcoin
+
+Read on full site: https://learn.txid.uk/en/ideas/deflation-is-not-the-enemy/

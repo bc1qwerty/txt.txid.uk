@@ -1,0 +1,500 @@
+Bitcoin Mempool Congestion: Understanding and Navigating Fee Spikes
+===================================================================
+
+2026-03-23 | en
+
+A practical and technical guide to Bitcoin mempool congestion - what causes fee spikes, how to read mempool visualizations, fee estimation strategies, CPFP, RBF, and Lightning as a congestion escape.
+
+On December 16, 2023, the average Bitcoin transaction fee hit $37.
+Three months earlier, it had been $1.50. The cause was a wave of
+Ordinals inscriptions and BRC-20 token mints that flooded the mempool
+with hundreds of thousands of pending transactions, each competing for
+limited block space. Users trying to send ordinary payments found
+themselves either paying exorbitant fees or watching their
+transactions languish unconfirmed for days.
+
+This was not the first time. Similar fee spikes occurred during the
+December 2017 bull run ($55 average fee), the April 2021 sell-off ($62
+average fee), and the May 2023 BRC-20 mania ($31 average fee). Each
+event followed the same pattern: a sudden surge in transaction demand
+met the fixed supply of approximately 4,000 transactions per block,
+and the result was a fee auction where users outbid each other for
+confirmation.
+
+Understanding mempool congestion is essential knowledge for anyone who
+uses Bitcoin. It determines when to transact, how much to pay, and
+which tools to use when the network is stressed. This article provides
+the technical understanding and practical strategies you need to
+navigate congestion effectively.
+
+What Causes Congestion
+----------------------
+
+The Bitcoin mempool [/articles/what-is-mempool/] is not a single
+entity - each of the approximately 60,000 reachable nodes on the
+Bitcoin network maintains its own independent mempool. But they share
+a common characteristic: they all have finite capacity (default 300 MB
+in Bitcoin Core) and they all serve the same function - holding
+unconfirmed transactions until a miner includes them in a block.
+
+Congestion occurs when the rate of incoming transactions exceeds the
+rate at which blocks can absorb them. Since Bitcoin produces roughly
+one block every 10 minutes, with each block capable of holding
+approximately 2,000-4,000 transactions (depending on transaction
+size), the network can process roughly 7 transactions per second at
+maximum. Anything above that rate, sustained over time, creates a
+backlog.
+
+## Inscription Waves
+
+The introduction of Ordinals (BIP-linked inscriptions that embed data
+in the witness portion of transactions) in early 2023 created an
+entirely new source of demand for block space. Unlike financial
+transactions, inscriptions are often large (images, text, even video
+stored on-chain) and their creators are willing to pay significant
+fees to ensure inclusion.
+
+During peak inscription periods, inscription transactions have
+consumed 50-70% of total block space. In December 2023, over 500,000
+transactions were pending in the mempool simultaneously, with
+inscriptions comprising the majority. This crowded out ordinary
+financial transactions and pushed fee rates above 300 sat/vB (compared
+to a normal range of 5-20 sat/vB).
+
+The economic dynamic is straightforward: inscription creators treat
+block space as a canvas for permanent data storage, and they value
+that permanence enough to pay premium fees. This demand is inelastic -
+they want their inscription confirmed regardless of cost - which
+drives fees up for everyone.
+
+## FOMO Buying During Bull Markets
+
+During rapid price appreciation, retail investors rush to buy Bitcoin
+on exchanges and then withdraw to self-custody. Exchange withdrawal
+transactions tend to be large (consolidating many customer deposits
+into a single withdrawal) but numerous. When thousands of users
+simultaneously request withdrawals, exchanges generate a burst of
+transactions that fills the mempool.
+
+The 2017 bull run was the canonical example. Bitcoin's price rose from
+$1,000 in January to $19,700 in December, and each price surge
+triggered a wave of new buyers wanting to move their coins off
+exchanges. Daily transaction counts exceeded 400,000, and the mempool
+ballooned to over 200,000 unconfirmed transactions. Fee rates exceeded
+1,000 sat/byte (pre-SegWit measurement), making small transactions
+economically unviable.
+
+## Exchange Consolidation
+
+Major exchanges periodically consolidate their UTXO sets - combining
+many small UTXOs (from deposits) into fewer, larger UTXOs for
+operational efficiency. These consolidation transactions can be
+massive (hundreds of inputs) and exchanges typically batch multiple
+customer withdrawals together.
+
+When a large exchange like Binance or Coinbase performs a major
+consolidation during a period of already-elevated mempool activity, it
+can push fee rates significantly higher. Exchange consolidation tends
+to be less visible than other congestion sources because the
+transactions are fewer but much larger in terms of block weight.
+
+## Block Time Variance
+
+Even without increased transaction demand, natural variance in block
+times can create temporary congestion. While the average block time is
+10 minutes, individual blocks can take 30, 60, or even 90 minutes due
+to the probabilistic nature of mining. The probability of a block
+taking longer than t minutes follows an exponential distribution: P(T
+> t) = e^(-t/10).
+
+There is approximately a 5% chance that a block takes longer than 30
+minutes and about a 0.25% chance it takes longer than 60 minutes. When
+two or three slow blocks occur in succession, the mempool can
+accumulate 20-30 minutes of extra transaction backlog, causing
+temporary fee spikes even in normally calm conditions.
+
+## Dust Attacks and Spam
+
+Malicious actors occasionally flood the mempool with thousands of very
+low-fee transactions designed to consume mempool space and degrade
+network performance. While these transactions typically have fee rates
+below the minimum relay threshold (1 sat/vB in Bitcoin Core), they can
+temporarily affect nodes with different minimum relay policies.
+
+More sophisticated spam involves transactions with fee rates just
+above the relay threshold, consuming mempool space without being
+confirmed (because miners prioritize higher-fee transactions). This
+was observed in 2015-2016 during the "stress tests" that some entities
+conducted as part of the block size debate.
+
+Reading Mempool Visualizations
+------------------------------
+
+Effective fee estimation requires understanding mempool state. Several
+visualization tools provide real-time mempool data.
+
+## Fee Rate Distribution
+
+The most useful mempool visualization is the fee rate distribution
+chart, which shows the total size (in vbytes or weight units) of
+transactions at each fee rate level. This typically appears as a
+stacked chart where:
+
+* The x-axis represents time (or blocks)
+* The y-axis represents cumulative transaction size
+* Colors represent fee rate ranges (e.g., 1-5 sat/vB, 5-10, 10-20,
+20-50, 50-100, 100+)
+
+When the chart shows a large volume of transactions at high fee rates,
+congestion is severe. When most transactions are in the 1-5 sat/vB
+range and the total size is small, the mempool is calm and low fees
+will suffice.
+
+## The "Fee Rate vs. Confirmation Time" Curve
+
+This visualization shows the fee rate required for confirmation within
+a given number of blocks. A steep curve indicates high congestion (big
+fee differences between 1-block and 6-block confirmation). A flat
+curve indicates low congestion (all transactions clear quickly
+regardless of fee).
+
+## Key Metrics to Watch
+
+* Mempool size (MB): Total size of all pending transactions. Normal:
+5-20 MB. Congested: 50-300+ MB.
+* Transaction count: Number of unconfirmed transactions. Normal:
+5,000-20,000. Congested: 100,000-500,000.
+* Incoming rate (tx/s): Rate of new transactions entering the mempool.
+If this exceeds approximately 7 tx/s sustained, the mempool will grow.
+* Fee rate for next block: The minimum fee rate to have a reasonable
+chance of inclusion in the next block. Normal: 5-15 sat/vB. Congested:
+50-300+ sat/vB.
+
+You can monitor these metrics in real-time on the txid.uk live mempool
+display [https://txid.uk], which provides visualization of current
+mempool conditions alongside other Bitcoin network data.
+
+Fee Estimation Strategies
+-------------------------
+
+## Don't Trust Wallet Defaults
+
+Most Bitcoin wallets provide fee estimation, but the quality varies
+enormously. Some wallets use simple heuristics (e.g., average fee of
+recent blocks) that can be wildly inaccurate during rapid changes in
+congestion. Others use sophisticated mempool analysis but may still
+overestimate during congestion (because they prioritize confirmation
+speed over cost).
+
+The best approach is to check a mempool visualization tool before
+setting your fee, rather than blindly accepting the wallet's
+suggestion. During calm periods, wallet estimates are usually
+adequate. During congestion, they are often too high (the wallet is
+being conservative to ensure confirmation).
+
+## The Time-Based Approach
+
+If your transaction is not time-sensitive, you can save significantly
+by waiting:
+
+Immediate confirmation needed: Pay the current "next-block" fee rate.
+This is the highest cost but ensures confirmation within 10-20
+minutes.
+
+Within 1-2 hours acceptable: Pay the fee rate for 6-block
+confirmation. This is typically 20-40% lower than the next-block rate
+during congestion.
+
+Within 24 hours acceptable: Use a fee rate at the 50th percentile of
+the current mempool. During severe congestion, this might mean waiting
+for the congestion to clear - which it always does, because the
+mempool clears during low-activity periods.
+
+No urgency: Set the minimum relay fee (1 sat/vB) and wait. During calm
+periods, even minimum-fee transactions confirm within a few hours.
+During congestion, they may take days, but they will eventually
+confirm as the mempool clears.
+
+## Weekend and Off-Peak Timing
+
+Bitcoin transaction activity follows a weekly pattern: highest on
+weekday business hours (UTC) and lowest on weekends. This pattern
+exists because institutional and exchange activity drives a
+significant portion of transaction volume.
+
+Average fee rates on Saturdays and Sundays are typically 30-60% lower
+than weekday peaks. If you can schedule transactions for weekend
+evenings (UTC), you will generally pay the lowest fees.
+
+Similarly, there are daily patterns: transaction volume is lowest
+during the early morning hours in UTC (approximately 00:00-06:00 UTC),
+which corresponds to nighttime in the Americas and early morning in
+Europe.
+
+## Overpaying Insurance vs. RBF Strategy
+
+Two philosophical approaches to fees exist:
+
+Conservative: Pay a fee rate moderately above the estimated next-block
+rate. This ensures quick confirmation but may overpay by 20-50%. This
+approach makes sense for large-value transactions where the fee is a
+tiny percentage of the amount and speed matters.
+
+Aggressive with RBF: Set a low initial fee rate and use Replace-By-Fee
+(RBF) [/articles/replace-by-fee-rbf/] to bump the fee if needed. This
+minimizes cost but requires active monitoring and the willingness to
+send a replacement transaction.
+
+CPFP: Child Pays for Parent
+---------------------------
+
+Child Pays for Parent (CPFP) is a technique for accelerating a stuck
+transaction that you received but did not send. If someone sends you a
+transaction with too low a fee, the transaction sits in the mempool
+unconfirmed. You cannot edit the original transaction (you do not
+control the sender's keys), but you can create a "child" transaction
+that spends the unconfirmed output.
+
+## How It Works
+
+When a miner evaluates transactions for inclusion in a block, they
+consider "packages" - groups of transactions where a child spends an
+output of a parent. The miner calculates the combined fee rate of the
+package (total fees / total weight) and evaluates whether the package
+as a whole is profitable to include.
+
+If the parent transaction has a fee rate of 5 sat/vB (too low for
+current conditions) and you create a child transaction with a fee rate
+of 200 sat/vB, the combined package might have an effective fee rate
+of 50 sat/vB - enough for next-block confirmation. The miner includes
+both transactions because the child's high fee makes the package
+profitable.
+
+## Practical Example
+
+* Alice sends you 0.1 BTC with a fee rate of 3 sat/vB. The transaction
+is 250 vbytes and pays a fee of 750 satoshis.
+* Current mempool conditions require 50 sat/vB for next-block
+confirmation.
+* You create a transaction spending Alice's unconfirmed output. Your
+transaction is 150 vbytes.
+* You need the package (400 vbytes total) to have an effective rate of
+50 sat/vB.
+* Package fee needed: 400 × 50 = 20,000 satoshis. Parent already pays
+750. Your child needs: 20,000 - 750 = 19,250 satoshis.
+* Your child transaction fee rate: 19,250 / 150 = 128.3 sat/vB.
+
+By paying 128.3 sat/vB on your small child transaction, you
+effectively accelerate the parent to 50 sat/vB.
+
+## Bitcoin Core's Package Relay
+
+As of Bitcoin Core 28.0, the mempool supports full package relay,
+meaning nodes propagate and validate transaction packages rather than
+individual transactions. This makes CPFP more reliable because
+previously, a low-fee parent transaction might not propagate through
+the network at all, making CPFP impossible from the receiver's
+perspective.
+
+RBF: Replace-By-Fee for Stuck Transactions
+------------------------------------------
+
+Replace-By-Fee (RBF) [/articles/replace-by-fee-rbf/] allows the sender
+of a transaction to replace it with a new version that pays a higher
+fee. This is the most efficient tool for dealing with stuck
+transactions that you sent.
+
+## How RBF Works
+
+A transaction signals RBF eligibility by setting a sequence number
+below 0xFFFFFFFE on at least one input. Most modern wallets enable RBF
+by default. When a replacement transaction is broadcast:
+
+* It must spend at least one of the same inputs as the original
+* It must pay a higher absolute fee than the original
+* It must pay a fee rate sufficient to cover the relay cost of the
+replacement
+* It must pay enough additional fee to cover the size of the
+replacement itself
+
+## Full RBF vs. Opt-In RBF
+
+Historically, Bitcoin Core implemented "opt-in RBF" - only
+transactions that explicitly signaled replacability (via sequence
+numbers) could be replaced. Starting with Bitcoin Core 26.0 (released
+December 2023), full RBF is enabled by default, meaning any
+unconfirmed transaction can be replaced by a higher-fee version,
+regardless of signaling.
+
+This change was controversial but practical: it acknowledges the
+reality that unconfirmed transactions have never been truly final. For
+users, it means you can always unstick a transaction by broadcasting a
+replacement with a higher fee, even if you forgot to signal RBF in the
+original.
+
+## Strategic RBF Usage
+
+The optimal RBF strategy during congestion:
+
+* Start low: Set your initial fee rate at 30-50% of the estimated
+next-block rate
+* Monitor: Watch the mempool for 30-60 minutes
+* Bump if needed: If the mempool is not clearing and you need faster
+confirmation, bump to the current next-block rate
+* Bump incrementally: Each replacement must pay a higher absolute fee.
+Small bumps (25-50% increase) are more cost-effective than large jumps
+
+This strategy saves money in cases where the mempool clears naturally
+(which happens often during daily lulls), while still providing the
+option to accelerate when necessary.
+
+Lightning Network as a Congestion Escape
+----------------------------------------
+
+The Lightning Network is the most effective solution for avoiding
+mempool congestion entirely. Lightning transactions do not use
+on-chain block space (except for channel opening and closing) and
+settle instantly with negligible fees - typically 1-10 satoshis for a
+$100 equivalent payment.
+
+## Why Lightning Works During Congestion
+
+When the mempool is congested and on-chain fees are $30+, Lightning
+payments continue to function normally because they do not compete for
+block space. The fee for a Lightning payment is determined by the
+routing nodes, not the mempool, and routing fees are typically a
+fraction of a cent.
+
+During the December 2023 congestion event, Lightning payments were
+processed at their usual speed and cost while on-chain transactions
+faced $37 average fees and multi-hour confirmation waits. This was a
+powerful demonstration of Lightning's value proposition: it provides a
+congestion-resistant payment layer on top of Bitcoin's base layer.
+
+## Practical Lightning Strategy
+
+For regular Bitcoin users, the practical strategy is:
+
+* Open Lightning channels during calm periods: Channel opening
+requires an on-chain transaction. Do this when fees are low (weekends,
+mempool below 10 MB).
+* Use Lightning for routine payments: Once channels are open, all
+payments flow through Lightning at minimal cost, regardless of
+on-chain conditions.
+* Reserve on-chain transactions for large, infrequent transfers: When
+you need to make a large on-chain payment, time it for low-congestion
+periods and use RBF for flexibility.
+* Use submarine swaps for liquidity: Services like Loop allow you to
+move funds between on-chain and Lightning without opening new
+channels.
+
+The Mempool as a Fee Market: An Austrian Perspective
+----------------------------------------------------
+
+From the perspective of Austrian economics, the Bitcoin mempool is a
+fascinating example of a free market in action. Block space is a
+scarce resource (limited to approximately 4 million weight units per
+block), and the mempool is the market where buyers (transaction
+senders) bid for that resource.
+
+## Price Discovery Through Competition
+
+There is no central authority setting Bitcoin transaction fees. No
+committee meets to decide the "appropriate" fee level. Instead, fees
+are determined by the same process that determines all prices in a
+free market: the interaction of supply and demand.
+
+Supply is fixed (one block every 10 minutes, with a fixed maximum
+weight). Demand is variable (dependent on network activity,
+speculation, inscription waves, etc.). When demand increases, the
+price (fee) rises. When demand decreases, the price falls. This is the
+price mechanism that Ludwig von Mises described as the essential
+coordinator of economic activity - transmitting information about
+scarcity through prices that no central planner could replicate.
+
+## The Role of Subjective Value
+
+Each user's willingness to pay a particular fee reflects their
+subjective valuation of the transaction. A user sending $100,000 to
+finalize a property purchase values fast confirmation highly and will
+pay $50 without hesitation. A user consolidating small UTXOs for
+future use values confirmation less and will wait for $0.50 fees. The
+mempool allows these different valuations to coexist and be
+efficiently sorted - high-value transactions confirm first, low-value
+transactions wait.
+
+This is exactly the process Carl Menger described in his theory of
+subjective value: goods (block space) do not have intrinsic value but
+derive their value from the subjective assessments of the individuals
+who desire them. The mempool is a real-time demonstration of marginal
+utility theory applied to a digital commodity.
+
+## Entrepreneurial Opportunity
+
+The fee market creates entrepreneurial opportunities. Mining pools
+develop sophisticated fee optimization algorithms to maximize revenue.
+Wallet developers compete on fee estimation accuracy. Lightning
+Network operators earn routing fees by providing an alternative to the
+congested base layer. Transaction batching services help exchanges
+reduce their block space consumption. Each of these enterprises
+emerged spontaneously, without central direction, in response to the
+market signals provided by mempool fees.
+
+Friedrich Hayek's concept of "spontaneous order" - complex, efficient
+systems arising from the decentralized actions of self-interested
+individuals - finds a perfect illustration in the Bitcoin fee market.
+No one designed the mempool to function as an efficient auction
+mechanism. It emerged naturally from the incentive structure of the
+protocol.
+
+Practical Checklist for Navigating Congestion
+---------------------------------------------
+
+When mempool congestion hits, follow this checklist:
+
+* Check the mempool before transacting: View current conditions on
+mempool visualization tools [https://txid.uk] before setting a fee
+* Ask yourself: is this urgent? If not, wait for off-peak hours or
+weekend lulls
+* Use Lightning for small payments: If your wallet supports Lightning,
+use it for any payment under $1,000
+* Enable RBF: Ensure your wallet enables RBF signaling by default
+* Start with a moderate fee: Set your fee at 50-70% of the next-block
+estimate, ready to bump via RBF
+* Use CPFP for incoming transactions: If you are waiting for a
+received transaction to confirm, create a child transaction with a
+high fee
+* Batch transactions: If you need to make multiple payments, combine
+them into a single transaction with multiple outputs
+* Consider timing: Check weekly and daily fee patterns and schedule
+non-urgent transactions accordingly
+
+Conclusion
+----------
+
+Mempool congestion is not a bug in Bitcoin - it is an inevitable
+consequence of a system with fixed supply and variable demand. The
+finite block space is a feature, not a limitation: it is what keeps
+Bitcoin decentralized, because unlimited blocks would require
+unlimited resources to validate.
+
+The tools for navigating congestion - fee estimation, RBF, CPFP,
+Lightning, timing strategies - are well-developed and accessible to
+any informed user. Understanding them transforms the experience of a
+congested mempool from frustration to competence.
+
+Every fee spike is a reminder that Bitcoin's block space is valuable -
+valuable enough that people compete to use it. In a world of infinite
+digital reproduction, Bitcoin created genuine digital scarcity. The
+mempool is where that scarcity meets demand, and the result is a
+market as elegant and efficient as any that Austrian economists have
+described.
+
+For more details on how the mempool works, see What Is the Mempool
+[/articles/what-is-mempool/]. For a comprehensive guide to managing
+Bitcoin transaction fees, see our Bitcoin Fee Guide
+[/articles/bitcoin-fee-guide/].
+
+Tags: Bitcoin, Mining
+
+Read on full site: https://learn.txid.uk/en/ideas/bitcoin-mempool-congestion/

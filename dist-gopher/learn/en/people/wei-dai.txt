@@ -1,0 +1,170 @@
+Wei Dai
+=======
+
+2026-03-24 | en
+
+Creator of b-money and the Crypto++ library, one of the earliest digital currency visionaries cited in Bitcoin's whitepaper.
+
+The First Citation in the Bitcoin Whitepaper
+--------------------------------------------
+
+Wei Dai is a computer engineer and cryptographer whose 1998 b-money
+proposal stands as one of the earliest and most influential blueprints
+for decentralized digital currency. He is one of only two people cited
+in Satoshi Nakamoto [/people/satoshi-nakamoto/]'s Bitcoin whitepaper
+-- the other being Adam Back [/people/adam-back/]. His work represents
+a crucial link between the theoretical aspirations of the cypherpunk
+movement and the practical reality of Bitcoin.
+
+Like many of Bitcoin's intellectual forebears, Dai is an intensely
+private person who has rarely spoken publicly about his role in
+digital currency history.
+
+B-Money: A Vision of Decentralized Digital Cash
+-----------------------------------------------
+
+In November 1998, Wei Dai published his b-money proposal on the
+cypherpunks mailing list. The paper described two protocols for a
+decentralized digital payment system that would allow anonymous,
+untraceable transactions without relying on a central authority.
+
+## Protocol A
+
+The first protocol proposed that all participants maintain a database
+of how much money belongs to each pseudonymous account. Money is
+created through computational work -- solving a previously unsolved
+computational problem. Transactions are broadcast to all participants,
+who update their records accordingly.
+
+## Protocol B
+
+Recognizing the impracticality of requiring every participant to
+maintain a complete copy of all accounts, the second protocol proposed
+a system where only a subset of participants (called "servers") would
+maintain the account database. Other users could verify the servers'
+behavior through cryptographic mechanisms.
+
+The parallels to Bitcoin's design are profound:
+
+* Computational work as the basis for money creation -- directly
+anticipating Bitcoin's mining
+* Broadcast transactions to a network -- the peer-to-peer model
+Bitcoin uses
+* Cryptographic pseudonyms -- Bitcoin addresses function exactly this
+way
+* Distributed record-keeping -- the blockchain's fundamental purpose
+
+Dai's b-money was never implemented as working software. The proposal
+acknowledged several unresolved technical challenges, including the
+difficulty of achieving consensus without a central authority. It
+would take another decade before Satoshi found the elegant solution --
+combining proof of work with a blockchain to create a trustless
+consensus mechanism.
+
+Crypto++: Building Blocks for Security
+--------------------------------------
+
+Beyond his digital currency work, Wei Dai created the Crypto++ library
+(also known as CryptoPP), one of the most widely used open-source
+cryptographic libraries in the world. Written in C++, the library
+provides implementations of a comprehensive set of cryptographic
+algorithms and schemes.
+
+Crypto++ has been used in countless applications, from academic
+research to commercial software to government systems. Its existence
+reflects Dai's commitment to making cryptographic tools freely
+available -- a core cypherpunk principle that cryptography belongs to
+everyone, not just governments and corporations.
+
+The library remains actively maintained and continues to be a standard
+reference implementation for cryptographic algorithms.
+
+The Cypherpunk Connection
+-------------------------
+
+Wei Dai was an active member of the cypherpunks mailing list during
+the 1990s, a community that included Adam Back [/people/adam-back/],
+Hal Finney [/people/hal-finney/], Nick Szabo [/people/nick-szabo/],
+and many other figures who would become central to Bitcoin's history.
+
+The cypherpunks believed that cryptography was the essential tool for
+defending individual privacy and liberty in the digital age. They
+didn't merely theorize -- they wrote code, published papers, and built
+tools. Dai's contributions, both b-money and Crypto++, exemplify this
+ethos of combining theoretical vision with practical implementation.
+
+The mailing list served as an intellectual crucible where ideas about
+digital cash, privacy, and decentralized systems were debated,
+refined, and evolved over years. B-money emerged from this ferment of
+ideas, and it is no coincidence that Satoshi chose to cite it
+prominently.
+
+Satoshi's Acknowledgment
+------------------------
+
+The very first citation in the Bitcoin whitepaper references Wei Dai's
+b-money:
+
+  | "W. Dai, 'b-money,' http://www.weidai.com/bmoney.txt, 1998."
+
+Satoshi also reached out to Wei Dai directly via email before
+publishing the whitepaper. In this correspondence, Satoshi
+acknowledged the intellectual debt to b-money and asked Dai for the
+correct citation details.
+
+This direct communication confirms that Satoshi was well aware of
+Dai's work and considered it an important predecessor. Whether b-money
+directly inspired specific design decisions in Bitcoin or served as
+broader conceptual validation, its influence on Bitcoin's creation is
+documented in Satoshi's own words.
+
+Privacy and Intellectual Humility
+---------------------------------
+
+Wei Dai has maintained a low profile throughout his career, avoiding
+the spotlight that has fallen on other figures in Bitcoin's history.
+He has occasionally participated in online discussions about
+cryptography, decision theory, and rationality, but has never sought
+recognition or celebrity for his contributions to digital currency.
+
+This discretion is consistent with the cypherpunk tradition of valuing
+work over personality. Dai's ideas speak through the systems they
+inspired -- Bitcoin processes transactions every ten minutes partly
+because a quiet engineer published a proposal on a mailing list in
+1998.
+
+Legacy
+------
+
+Wei Dai's contributions occupy a foundational position in Bitcoin's
+intellectual history. B-money demonstrated that a thoughtful, rigorous
+approach to decentralized digital cash was possible, even if the
+specific implementation challenges remained unsolved. By publishing
+the concept openly, Dai planted seeds that would grow -- through years
+of cypherpunk discussion, refinement, and experimentation -- into
+Bitcoin.
+
+His Crypto++ library, meanwhile, continues to serve as critical
+infrastructure for the broader cryptographic ecosystem.
+
+Together, b-money and Crypto++ represent two sides of the same coin: a
+vision of a world secured by mathematics, and the practical tools to
+build it.
+
+Connected Concepts
+------------------
+
+* Satoshi Nakamoto [/people/satoshi-nakamoto/] -- Cited Dai's b-money
+in the first reference of the Bitcoin whitepaper
+* Adam Back [/people/adam-back/] -- The only other person cited in the
+Bitcoin whitepaper
+* Nick Szabo [/people/nick-szabo/] -- Proposed bit gold in the same
+year as b-money
+* Proof of Work [/ideas/proof-of-work/] -- The mechanism b-money
+proposed for creating digital money
+* What is Bitcoin? [/ideas/bitcoin/] -- The system that realized the
+vision Dai described
+
+Tags: Bitcoin, Cypherpunk
+
+Read on full site: https://learn.txid.uk/en/people/wei-dai/

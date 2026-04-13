@@ -1,0 +1,144 @@
+April 9, 2026
+=============
+
+2026-04-09 | digest | by txid | en
+
+Daily digest
+
+Bitcoin Surges Past $72K as Geopolitical Risk Ebbs
+--------------------------------------------------
+
+Bitcoin jumped above $72,000 following a US-Iran ceasefire
+announcement, triggering $280 million in bear liquidations. The rally
+reflects a flight to risk-on assets as geopolitical tensions
+temporarily ease, though observers warn the fragile truce remains
+vulnerable to further escalation.
+
+Why it matters: Bitcoin's positive correlation with ceasefire optimism
+and inverse correlation with war risk demonstrates its role as a hedge
+against geopolitical instability and currency debasement.
+
+→ Cointelegraph
+[https://cointelegraph.com/news/bitcoin-tops-dollar72k-after-dollar280m-liquidation-targets-bears-will-the-fragile-truce-hold?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound]
+
+______________________________________________________________________
+
+Morgan Stanley's Bitcoin ETF Launches With $34M Inflow on Day One
+-----------------------------------------------------------------
+
+Morgan Stanley's new low-fee bitcoin ETF opened to strong demand,
+drawing $34 million in initial trading volume. The launch intensifies
+competition among institutional custodians, accelerating the shift
+toward cost-conscious distribution of bitcoin exposure.
+
+Why it matters: Institutional adoption through major investment banks
+legitimizes bitcoin as a portfolio asset and further insulates it from
+regulatory suppression by moving it into mainstream financial
+infrastructure.
+
+→ CoinDesk
+[https://www.coindesk.com/markets/2026/04/08/morgan-stanley-s-bitcoin-etf-draws-usd34-million-on-day-one]
+
+______________________________________________________________________
+
+White House Admits Banning Stablecoin Yield Helps Banks, Hurts
+Consumers
+----------------------------------------------------------------------
+
+A White House economic analysis concludes that restricting yield on
+stablecoins provides negligible benefits to bank lending while
+directly costing consumers in lost returns. The admission contradicts
+financial establishment pressure to eliminate non-custodial savings
+alternatives.
+
+Why it matters: Government recognition that stablecoin restrictions
+primarily protect banking monopolies—not financial stability—exposes
+the true intent behind anti-crypto regulation: maintaining control
+over monetary function and preventing alternatives to
+fractional-reserve credit.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/white-house-stablecoin-yield-hurt-consumer]
+
+______________________________________________________________________
+
+Iran War Deepens as Ceasefire Collapses Within Hours
+----------------------------------------------------
+
+The US-Iran ceasefire announced this week is already unraveling, with
+both sides accusing the other of violations. Israeli strikes on
+Lebanon continue despite peace negotiations, threatening to restart
+full-scale conflict and reignite energy markets.
+
+Why it matters: Extended geopolitical conflict risks
+stagflation—currency debasement paired with supply destruction—exactly
+the macroeconomic environment that strengthens bitcoin's case as sound
+money outside state control.
+
+→ CNBC
+[https://www.cnbc.com/2026/04/08/ceasefire-iran-war-lebanon.html] · →
+CNBC
+[https://www.cnbc.com/2026/04/09/asia-iran-oil-shock-1997-crisis-comparison-reserves-stagflation-hormuz-trump.html]
+
+______________________________________________________________________
+
+Treasury's GENIUS Act Would Give Government Power to Block Stablecoin
+Transactions
+----------------------------------------------------------------------
+
+The proposed rule would require stablecoin issuers to allow the
+Treasury to "block, freeze, and reject" transactions deemed illicit.
+The framework effectively grants state permission to disable private
+money without due process.
+
+Why it matters: Centralized control over transaction
+settlement—whether through banks or government-regulated
+stablecoins—remains the core threat bitcoin was designed to overcome.
+This rule codifies financial surveillance and arbitrary asset seizure.
+
+→ Cointelegraph
+[https://cointelegraph.com/news/treasury-genius-act-rule-illicit-finance?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound]
+
+______________________________________________________________________
+
+Bitcoin Has 3–5 Years to Prepare for Quantum Threat, Says Bernstein
+-------------------------------------------------------------------
+
+Analysts from Bernstein argue quantum computing poses a real but
+manageable threat to Bitcoin, estimating 3–5 years before breaking
+modern cryptography. The timeline allows for orderly migration to
+post-quantum signature schemes without existential crisis.
+
+Why it matters: Transparent acknowledgment of quantum risk—without
+panic—demonstrates Bitcoin's technical flexibility and the ecosystem's
+capability to evolve its security model while maintaining
+decentralized consensus.
+
+→ Cointelegraph
+[https://cointelegraph.com/news/bitcoin-quantum-risk-3-5-years-bernstein?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound]
+· → Bitcoin Magazine
+[https://bitcoinmagazine.com/news/bernstein-pushes-back-on-bitcoin-quantum]
+
+______________________________________________________________________
+
+Trump's Undeclared War Expands State Power as Congress Abdicates
+Constitutional Duty
+----------------------------------------------------------------------
+
+Trump administration military operations against Iran continue without
+congressional declaration, while Republican leadership refuses
+constitutional confrontation. The pattern mirrors previous executive
+wars that centralize power while socializing costs across the currency
+and economy.
+
+Why it matters: Endless war financed through monetary expansion is the
+primary driver of currency debasement and sovereign debt
+accumulation—the fiscal-monetary dysfunction that makes sound money
+essential to individual liberty.
+
+→ Mises Institute
+[https://mises.org/podcasts/audio-mises-wire/donald-trump-another-bismarck]
+· → Mises Institute
+[https://mises.org/podcasts/guns-and-butter/economic-destruction-trumps-war-goes-far-beyond-high-gas-prices]
+
+Read on full site: https://news.txid.uk/digest/2026-04-09

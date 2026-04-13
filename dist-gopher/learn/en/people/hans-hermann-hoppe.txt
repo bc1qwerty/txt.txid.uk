@@ -1,0 +1,209 @@
+Hans-Hermann Hoppe
+==================
+
+2026-03-09 | en
+
+A radical thinker who justified liberalism through argumentation ethics.
+
+The Most Radical Voice of Liberalism
+------------------------------------
+
+Hans-Hermann Hoppe (1949- ) is a German-born economist and political
+philosopher who has justified private property rights and liberalism a
+priori through argumentation ethics. As a student and intellectual
+heir of Rothbard, he occupies a unique position in contemporary
+liberal thought through his radical critique of democracy and his
+social theory grounded in a private property order.
+
+Hoppe's works are controversial, but both his supporters and critics
+acknowledge the logical rigor of his arguments.
+
+Biography
+---------
+
+## From Germany to America
+
+Hoppe was born in 1949 in Peine, West Germany. He studied philosophy,
+sociology, and economics at Saarland University, Goethe University
+(Frankfurt), and the University of Michigan. While at Frankfurt, he
+earned his doctoral degree under Jürgen Habermas.
+
+This is a noteworthy intellectual background. Habermas is a leading
+figure of the Frankfurt School and a master of left-wing social
+theory. Hoppe drew inspiration from Habermas's discourse ethics, but
+applied it to reach the opposite conclusions - namely, the
+justification of private property and the illegitimacy of the state.
+He defended liberalism with a tool from the left.
+
+In 1986, Hoppe immigrated to the United States and served as a
+professor of economics at the University of Nevada, Las Vegas (UNLV).
+Meeting Rothbard at the same university formed a decisive intellectual
+alliance. Rothbard described Hoppe's argumentation ethics as "the most
+interesting justification of liberalism."
+
+After retiring from the university in 2006, he moved through Turkey
+and now resides in Istanbul, where he founded the Property and Freedom
+Society and hosts annual academic conferences.
+
+Core Ideas
+----------
+
+## Argumentation Ethics
+
+This is Hoppe's most original contribution. The core argument proceeds
+as follows:
+
+Premise: Consider the very act of argumentation itself - discussing
+what norms are justified. What do the two people engaged in
+argumentation presuppose?
+
+* The Presupposition of Self-Ownership: To participate in
+argumentation means to freely use one's own body (brain, vocal cords,
+hands). If the other party had control over my body, I could not
+participate in argumentation.
+
+* The Presupposition of Non-Aggression: Argumentation is an activity
+aimed at persuading the other through logic and evidence, not through
+physical coercion. To justify force while simultaneously engaging in
+argumentation is a performative contradiction.
+
+* The Presupposition of Private Property: If we grant self-ownership,
+we logically derive the right to property in external resources
+transformed by one's labor (homesteading).
+
+Therefore: Any norm that denies private property rights contradicts
+argumentation itself. Private property rights are the only justifiable
+norms.
+
+The core strength of this argument is that it is a priori. It does not
+depend on empirical data or subjective value judgments, but derives
+directly from the logical structure of the activity of argumentation.
+
+## Critique of Democracy: Why Democracy Is a Failed God
+
+Hoppe's most controversial work is Democracy: The God That Failed
+(2001).
+
+Hoppe compares democracy and monarchy from the perspective of
+protecting private property. The core argument:
+
+A monarch (king) regards the state as his own private property.
+Therefore, he has an incentive to preserve the value of the state (its
+capital value) in the long term. Since the king will pass the state to
+his descendants, excessive expropriation would diminish the value of
+his property.
+
+A democratic ruler (president, congressman) merely leases the state
+temporarily. Once his term ends, he must leave, so he has no incentive
+to preserve capital value. Instead, he has an incentive to extract
+(expropriate) as much as possible during his term. This is the
+structural reason for endless increases in government spending and
+debt under democracy.
+
+Hoppe is not defending monarchy in this comparison. His conclusion is
+that any form of state violates private property, and the true
+alternative is a private property order, that is, a stateless society.
+
+## Time Preference and Civilization
+
+Hoppe extends time preference theory into a theory of civilization.
+Low time preference [/ideas/time-preference/] - the tendency to forego
+present satisfaction for the future - enables saving, investment, and
+long-term planning, and is the foundation of civilizational
+development.
+
+According to Hoppe, the state (particularly the democratic state)
+artificially increases time preference:
+
+* Inflation destroys the value of savings, signaling to consume
+immediately
+* High taxes reduce the rewards for future investment
+* The welfare state allows present consumption without personal
+responsibility
+* Public debt transfers costs to future generations
+
+Civilizational decline is a consequence of high time preference, and
+state expansion is its cause.
+
+## Private Law Society
+
+The alternative social order presented by Hoppe is a private law
+society. In this society:
+
+* Dispute Resolution: Provided competitively by private arbitration
+agencies
+* Public Order: Provided by private security companies and insurance
+companies
+* Defense: Armed citizens and private defense associations
+* Infrastructure: Everything provided in markets based on private
+property
+
+Insurance companies play a crucial role in this vision. They have
+economic interest in protecting their customers' property, and thus
+have incentives to invest efficiently in crime prevention and dispute
+resolution.
+
+Property and Freedom Society
+----------------------------
+
+Founded by Hoppe in 2006, this society hosts annual academic
+conferences in Bodrum, Turkey. Libertarian scholars, economists, and
+philosophers from around the world gather to conduct scholarly
+discussions on the state, property rights, and freedom, aiming to
+provide a free intellectual space removed from censorship and
+self-censorship in mainstream academia.
+
+Major Works
+-----------
+
+* A Theory of Socialism and Capitalism (1989) - systematic critique of
+various forms of socialism
+* The Economics and Ethics of Private Property (1993)
+* Democracy: The God That Failed (2001) - the representative work on
+the critique of democracy
+* The Great Fiction (2012) - a collection of essays
+
+Famous Quotes
+-------------
+
+| "In a free society, there is no 'right' to immigration. There is
+only the invitation of private property owners."
+
+| "No institution in human history has destroyed private property as
+efficiently as democracy."
+
+| "Taxation is robbery, and tax collectors are robbers. Whether they
+are elected by vote does not change this fact."
+
+| "The state is a compulsory territorial monopolist. It is an
+institution that maintains a monopoly on the role of ultimate arbiter
+of violence within a given territory."
+
+Connection with Bitcoin
+-----------------------
+
+Hoppe's thought connects naturally with Bitcoin:
+
+* Technological Reinforcement of Private Property: Bitcoin's private
+keys represent mathematically guaranteed ownership and protect
+property from state seizure
+* Destruction of State Currency Monopoly: Bitcoin technologically
+circumvents the state monetary monopoly that Hoppe critiques
+* Promotion of Low Time Preference: Bitcoin's fixed supply encourages
+saving and eliminates inflation-induced distortions of time preference
+
+Related Concepts
+----------------
+
+* Non-Aggression Principle [/ideas/non-aggression-principle/] - the
+core principle reached by argumentation ethics
+* Time Preference [/ideas/time-preference/] - a key concept in Hoppe's
+theory of civilization
+* What is Liberalism? [/ideas/libertarianism/] - political philosophy
+to which Hoppe has contributed
+* Sound Money [/ideas/sound-money/] - the relationship between time
+preference and currency
+
+Tags: Liberalism
+
+Read on full site: https://learn.txid.uk/en/people/hans-hermann-hoppe/

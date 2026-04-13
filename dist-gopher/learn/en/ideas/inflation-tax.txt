@@ -1,0 +1,169 @@
+Inflation Tax
+=============
+
+2026-03-09 | en
+
+The government can take your wealth without raising taxes. An invisible tax not found in law.
+
+A Tax Not in Law
+----------------
+
+There are two kinds of taxes. One is the official tax explicitly
+stated in tax law. Income tax, value-added tax, property tax - these
+are determined by law, tax rates are public, and they are approved by
+parliament.
+
+The other is the Inflation Tax. When the government issues currency,
+the purchasing power of existing money declines. The number in your
+bank account doesn't change, but what you can buy with that money
+decreases. This is effectively the government taking part of your
+money.
+
+But this "tax" is not recorded anywhere in tax law, is not voted on in
+parliament, and no bill arrives at your door. That's why most citizens
+don't realize they're paying this tax.
+
+How the Inflation Tax Works
+---------------------------
+
+## A Simple Example
+
+Let's say there is a total of 1 million won in circulation in the
+economy. You have 100,000 won, so you own 10% of all currency.
+
+The government issues a new 1 million won through the central bank.
+Now the total currency in circulation is 2 million won. Your 100,000
+won is still 100,000 won, but your share of all currency has dropped
+from 10% to 5%. As new currency is absorbed into the economy, prices
+rise, and your purchasing power is cut in half.
+
+The government spends the newly issued 1 million won - before prices
+rise. Your lost purchasing power has been transferred to government
+spending.
+
+## Why Governments Choose Inflation Over Taxes
+
+When the government needs additional revenue, there are three methods:
+
+* Raising Taxes - Faces the most political resistance. Voters
+immediately object.
+* Issuing Government Bonds - The burden is shifted to the future, as
+repayment comes from future taxes.
+* Issuing Currency - Faces the least resistance. Purchasing power
+decline happens gradually, the cause is unclear, and it is not
+perceived as direct "taxation."
+
+The logic of Frédéric Bastiat [/people/frederic-bastiat/]'s "That
+Which Is Seen and That Which Is Not Seen" shines here. The effects of
+government spending (new roads, welfare programs) are seen. Meanwhile,
+everyone's declining purchasing power as a result is unseen.
+Politicians boast about what is seen and remain silent about what is
+unseen.
+
+Who Suffers Most
+----------------
+
+The inflation tax is regressive. That is, the poorer you are, the
+greater the proportion of wealth you lose.
+
+## Cash Holders
+
+Wealthy people hold most of their assets in real assets or financial
+assets like stocks, real estate, and bonds. These assets see their
+nominal prices rise along with money supply growth, offsetting
+inflation.
+
+In contrast, low-income people hold most of their assets in cash or
+deposits. Cash is the asset most vulnerable to inflation. The
+inflation tax is concentrated on those holding cash.
+
+## Wage Earners
+
+When prices rise, asset prices respond immediately, but wages adjust
+later. During this time lag, the real purchasing power of wage earners
+continues to decline. Salary negotiations happen once a year, but
+prices rise every day.
+
+## Bondholders and Savers
+
+People who lent money (creditors) and those who saved receive money
+back with reduced real value due to inflation. Meanwhile, those who
+borrowed money (debtors) effectively repay less value. The government
+is the largest debtor in history, so inflation is a mechanism for the
+government to repay its debt with citizens' savings.
+
+Historical Examples
+-------------------
+
+## Weimar Republic (1921-1923)
+
+To pay war reparations from World War I, the German government issued
+vast amounts of currency. The exchange rate went from 60 marks per
+dollar in January 1921 to 420 billion marks in November 1923.
+Citizens' lifetime savings became worthless paper, and the middle
+class fell into poverty overnight.
+
+## Zimbabwe (2007-2008)
+
+Due to reckless currency issuance by the Mugabe government, the
+inflation rate reached 79,600,000,000% in November 2008. 100 trillion
+Zimbabwean dollar bills were issued but couldn't buy three eggs.
+
+## "Moderate" Inflation in Developed Countries
+
+Extreme cases aren't the only inflation tax. America's 2% annual
+inflation target halves purchasing power in 35 years. "Stable"
+inflation means stably stealing wealth.
+
+Since the Nixon Shock [/ideas/nixon-shock/] in 1971, the US dollar has
+lost 86% of its purchasing power. No tax bill has ever declared it
+would take 86% of citizens' wealth, yet inflation quietly achieved it
+over 50 years.
+
+Why Target 2%
+-------------
+
+Most central banks target 2% annual inflation as a "price stability"
+goal. But 2% doesn't mean prices are stable - it means purchasing
+power falls 2% every year.
+
+From the Austrian school perspective, the very concept of an "optimal
+inflation rate" is contradictory. In a sound money
+[/ideas/sound-money/] system, prices naturally decline as productivity
+improves. When technology makes things cheaper to produce, raising
+prices through currency issuance robs citizens of the benefits of
+productivity gains.
+
+Bitcoin: Currency Where Inflation Tax Is Impossible
+---------------------------------------------------
+
+Bitcoin is a currency where the inflation tax is structurally
+impossible.
+
+* Total supply of 21 million coins - no government, institution, or
+individual can issue more
+* Halving [/ideas/halving/] causes issuance to gradually decrease -
+inflation rate approaches zero over time
+* Rules enforced by code - cannot be changed by political decision
+
+Ludwig von Mises [/people/ludwig-von-mises/] called sound money a
+"brake on government fiscal irresponsibility." Bitcoin implements that
+brake in mathematics.
+
+Connected Concepts
+------------------
+
+* Nixon Shock [/ideas/nixon-shock/] - The moment when constraints on
+the inflation tax completely disappeared
+* Fiat Money [/ideas/fiat-money/] - The currency system that enables
+the inflation tax
+* Cantillon Effect [/ideas/cantillon-effect/] - Who receives new
+currency first
+* Moral Hazard [/ideas/moral-hazard/] - The perverse incentives
+created by unlimited currency issuance
+* Sound Money [/ideas/sound-money/] - The conditions for money without
+inflation tax
+
+Tags: Economics
+
+Read on full site: https://learn.txid.uk/en/ideas/inflation-tax/

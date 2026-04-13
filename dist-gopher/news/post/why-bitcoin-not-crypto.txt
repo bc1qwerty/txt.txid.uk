@@ -1,0 +1,126 @@
+Why Bitcoin, Not Crypto
+=======================
+
+2026-03-23 | opinion | by txid | en
+
+Bitcoin and 'crypto' are not the same thing. The distinction isn't tribal — it's structural. Here's why this publication covers Bitcoin exclusively.
+
+This publication covers Bitcoin. Not "crypto." Not "digital assets."
+Not "web3." Just Bitcoin.
+
+This is not an aesthetic preference or tribal affiliation. It is an
+editorial decision rooted in a structural distinction that the market,
+the media, and most analysts consistently fail to make.
+
+The Categorical Error
+---------------------
+
+The term "crypto" groups thousands of fundamentally different things
+under one label. Bitcoin — a decentralized monetary network with no
+issuer, no foundation with meaningful control, and a fixed supply — is
+placed in the same category as venture-funded token projects, meme
+coins, and centralized platforms issuing their own securities.
+
+This is like categorizing gold, penny stocks, and casino chips as
+"shiny things" and analyzing them together. You could do it. It would
+also be useless.
+
+The reason this matters is not pedantry. It is that the analytical
+frameworks required for Bitcoin are entirely different from those
+required for everything else in "crypto." Bitcoin responds to macro
+liquidity cycles, monetary policy shifts, and sovereign adoption
+trends. Most tokens respond to marketing cycles, insider selling
+schedules, and the mood on social media.
+
+Mixing these signals produces noise, not insight.
+
+Decentralization Is Binary
+--------------------------
+
+The most important property of a monetary network is whether any
+individual, company, or foundation can alter its rules. This is not a
+spectrum. It is a binary condition.
+
+Bitcoin's consensus rules are enforced by tens of thousands of
+independent nodes run by individuals and institutions worldwide. No
+entity controls the development process. No foundation can
+unilaterally change the monetary policy. No CEO can freeze your coins
+or reverse a transaction.
+
+This is not true of any other project in the "crypto" space. Every
+alternative has some combination of:
+
+* A founding entity with outsized influence over protocol direction
+* Pre-allocated supply that concentrates economic power among insiders
+* Governance mechanisms that allow monetary policy changes through
+voting — which means the policy is political, not mathematical
+* Points of control that regulators can (and do) target to compel
+compliance
+
+These are not minor implementation details. They determine whether an
+asset can credibly function as neutral money or whether it is, in
+substance, an equity instrument with a token wrapper.
+
+The Monetary Question
+---------------------
+
+Bitcoin was designed to answer one specific question: is it possible
+to create money that no single entity controls?
+
+After seventeen years, the answer appears to be yes. The network has
+operated continuously since January 2009 without a single hour of
+downtime. The supply schedule has never been altered. The rules have
+never been changed by executive decision. This track record is the
+product, and it compounds over time — what Nassim Taleb would call the
+Lindy effect.
+
+Everything else in "crypto" is trying to answer different questions.
+Can we build a decentralized computer? Can we tokenize real-world
+assets? Can we create programmable money? These may be interesting
+engineering questions. They are not the same question Bitcoin answers,
+and they do not produce the same kind of asset.
+
+When central banks debase their currencies, when governments impose
+capital controls, when the global monetary order shifts — the relevant
+asset is the one that no government can print, no company can freeze,
+and no committee can dilute. That asset is Bitcoin. The others are
+technology bets at best, and securities fraud at worst.
+
+Why This Matters for Analysis
+-----------------------------
+
+Serious Bitcoin analysis requires understanding macro economics,
+monetary history, game theory, network effects, and geopolitics. It
+requires tracking central bank balance sheets, global M2 trends,
+sovereign adoption signals, and mining economics.
+
+None of this framework applies to analyzing whether a dog-themed token
+will pump next week.
+
+By refusing to cover "crypto," this publication is not limiting its
+scope. It is sharpening its focus. Every article here applies a
+consistent analytical lens — Bitcoin as an emerging monetary asset in
+the context of global macro, politics, and monetary policy.
+
+This means we can go deeper. We can track the slow, structural shifts
+that matter over years rather than chasing the token of the week. We
+can build a coherent body of analysis rather than a disconnected
+series of hot takes.
+
+The Editorial Standard
+----------------------
+
+You will not find altcoin price predictions here. You will not find
+"Top 10 Crypto Projects" lists. You will not find sponsored content
+disguised as analysis.
+
+What you will find is rigorous, independent analysis of Bitcoin's
+position in the global monetary landscape. The intersection of sound
+money with central bank policy, political developments, and macro
+economic cycles.
+
+Bitcoin is the signal. This publication exists to amplify it.
+
+Tags: bitcoin, philosophy, sound money, decentralization
+
+Read on full site: https://news.txid.uk/post/why-bitcoin-not-crypto

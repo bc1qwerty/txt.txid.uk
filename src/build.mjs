@@ -420,6 +420,9 @@ ${learnPreview}
 <h3>Gemini protocol</h3>
 <pre><code>gemini://gemini.txid.uk/</code></pre>
 <p class="meta">The entire mirror is also served over the <a href="https://geminiprotocol.net/">Gemini protocol</a> — a minimalist alternative to HTTP. No HTML, no CSS, no JavaScript, no cookies, no tracking. Requires a Gemini browser such as <a href="https://gmi.skyjake.fi/lagrange/">Lagrange</a> (desktop), <a href="https://github.com/makeworld-the-better-one/amfora">Amfora</a> (terminal), or <a href="https://ariane.app/">Ariane</a> (Android).</p>
+<h3>Gopher protocol</h3>
+<pre><code>gopher://gopher.txid.uk/</code></pre>
+<p class="meta">The 1991 pre-web hypertext system. Pure text menus and files, zero formatting. Requires a Gopher client such as <a href="https://www.floodgap.com/overbite/">OverbiteWX</a>, Lagrange (which also speaks Gopher), or the terminal command <code>nc gopher.txid.uk 70</code>.</p>
 <h3>IPFS (content-addressed)</h3>
 <pre><code>https://ipfs.io/ipns/k51qzi5uqu5djaf06lbcq4kmw5hzrhkhrvpuqvpynq0jlgeic8kq1mzmt0mhb2/</code></pre>
 <p class="meta">This mirror is also pinned to <a href="https://ipfs.tech/">IPFS</a>. Every byte is addressed by its content hash — no central authority can alter or take down a specific version. The IPNS link above tracks the latest build; a <a href="https://docs.ipfs.tech/concepts/ipfs-gateway/#public-gateways">public gateway</a> fetches from any peer that has the content. For direct peer access, run <code>ipfs</code> locally and use the same path.</p>

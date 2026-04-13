@@ -1,0 +1,199 @@
+Moral Hazard
+============
+
+2026-03-09 | en
+
+When people can pass the cost of failure to others, they become more reckless.
+
+What is Moral Hazard?
+---------------------
+
+Moral Hazard is a phenomenon where individuals or organizations take
+on greater risks when the costs of those risks can be passed on to
+others. In simple terms: "If I won't suffer the consequences of
+failure, I'll act more recklessly."
+
+While this concept originated in the insurance industry, it has become
+a crucial tool for understanding modern financial systems and
+government policy. From the Austrian economics perspective in
+particular, moral hazard represents one of the most destructive
+incentive distortions created by the fiat money [/ideas/fiat-money/]
+system.
+
+Moral Hazard in Insurance: The Original Form
+--------------------------------------------
+
+The easiest example to understand comes from insurance.
+
+Consider a car driver with auto insurance. Without insurance, if an
+accident occurs, they must bear all repair costs, so they drive
+carefully. But what happens with comprehensive coverage? Since the
+insurance company will cover most accident costs, people unconsciously
+become less careful. They might not pay attention when parking, or
+fail to slow down on narrow roads.
+
+This is the basic structure of moral hazard: when the person taking
+the risk is separated from the person bearing the cost, risk-taking
+behavior increases.
+
+The insurance industry understands this problem well and responds with
+mechanisms like deductibles, surcharges, and premium differentiation.
+That is, the market operates in a direction that suppresses moral
+hazard.
+
+"Too Big to Fail": Moral Hazard in the Financial System
+-------------------------------------------------------
+
+The problem emerges when governments and central banks systematically
+expand moral hazard instead of restraining it.
+
+## The "Too Big to Fail" Logic
+
+"Too Big to Fail" is the logic that certain financial institutions are
+so large that their bankruptcy would create catastrophe for the entire
+economy, so the government must necessarily rescue them.
+
+Let's examine the incentive structure this logic creates:
+
+* When a large bank earns massive profits from high-risk investments,
+those profits belong to management and shareholders
+* When high-risk investments fail, those losses are borne by taxpayers
+and all citizens through currency devaluation
+* Therefore, the rational strategy is to take on as much risk as
+possible
+
+This is an asymmetric incentive: "Heads I win, tails you lose." In
+such a structure, reckless behavior is not irrational-it's actually
+the most rational choice.
+
+## The Central Bank as Safety Net
+
+Large financial institutions can enjoy "too big to fail" status
+because there exists a central bank acting as lender of last resort.
+The central bank can infinitely issue currency during crises to rescue
+failing institutions.
+
+The mere existence of this safety net creates moral hazard. Banks know
+that the central bank will rescue them in the worst-case scenario. The
+more robust the safety net, the higher they walk the tightrope.
+
+The 2008 Financial Crisis: A Textbook Case of Moral Hazard
+----------------------------------------------------------
+
+The 2008 financial crisis is a historical example demonstrating how
+moral hazard can collapse an entire system.
+
+## Before the Crisis
+
+* Banks provided mortgages even to people without repayment capacity
+(subprime lending)
+* These loans were bundled into complex financial products (MBS, CDO)
+and sold worldwide
+* Credit rating agencies assigned AAA ratings to these dangerous
+products
+* All participants acted under the assumption that "the government
+will fix this if problems arise"
+
+## Crisis and Rescue
+
+When the 2008 crisis hit, the US government and Federal Reserve
+responded as follows:
+
+* $700 billion TARP (Troubled Asset Relief Program) to rescue banks
+* Quantitative easing by the Fed injecting trillions of dollars
+* Direct capital injections into major institutions like AIG,
+Citigroup, and Bank of America
+
+As a result, financial institutions that took reckless risks were
+rescued, and the cost was borne by taxpayers and all citizens through
+inflation.
+
+## Lessons Unlearned
+
+More seriously, the 2008 rescue further reinforced future moral
+hazard. The belief that "the government will ultimately rescue us" was
+confirmed.
+
+After 2008, large banks actually became even larger. While regulations
+were strengthened, the fundamental structure-privatizing profits while
+socializing losses-remained unchanged. The moral hazard underlying
+this structure lies at the heart of the boom-bust cycle explained by
+business cycle theory [/ideas/abct/].
+
+The Expansion of Moral Hazard: Government and National Debt
+-----------------------------------------------------------
+
+Moral hazard is not limited to financial institutions. Governments
+themselves are subjects of moral hazard.
+
+In a fiat currency system, instead of the politically unfavorable
+choice of raising taxes, governments can finance spending through
+currency issuance (inflation). This enables reckless government fiscal
+management.
+
+* War costs are covered by currency issuance rather than direct
+taxation of citizens
+* Popular welfare programs are expanded without securing sources of
+funding
+* Debt is effectively reduced through inflation
+
+Passing current costs to future generations-this is moral hazard at
+the national level. The fact that US national debt exceeds $36
+trillion is the accumulated result of this moral hazard.
+
+The Vicious Cycle of Moral Hazard
+---------------------------------
+
+Moral hazard creates a self-reinforcing cycle:
+
+* Crisis occurs → Government rescues
+* Rescue succeeds → Expectation forms that "we'll be rescued next time
+too"
+* Expectation forms → Greater risk-taking
+* Greater risk → Larger crisis
+* Larger crisis → Larger-scale rescue needed
+
+With each cycle, both the scale of the crisis and the magnitude of the
+rescue grow. The dot-com bubble (2000) was smaller than the financial
+crisis (2008), and the financial crisis was smaller than the currency
+issuance scale of the COVID response (2020). This is not coincidence
+but the inevitable path created by moral hazard.
+
+Bitcoin: A System Without Rescue
+--------------------------------
+
+Bitcoin was designed as a system where moral hazard is structurally
+impossible.
+
+* No lender of last resort: No one can act as a "Bitcoin central bank"
+to rescue failing institutions
+* Unchangeable supply: No new bitcoins can be created and injected
+even during crises
+* Personal responsibility: If you lose your private keys, recovery is
+impossible forever. This is coldly honest, but it implements the
+principle that true ownership comes with responsibility
+
+The message Satoshi Nakamoto embedded in Bitcoin's genesis block is
+telling:
+
+| "The Times 03/Jan/2009 Chancellor on brink of second bailout for
+banks"
+
+This is a declaration that Bitcoin was born as a direct answer to
+bailouts and moral hazard.
+
+Connected Concepts
+------------------
+
+* Business Cycle Theory [/ideas/abct/] - The boom-bust cycle created
+by moral hazard
+* Fiat Money [/ideas/fiat-money/] - The monetary system that enables
+moral hazard
+* Cantillon Effect [/ideas/cantillon-effect/] - Unfair wealth
+redistribution created by bailouts and currency issuance
+* Sound Money [/ideas/sound-money/] - The properties of money that
+structurally suppress moral hazard
+
+Tags: Economics
+
+Read on full site: https://learn.txid.uk/en/ideas/moral-hazard/

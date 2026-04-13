@@ -1,0 +1,439 @@
+How Bitcoin Mining Works: A Step-by-Step Technical Breakdown
+============================================================
+
+2026-03-20 | en
+
+A detailed technical walkthrough of Bitcoin mining - from block template construction and transaction selection to SHA-256 double hashing, difficulty targets, nonce searching, block propagation, mining pool mechanics, and ASIC evolution.
+
+Bitcoin mining is the process by which new blocks are added to the
+blockchain, new bitcoins are issued, and the network reaches consensus
+on the state of all transactions - without any central authority. It
+is the engine that makes Bitcoin work. But beneath the familiar
+metaphor of "digital gold mining" lies a precise, deterministic
+computational process that is worth understanding in detail.
+
+This article walks through the mining process step by step, from the
+moment a miner begins assembling a candidate block to the moment that
+block is accepted by the network.
+
+Step 1: Constructing the Block Template
+---------------------------------------
+
+Mining does not begin with hashing. It begins with block template
+construction - the process of deciding which transactions to include
+in the next block and assembling the data structures that the miner
+will hash.
+
+## Fetching Transactions from the Mempool
+
+Every Bitcoin full node maintains a mempool (memory pool): a
+collection of valid, unconfirmed transactions that have been broadcast
+to the network but not yet included in a block. When a miner begins
+working on a new block, they select transactions from their mempool to
+include.
+
+Transaction selection is not random. Miners are economically rational
+actors, and they select transactions to maximize fee revenue within
+the block's size constraints. Since the SegWit upgrade, blocks are
+limited to 4 million weight units (approximately 1-1.5 MB of raw data,
+depending on the transaction types). The miner constructs a set of
+transactions that fits within this limit while maximizing the total
+fees.
+
+In practice, this means transactions are sorted by fee rate (satoshis
+per virtual byte, sat/vB). Higher fee-rate transactions are included
+first. A transaction paying 50 sat/vB will be included before one
+paying 10 sat/vB. This market-based fee mechanism is how Bitcoin
+allocates scarce block space without a central authority.
+
+## The Coinbase Transaction
+
+Every block must contain exactly one special transaction as its first
+entry: the coinbase transaction. This transaction has no inputs (it
+does not spend any existing UTXOs) and creates new bitcoins according
+to the current block subsidy schedule.
+
+As of 2026, the block subsidy is 3.125 BTC per block (following the
+April 2024 halving). The coinbase transaction output is the block
+subsidy plus the sum of all transaction fees in the block. If the
+block contains 0.5 BTC in total fees, the coinbase output is 3.625
+BTC.
+
+The coinbase transaction also contains an arbitrary data field (the
+coinbase scriptSig) where miners can embed up to 100 bytes of data.
+Satoshi Nakamoto famously included the headline "The Times 03/Jan/2009
+Chancellor on brink of second bailout for banks" in the genesis
+block's coinbase. Today, miners use this field for pool
+identification, the extra nonce (discussed below), and occasionally
+messages.
+
+## Building the Merkle Tree
+
+Once the miner has selected transactions, they construct a Merkle tree
+- a binary hash tree where every leaf node is the hash of a
+transaction, and every non-leaf node is the hash of its two children.
+The root of this tree, the Merkle root, is a single 32-byte hash that
+cryptographically commits to every transaction in the block.
+
+The Merkle tree construction proceeds as follows:
+
+* Hash each transaction (using SHA-256d, i.e., double SHA-256) to get
+the transaction IDs (txids)
+* Pair the txids. If there is an odd number, duplicate the last one
+* Hash each pair together to produce the next level
+* Repeat until only one hash remains - the Merkle root
+
+The Merkle root is critical because it allows anyone to verify that a
+specific transaction is included in the block without downloading the
+entire block (this is called a Merkle proof or SPV proof). It also
+means that changing even a single byte in any transaction would
+produce a completely different Merkle root.
+
+## Assembling the Block Header
+
+The miner now assembles the 80-byte block header from six fields:
+
+| Field | Size | Value |
+|---|---|---|
+| Version | 4 bytes | Block version (currently 0x20000000 plus any
+BIP9 signaling bits) |
+| Previous Block Hash | 32 bytes | The SHA-256d hash of the most
+recent valid block header |
+| Merkle Root | 32 bytes | The Merkle root computed from the selected
+transactions |
+| Timestamp | 4 bytes | Current Unix time (with some flexibility -
+must be within a 2-hour window) |
+| Bits (Target) | 4 bytes | Compact encoding of the current difficulty
+target |
+| Nonce | 4 bytes | Initially set to 0 |
+
+This 80-byte header is the data that the miner will hash repeatedly.
+
+Step 2: The Hashing Process
+---------------------------
+
+## SHA-256 Double Hashing
+
+Bitcoin's proof-of-work uses SHA-256d: the SHA-256 hash function
+applied twice in succession. Given the 80-byte block header as input:
+
+    hash = SHA-256(SHA-256(block_header))
+
+SHA-256 produces a 256-bit (32-byte) output. This output is a number
+between 0 and 2^256 - 1. The key property of SHA-256 that makes
+proof-of-work possible is that it is a one-way function: given an
+output, there is no way to compute the input except by trying inputs
+and checking. Small changes to the input produce completely
+unpredictable changes to the output (the avalanche effect).
+
+## The Difficulty Target
+
+The miner's goal is to find a block header whose SHA-256d hash, when
+interpreted as a 256-bit number, is less than the current difficulty
+target. The target is encoded in the header's "Bits" field using a
+compact representation.
+
+Conceptually, the target defines how many leading zeros the hash must
+have. A lower target means more leading zeros are required, which
+means a smaller number, which means the hash is harder to find. When
+the network says "difficulty has increased," it means the target has
+been lowered, requiring more computational work to find a valid hash.
+
+At the time of writing, the difficulty target requires roughly 79-80
+leading zero bits, meaning a valid hash must be a number smaller than
+approximately 2^176. The odds of any single hash attempt satisfying
+this condition are approximately 1 in 2^80 - about 1 in 10^24.
+
+## Iterating the Nonce
+
+The miner's search process is straightforward:
+
+* Set the nonce field to 0
+* Compute SHA-256d of the 80-byte header
+* Compare the result to the target
+* If the hash is below the target: valid block found
+* If not: increment the nonce by 1 and repeat
+
+The nonce is a 32-bit field, providing 2^32 (approximately 4.3
+billion) possible values. At modern ASIC hash rates, a single miner
+exhausts the entire 32-bit nonce space in under one second. This is
+why additional sources of variation are needed.
+
+## The Extra Nonce and Other Search Dimensions
+
+When the 4.3 billion nonce values are exhausted without finding a
+valid hash, the miner must change something else in the block header
+to create a new set of hashes to try. The primary mechanism is the
+extra nonce:
+
+Extra nonce: A field within the coinbase transaction's scriptSig.
+Incrementing the extra nonce changes the coinbase transaction, which
+changes its txid, which changes the Merkle root, which changes the
+block header - giving a completely new set of 2^32 nonce values to
+try.
+
+Timestamp: The miner can adjust the timestamp within the allowed range
+(the current time plus or minus a window), producing different
+headers.
+
+Transaction selection: The miner can add, remove, or reorder
+transactions, changing the Merkle root.
+
+In practice, modern mining operates in a three-dimensional search
+space: nonce (inner loop, exhausted in milliseconds), extra nonce
+(middle loop), and timestamp/transaction set (outer loop).
+
+Step 3: Finding a Valid Block
+-----------------------------
+
+When a miner finally computes a hash that falls below the target, they
+have found a valid block. This hash serves as the proof of work -
+evidence that a specific, quantifiable amount of computational effort
+was expended. Anyone can verify this proof instantly by hashing the
+block header once and checking that the result is below the target.
+Verification takes microseconds; finding the proof took billions of
+attempts.
+
+This asymmetry - hard to produce, trivial to verify - is the
+fundamental property that makes proof-of-work useful for consensus.
+
+Step 4: Block Propagation
+-------------------------
+
+Once a valid block is found, the miner broadcasts it to the network as
+fast as possible. Speed matters: if another miner finds a valid block
+at the same height first and that block propagates more widely, the
+slower miner's block becomes an orphan (or more precisely, a stale
+block), and they receive no reward.
+
+## Compact Block Relay (BIP 152)
+
+Modern Bitcoin nodes use compact block relay to minimize propagation
+time. Instead of transmitting the full block (which can be over 1 MB),
+the node sends:
+
+* The block header
+* A list of short transaction identifiers (6 bytes each instead of
+32-byte txids)
+
+The receiving node matches these short identifiers against
+transactions already in its mempool. Since most transactions in the
+new block were already known to the receiving node, only a few missing
+transactions need to be explicitly requested. This reduces block
+propagation time from seconds to milliseconds in most cases.
+
+## Block Validation
+
+Every node that receives the block independently validates it:
+
+* Header validation: Is the hash below the target? Is the previous
+block hash correct? Is the timestamp within the acceptable range?
+* Transaction validation: Is every transaction valid? Are the inputs
+unspent? Are the signatures correct? Do the outputs not exceed the
+inputs (plus the block subsidy)?
+* Merkle root verification: Does the computed Merkle root match the
+one in the header?
+* Block size/weight: Is the block within the 4-million-weight-unit
+limit?
+
+Only after passing all checks does a node add the block to its copy of
+the blockchain and relay it to its peers. This independent validation
+by every node is what makes Bitcoin trustless - no node needs to trust
+the miner or any other node.
+
+Step 5: Difficulty Adjustment
+-----------------------------
+
+Bitcoin's difficulty adjustment algorithm ensures that blocks are
+produced, on average, every 10 minutes, regardless of how much hash
+power is on the network. This adjustment occurs every 2,016 blocks
+(approximately every two weeks).
+
+The algorithm is straightforward:
+
+new_target = old_target × (time_to_mine_2016_blocks / 20160_minutes)
+
+If the last 2,016 blocks were mined in 10 days instead of 14, blocks
+were coming too fast, and the target is lowered (difficulty increases)
+by a factor of 14/10 = 1.4. If they took 20 days, the target is raised
+(difficulty decreases) by a factor of 14/20 = 0.7. The adjustment is
+capped at a factor of 4 in either direction to prevent extreme
+changes.
+
+This self-regulating mechanism means that Bitcoin's issuance schedule
+is predictable regardless of the price of bitcoin, the number of
+miners, or the sophistication of mining hardware. Hash rate can
+double, and after one difficulty adjustment, blocks will again arrive
+every 10 minutes.
+
+Mining Pools: Collective Hash Power
+-----------------------------------
+
+The probability of a solo miner finding a block is proportional to
+their share of the total network hash rate. With the network hash rate
+exceeding 700 EH/s (exahashes per second) in 2026, even a miner
+operating thousands of ASIC machines represents a tiny fraction of the
+network. A miner with 1 PH/s (petahash per second) has approximately a
+1 in 700,000 chance of mining each block, or roughly one block per
+13.5 years on average.
+
+This variance problem led to the creation of mining pools, where many
+miners combine their hash power and share rewards proportionally.
+
+## How Pools Work
+
+* The pool operator provides a block template to all pool members
+* Each miner works on a modified version of this template (with their
+own extra nonce range)
+* Miners submit shares - proof-of-work solutions that meet a lower
+difficulty target than the actual Bitcoin difficulty. These shares
+prove that the miner is performing work
+* If any miner's hash also meets the actual Bitcoin difficulty target,
+the pool broadcasts the valid block
+* The block reward is distributed among all pool members
+proportionally to the shares they contributed
+
+## Payout Schemes
+
+PPS (Pay Per Share): The pool pays a fixed amount for each valid
+share, regardless of whether the pool actually finds a block. This
+eliminates variance for miners but transfers risk to the pool
+operator.
+
+PPLNS (Pay Per Last N Shares): The pool pays proportionally based on
+shares contributed during a window around when a block is found. This
+distributes risk more evenly but introduces some variance.
+
+FPPS (Full Pay Per Share): Like PPS but also includes an estimated
+share of transaction fees, not just the block subsidy.
+
+## Centralization Concerns
+
+As of 2026, the top 4 mining pools control over 60% of the network
+hash rate. This concentration raises concerns about censorship and
+potential 51% attacks. However, it is important to note that pool
+miners can and do switch pools - the hash power is distributed among
+individual miners who voluntarily point their machines at a particular
+pool's server. If a pool acts maliciously, miners can migrate to other
+pools within minutes.
+
+The development of Stratum V2, a new mining protocol, addresses some
+centralization concerns by allowing individual miners to construct
+their own block templates rather than accepting the pool operator's
+template. This prevents pool operators from censoring specific
+transactions.
+
+ASIC Evolution: The Hardware Arms Race
+--------------------------------------
+
+Bitcoin mining hardware has evolved through four generations:
+
+## CPU Mining (2009-2010)
+
+Satoshi Nakamoto mined the first Bitcoin blocks on a standard CPU.
+Bitcoin's early blocks were mined at hash rates measured in megahashes
+per second (MH/s). An Intel Core i7 of that era could achieve roughly
+10-30 MH/s.
+
+## GPU Mining (2010-2013)
+
+Graphics processing units (GPUs) offered 10-100x improvement over CPUs
+for SHA-256 hashing due to their parallel processing architecture. A
+high-end GPU could achieve 200-800 MH/s. GPU mining made CPU mining
+economically obsolete virtually overnight.
+
+## FPGA Mining (2011-2013)
+
+Field-Programmable Gate Arrays (FPGAs) offered better energy
+efficiency than GPUs, achieving similar hash rates with significantly
+less power consumption. However, FPGAs were expensive and difficult to
+program, and their dominance was brief.
+
+## ASIC Mining (2013-Present)
+
+Application-Specific Integrated Circuits (ASICs) are chips designed
+exclusively for SHA-256 hashing. The first Bitcoin ASICs appeared in
+2013, and they immediately rendered all previous mining hardware
+obsolete.
+
+Modern ASICs (2026) achieve hash rates of 200-300 TH/s (terahashes per
+second) per unit while consuming 15-25 watts per terahash. Key
+milestones:
+
+* Bitmain Antminer S9 (2016): 14 TH/s, 98 W/TH - defined an era
+* Bitmain Antminer S19 XP (2022): 140 TH/s, 21.5 W/TH
+* Bitmain Antminer S21 (2024): 200 TH/s, 17.5 W/TH
+* Latest generation (2026): 250-300+ TH/s with sub-15 W/TH efficiency
+
+The ASIC arms race has driven two fundamental trends: increasing hash
+rate (and thus network security) and decreasing energy consumption per
+hash. The result is that Bitcoin mining has become a highly
+specialized industrial operation - the era of profitable home mining
+with commodity hardware ended years ago.
+
+Energy and Economics
+--------------------
+
+Mining is fundamentally an energy conversion process: electricity is
+converted into cryptographic security for the Bitcoin network. A miner
+is profitable when the value of bitcoin earned (block subsidy plus
+fees) exceeds the cost of electricity, hardware depreciation, cooling,
+and operational overhead.
+
+The break-even electricity price varies by ASIC generation and Bitcoin
+price, but as a rough guideline in 2026: with a modern ASIC achieving
+17 W/TH and Bitcoin at $80,000, mining is profitable at electricity
+costs below approximately $0.08-0.10 per kWh. This economic pressure
+drives miners to seek the cheapest electricity on Earth, which
+increasingly means stranded energy (energy that would otherwise be
+wasted) and renewable energy (which is often the cheapest per kWh at
+scale).
+
+## The Difficulty-Price Feedback Loop
+
+When Bitcoin's price rises, mining becomes more profitable, attracting
+more hash power, which increases difficulty, which reduces
+profitability per unit of hash power. When the price falls,
+unprofitable miners shut down, difficulty decreases, and remaining
+miners become more profitable. This feedback loop maintains a dynamic
+equilibrium where mining is always marginally profitable for the most
+efficient operators.
+
+Why Proof of Work Matters
+-------------------------
+
+Proof of work is often criticized as "wasteful." This criticism
+misunderstands the function of the energy expenditure. The energy
+consumed by mining is not wasted - it is converted into an unforgeable
+proof that a specific amount of physical work was performed. This
+proof has three critical properties:
+
+* Objective cost: Creating a valid block requires provably expending
+real-world resources (electricity). This objective cost prevents Sybil
+attacks - an attacker cannot cheaply create fake blocks.
+
+* Thermodynamic finality: As blocks are buried under subsequent
+blocks, reversing them requires re-expending all the energy used to
+create the subsequent blocks. After six confirmations, reversing a
+transaction would require more energy than a small country consumes in
+a year.
+
+* Fair issuance: New bitcoins are distributed to those who expend real
+resources to secure the network, creating a direct link between
+physical work and monetary issuance. This is analogous to how gold
+mining distributes new gold - through expenditure of energy, not
+through political decree.
+
+Proof of work is the mechanism that anchors digital money to physical
+reality. Without it, Bitcoin would be just another database that
+requires trust in its operators.
+
+For a deeper understanding of block structure, see Bitcoin Block
+Structure [/ideas/bitcoin-block-structure]. For the economic
+implications of mining, see Bitcoin Halving
+[/articles/bitcoin-halving] and Bitcoin and Energy
+[/articles/bitcoin-energy].
+
+Tags: Bitcoin, Mining, Technical
+
+Read on full site: https://learn.txid.uk/en/articles/how-bitcoin-mining-works-step-by-step/

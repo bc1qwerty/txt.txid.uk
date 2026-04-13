@@ -1,0 +1,155 @@
+Satoshi Nakamoto
+================
+
+2026-03-09 | en
+
+The founder of Bitcoin. A revolution created by an unknown figure.
+
+The Ghost Who Created Bitcoin
+-----------------------------
+
+Satoshi Nakamoto is the founder of Bitcoin. He entered history by
+posting a whitepaper on a cryptography mailing list in October 2008,
+and quietly disappeared at the end of 2010. His identity remains
+unknown to this day - it has not even been confirmed whether he is a
+single individual or a team of multiple people.
+
+This anonymity is not a flaw. It is the very essence of Bitcoin.
+
+The Whitepaper: Nine Pages of Revolution
+----------------------------------------
+
+On October 31, 2008, Satoshi published a 9-page paper titled "Bitcoin:
+A Peer-to-Peer Electronic Cash System". This whitepaper is regarded as
+one of the most important documents in the history of computer science
+and economics.
+
+The core problem the whitepaper solved was the double-spending
+problem. Since digital files can be copied infinitely, digital
+currency faced a fundamental problem: the same money could be spent
+twice. The conventional solution was to rely on a trusted third party
+like a bank.
+
+Satoshi solved this problem without a trusted third party. By
+combining Proof of Work and blockchain structures, he designed a
+system where the validity of transactions could be verified through
+the competitive cooperation of network participants alone.
+
+This was not merely a technical innovation. For the first time in
+human history, currency that operates without central authority became
+possible.
+
+The Genesis Block: A Hidden Message
+-----------------------------------
+
+On January 3, 2009, Satoshi generated the first block of the Bitcoin
+network. This Genesis Block contains a significant message:
+
+| "The Times 03/Jan/2009 Chancellor on brink of second bailout for
+banks"
+
+This was the actual front-page headline of the British Times newspaper
+on that day. Satoshi's choice of this message was no accident. During
+the 2008 global financial crisis, governments worldwide bailed out
+irresponsible banks with taxpayer money. A system that privatizes
+profits and socializes losses - Satoshi created Bitcoin as an answer
+to this absurdity.
+
+The message in the Genesis Block is a declaration eternally carved
+into the blockchain, expressing Bitcoin's reason for existence.
+
+Early Development and Community
+-------------------------------
+
+Satoshi wrote almost all of Bitcoin's initial code himself. The first
+Bitcoin transaction was Satoshi sending 10 BTC to programmer Hal
+Finney (January 12, 2009).
+
+During the early years, Satoshi was actively engaged on Bitcoin forums
+and mailing lists. He answered technical questions, improved code, and
+provided direction for the project. His writings reveal both deep
+economic understanding and cryptographic expertise.
+
+One of Satoshi's forum posts directly shows a connection to Austrian
+economics:
+
+| "The problem with fiat currency is that it requires trust in the
+central bank not to debase the currency [...]. History is littered
+with breaches of that trust."
+
+Disappearance: 2010
+-------------------
+
+In December 2010, Satoshi left a final public message and disappeared.
+He transferred management of the project to other developers like
+Gavin Andresen and never participated in any public communication
+again.
+
+The Bitcoin estimated to have been mined by Satoshi amounts to
+approximately one million BTC. These coins have never moved once.
+Assets worth tens of trillions of won lie dormant on the blockchain,
+untouched.
+
+Why Anonymity Matters
+---------------------
+
+The fact that Satoshi's identity has never been revealed is a blessing
+for Bitcoin. Here's why:
+
+## A Protocol Without a Leader
+
+Bitcoin is a protocol, not a company. If the founder were known,
+governments could arrest or coerce him to pressure changes to the
+protocol. Anonymity made Bitcoin free from the control of any
+individual.
+
+## A System Not Dependent on Authority
+
+The fact that we don't know who Satoshi is means that Bitcoin's value
+is based on code and mathematics, not on the founder's authority.
+Bitcoin operates on verification, not belief - "Don't trust, verify."
+
+## An Equal Start
+
+Satoshi did not pre-mine Bitcoin or grant himself special privileges.
+Everyone could participate on equal terms.
+
+Notable Quotes
+--------------
+
+| "The root problem with conventional currency is all the trust that's
+required to make it work."
+
+| "If governments don't have the ability to provide complete privacy,
+we must protect our privacy with cryptography."
+
+| "I've moved on to other things. Bitcoin is in good hands with Gavin
+and everyone." (Final known email, April 2011)
+
+Satoshi's Legacy
+----------------
+
+What Satoshi Nakamoto created was not software. It was proof that
+currency can operate without a state. For thousands of years, currency
+was the domain of monarchs, kings, and governments. Satoshi broke this
+monopoly.
+
+And most importantly - Satoshi left. He could have seized power but
+chose to give it up. This act itself best illustrates Bitcoin's
+spirit. Bitcoin is not the property of any individual or group, but of
+everyone who runs this code.
+
+Connected Concepts
+------------------
+
+* What is Bitcoin? [/ideas/bitcoin/] - The foundation of the system
+Satoshi created
+* Proof of Work [/ideas/proof-of-work/] - The mechanism through which
+Satoshi solved the double-spending problem
+* Sound Money [/ideas/sound-money/] - Why Bitcoin is sound money
+* Halving [/ideas/halving/] - The supply reduction mechanism designed
+by Satoshi
+
+Tags: Bitcoin
+
+Read on full site: https://learn.txid.uk/en/people/satoshi-nakamoto/

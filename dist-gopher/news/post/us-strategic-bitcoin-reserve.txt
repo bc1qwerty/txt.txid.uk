@@ -1,0 +1,241 @@
+US Strategic Bitcoin Reserve: Executive Order 14178 Six Months In
+=================================================================
+
+2026-03-18 | politics | by txid | en
+
+Six months after Executive Order 14178 established the Strategic Bitcoin Reserve, the US holds 207,000 BTC from seizures. The debate: whether to buy more.
+
+On September 12, 2025, President Trump signed Executive Order 14178,
+establishing the Strategic Bitcoin Reserve of the United States. The
+order directed the Treasury Department to consolidate all Bitcoin held
+by the federal government — approximately 207,000 BTC seized through
+criminal and civil forfeiture proceedings — into a single reserve,
+managed as a permanent national asset.
+
+The operative instruction was two words: never sell.
+
+Six months later, those two words have reshaped the policy debate
+around Bitcoin at the federal level. The question is no longer whether
+the United States should hold Bitcoin. It is whether 207,000 BTC is
+enough, how to acquire more without spending taxpayer money, and what
+it means when the world's largest economy treats a decentralized
+digital asset as a strategic reserve alongside gold, petroleum, and
+foreign currency.
+
+What the Executive Order Actually Does
+--------------------------------------
+
+EO 14178 establishes three concrete mechanisms:
+
+Consolidation. All Bitcoin held across federal agencies — primarily
+the Department of Justice and the Treasury Department — is transferred
+to a single reserve managed by the Treasury. Previously, seized
+Bitcoin was scattered across agency wallets, sometimes sold at auction
+(the US Marshals Service conducted multiple auctions between 2014 and
+2024), and managed with no coordinated strategy.
+
+Prohibition on sale. The reserve is designated as a permanent holding.
+No Bitcoin in the reserve may be sold, exchanged, or otherwise
+disposed of without a subsequent executive order or act of Congress.
+This is the "Digital Fort Knox" framing that the administration has
+used publicly — a reserve that only grows, never shrinks.
+
+Budget-neutral acquisition mandate. The order directs the Treasury and
+Commerce departments to develop strategies for acquiring additional
+Bitcoin that do not impose costs on taxpayers. This provision is
+deliberately vague — it invites creative policy proposals without
+committing to any specific mechanism.
+
+The Holdings
+------------
+
+The approximately 207,000 BTC in the reserve come from a series of
+high-profile seizures conducted over the past decade:
+
+| Source | Approximate BTC | Year Seized | Status |
+|---|---|---|---|
+| Silk Road (Ulbricht) | 69,370 | 2013–2020 | In reserve |
+| Silk Road (Individual X) | 51,326 | 2021 | In reserve |
+| Bitfinex hack (Lichtenstein) | 94,643 | 2022 | In reserve |
+| Various smaller seizures | ~10,000 | 2015–2025 | In reserve |
+| Previously auctioned | ~30,000+ | 2014–2024 | Sold (not recoverable)
+|
+
+At current prices, the reserve's value fluctuates around $14–17
+billion — meaningful in absolute terms, but a rounding error relative
+to the $8.1 trillion in US Treasury securities outstanding or the
+approximately $610 billion in gold reserves held at Fort Knox and the
+Federal Reserve Bank of New York.
+
+The irony of the previously auctioned Bitcoin is not lost on anyone.
+The US Marshals Service sold roughly 30,000 BTC at prices that, at
+today's valuations, represent tens of billions in foregone value. Tim
+Draper purchased 29,656 BTC at a 2014 auction for approximately $19
+million — a position now worth over $2 billion. EO 14178 exists, in
+part, to ensure that particular mistake is never repeated.
+
+The Acquisition Debate
+----------------------
+
+The executive order's budget-neutral mandate has generated the most
+creative — and contentious — policy proposals in recent memory.
+
+Gold certificate revaluation. The most discussed proposal involves
+revaluing the Treasury's gold certificates, which are still carried on
+the books at the 1973 statutory price of $42.22 per ounce. The actual
+market value of US gold reserves exceeds $600 billion. Revaluing the
+certificates to market price would generate a paper surplus of over
+$550 billion, which could theoretically be used to purchase Bitcoin
+without new appropriations or debt issuance. Critics argue this is
+accounting arbitrage — it does not create new wealth, it merely
+reclassifies existing wealth — and that Congress would need to
+authorize the revaluation.
+
+Tariff revenue allocation. The administration has floated dedicating a
+portion of tariff revenue to Bitcoin purchases. With the expanded
+tariff regime generating an estimated $100–150 billion annually, even
+a small percentage allocation would produce meaningful buying power.
+This approach has the advantage of being budget-neutral in the sense
+that it redirects existing revenue rather than creating new spending.
+
+Selling other reserves. A more radical proposal involves selling
+portions of the Strategic Petroleum Reserve or other commodity
+stockpiles to fund Bitcoin purchases. This has minimal political
+support — the optics of selling oil to buy Bitcoin are problematic
+even for the most enthusiastic proponents.
+
+The Lummis Bitcoin Act
+----------------------
+
+Senator Cynthia Lummis of Wyoming introduced the Bitcoin Act in the
+119th Congress, proposing that the United States acquire one million
+BTC over a five-year period. The bill specifies annual purchases of
+200,000 BTC, funded through a combination of Federal Reserve surplus
+redistribution and gold certificate revaluation.
+
+One million BTC represents approximately 4.76% of Bitcoin's total
+eventual supply. At current prices, the acquisition would cost roughly
+$70–85 billion — a staggering sum in absolute terms, but approximately
+1.4% of annual federal spending.
+
+The bill has 18 Senate co-sponsors and has passed committee markup.
+Its chances of full passage remain uncertain, but the fact that a bill
+proposing the government purchase nearly five percent of a
+decentralized digital asset's supply is being seriously debated in
+committee represents a fundamental shift in how Washington views
+Bitcoin.
+
+State-Level Movements
+---------------------
+
+The federal reserve has catalyzed state-level action. As of March
+2026, at least 26 states have introduced legislation related to
+Bitcoin reserves or Bitcoin-friendly treasury management:
+
+Texas passed its Bitcoin reserve bill in late 2025, authorizing the
+state comptroller to accept Bitcoin for tax payments and hold a
+portion of the state's rainy day fund in BTC. Texas's approach is the
+most aggressive at the state level — it treats Bitcoin not as a
+speculative asset to be held in small quantities, but as a legitimate
+treasury reserve asset.
+
+Florida introduced a bill authorizing the state pension fund to
+allocate up to 3% of assets under management to Bitcoin. Given the
+Florida Retirement System manages approximately $250 billion, a 3%
+allocation would represent $7.5 billion in potential demand.
+
+Wyoming — already the most crypto-friendly state by statute — expanded
+its existing framework to allow the state treasury to hold Bitcoin
+directly, not just through ETFs or trusts.
+
+The state-level movement is significant because it creates a
+competitive dynamic. If Texas holds Bitcoin and it appreciates,
+neighboring states face political pressure to explain why they did
+not. Game theory operates at the state level just as it operates at
+the national level.
+
+International Reaction
+----------------------
+
+The international response has been a mixture of validation,
+skepticism, and quiet imitation.
+
+El Salvador, which made Bitcoin legal tender in September 2021, has
+been vocally validated by the US move. President Bukele, who endured
+years of criticism from the IMF and international financial
+institutions, has pointed to the US strategic reserve as vindication
+of his government's Bitcoin strategy. El Salvador's own holdings —
+approximately 6,000 BTC accumulated through daily purchases — are
+modest by comparison, but the country's first-mover status now carries
+geopolitical weight it did not have before.
+
+Bhutan, which has been mining Bitcoin using hydroelectric power since
+2019, has formalized its holdings as a sovereign reserve. The Czech
+National Bank has disclosed Bitcoin holdings for diversification
+purposes.
+
+The more significant signal is the silence from major economies.
+Neither China, the EU, Japan, nor the UK has publicly responded to the
+US strategic reserve with a comparable initiative. But the absence of
+public response does not indicate the absence of private deliberation.
+Central banks do not announce reserve strategy shifts until they are
+ready to execute them.
+
+The Opposition Case
+-------------------
+
+Critics of the strategic reserve make several serious arguments that
+deserve engagement rather than dismissal.
+
+Volatility. Bitcoin has experienced drawdowns exceeding 70% multiple
+times in its history. A strategic reserve that can lose two-thirds of
+its value in eighteen months is unlike any other reserve asset the US
+holds. The counterargument — that volatility is a feature of an
+emerging monetary asset and decreases over time — is plausible but
+unproven at the scale of sovereign reserves.
+
+Opportunity cost. Every dollar spent acquiring Bitcoin is a dollar not
+spent on infrastructure, debt reduction, defense, or social programs.
+The budget-neutral framing mitigates this somewhat, but gold
+certificate revaluation or tariff revenue allocation still represent
+choices about how to deploy finite resources.
+
+Political risk. A reserve established by executive order can be
+unwound by executive order. If a future administration is hostile to
+Bitcoin, the reserve could be liquidated — potentially at fire-sale
+prices — with no Congressional check. The Lummis Act, if passed, would
+provide statutory protection that an executive order cannot.
+
+Market distortion. Government purchases of a finite asset with a known
+supply schedule create price effects that benefit existing holders
+disproportionately. Whether this constitutes acceptable policy or a
+wealth transfer to early adopters is a legitimate distributional
+question.
+
+The Game Theory
+---------------
+
+The structural significance of EO 14178 transcends the specific policy
+debate. It establishes a precedent that transforms Bitcoin's position
+in the global monetary order.
+
+Once one major nation-state formally designates Bitcoin as a strategic
+reserve asset, every other nation-state must evaluate its own
+position. The cost of holding Bitcoin that appreciates is zero — you
+hold an appreciating asset. The cost of not holding Bitcoin that
+appreciates is measured in relative national wealth decline. This
+asymmetry creates a game-theoretic incentive structure in which
+non-adoption becomes increasingly expensive over time.
+
+This does not guarantee that other nations will follow. It guarantees
+that they must now actively decide not to, rather than passively
+ignoring the question. The US strategic reserve has moved Bitcoin from
+the category of "things nation-states can safely ignore" to "things
+nation-states must have a position on."
+
+Whether that position is adoption, rejection, or quiet accumulation —
+the era of institutional indifference to Bitcoin is over.
+
+Tags: strategic reserve, executive order, US government, bitcoin, treasury, policy
+
+Read on full site: https://news.txid.uk/post/us-strategic-bitcoin-reserve

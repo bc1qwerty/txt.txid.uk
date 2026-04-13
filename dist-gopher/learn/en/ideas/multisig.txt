@@ -1,0 +1,138 @@
+Multisig (Multisig) - Multi-Signature Security
+==============================================
+
+2026-03-06 | en
+
+Multisig is a security mechanism that requires signatures from multiple private keys in Bitcoin transactions, with a threshold number of signatures needed for approval.
+
+Multisig is a security mechanism that requires a threshold number of
+signatures from multiple private keys to approve Bitcoin transactions.
+It structurally eliminates the risk of fund loss due to a single key
+being lost, stolen, or obtained under coercion, making it one of the
+most robust Bitcoin custody solutions for both individuals and
+organizations.
+
+Technical Implementation of the M-of-N Scheme
+---------------------------------------------
+
+Multisig is implemented using Bitcoin Script's OP_CHECKMULTISIG
+opcode. The spending conditions are encoded in a script that requires
+M valid signatures out of N public keys to spend a UTXO. Initially,
+P2SH (Pay-to-Script-Hash) was used, representing the script hash as an
+address starting with 3. After the introduction of SegWit, P2WSH
+(Pay-to-Witness-Script-Hash) became the standard, bringing significant
+improvements in fee efficiency and script flexibility. P2WSH separates
+witness data from the transaction body, conserving block space and
+also resolving the transaction malleability problem.
+
+Scenario-Specific Configurations
+--------------------------------
+
+2-of-3 Personal Custody: The most recommended configuration for
+individual users. Three keys are stored in separate physical locations
+(e.g., a home safe, a bank safe deposit box, and a trusted relative's
+secure storage). Even if one key is lost or destroyed, funds remain
+accessible with the other two, achieving both high security and
+recoverability without a single point of failure.
+
+3-of-5 Corporate Management: Well suited for companies or DAOs
+(Decentralized Autonomous Organizations). Five board members each hold
+a key, and fund movements require approval from a majority of three.
+Operations continue even if two members are unavailable or lose their
+keys, while simultaneously preventing unilateral embezzlement.
+
+2-of-2 Escrow: The buyer and seller each hold one key, meaning funds
+can only move when both parties agree. This enables conditional
+transactions without relying on third-party trust. Variations that
+incorporate timelocks or mediators for dispute resolution are also
+possible.
+
+Key Ceremony Procedures
+-----------------------
+
+Setting up a multisig wallet securely requires a systematic process
+known as a key ceremony. Each signer independently generates their key
+pair and shares only their public key (xpub) to construct the multisig
+wallet. The following practices must be observed: each key is
+generated in an isolated environment (air-gapped device); seed phrases
+are never disclosed to other participants; the wallet configuration
+file (wallet descriptor) is backed up by all participants; and a
+verification transaction (small test send and receive) confirms the
+setup works correctly. Skipping or neglecting the key ceremony can
+fundamentally undermine the security benefits of multisig.
+
+Tool Comparison: Sparrow, Specter, Nunchuk
+------------------------------------------
+
+Sparrow Wallet is a desktop-only wallet offering an intuitive UI and
+powerful coin control features. It has excellent compatibility with a
+wide range of hardware wallets and presents the PSBT (Partially Signed
+Bitcoin Transaction) workflow visually. Recommended for individual
+users.
+
+Specter Desktop integrates tightly with your own Bitcoin node to
+achieve full privacy. Its strength lies in close integration with
+Bitcoin Core, making it suitable for technically proficient users.
+
+Nunchuk supports both mobile and desktop platforms and specializes in
+team-based multisig management. It excels in collaborative workflows
+with features like signature request notifications and inter-cosigner
+communication, and its adoption in corporate environments is growing.
+
+Taproot and MuSig2: Impact on Multisig
+--------------------------------------
+
+The Taproot upgrade activated in 2021, combined with the MuSig2
+protocol, dramatically improves multisig privacy and efficiency.
+MuSig2 allows signatures from multiple signers to be aggregated into a
+single Schnorr signature, making the transaction indistinguishable
+from an ordinary single-signature transaction on-chain. This provides
+two key benefits. First, privacy improvement: external observers
+cannot determine whether a transaction is multisig or single-sig.
+Second, fee reduction: the aggregated single signature produces a
+smaller transaction size than traditional multisig scripts, lowering
+fees. However, MuSig2 is not yet fully supported across all wallets,
+and it introduces operational complexity in the form of interactive
+signing rounds.
+
+Limitations and Caveats of Multisig
+-----------------------------------
+
+Multisig is a powerful security tool, but it comes at the cost of
+complexity. All participants must securely back up the wallet
+configuration file (output descriptor or wallet configuration);
+without this file, funds cannot be recovered from seed phrases alone.
+The signing process is also more cumbersome than single-key setups,
+potentially limiting access in emergency situations. For inheritance
+planning, thorough documentation is essential so that heirs can
+understand the multisig structure and recovery procedures.
+Underestimating the complexity can paradoxically create an even
+greater risk of permanent fund inaccessibility.
+
+Real-World Security Incidents and Lessons
+-----------------------------------------
+
+The value of multisig becomes clear through real-world security
+incidents. Exchange hot wallets secured by a single key have been
+hacked multiple times, resulting in massive fund losses; these events
+led major exchanges to mandate multisig for cold wallet storage.
+Conversely, cases have been reported where backup procedures were
+neglected in a multisig setup, a key was lost, and the remaining keys
+could not meet the threshold, rendering funds permanently
+inaccessible. These cases teach us that multisig is not a silver
+bullet -- it delivers true security only when combined with proper
+setup, backup, and recovery planning.
+
+Related Concepts
+----------------
+
+* Node [/ideas/node/] - Independent validation software for the
+Bitcoin network
+* What is Bitcoin? [/ideas/bitcoin/] - Basic concepts and how Bitcoin
+works
+* Private Property Rights [/ideas/private-property/] - The right to
+exclusively own personal property
+
+Tags: Bitcoin, Security
+
+Read on full site: https://learn.txid.uk/en/ideas/multisig/

@@ -262,6 +262,7 @@ async function buildLanding(newsFeed, learnFeed) {
   doc += '## Other access methods\n\n';
   doc += `=> https://txt.txid.uk/ Clearnet text-only mirror (HTML)\n`;
   doc += `=> http://3gtfnkxog3gymzodli5bzzr5uwahklap3jldaqohowldtdlhwfbcdeid.onion/ Tor hidden service (v3 onion)\n`;
+  doc += `=> gopher://gopher.txid.uk/ Gopher protocol (port 70)\n`;
   doc += `=> https://txid.uk/ Full-featured txid.uk ecosystem\n\n`;
   doc += '## About\n\n';
   doc += 'Part of the txid.uk ecosystem. Brutalist by design.\n\n';

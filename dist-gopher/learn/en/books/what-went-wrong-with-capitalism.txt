@@ -1,0 +1,68 @@
+What Went Wrong with Capitalism
+===============================
+
+2026-02-18 | en
+
+Diagnoses how excessive government intervention has destroyed the self-correcting mechanisms of the free market.
+
+What broke capitalism? Not too little government - too much of it.
+That's the counterintuitive argument Ruchir Sharma makes, and he
+brings the receipts. As one of Wall Street's most respected global
+investors, Sharma has the credibility and the data to make this case
+from inside the system, which is exactly what makes it so damning.
+
+The Core Argument
+-----------------
+
+Each crisis gets a bigger bailout. The savings and loan crisis. 2008.
+COVID. Every time, the government response grows larger, and each time
+it prevents the creative destruction that capitalism needs to stay
+healthy. The result? Capital gets trapped in zombie companies -
+unproductive firms that should have failed but didn't, consuming
+resources that ought to flow to innovative new businesses. Sharma
+shows their share of developed economies has risen dramatically.
+
+Meanwhile, government spending as a share of GDP ratchets steadily
+upward in every developed nation. Each crisis justifies a permanent
+expansion of the state. And the primary mechanism distorting
+everything, Sharma argues, is artificially low interest rates. Cheap
+money inflates asset prices, punishes savers, rewards borrowers, and
+widens the wealth gap.
+
+Here's the most devastating insight in the book: the very policies
+designed to reduce inequality - bailouts, stimulus, low rates - are
+actually the primary drivers of inequality. They inflate the asset
+prices that benefit the wealthy while eroding the purchasing power of
+everyone else. It's a vicious cycle where each intervention plants the
+seed of the next crisis, requiring an even bigger intervention.
+
+The Bottom Line
+---------------
+
+Sharma isn't a Bitcoin maximalist or an Austrian economist. He's a
+mainstream financial insider saying the quiet part out loud. That
+makes this book a uniquely credible complement to theoretical
+critiques of interventionism - and an indirect but powerful case for
+why the world needs an alternative to central bank discretion.
+
+Related Concepts
+----------------
+
+* Moral Hazard [/en/ideas/moral-hazard/] - How bailouts create
+incentives for reckless behavior
+* ABCT [/en/ideas/abct/] - The Austrian theory explaining why
+artificial credit expansion fails
+* Cantillon Effect [/en/ideas/cantillon-effect/] - Why money creation
+benefits those closest to the source
+* Fiat Money [/en/ideas/fiat-money/] - The monetary system enabling
+endless intervention
+* Inflation Tax [/en/ideas/inflation-tax/] - How low-rate policies
+erode purchasing power
+* Free Market [/en/ideas/free-market/] - The self-correcting system
+that intervention destroys
+* Sound Money [/en/ideas/sound-money/] - The constraint that would
+prevent the bailout cycle
+* Austrian Economics [/en/learn/austrian-economics/] - The
+intellectual tradition that predicted these problems
+
+Read on full site: https://learn.txid.uk/en/books/what-went-wrong-with-capitalism/

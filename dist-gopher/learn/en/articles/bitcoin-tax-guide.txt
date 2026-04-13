@@ -1,0 +1,383 @@
+Bitcoin Tax Guide: What You Need to Know
+========================================
+
+2026-03-20 | en
+
+A comprehensive guide to Bitcoin taxation - capital gains principles, cost basis methods (FIFO, LIFO, Specific ID), taxable vs non-taxable events, record-keeping best practices, and jurisdiction-specific rules for the US, South Korea, and Japan. Not tax advice.
+
+Bitcoin exists outside the traditional financial system by design, but
+the tax obligations it creates are firmly inside it. Every
+jurisdiction that has addressed cryptocurrency taxation treats Bitcoin
+as property, an asset, or a form of income - and in every case, tax
+events are triggered by actions that most Bitcoin users perform
+routinely. Understanding these obligations is not optional. The
+penalties for non-compliance range from substantial fines to criminal
+prosecution.
+
+This guide covers the fundamental principles of Bitcoin taxation, the
+mechanics of calculating tax liability, and the specific rules in
+three major jurisdictions: the United States, South Korea, and Japan.
+It is educational material, not tax advice. Consult a qualified tax
+professional for your specific situation.
+
+The Fundamental Principle: Bitcoin Is Property
+----------------------------------------------
+
+The starting point for understanding Bitcoin taxation in virtually
+every jurisdiction is this: Bitcoin is treated as property, not
+currency. This classification has profound consequences.
+
+When you sell property for more than you paid for it, you realize a
+capital gain. When you sell it for less, you realize a capital loss.
+This applies whether the property is a house, a stock, or a bitcoin.
+The gain or loss is the difference between your cost basis (what you
+paid for it, including fees) and the proceeds (what you received when
+you disposed of it).
+
+This means that every time you sell, trade, or spend bitcoin, you are
+disposing of property and must calculate whether you have a gain or a
+loss. If you bought 0.5 BTC for $15,000 and later sold it for $25,000,
+you have a capital gain of $10,000. If you bought 1 BTC for $60,000
+and sold it for $45,000, you have a capital loss of $15,000.
+
+The critical nuance is that exchanging one cryptocurrency for another
+is also a taxable disposition. If you trade Bitcoin for Ethereum, you
+have "sold" the Bitcoin. The fair market value of the Ethereum you
+received is your proceeds from the Bitcoin sale. This surprises many
+newcomers who assume that trading between cryptocurrencies is not a
+taxable event because no fiat currency was involved.
+
+Taxable vs. Non-Taxable Events
+------------------------------
+
+Understanding which actions trigger tax obligations and which do not
+is essential for accurate reporting.
+
+## Taxable Events
+
+Selling Bitcoin for fiat currency. The most straightforward taxable
+event. You calculate the difference between your cost basis and the
+sale price.
+
+Trading Bitcoin for another cryptocurrency. As noted above, this is
+treated as selling the Bitcoin. Your proceeds are the fair market
+value of the cryptocurrency you received at the time of the trade.
+
+Spending Bitcoin on goods or services. When you buy a coffee with
+bitcoin, you are disposing of property. If the bitcoin you spent had a
+cost basis of $100 and the coffee cost $5 worth of bitcoin that was
+now worth $150, you have a $50 capital gain. Yes, on a coffee
+purchase. This is the practical reality of property classification.
+
+Receiving Bitcoin as payment for goods or services. This is ordinary
+income, taxed at your income tax rate. The amount of income is the
+fair market value of the bitcoin at the time you received it. This
+applies to freelancers, merchants, employees paid in bitcoin, and
+anyone who receives bitcoin as compensation.
+
+Mining rewards. Bitcoin received from mining is taxed as ordinary
+income at the fair market value on the date you receive it. When you
+later sell that mined bitcoin, you have a second taxable event - a
+capital gain or loss based on the difference between the fair market
+value when mined (your cost basis) and the sale price.
+
+Airdrops, hard fork coins, and staking rewards. Generally treated as
+ordinary income at the fair market value when you receive them. The
+cost basis for future sales is that fair market value.
+
+Earning interest or yield on Bitcoin. Interest from lending platforms
+or DeFi protocols is ordinary income.
+
+## Non-Taxable Events
+
+Buying Bitcoin with fiat currency. Simply purchasing bitcoin does not
+create a taxable event. It establishes your cost basis.
+
+Transferring Bitcoin between your own wallets. Moving bitcoin from one
+wallet you own to another is not a taxable event. However, you should
+maintain records showing that both wallets belong to you, in case you
+need to prove this to tax authorities.
+
+Donating Bitcoin to a qualified charity. In many jurisdictions
+(including the US), donating appreciated property to a qualified
+charity allows you to deduct the fair market value without paying
+capital gains tax on the appreciation.
+
+Gifting Bitcoin (below thresholds). In the US, you can gift up to
+$18,000 per recipient per year (2024) without gift tax implications.
+The recipient inherits your cost basis.
+
+HODLing. Simply holding bitcoin, regardless of how much it
+appreciates, does not trigger a taxable event. Unrealized gains are
+not taxed.
+
+Cost Basis Methods
+------------------
+
+When you have purchased bitcoin at different times and different
+prices, you need a method to determine which bitcoin you are selling.
+This is the cost basis method, and it significantly affects your tax
+liability.
+
+## FIFO (First In, First Out)
+
+FIFO assumes that the first bitcoin you bought is the first bitcoin
+you sell. This is the default method in most jurisdictions and is the
+simplest to implement.
+
+Example: You bought 1 BTC at $20,000 in January 2024, 1 BTC at $40,000
+in June 2024, and 1 BTC at $60,000 in December 2024. In March 2025,
+you sell 1 BTC for $70,000. Under FIFO, you are selling the January
+purchase, so your gain is $70,000 - $20,000 = $50,000.
+
+Impact: In a bull market, FIFO tends to produce the largest gains (and
+highest taxes) because you are selling the cheapest lots first.
+However, those gains are more likely to qualify as long-term capital
+gains (held over one year), which are taxed at a lower rate in many
+jurisdictions.
+
+## LIFO (Last In, First Out)
+
+LIFO assumes that the most recently purchased bitcoin is sold first.
+
+Example: Using the same purchases above, selling 1 BTC for $70,000
+under LIFO means you are selling the December purchase. Your gain is
+$70,000 - $60,000 = $10,000.
+
+Impact: LIFO typically produces smaller gains in a rising market but
+larger gains in a falling market. The gains are more likely to be
+short-term (held less than one year), which may be taxed at a higher
+rate.
+
+Important: LIFO is not accepted in all jurisdictions. The US allows
+it, but South Korea and Japan generally require or default to other
+methods.
+
+## Specific Identification
+
+Specific identification allows you to choose exactly which lot of
+bitcoin you are selling. This gives you the most control over your tax
+liability but requires meticulous record-keeping.
+
+Example: Using the same purchases, if you want to minimize your gain,
+you can specifically identify the $60,000 lot. If you want to realize
+a loss (because the price has dropped to $35,000), you can identify
+the $60,000 lot for a $25,000 loss.
+
+Requirements: You must be able to identify the specific lot at the
+time of the sale, not after the fact. This means maintaining records
+that link specific purchases to specific UTXOs or exchange lot
+numbers.
+
+## Average Cost Basis
+
+Some jurisdictions allow or require the average cost basis method,
+where you divide your total cost by your total holdings to get a
+per-unit cost.
+
+Example: Total cost of 3 BTC = $120,000 ($20K + $40K + $60K). Average
+cost per BTC = $40,000. Selling 1 BTC for $70,000 produces a gain of
+$30,000.
+
+Holding Periods: Short-Term vs. Long-Term
+-----------------------------------------
+
+Many jurisdictions distinguish between short-term and long-term
+capital gains based on how long you held the asset before selling it.
+
+Short-term gains (held one year or less in the US) are typically taxed
+at your ordinary income tax rate, which can be as high as 37% in the
+US.
+
+Long-term gains (held more than one year in the US) receive
+preferential tax rates - 0%, 15%, or 20% in the US depending on your
+income level.
+
+This distinction creates a strong incentive to hold bitcoin for at
+least one year before selling. A $50,000 gain taxed at 15% (long-term)
+costs $7,500; the same gain taxed at 37% (short-term) costs $18,500.
+
+Jurisdiction-Specific Rules
+---------------------------
+
+## United States
+
+The IRS treats cryptocurrency as property (Notice 2014-21). Key
+points:
+
+* Capital gains rates: 0%, 15%, or 20% for long-term; ordinary income
+rates (10-37%) for short-term
+* Cost basis methods: FIFO is the default; specific identification is
+allowed with adequate records
+* Reporting: Form 8949 for capital gains/losses; Schedule D for
+summary; Form 1040 includes a digital asset question ("At any time
+during the tax year, did you receive, sell, exchange, or otherwise
+dispose of any digital assets?")
+* Wash sale rules: As of 2026, cryptocurrency is not subject to the
+wash sale rule that applies to securities. This means you can sell
+bitcoin at a loss and immediately repurchase it to harvest the tax
+loss. Note: Legislation to extend wash sale rules to crypto has been
+proposed repeatedly - monitor this carefully
+* De minimis exemption: There is currently no de minimis exemption for
+crypto transactions. Every taxable event, regardless of size, must be
+reported
+* FBAR/FATCA: Foreign exchange accounts holding cryptocurrency may
+trigger FBAR reporting requirements if the aggregate value exceeds
+$10,000
+
+## South Korea
+
+South Korea's cryptocurrency tax framework has undergone significant
+changes:
+
+* Tax rate: 20% on gains exceeding 2.5 million KRW (approximately
+$1,900) per year, effective from January 2025 after multiple
+postponements
+* Classification: Classified as "other income" (기타소득), not capital
+gains
+* Cost basis: The transfer-in price method is used; the acquisition
+cost is calculated from actual purchase records
+* Reporting: Annual tax filing through the National Tax Service (국세청).
+Domestic exchanges report transactions automatically
+* Losses: Losses can offset gains within the same tax year but cannot
+be carried forward to future years
+* Foreign exchange reporting: Holdings on foreign exchanges exceeding
+500 million KRW must be reported to the tax authority
+* Inheritance and gift tax: Cryptocurrency is valued at the average
+market price over two months (one month before and one month after the
+relevant date) for inheritance and gift tax purposes
+
+## Japan
+
+Japan has one of the most aggressive cryptocurrency tax regimes among
+developed nations:
+
+* Classification: Cryptocurrency gains are classified as
+"miscellaneous income" (雑所得), not capital gains
+* Tax rates: Subject to the progressive income tax scale, which
+reaches up to 45% for national tax, plus 10% local tax - a maximum
+combined rate of approximately 55%
+* Cost basis methods: The moving average method or the total average
+method are accepted. FIFO is allowed
+* Reporting: Annual self-assessment tax return (確定申告) required if
+crypto gains exceed 200,000 JPY ($1,350)
+* Crypto-to-crypto trades: Taxable at the point of exchange, same as
+in the US
+* Mining and staking: Taxed as miscellaneous income at the time of
+receipt
+* NFTs: Subject to taxation under the same framework
+* Reform efforts: There has been significant advocacy to reclassify
+crypto gains as "capital gains" with a flat 20% rate, similar to stock
+market gains. The Japan Blockchain Association has submitted proposals
+for this reform, but as of 2026 the 55% maximum rate remains in effect
+
+Record-Keeping Best Practices
+-----------------------------
+
+Accurate record-keeping is not merely advisable - it is legally
+required and practically essential. Without complete records, you
+cannot accurately calculate your tax liability, and you may default to
+the least favorable assumptions.
+
+## What to Record for Every Transaction
+
+* Date and time of the transaction
+* Type of transaction (buy, sell, trade, receive, send, mine)
+* Amount of bitcoin involved
+* Fair market value in your local currency at the time of the
+transaction
+* Fees paid (trading fees, network fees, withdrawal fees)
+* Running cost basis for each lot
+* Counterparty information (exchange name, wallet address)
+* Purpose (investment, payment for services, gift, donation)
+
+## Tools and Methods
+
+Exchange records: Download your complete transaction history from
+every exchange you have used. Exchanges may not retain records
+indefinitely - download early and often. Store in multiple locations.
+
+On-chain records: Your Bitcoin wallet contains a complete record of
+every transaction. Export these records and maintain them separately
+from the wallet itself.
+
+Tax software: Specialized cryptocurrency tax software (CoinTracker,
+Koinly, CoinLedger, TaxBit) can import exchange data and calculate tax
+liability automatically. These tools support multiple cost basis
+methods and generate the required tax forms.
+
+Spreadsheet tracking: For smaller portfolios, a well-maintained
+spreadsheet can suffice. Track each purchase as a separate lot with
+its date, amount, cost basis (including fees), and current status
+(held or sold).
+
+## The Cost of Poor Records
+
+If you cannot document your cost basis, tax authorities may assume a
+cost basis of zero - meaning your entire sale proceeds are treated as
+gain. This is the worst possible outcome and is entirely avoidable
+with proper record-keeping.
+
+Tax-Loss Harvesting
+-------------------
+
+Tax-loss harvesting is the practice of intentionally selling assets at
+a loss to offset capital gains and reduce your overall tax liability.
+
+How it works: If you have $30,000 in realized gains from Bitcoin
+sales, and you also hold a position that is currently at a $10,000
+loss, you can sell that position to realize the loss. Your net taxable
+gain is now $20,000 instead of $30,000.
+
+In the US: You can deduct up to $3,000 of net capital losses against
+ordinary income per year. Excess losses carry forward to future years
+indefinitely. And because (as of 2026) the wash sale rule does not
+apply to crypto, you can immediately repurchase the same asset -
+unlike with stocks.
+
+Warning: Do not engage in aggressive tax strategies without
+professional advice. Tax authorities worldwide are increasing their
+scrutiny of cryptocurrency transactions, and what appears to be a
+legitimate strategy may be recharacterized as tax evasion if
+improperly executed.
+
+The Broader Picture: Tax Compliance and Bitcoin Philosophy
+----------------------------------------------------------
+
+There is an inherent tension between Bitcoin's ethos of individual
+sovereignty and the state's power to tax. Many Bitcoiners view
+taxation as ranging from a necessary compromise to legalized theft,
+depending on their position on the political spectrum.
+
+Regardless of your philosophical position, the practical reality is
+that tax non-compliance carries severe consequences - criminal
+prosecution, asset seizure, and imprisonment. The pseudonymous nature
+of Bitcoin provides far less protection than many assume. Exchanges
+report to tax authorities. Chain analysis firms work with governments.
+The IRS has issued John Doe summonses to exchanges to obtain customer
+records.
+
+The most prudent approach is to comply with tax obligations while
+advocating for reasonable tax policies through legitimate political
+channels. Several jurisdictions are moving toward more favorable
+cryptocurrency tax treatment - flat rates, higher exemptions, and
+capital gains classification instead of income classification. These
+changes come through legislative advocacy, not through non-compliance.
+
+Disclaimer
+----------
+
+This article is for educational purposes only and does not constitute
+tax, financial, or legal advice. Tax laws vary by jurisdiction and
+change frequently. The information presented here may be outdated or
+inapplicable to your specific situation. Consult a qualified tax
+professional who is familiar with cryptocurrency taxation in your
+jurisdiction before making any tax-related decisions.
+
+For more on Bitcoin's relationship with regulation, see Bitcoin vs
+CBDC [/articles/bitcoin-vs-cbdc] and Bitcoin and Property Rights
+[/articles/bitcoin-and-property-rights].
+
+Tags: Bitcoin, Liberty, Security
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-tax-guide/

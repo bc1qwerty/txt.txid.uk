@@ -1,0 +1,71 @@
+Bitcoin Whitepaper
+==================
+
+2026-01-06 | en
+
+A Korean edition with detailed commentary on the key concepts of the Bitcoin whitepaper alongside the original text.
+
+Nine pages. That's all it took to launch a trillion-dollar monetary
+revolution. Satoshi Nakamoto's 2008 whitepaper is the founding
+document of Bitcoin, and this annotated Korean edition makes it
+accessible even if you don't have a computer science background. If
+you're going to understand Bitcoin deeply, you have to start here.
+
+What Satoshi Actually Solved
+----------------------------
+
+The core breakthrough is deceptively simple to state: how do you
+prevent someone from spending the same digital money twice without
+relying on a trusted middleman? Every previous attempt at digital cash
+had failed at this problem. Satoshi's answer was a peer-to-peer
+network using proof of work to achieve consensus on the order of
+transactions. For the first time ever, digital scarcity became
+possible.
+
+The paper describes how miners expend real computational energy to
+validate transactions and build blocks, creating an incentive
+structure where honesty pays better than cheating. These blocks are
+chained together with cryptographic hashes, so altering any historical
+transaction would mean redoing all the work that came after it - an
+impossibly expensive task. It's elegant engineering, but what really
+sets the whitepaper apart is how it weaves together technical
+solutions with economic incentive design. Block rewards and
+transaction fees motivate people to secure the network without any
+central coordinator. Satoshi even anticipated that most users wouldn't
+want to run full nodes, describing simplified payment verification for
+lightweight clients.
+
+The Korean commentary in this edition is genuinely helpful, unpacking
+the dense technical passages into clear explanations. But beyond
+accessibility, reading the original source matters for a deeper
+reason: it cuts through years of competing narratives about what
+Bitcoin is "supposed" to be and lets you judge for yourself.
+
+Why Start Here
+--------------
+
+Every debate about Bitcoin's development and direction traces back to
+this document. Understanding the whitepaper isn't just academic - it's
+the foundation for having informed opinions about everything that came
+after.
+
+Related Concepts
+----------------
+
+* Proof of Work [/en/ideas/proof-of-work/] - The consensus mechanism
+at the heart of the whitepaper
+* Merkle Tree [/en/ideas/merkle-tree/] - The data structure enabling
+efficient transaction verification
+* UTXO [/en/ideas/utxo/] - The transaction model Satoshi designed
+* Difficulty Adjustment [/en/ideas/difficulty-adjustment/] - How the
+network self-regulates
+* Mempool [/en/ideas/mempool/] - Where transactions wait before
+confirmation
+* Node [/en/ideas/node/] - The software that enforces the protocol
+rules
+* Bitcoin Technical [/en/learn/bitcoin-technical/] - Deeper
+exploration of the protocol
+* Bitcoin [/en/learn/bitcoin/] - The broader context of Bitcoin's
+significance
+
+Read on full site: https://learn.txid.uk/en/books/bitcoin-whitepaper/

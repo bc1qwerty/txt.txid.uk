@@ -1,0 +1,162 @@
+Why Bitcoin Matters
+===================
+
+2026-02-18 | en
+
+Bitcoin is not an investment product - it is a technological exit from the state's monopoly on money. With concrete examples, we examine how the fiat money system erodes your wealth and why Bitcoin is fundamentally different.
+
+Your paycheck is deposited into your account every month. The number
+is not much different from previous years. Yet strangely, what you can
+buy with that money shrinks every year. In 2020, 50 million won could
+secure a jeonse lease for a small apartment on the outskirts of Seoul.
+In 2025, your options with the same amount have been cut by more than
+half. This is not because you increased your spending or became lazy.
+It is because the monetary system itself is quietly gnawing away at
+your savings.
+
+To truly understand Bitcoin, you must first confront this
+uncomfortable truth. You must start not with price charts or
+investment returns, but with the fundamental question: what is money,
+and who controls it?
+
+How Fiat Money Silently Steals Your Wealth
+------------------------------------------
+
+On August 15, 1971, President Richard Nixon officially abolished the
+gold standard. This date marks the greatest turning point in the
+history of human money. Once the physical constraint of gold was
+removed, central banks around the world gained the ability to print
+money with virtually no limit. Gold reserves no longer set the
+boundary on currency issuance.
+
+The consequences are clear in the numbers. The purchasing power of the
+U.S. dollar has fallen about 87% since 1971. What $1 could buy in 1971
+now costs about $7.70. The Korean won is no exception. In 1980, a bowl
+of 짜장면 cost 500 won; by 2025, the average exceeds 7,000 won. Same
+food, same ingredients, yet the price has risen 14-fold. 짜장면 did not
+become expensive - the won lost that much value.
+
+Inflation is not a natural phenomenon. It is the result of governments
+intentionally expanding the money supply to cover fiscal deficits and
+dilute accumulated debt. The Bank of Korea's broad money supply (M2)
+grew from approximately 1,600 trillion won in 2010 to about 4,000
+trillion won in 2025 - more than 2.5 times in 15 years. Did your
+salary increase 2.5 times over that period? For most workers, the
+answer is no.
+
+What is even more serious is that this is not a bug in the system - it
+is the design. The fiat money [/ko/ideas/fiat-money/] system is
+structurally designed so that governments expand the money supply to
+pay off their debts. The gradual loss of value in your savings is not
+collateral damage - it is the system working as intended.
+
+How Bitcoin Is Fundamentally Different from This System
+-------------------------------------------------------
+
+Bitcoin differs from every form of money humanity has ever used in
+three core properties. This is not a mere improvement - it is a
+paradigm shift.
+
+## Absolute Scarcity: 21 Million Guaranteed by Mathematics
+
+Bitcoin's total supply is 21 million. This number is inscribed in the
+source code, and tens of thousands of full nodes worldwide
+(approximately 15,000-20,000 public nodes, and more when counting
+private ones) monitor this rule around the clock. No president, no
+central bank governor, no international body, not even Bitcoin's own
+developers can arbitrarily change this number. To change it would
+require the consent of the majority of node operators worldwide, and
+they have absolutely no economic incentive to increase the supply.
+
+New bitcoins are created only through mining, and the mining reward is
+halved approximately every four years (the halving). The reward that
+started at 50 BTC per block in 2009 was reduced to 25 BTC in 2012,
+12.5 BTC in 2016, 6.25 BTC in 2020, and 3.125 BTC after the fourth
+halving in April 2024. Around the year 2140, the last bitcoin will be
+mined, and after that, not a single additional bitcoin will ever be
+created.
+
+Gold is also scarce, but in a fundamentally different way. If new
+deposits are discovered or mining technology advances, the gold supply
+increases. In fact, the total amount of gold above ground grows by
+about 1.5-2% each year. If technologies like asteroid mining become
+commercially viable, the supply growth rate could explode. Bitcoin has
+no such variables. Its scarcity is mathematically, permanently fixed.
+No asset like this has ever existed in human history.
+
+## Censorship Resistance: Transactions Requiring No One's Permission
+
+In February 2022, the Canadian government froze the bank accounts of
+participants and supporters of a trucker protest against COVID public
+health policies. Without a court ruling, by administrative order
+alone, the assets of hundreds of people were frozen. This happened in
+democratic Canada. These measures were temporary under the Emergencies
+Act and were subsequently subject to legal review.
+
+The 2013 Cyprus financial crisis was even more extreme. As a drastic
+remedy during a national insolvency crisis, the government forcibly
+cut up to 47.5% from the accounts of depositors holding over 100,000
+euros. It was your money, but you had no say. The moment you entrusted
+it to the banking system, the fate of that money passed into the hands
+of the government and the banks.
+
+Bitcoin transactions require no third-party permission. With an
+internet-connected device and a private key, you can transmit value to
+anyone in the world, at any time, in any amount. No bank, no
+government, no payment processor, no credit card company can block or
+censor a transaction in the middle. This is a technical property, not
+a policy promise.
+
+China banned Bitcoin mining and trading entirely in 2021. But the
+Bitcoin network did not stop. Nodes and miners within China departed,
+but participants in other countries maintained the network. No single
+country's decision can stop Bitcoin. This is censorship resistance
+guaranteed by technology.
+
+## Self-Sovereignty: Property Rights Guaranteed by Code
+
+In the traditional financial system, your money is essentially a
+number in a database managed by a bank. As long as you maintain an
+account at the bank, you can access that number. But if the bank
+freezes your account, gets hacked, goes bankrupt, or the government
+issues a seizure order, that access vanishes in an instant.
+
+Bitcoin is different. Only the person holding the private key (or its
+human-readable representation, the seed phrase) can move the
+corresponding bitcoin. This is a technical fact, not a legal promise.
+A person who remembers their 12-24 word seed phrase can access their
+bitcoin from anywhere in the world, without the permission of any
+financial institution. No form of property right like this has ever
+existed in human history. However, this self-sovereignty demands
+technical understanding and responsibility. If you lose your keys, you
+permanently lose your assets, and for ordinary users, this remains a
+high barrier to entry.
+
+Not an Investment Asset - An Exit
+---------------------------------
+
+Many people see Bitcoin as "the next asset to go up." But Bitcoin's
+true value lies not in price appreciation, but in the fact that it is
+an exit from the state's monopoly on money.
+
+In the fiat money system, your savings melt away a little each year
+through the invisible tax of inflation. Every time a government faces
+a crisis, it issues more currency, and the cost is borne by those who
+hold cash. Bitcoin is the first technological method in history to
+escape this structural expropriation.
+
+Understanding this is not simply understanding a technology. It is
+asking the fundamental questions: what is money, what should the
+relationship between the state and the individual be, and where do
+property rights come from? Bitcoin is one concrete, functioning answer
+to those questions.
+
+Whether the price goes up or down, the very fact that Bitcoin exists
+is what matters. For the first time, humanity has a choice. Instead of
+being compelled to use only money issued and managed by governments,
+people can now choose an alternative currency guaranteed by
+mathematical law. The existence of that choice is why Bitcoin matters.
+
+Tags: Bitcoin
+
+Read on full site: https://learn.txid.uk/en/articles/why-bitcoin-matters/

@@ -1,0 +1,280 @@
+The Lightning Economy Is Already Here
+=====================================
+
+2026-03-21 | opinion | by txid | en
+
+While skeptics debate whether Lightning 'works,' a parallel economy runs on it. Nostr zaps, merchant payments, cross-border remittances — it's not theoretical.
+
+There is a peculiar disconnect in the discourse around Bitcoin's
+Lightning Network. On one side, skeptics argue that Lightning has
+failed — too complex, too small, too many edge cases. On the other
+side, enthusiasts project a future where Lightning replaces Visa. Both
+miss what is actually happening.
+
+Lightning is not failing. It is not replacing Visa. It is quietly
+operating a parallel economy that, while small in absolute terms, is
+real, growing, and solving problems that no other payment system can
+solve at the same cost.
+
+The Lightning economy is not theoretical. It is running. Here is
+where.
+
+Nostr and the Value-for-Value Economy
+-------------------------------------
+
+The most vibrant Lightning economy exists in the most unlikely place:
+a decentralized social protocol that most people have never heard of.
+
+Nostr — Notes and Other Stuff Transmitted by Relays — is an open
+protocol for decentralized social communication. It has no company, no
+token, no venture funding. What it does have is zaps: Lightning
+payments sent directly from one user to another, attached to specific
+pieces of content.
+
+A user reads a post they find valuable and sends 1,000 sats
+(approximately $0.70) to the author. A developer ships an open-source
+tool and receives zaps from grateful users. A musician publishes a
+song on Wavlake — a Nostr-integrated music platform — and receives
+streaming payments directly, with no label, no distributor, and no
+30-day settlement delay.
+
+This is the value-for-value model that podcaster Adam Curry has
+championed since 2019: consumers pay what they believe content is
+worth, directly to creators, with zero intermediaries. On Nostr, this
+model is not theoretical. It is the default mode of interaction. Every
+post, every note, every piece of content has a Lightning address
+attached. Payment is one tap away.
+
+The amounts are small individually. The Nostr zapping economy
+processes an estimated 50,000–100,000 transactions daily, with a
+median zap value of approximately 500–2,000 sats. But the economic
+model is entirely novel: micropayments that are genuinely micro,
+settled instantly, with no minimum transaction, no processing fee that
+exceeds the payment amount, and no platform taking a 30% cut.
+
+Podcasting 2.0: Streaming Sats
+------------------------------
+
+The podcast industry processes approximately $4 billion in annual
+advertising revenue through a model that most listeners find intrusive
+and most creators find inadequate. Podcasting 2.0 — an open standard
+built on the podcast namespace and Lightning integration — offers an
+alternative.
+
+Listeners using compatible apps — Fountain, Breez, Castamatic, and
+others — can stream sats to podcast creators in real time. Not a
+lump-sum donation. Not a monthly subscription. A continuous stream of
+satoshis, typically 50–500 sats per minute, flowing from listener to
+creator for as long as the listener is engaged.
+
+Fountain, the largest Podcasting 2.0 app, reports over 300,000 active
+users who have collectively streamed billions of sats to creators. The
+top podcasts on the platform earn meaningful revenue — not enough to
+replace advertising entirely, but enough to demonstrate that the model
+works and scales.
+
+The structural advantage is alignment. In the advertising model, the
+podcast's customer is the advertiser, not the listener. In the
+streaming sats model, the customer is the listener. This changes
+incentives: creators optimize for listener value rather than
+advertiser-friendly metrics. The result is content that serves its
+audience rather than its sponsors — a distinction that matters more
+than it might seem.
+
+El Salvador: Messy Reality, Real Adoption
+-----------------------------------------
+
+El Salvador adopted Bitcoin as legal tender in September 2021. The
+government-built Chivo wallet was widely criticized — buggy,
+centralized, and unpopular with a public that did not ask for digital
+money. International media focused on the Chivo problems and declared
+the experiment a failure.
+
+The reality on the ground is more nuanced. While Chivo usage has
+declined, organic Lightning adoption in specific communities has
+proven durable.
+
+Bitcoin Beach (El Zonte), the community where the Lightning economy
+originated before the legal tender law, continues to operate a
+circular Bitcoin economy. Local merchants accept Lightning for
+groceries, haircuts, and bus fare. Remittances from Salvadorans
+working in the United States arrive via Lightning and are spent
+locally without conversion to dollars. The community's experience
+demonstrates that Lightning-based commerce works at the village scale
+when adoption reaches critical mass.
+
+Bitcoin Jungle in Costa Rica's Uvita region has replicated the model
+independently — a community of merchants, expats, and locals
+transacting in Bitcoin via Lightning, building a local circular
+economy outside any government mandate.
+
+These are not Silicon Valley demonstrations or conference stunts. They
+are working economies in developing communities where the alternative
+is often unbanked cash transactions with high remittance fees.
+
+Cross-Border Remittances
+------------------------
+
+The remittance market processes approximately $800 billion annually in
+cross-border transfers, with average fees of 6.2% according to World
+Bank data. For the corridors that matter most — US to Latin America,
+Gulf states to South Asia, Europe to Africa — those fees represent a
+regressive tax on the world's poorest workers sending money to the
+world's poorest families.
+
+Lightning is beginning to compete in this market, not through
+Bitcoin-branded consumer apps but through infrastructure that is
+invisible to the end user.
+
+Strike operates in the US, El Salvador, and select other markets,
+offering near-instant cross-border transfers using Lightning as the
+settlement rail. The sender deposits dollars. Strike converts to
+Bitcoin, routes via Lightning, and the recipient receives local
+currency. Neither party needs to know or care that Bitcoin was
+involved. The fee is typically 0.1–0.5% — an order of magnitude lower
+than Western Union.
+
+Machankura provides Lightning access in Africa via USSD — the simple
+text-based menu system that works on any mobile phone, including
+feature phones with no internet connection. In countries where
+smartphone penetration is low but mobile phone penetration is
+near-universal, Machankura's model enables Lightning payments for
+users who cannot install an app.
+
+Bitnob facilitates remittances between the US, UK, and several African
+countries using Lightning for settlement, targeting the African
+diaspora sending money home. The combination of near-zero fees,
+instant settlement, and accessibility via basic mobile phones
+addresses the exact pain points that make traditional remittance
+services expensive and slow.
+
+| Use Case | Estimated Daily Tx Volume | Key Platforms | Primary
+Regions |
+|---|---|---|---|
+| Nostr zaps | 50,000–100,000 | Nostr clients (Damus, Primal,
+Amethyst) | Global |
+| Podcasting 2.0 | 20,000–40,000 | Fountain, Breez, Castamatic | US,
+Europe |
+| Merchant payments | 30,000–60,000 | BTCPay, Square (pending), Breez
+POS | El Salvador, Costa Rica, EU |
+| Remittances | 10,000–25,000 | Strike, Machankura, Bitnob | US-LATAM,
+Africa, Gulf-South Asia |
+| Peer-to-peer | 40,000–80,000 | Phoenix, Muun, Wallet of Satoshi |
+Global |
+| Exchanges/trading | 100,000+ | Various | Global |
+
+These numbers are estimates derived from on-chain analytics and
+platform reports. They are imprecise. They are also not zero — which
+is the point.
+
+The Circular Economy
+--------------------
+
+The most interesting development in the Lightning economy is not any
+single use case but the emergence of circular flows — Bitcoin earned,
+spent, and re-earned without ever touching a fiat off-ramp.
+
+A developer earns sats for open-source contributions through platforms
+like Stacker News or Geyser Fund. They spend those sats on a VPN
+subscription from Mullvad (which accepts Lightning). The VPN provider
+pays its server costs partly in Bitcoin to a hosting provider that
+accepts it. Each participant in this chain transacted without a bank
+account, a credit card, or a currency conversion.
+
+This is small. It is niche. It is also exactly how parallel economies
+begin. The early internet economy was similarly niche — a small
+community of enthusiasts buying and selling digital goods with new
+tools that most people found confusing and unnecessary. The question
+was never whether the early internet economy was large enough to
+matter. It was whether the infrastructure and behavior patterns being
+established would scale.
+
+The Square Inflection
+---------------------
+
+Block's announcement that Square will enable Lightning payments by
+default across four million merchants starting March 30 represents a
+potential inflection point for the Lightning economy. Not because it
+guarantees adoption — most merchants will not see significant
+Lightning volume initially — but because it eliminates the supply-side
+constraint that has limited Lightning commerce to date.
+
+Currently, a consumer who wants to spend Bitcoin via Lightning must
+actively seek out merchants who accept it. After March 30, four
+million merchants will accept it by default. The constraint shifts
+entirely to demand — and demand is a function of wallet adoption, user
+experience, and economic incentive, all of which are improving on
+independent trajectories.
+
+The zero-fee promotional period through 2026 creates a direct economic
+incentive for merchant adoption. For small businesses processing
+high-fee credit card transactions, every Lightning payment that
+displaces a card payment is pure margin improvement. This is not
+ideological — it is arithmetic.
+
+What Is Missing
+---------------
+
+Acknowledging the Lightning economy's existence and growth does not
+require ignoring its limitations. Several gaps remain between the
+current state and a fully functional payment economy.
+
+Merchant tooling. While BTCPay Server and Breez POS provide capable
+point-of-sale solutions, they lack the integration depth of
+established payment processors. Inventory management, accounting
+software integration, and automated tax reporting are immature.
+Merchants need Lightning payments to slot into their existing business
+workflows, not create parallel ones.
+
+Accounting and tax clarity. In most jurisdictions, spending Bitcoin
+triggers a capital gains event. A user who buys coffee with Bitcoin
+that has appreciated must calculate and report the gain. This friction
+is not Lightning's fault — it is a tax policy problem — but it
+suppresses everyday spending regardless of how frictionless the
+payment technology becomes.
+
+Inbound liquidity. Receiving Lightning payments requires inbound
+channel capacity. For merchants new to Lightning, acquiring sufficient
+inbound liquidity can be confusing and costly. Solutions like
+Lightning Service Providers (LSPs) abstract this complexity, but the
+underlying economic reality — someone must commit capital to enable
+your inbound payments — remains a structural friction.
+
+Privacy. Lightning payments are more private than on-chain Bitcoin
+transactions, but they are not anonymous. Channel surveillance, route
+analysis, and the concentration of routing through large nodes create
+privacy risks that are not well understood by most users.
+
+1996, Not 2006
+--------------
+
+The Lightning economy today resembles the internet economy in 1996.
+The infrastructure works but is rough around the edges. The user base
+is small but growing. The use cases are real but niche. The mainstream
+narrative oscillates between "it's a toy" and "it will change
+everything," missing the more interesting truth: it is a toy that is
+becoming less toy-like with each passing month.
+
+In 1996, the internet had approximately 36 million users worldwide.
+E-commerce was a rounding error. Most people could not articulate why
+they would need email. The infrastructure was slow, unreliable, and
+required technical knowledge to navigate.
+
+Nobody who used the internet in 1996 was confused about whether it
+worked. The question was whether what worked at small scale would work
+at large scale — and whether the problems that remained would be
+solved by iteration or would prove fundamental.
+
+Lightning is in the same position. It works. The people using it know
+it works. The economy running on it is small, messy, and growing. The
+problems are real but tractable. And the skeptics, as in 1996, are
+evaluating a present-tense snapshot against a future-tense standard —
+demanding that a nascent network perform like a mature one before they
+will acknowledge it performs at all.
+
+The Lightning economy is already here. It is not waiting for
+permission to exist.
+
+Tags: lightning network, payments, nostr, zaps, circular economy, bitcoin
+
+Read on full site: https://news.txid.uk/post/lightning-economy-already-here

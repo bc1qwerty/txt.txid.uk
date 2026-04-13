@@ -1,0 +1,159 @@
+Hyperbitcoinization: The Scenario of Replacing Fiat Currency
+============================================================
+
+2026-02-27 | en
+
+A deep analysis of the hyperbitcoinization scenario in which fiat currencies collapse and Bitcoin becomes the world's reserve currency. We examine the theoretical mechanisms, real-world evidence, and feasibility in concrete detail.
+
+On September 7, 2021, El Salvador became the first country in the
+world to adopt Bitcoin as legal tender. It happened in a small Central
+American nation of 6.5 million people, but its significance in the
+history of money was anything but small. For the first time in
+history, a nation officially recognized a decentralized cryptocurrency
+as its official currency.
+
+What if this happened not in just one or two countries, but
+simultaneously across dozens of nations? Could the entire fiat
+currency system collapse and Bitcoin become the world's dominant
+currency? The theoretical answer to this question is
+Hyperbitcoinization.
+
+The Conceptual Origins of Hyperbitcoinization
+---------------------------------------------
+
+Hyperbitcoinization is a concept first systematically laid out in a
+2014 essay titled "Hyperbitcoinization" by Bitcoin researcher Daniel
+Krawisz. Krawisz was a core member of the Satoshi Nakamoto Institute,
+known for his in-depth research on the economic properties of Bitcoin.
+
+His central argument is clear. If hyperinflation is the phenomenon of
+fiat currency value rapidly collapsing, hyperbitcoinization is the
+phenomenon occurring on the exact opposite side. The moment the
+perception that Bitcoin is superior to fiat currency in every way
+crosses a critical threshold, people voluntarily abandon fiat and a
+massive monetary shift toward Bitcoin occurs.
+
+The part Krawisz particularly emphasized was voluntariness.
+Hyperinflation is a phenomenon forced upon people by the failure of
+government money printing, but hyperbitcoinization is fundamentally
+different in that it is a natural result produced by the accumulation
+of rational economic choices made by individuals. It is not coercion
+from above but voluntary adoption from below.
+
+The Mechanism of How Hyperbitcoinization Works
+----------------------------------------------
+
+The hyperbitcoinization process is explained through network effects
+and self-reinforcing feedback loops. Let us walk through this process
+step by step.
+
+Stage 1 - The Spread of Initial Awareness: A small number of early
+adopters begin to understand Bitcoin's economic properties. They judge
+that characteristics such as absolute scarcity (the 21 million cap),
+censorship resistance, and self-sovereign custody are superior to fiat
+currency, and convert a portion of their assets into Bitcoin. This
+stage has already been underway since the 2010s.
+
+Stage 2 - Increasing Economic Pressure: As the number of Bitcoin
+holders grows, Bitcoin's value rises according to network effects.
+Conversely, those who save only in fiat currency experience a relative
+loss of purchasing power. A point arrives where not holding Bitcoin
+itself becomes a significant opportunity cost. The "FOMO (Fear Of
+Missing Out)" that many people experienced when Bitcoin rose roughly
+tenfold in 2020-2021 is the psychological driver of this stage. While
+FOMO can be confused with speculative psychology, the movement of
+rational economic agents into Bitcoin upon recognizing fiat currency's
+declining purchasing power is a fundamentally different motivation.
+
+Stage 3 - Crossing the Tipping Point: Once a sufficient number of
+individuals, businesses, and institutions begin using Bitcoin, not
+accepting Bitcoin becomes a competitive disadvantage. Employees want
+to receive salaries in Bitcoin, and customers start demanding Bitcoin
+payment options. At this point, the transition accelerates rapidly.
+Like the mass-adoption curves of the internet or smartphones, it
+enters the steep ascent of an S-curve.
+
+Stage 4 - The Collapse of Fiat Currency: The massive shift from fiat
+to Bitcoin proceeds in a self-reinforcing manner, and the purchasing
+power of fiat currencies plummets. Like the hyperinflation that
+occurred in the Weimar Republic or Zimbabwe - except this time, people
+already have a prepared alternative: Bitcoin.
+
+Krawisz argued that once this process crosses the tipping point, it
+could be completed within a matter of months. In previous currency
+crises, people fled to gold, foreign currencies, or real estate, but
+there were limits to how quickly they could move. In the Bitcoin era,
+however, it is possible to move an entire fortune within minutes.
+
+Signs of Hyperbitcoinization Observed in the Real World
+-------------------------------------------------------
+
+Is this merely a theoretical scenario? In reality, signs pointing
+toward hyperbitcoinization are already appearing in various forms.
+
+Nation-level Bitcoin adoption: After adopting Bitcoin as legal tender
+in September 2021, El Salvador continued to purchase Bitcoin, holding
+approximately 5,800 BTC as of 2024. The Central African Republic also
+adopted Bitcoin as legal tender in 2022, but it was struck down by a
+constitutional court ruling in 2023. Since 2024, multiple countries
+have begun considering Bitcoin as a strategic reserve asset.
+
+Large-scale corporate Bitcoin accumulation: MicroStrategy (now
+Strategy) began purchasing Bitcoin with corporate funds in August 2020
+and had accumulated approximately 440,000 BTC by the end of 2024. This
+represents about 2% of the circulating Bitcoin supply. As this
+strategy proved successful, a growing number of other publicly traded
+companies followed suit by incorporating Bitcoin into their balance
+sheets. Tesla, Coinbase, Block, and others began putting Bitcoin on
+their balance sheets.
+
+U.S. strategic reserve considerations: In 2024-2025, a movement
+emerged within the U.S. political sphere to consider Bitcoin as a
+national strategic reserve asset. Some state governments also began
+pursuing legislation to allocate a portion of pension funds or
+treasury assets to Bitcoin. If this were to materialize, it would
+provide significant momentum to the hyperbitcoinization scenario.
+
+Adoption in countries with severe inflation: In countries like
+Argentina, Turkey, and Lebanon where national currencies are rapidly
+losing value, Bitcoin adoption is not theory - it is reality. In
+Argentina, saving in Bitcoin or dollar stablecoins instead of the
+domestic peso has become commonplace. In these countries,
+hyperbitcoinization could already be considered partially underway.
+
+Critical Perspectives and a Realistic Outlook
+---------------------------------------------
+
+It would be an overreach to view hyperbitcoinization as imminent or
+inevitable.
+
+The fiat currency system is deeply intertwined with state power.
+Governments do not easily relinquish the power to issue currency. Tax
+collection, defense spending, social security expenditures - all of
+these depend on the fiat currency system. Governments around the world
+will respond with aggressive regulation if they determine that Bitcoin
+threatens their national currency. Many governments are developing
+CBDCs (Central Bank Digital Currencies) as an alternative to Bitcoin.
+This is a variable that could delay or complicate hyperbitcoinization.
+
+Bitcoin also faces technical limitations. The Bitcoin base layer
+currently processes approximately 7 transactions per second. The
+Lightning Network is addressing scalability, but further technological
+development is needed for it to become a global payment system used
+daily by billions of people.
+
+The most realistic scenario is gradual adoption. Bitcoin progressively
+becomes the savings vehicle and store of value for more and more
+people, coexisting with fiat currencies by complementing or partially
+replacing them. A process of increasing share rather than complete
+replacement - this is the more plausible picture for the coming
+decades.
+
+Regardless of which scenario materializes, Bitcoin's influence on the
+global financial system continues to grow. Hyperbitcoinization is not
+a prophecy but a horizon of possibility. And it is difficult to deny
+that the world is slowly moving toward that horizon.
+
+Tags: Bitcoin, Economics
+
+Read on full site: https://learn.txid.uk/en/articles/hyperbitcoinization/

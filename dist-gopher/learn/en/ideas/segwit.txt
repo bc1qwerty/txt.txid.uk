@@ -1,0 +1,179 @@
+SegWit (Segregated Witness) - Scaling Through Signature Separation
+==================================================================
+
+2026-03-08 | en
+
+SegWit (Segregated Witness) is a Bitcoin protocol upgrade activated in 2017 that increases the practical capacity of blocks by separating signature data from transactions.
+
+SegWit (Segregated Witness) is a Bitcoin protocol upgrade activated in
+August 2017 that increases the practical capacity of blocks by
+separating signature data (witness) from transactions. Beyond a mere
+technical improvement, SegWit was the outcome of the most intense
+governance debate in Bitcoin's history -- the Blocksize War.
+
+(Script+Signature)"] --- A3["Outputs"] --- A4["Locktime"]
+    end
+    subgraph "SegWit Transaction"
+B1["Version"] --- B2["Marker+Flag"] --- B3["Inputs<br/>(Script only)"]
+--- B4["Outputs"] --- B5["Witness<br/>(Signature separated)"] ---
+B6["Locktime"]
+    end
+    style A2 fill:#f85149,stroke:#f85149,color:#000
+    style B3 fill:#3fb950,stroke:#3fb950,color:#000
+    style B5 fill:#58a6ff,stroke:#58a6ff,color:#000`} />
+
+The Context of the Blocksize War (2015-2017)
+--------------------------------------------
+
+As Bitcoin's transaction throughput approached the 1 MB block size
+limit, scalability became the community's central issue. Two main
+factions opposed each other.
+
+The big block camp advocated for a hard fork to directly increase
+block size to 2 MB, 8 MB, or beyond. Their logic was that larger
+blocks could process more transactions, enabling immediate scaling.
+This camp included many large mining pools and certain businesses.
+
+The small block camp worried that increasing block size would raise
+node operating costs and weaken decentralization. They instead
+supported efficient scaling through soft forks like SegWit and
+long-term scaling through Layer 2 solutions like the Lightning
+Network. Most core developers and many node operators held this
+position.
+
+This debate led to the 2017 New York Agreement (SegWit2x), UASF
+BIP148, and ultimately the Bitcoin Cash hard fork split. SegWit's
+activation was a historic event that proved node operators (users)
+could force rule changes upon miners.
+
+Core Content of BIP141/143/144
+------------------------------
+
+SegWit is composed of three major BIPs (Bitcoin Improvement
+Proposals).
+
+BIP141 (Segregated Witness) defines the core SegWit specification. It
+separates witness data from the transaction body into a dedicated
+"witness" structure and introduces the concept of block weight instead
+of block size. The maximum block weight is 4,000,000 weight units,
+with non-witness data at 1 byte = 4 weight units and witness data at 1
+byte = 1 weight unit.
+
+BIP143 (Transaction Signature Verification for Version 0 Witness
+Program) redesigned the signature hash algorithm for SegWit
+transactions. Under the legacy scheme, the data size requiring signing
+grew quadratically (O(n^2)) with the number of inputs, causing
+verification costs to spike for transactions with many inputs. BIP143
+improved each input's signature hash calculation to O(n), eliminating
+this attack vector.
+
+BIP144 (Peer Services - New Serialization) defines the P2P network
+serialization format for SegWit transactions. It introduced new
+message formats that maintain backward compatibility with legacy nodes
+while enabling efficient transmission of witness data between
+SegWit-supporting nodes.
+
+The Transaction Malleability Problem Explained
+----------------------------------------------
+
+Transaction malleability is the problem of being able to change a
+transaction's ID (txid) without altering its meaning (inputs, outputs,
+amounts). Before SegWit, the signature (scriptSig) was included in the
+txid calculation, and due to properties of ECDSA signatures, multiple
+valid signatures could be generated for the same message with the same
+private key.
+
+The practical damage from this problem was severe for off-chain
+protocols like the Lightning Network. Payment channels construct
+subsequent transactions by referencing unconfirmed transactions'
+txids, and if a txid changed, the entire channel state could be
+invalidated. The 2014 Mt. Gox hack is also believed to have exploited
+transaction malleability.
+
+SegWit fundamentally resolved this by excluding signature data from
+the txid calculation. A SegWit transaction's txid is computed from
+only inputs and outputs without signatures, so modifying signatures
+does not change the txid. This enabled implementation of protocols
+like the Lightning Network that depend on txid immutability.
+
+The Rationale for the Witness Discount
+--------------------------------------
+
+The reason witness data (signatures) receives a 75% weight discount
+compared to non-witness data in SegWit is justified both economically
+and technically.
+
+Technically, witness data is not included in the UTXO set. The UTXO
+set is critical data that nodes must access quickly, often kept in
+memory. Signature data is no longer needed after transaction
+verification, so its long-term cost is lower than non-witness data
+that inflates the UTXO set. The witness discount reflects this real
+cost differential.
+
+Economically, the witness discount encourages UTXO consolidation.
+Transactions that spend many small UTXOs require numerous signatures,
+resulting in a high proportion of witness data -- and thanks to the
+discount, these consolidation transactions become relatively cheaper
+in fees. This creates an incentive structure that restrains UTXO set
+bloat.
+
+Evolution of SegWit Address Formats
+-----------------------------------
+
+SegWit evolved through multiple address format stages.
+
+P2SH-P2WPKH (starting with 3): A compatibility format for early SegWit
+adoption. By wrapping SegWit in the legacy P2SH address format, even
+older wallets that did not support SegWit could send to these
+addresses. However, the wrapping overhead prevented optimal fee
+savings.
+
+bech32 (starting with bc1q): The native SegWit address format defined
+in BIP173. It maximizes SegWit's fee reduction benefits, features
+improved error detection, and uses lowercase only (case-insensitive)
+for better QR code efficiency. Used for SegWit v0.
+
+bech32m (starting with bc1p): An improved address format defined in
+BIP350 that fixes a subtle bug where bech32 failed to detect errors
+when the last character was changed. Used for Taproot (SegWit v1 and
+above).
+
+The Political Significance of UASF BIP148
+-----------------------------------------
+
+When miners failed to reach the 95% signaling threshold needed for
+SegWit activation in 2017, users organized a UASF (User Activated Soft
+Fork) through BIP148. BIP148 declared that starting August 1, 2017,
+blocks not setting the SegWit signaling bit (bit 1) would be rejected.
+
+The political significance of this movement was profound.
+Traditionally, protocol changes relied on miner signaling, but UASF
+demonstrated that node operators (the economic majority) could force
+rules upon miners. If an economic majority of nodes applied BIP148,
+coins in blocks not supporting SegWit would be rejected by these nodes
+and become worthless. Miners could not afford the risk of their block
+rewards going economically unrecognized.
+
+Ultimately, BIP91 -- a compromise -- was rapidly adopted among miners,
+SegWit was activated, and no actual chain split occurred. However,
+UASF was a turning point that proved the ultimate authority in
+Bitcoin's power structure rests not with miners but with users (node
+operators).
+
+Related Concepts
+----------------
+
+* Lightning Network [/ideas/lightning-network/] - A Bitcoin Layer 2
+payment network built on SegWit
+* Node [/ideas/node/] - Independent validation software that drove
+SegWit activation through UASF
+* Merkle Tree [/ideas/merkle-tree/] - SegWit introduced a separate
+Merkle structure for witness data
+* Mempool [/ideas/mempool/] - SegWit's weight system influenced the
+fee structure
+* What is Bitcoin? [/start/bitcoin/] - Fundamental concepts and how
+Bitcoin works
+
+Tags: Bitcoin, Technical
+
+Read on full site: https://learn.txid.uk/en/ideas/segwit/

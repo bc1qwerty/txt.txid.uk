@@ -1,0 +1,536 @@
+How to Run a Bitcoin Full Node: A Practical Guide
+=================================================
+
+2026-03-19 | en
+
+A practical guide to running your own Bitcoin full node - from hardware requirements and Bitcoin Core installation to Tor configuration and connecting your wallet.
+
+Running your own Bitcoin full node is the single most important thing
+you can do for your financial sovereignty. Without your own node,
+you're trusting someone else to tell you the state of the Bitcoin
+network - how much Bitcoin you have, whether your transactions are
+confirmed, and whether the rules of Bitcoin are being followed. With
+your own node, you verify everything yourself.
+
+This guide covers everything you need to go from zero to a running
+full node: why it matters, what hardware you need, how to install and
+configure Bitcoin Core, how to route through Tor for privacy, and how
+to connect your wallet for day-to-day use.
+
+Why Run Your Own Node?
+----------------------
+
+Before diving into the technical setup, it's crucial to understand why
+running a node matters. This isn't about ideology - it's about
+concrete, practical benefits.
+
+## Benefit 1: Trustless Verification
+
+When you use a mobile wallet or web service to check your Bitcoin
+balance, you're trusting their server to give you accurate
+information. A compromised or malicious server could show you fake
+transactions, hide real ones, or lie about the number of
+confirmations. For a detailed discussion of verification methods, see
+our guide on how to verify a Bitcoin transaction
+[/en/articles/how-to-verify-bitcoin-transaction/].
+
+Your own node eliminates this trust requirement entirely. It downloads
+every block since the genesis block, validates every transaction
+against all consensus rules, and builds its own view of the blockchain
+state. When your wallet connects to your own node, the balance it
+shows you has been verified by your computer, not someone else's.
+
+## Benefit 2: Financial Privacy
+
+Every time you query a third-party service about a Bitcoin address or
+transaction, you reveal your financial activity to that service. They
+learn:
+
+* Which addresses belong to you
+* When you check your balance (correlation with transactions)
+* Your IP address and approximate location
+* Your transaction patterns and timing
+
+Your own node processes everything locally. Blockchain queries never
+leave your machine. This is the highest level of financial privacy
+available in Bitcoin. For more on this topic, see our guide on Bitcoin
+and privacy [/en/articles/bitcoin-and-privacy/].
+
+## Benefit 3: Network Sovereignty
+
+Every full node enforces Bitcoin's consensus rules independently. If
+miners tried to change the rules - increasing the 21 million cap,
+altering the block time, or introducing censorship - your node would
+reject their blocks. It would simply ignore the invalid chain and
+continue following the valid rules.
+
+This is how Bitcoin's rules are actually enforced: not by miners, not
+by developers, but by the collective refusal of full nodes to accept
+invalid blocks. When you run a node, you have a direct vote in
+Bitcoin's governance. Without one, you're trusting others to vote on
+your behalf.
+
+For more on how this governance works in practice, see Bitcoin
+governance [/en/articles/bitcoin-governance/].
+
+## Benefit 4: Supporting the Network
+
+By running a full node, especially one that accepts incoming
+connections, you strengthen the Bitcoin network. You help relay
+transactions and blocks to other nodes, you provide additional
+validation capacity, and you make the network more resilient against
+attacks and network partitions.
+
+Hardware Requirements
+---------------------
+
+Running a Bitcoin full node doesn't require expensive hardware. Here
+are the current requirements as of 2026.
+
+## Minimum Requirements
+
+| Component | Specification |
+|:---|:---|
+| CPU | Any modern dual-core processor (2 GHz+) |
+| RAM | 4 GB minimum, 8 GB recommended |
+| Storage | 1 TB SSD (for full unpruned node) |
+| Internet | Broadband connection, 50+ GB initial download |
+| OS | Linux, macOS, Windows, or BSD |
+
+## Recommended Setups
+
+Option 1: Repurposed Old Computer ($0-50)
+
+That old laptop or desktop sitting in your closet is probably
+sufficient. Any computer manufactured after 2015 with an SSD upgrade
+can run a full node. This is the most cost-effective option - you
+likely already have the hardware.
+
+Requirements:
+* Add a 1 TB SATA SSD ($60-80) if the computer doesn't have one
+* 4+ GB of RAM (most computers from this era have this)
+* Stable internet connection
+
+Option 2: Raspberry Pi ($100-200)
+
+The Raspberry Pi 4 or 5 with an external SSD is the classic Bitcoin
+node setup. It's small, silent, energy-efficient (consuming only 5-15
+watts), and runs 24/7 without noticeable impact on your electricity
+bill.
+
+Components needed:
+* Raspberry Pi 4 (4GB) or Pi 5: $55-80
+* 1 TB USB 3.0 SSD: $60-80
+* MicroSD card (32GB+) for OS: $8-10
+* Official power supply: $8-12
+* Case with passive cooling: $10-15
+
+Option 3: Dedicated Mini PC ($200-400)
+
+For better performance, a mini PC like an Intel NUC or similar offers
+significantly faster initial sync and smoother operation. This is
+ideal if you want to also run additional services like an Electrum
+server or a Lightning node.
+
+Option 4: Pre-built Node Solutions ($300-1000)
+
+Products like Start9, Umbrel, RaspiBlitz, and MyNode offer
+pre-configured node hardware and software. They provide a web-based
+GUI for management and come with additional services pre-installed.
+While more expensive, they offer the lowest technical barrier.
+
+## Storage Considerations: Full vs Pruned
+
+A full unpruned node stores the entire blockchain - currently about
+600+ GB and growing at approximately 50-80 GB per year. This requires
+a 1 TB drive (or 2 TB for multi-year future-proofing).
+
+A pruned node stores only the most recent blocks, discarding older
+block data after validating it. You can run a pruned node with as
+little as 10 GB of storage. A pruned node provides the same validation
+and verification security as a full node - it has verified every block
+in Bitcoin's history. It simply doesn't keep old block data around,
+meaning it cannot serve historical blocks to other nodes or rescan for
+old transactions.
+
+To enable pruning, add this to your bitcoin.conf:
+
+    prune=550
+
+The number is in MB - 550 MB is the minimum. Using prune=10000 (10 GB)
+provides a comfortable buffer.
+
+Installing Bitcoin Core
+-----------------------
+
+Bitcoin Core is the reference implementation of the Bitcoin protocol
+and the most widely used full node software. Here's how to install it
+on common platforms.
+
+## Linux (Ubuntu/Debian)
+
+Step 1: Download Bitcoin Core
+
+Visit bitcoincore.org [https://bitcoincore.org/en/download/] and
+download the latest release. As of 2026, this is version 28.x.
+
+    cd /tmp
+wget
+https://bitcoincore.org/bin/bitcoin-core-28.0/bitcoin-28.0-x86_64-linux-gnu.tar.gz
+
+Step 2: Verify the download
+
+This step is critical - never skip it. You're about to trust this
+software with your financial data.
+
+Download the SHA256 checksums and the signature file:
+
+    wget https://bitcoincore.org/bin/bitcoin-core-28.0/SHA256SUMS
+    wget https://bitcoincore.org/bin/bitcoin-core-28.0/SHA256SUMS.asc
+
+Verify the checksum:
+
+    sha256sum --check SHA256SUMS --ignore-missing
+
+You should see bitcoin-28.0-x86_64-linux-gnu.tar.gz: OK.
+
+Verify the PGP signature (requires importing the Bitcoin Core release
+signing keys first):
+
+    gpg --verify SHA256SUMS.asc SHA256SUMS
+
+Step 3: Install
+
+    tar xzf bitcoin-28.0-x86_64-linux-gnu.tar.gz
+sudo install -m 0755 -o root -g root -t /usr/local/bin
+bitcoin-28.0/bin/*
+
+Step 4: Create data directory
+
+    mkdir -p ~/.bitcoin
+
+## macOS
+
+Download the .dmg file from bitcoincore.org, verify the checksum and
+signature as above, then drag Bitcoin Core to your Applications
+folder. Alternatively, install via Homebrew:
+
+    brew install bitcoin
+
+## Windows
+
+Download the .exe installer from bitcoincore.org, verify the checksum
+and signature, and run the installer. Choose your data directory
+during installation - use an SSD for dramatically better performance.
+
+Configuration
+-------------
+
+Bitcoin Core's behavior is controlled by the bitcoin.conf file,
+located in the data directory (~/.bitcoin/ on Linux,
+~/Library/Application Support/Bitcoin/ on macOS, %APPDATA%\Bitcoin\ on
+Windows).
+
+## Essential Configuration
+
+Create or edit the bitcoin.conf file:
+
+    # Network
+    # Run on mainnet (default, but explicit is good)
+    chain=main
+    
+    # Performance
+    # Database cache size in MB (more = faster sync)
+    # Set to ~50-70% of available RAM during initial sync
+    dbcache=2048
+    
+    # Connection settings
+    # Maximum number of connections
+    maxconnections=40
+    
+    # Accept incoming connections (helps the network)
+    listen=1
+    
+    # RPC (needed for wallet connections)
+    server=1
+    rpcuser=your_rpc_username
+    rpcpassword=your_secure_rpc_password
+    
+    # Memory pool limits
+    # Maximum mempool size in MB
+    maxmempool=300
+
+## Important Configuration Notes
+
+RPC Credentials: The rpcuser and rpcpassword are used by wallets and
+other software to communicate with your node. Generate a strong random
+password - this is not something you'll type regularly.
+
+A more secure approach is to use rpcauth instead of plain
+rpcuser/rpcpassword. Bitcoin Core includes a script to generate the
+hashed credential:
+
+    python3 share/rpcauth/rpcauth.py your_username
+
+This outputs a line to add to bitcoin.conf and the password to use in
+connecting applications.
+
+dbcache During Initial Sync: The initial blockchain download (IBD) is
+significantly faster with a larger dbcache. If you have 16 GB of RAM,
+setting dbcache=8000 during the initial sync can reduce sync time from
+days to hours. After the sync is complete, you can lower it to
+dbcache=450 for normal operation.
+
+Initial Blockchain Sync
+-----------------------
+
+The initial blockchain download is the longest part of the setup
+process. Your node downloads and validates every block from January 3,
+2009 to the present - currently over 880,000 blocks.
+
+## Starting the Sync
+
+    bitcoind -daemon
+
+Or launch Bitcoin Core (the Qt GUI version) if you prefer a graphical
+interface.
+
+## Monitoring Progress
+
+    bitcoin-cli getblockchaininfo
+
+Key fields to watch:
+
+* blocks: The number of blocks your node has validated
+* headers: The number of block headers downloaded (this completes
+quickly)
+* verificationprogress: A number between 0 and 1 indicating sync
+percentage
+* initialblockdownload: true while still syncing, false when caught up
+
+## Expected Sync Times
+
+| Hardware | dbcache | Approximate Time |
+|:---|:---:|:---:|
+| Raspberry Pi 4 | 1024 MB | 3-7 days |
+| Old laptop (SSD) | 2048 MB | 1-3 days |
+| Modern desktop | 8000 MB | 6-12 hours |
+| Fast NVMe + 32GB RAM | 16000 MB | 2-4 hours |
+
+The bottleneck is usually CPU (for signature verification) and I/O
+(for database operations). An SSD is essentially mandatory - do not
+attempt initial sync on an HDD; it could take weeks.
+
+## Tips for Faster Sync
+
+* Maximize dbcache: Use as much RAM as you can spare
+* Use a wired connection: Wi-Fi can be a bottleneck for the 600+ GB
+download
+* Close other applications: Give your node full system resources
+during sync
+* Don't restart unnecessarily: Each restart adds overhead
+* Use assumevalid (default): Bitcoin Core skips signature validation
+for blocks before a certain hash (but still validates all other
+rules). This is safe and dramatically speeds up sync.
+
+Setting Up Tor for Privacy
+--------------------------
+
+Routing your Bitcoin node through Tor prevents your ISP and network
+observers from knowing that you're running a Bitcoin node. It also
+hides your real IP address from other nodes on the network.
+
+## Installing Tor
+
+On Ubuntu/Debian:
+
+    sudo apt install tor
+
+On macOS:
+
+    brew install tor
+
+## Configuring Bitcoin Core for Tor
+
+Add these lines to your bitcoin.conf:
+
+    # Tor Configuration
+    proxy=127.0.0.1:9050
+    listen=1
+    bind=127.0.0.1
+    
+    # Create a Tor hidden service for incoming connections
+    listenonion=1
+    
+    # Only connect through Tor (maximum privacy)
+    onlynet=onion
+    
+    # Optional: also allow clearnet connections for faster sync
+    # onlynet=ipv4
+    # onlynet=ipv6
+    # onlynet=onion
+
+With onlynet=onion, your node will only connect to other Tor nodes.
+This provides the strongest privacy but may result in fewer peers. For
+initial sync, you might want to allow clearnet connections for speed,
+then switch to Tor-only afterward.
+
+## Verifying Tor Is Working
+
+After restarting Bitcoin Core:
+
+    bitcoin-cli getnetworkinfo
+
+Check the networks section - you should see entries for onion with
+reachable: true. The localaddresses section should show your .onion
+address.
+
+Connecting Your Wallet to Your Node
+-----------------------------------
+
+Running a full node provides its maximum benefit when your wallet uses
+it for all blockchain queries. Here's how to connect popular wallets.
+
+## Sparrow Wallet (Recommended)
+
+Sparrow is an excellent desktop Bitcoin wallet that connects directly
+to your own node.
+
+* In Sparrow, go to File → Preferences → Server
+* Select Bitcoin Core as the server type
+* Enter your node's RPC URL: http://127.0.0.1:8332 (or your node's IP
+if on a different machine)
+* Enter your RPC username and password
+* Click Test Connection to verify
+
+Once connected, every transaction Sparrow displays has been fully
+verified by your own node.
+
+## Electrum Server (For Mobile Wallets)
+
+Most mobile wallets use the Electrum protocol. To connect them to your
+own node, you need to run an Electrum server alongside Bitcoin Core:
+
+* Fulcrum: High-performance Electrum server, recommended for most
+users
+* Electrs: Lightweight alternative, lower resource requirements
+* ElectrumX: The original implementation
+
+After installing an Electrum server, you can point mobile wallets
+(like BlueWallet or Envoy) to your own server instead of a public one.
+
+## Bitcoin Core's Built-In Wallet
+
+Bitcoin Core includes its own wallet functionality. While not as
+user-friendly as dedicated wallet software, it provides the tightest
+integration with your node:
+
+    # Create a new wallet
+    bitcoin-cli createwallet "my_wallet"
+    
+    # Generate a receiving address
+    bitcoin-cli -rpcwallet="my_wallet" getnewaddress
+    
+    # Check balance
+    bitcoin-cli -rpcwallet="my_wallet" getbalance
+    
+    # Send bitcoin
+    bitcoin-cli -rpcwallet="my_wallet" sendtoaddress "bc1q..." 0.001
+
+Maintenance and Monitoring
+--------------------------
+
+## Keeping Bitcoin Core Updated
+
+Stay on the latest stable release for security patches and performance
+improvements. The update process is:
+
+* Download the new version
+* Verify checksums and signatures
+* Stop Bitcoin Core: bitcoin-cli stop
+* Install the new binaries
+* Start Bitcoin Core: bitcoind -daemon
+
+Bitcoin Core handles database migrations automatically. Your
+blockchain data is preserved across updates.
+
+## Monitoring Node Health
+
+Useful commands for monitoring:
+
+    # Overall node status
+    bitcoin-cli getblockchaininfo
+    
+    # Network connection status
+    bitcoin-cli getpeerinfo | grep "addr"
+    
+    # Memory pool status
+    bitcoin-cli getmempoolinfo
+    
+    # Estimated fees
+    bitcoin-cli estimatesmartfee 6
+    
+    # Uptime
+    bitcoin-cli uptime
+
+## Common Issues and Solutions
+
+Slow sync or frequent disconnects: Check your internet connection and
+ensure no firewall is blocking Bitcoin Core's port (default: 8333).
+
+Disk full: If your disk is running low, enable pruning by adding
+prune=550 to bitcoin.conf and restarting.
+
+High bandwidth usage: Bitcoin Core can use significant bandwidth.
+Limit upload with maxuploadtarget=5000 (in MB per 24 hours) in
+bitcoin.conf.
+
+Can't reach the node from another device: Ensure rpcbind=0.0.0.0 is
+set in bitcoin.conf and rpcallowip=192.168.1.0/24 (adjust for your
+network) allows connections from your local network.
+
+Running a Lightning Node (Next Steps)
+-------------------------------------
+
+Once you have a Bitcoin full node running, you can extend it with a
+Lightning Network node for instant, low-cost payments. Popular
+Lightning implementations include:
+
+* LND (Lightning Network Daemon): The most widely used, with extensive
+tooling
+* Core Lightning (CLN): Developed by Blockstream, highly modular
+* Eclair: Developed by ACINQ, used by the Phoenix wallet
+
+A Lightning node requires an already-synced Bitcoin full node,
+sufficient funds to open payment channels, and the willingness to
+manage channel liquidity. For an introduction to Lightning, see our
+Lightning Network guide [/en/articles/lightning-network-intro/].
+
+Conclusion: Your Node, Your Rules
+---------------------------------
+
+Running your own Bitcoin full node is an act of financial
+self-sovereignty. It means you don't trust any third party to tell you
+the state of your money. You verify everything yourself, from the very
+first block to the most recent transaction.
+
+This is what separates Bitcoin from every financial system that came
+before it. In traditional finance, you must trust banks, auditors,
+regulators, and central bankers to play by the rules. With your own
+Bitcoin node, you verify the rules are being followed -
+mathematically, cryptographically, independently.
+
+The setup requires some technical effort, but the result is profound:
+complete financial sovereignty. No one can lie to you about your
+balance, censor your transactions without your knowledge, or change
+the monetary rules without your consent. In a world of increasing
+financial surveillance and monetary manipulation, this capability is
+not just useful - it's essential.
+
+For more on the philosophy behind self-sovereignty, see our guides on
+self-custody [/en/articles/self-custody/] and why Bitcoin matters
+[/en/articles/why-bitcoin-matters/].
+
+Tags: Bitcoin, Security, Technical
+
+Read on full site: https://learn.txid.uk/en/articles/how-to-run-bitcoin-node/

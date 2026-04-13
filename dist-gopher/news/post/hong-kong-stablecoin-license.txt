@@ -1,0 +1,197 @@
+Hong Kong Gave HSBC a Stablecoin License
+========================================
+
+2026-03-25 | politics | by txid | en
+
+Hong Kong grants stablecoin licenses to HSBC and Standard Chartered — the same banks that print the city's physical banknotes. 36 applications filed.
+
+There is a particular irony in the fact that the first institutions to
+receive Hong Kong's stablecoin licenses are the same banks that
+already print the city's physical currency. HSBC and Standard
+Chartered — two of the three note-issuing banks authorized by the Hong
+Kong Monetary Authority — are now poised to become the first licensed
+issuers of Hong Kong dollar-backed digital tokens.
+
+The expected license grants, anticipated around March 24, mark the
+culmination of a regulatory process that began with the Stablecoins
+Ordinance taking effect in August 2025. The HKMA has received 36
+formal applications. That number reflects both the commercial appetite
+for regulated stablecoin issuance and the seriousness with which Hong
+Kong is pursuing its ambition to become Asia's primary digital asset
+hub.
+
+This is not an experiment. It is a deliberate policy decision by a
+financial center that has calculated, correctly or otherwise, that the
+future of money includes programmable digital tokens issued under
+state supervision.
+
+The HQLA Standard
+-----------------
+
+The Stablecoins Ordinance establishes one of the world's most
+prescriptive frameworks for stablecoin issuance. Its central
+requirement — and its most significant differentiator — is the mandate
+that reserves must consist exclusively of High Quality Liquid Assets.
+Under Basel III, HQLA means cash, central bank reserves, and
+high-grade government securities. It does not include corporate bonds,
+commercial paper, money market fund shares, or the miscellaneous mix
+of assets that have historically backed the largest stablecoins.
+
+This is a direct response to the Tether problem. For years, the
+world's largest stablecoin disclosed reserve compositions that
+included commercial paper, secured loans, and other assets of varying
+liquidity and credit quality. Hong Kong's framework eliminates that
+ambiguity entirely: if it is not HQLA, it cannot back a licensed
+stablecoin.
+
+The strictness explains why the HKMA prioritized note-issuing banks
+for its first approvals. HSBC and Standard Chartered already manage
+massive HQLA portfolios as part of their banking operations. They have
+the regulatory infrastructure, compliance systems, and auditing
+relationships to demonstrate reserve management at the required
+standard. For these institutions, stablecoin issuance is an extension
+of existing treasury operations, not a new capability to build from
+scratch.
+
+The Standard Chartered Joint Venture
+------------------------------------
+
+Standard Chartered's approach illustrates the hybrid models emerging
+at the intersection of traditional banking and digital assets. Rather
+than issuing a stablecoin independently, the bank formed a joint
+venture with Animoca Brands, a Hong Kong-based Web3 company with
+extensive blockchain gaming operations, and HKT, Hong Kong's dominant
+telecommunications provider with over six million mobile subscribers.
+
+The structure is deliberate. Standard Chartered provides the banking
+license, regulatory relationships, and reserve management. Animoca
+brings distribution through its Web3 ecosystem and a user base already
+familiar with digital tokens. HKT offers payment infrastructure and
+the retail distribution network of a telecoms company with millions of
+existing customer relationships.
+
+The resulting HKD-backed stablecoin would have something most existing
+stablecoins lack: a regulated banking partner managing reserves, a
+crypto-native distribution channel, and a traditional retail payment
+network — all under a single licensed entity. Standard Chartered
+tested the model in the HKMA's stablecoin issuer sandbox in 2024,
+working through operational issues and regulatory reporting frameworks
+before the formal licensing regime took effect.
+
+Why Note-Issuing Banks Matter
+-----------------------------
+
+The HKMA's choice is not administrative convenience. It reflects a
+specific philosophy about how stablecoins relate to the existing
+monetary system.
+
+Hong Kong's currency regime is unique. The Hong Kong dollar is pegged
+to the US dollar through a currency board system, and physical
+banknotes are issued not by the central bank but by three commercial
+banks: HSBC, Standard Chartered, and Bank of China (Hong Kong). These
+banks hold US dollar reserves with the HKMA and issue HK dollar notes
+against those reserves. The system has operated since the colonial era
+and survived the 1997 Asian financial crisis, the 2008 global
+financial crisis, and the pandemic.
+
+A HKD-backed stablecoin issued by HSBC or Standard Chartered is, in
+structural terms, a digital extension of this existing system. The
+bank holds HQLA reserves and issues digital tokens denominated in Hong
+Kong dollars against those reserves. The mechanics are functionally
+identical to physical banknote issuance, updated for digital
+infrastructure. The HKMA has deliberately designed the stablecoin
+licensing framework to mirror the existing note issuance system,
+creating regulatory consistency between physical and digital forms of
+the Hong Kong dollar.
+
+The Competitive Landscape
+-------------------------
+
+Hong Kong's program does not exist in a vacuum. It is one move in a
+multi-jurisdictional competition to establish the framework governing
+the next generation of digital money.
+
+| Jurisdiction | Reserve Standard | Key Advantage | Key Limitation |
+|---|---|---|---|
+| Hong Kong | HQLA only | Strictest reserves, institutional
+credibility | Smaller market, China relationship uncertainty |
+| Singapore | Principles-based | Flexibility, fintech ecosystem | Less
+prescriptive reserves |
+| Dubai | Sandbox-based | Speed, regulatory flexibility | Credibility
+concerns |
+| EU (MiCA) | Cash + low-risk assets | Largest geographic scope |
+Compliance costs |
+| United States | No federal framework | Largest market | Regulatory
+fragmentation |
+
+Singapore has taken a more flexible approach through the Payment
+Services Act, attracting major issuers like Circle and Paxos with
+lighter reserve requirements. Dubai has pursued speed and
+accessibility through its VARA framework, trading regulatory
+credibility for first-mover advantage. The EU's MiCA provides the
+broadest geographic coverage across 27 member states but has been
+criticized for compliance costs that disadvantage European issuers.
+
+The United States remains conspicuously absent. No comprehensive
+federal stablecoin framework has been enacted, and every month of
+delay is a month in which Hong Kong, Singapore, and the EU establish
+facts on the ground.
+
+The China Question
+------------------
+
+Any discussion of Hong Kong's financial policy must address Beijing.
+Hong Kong operates under "one country, two systems," which grants
+autonomous monetary and regulatory authority. The HKMA is not the
+People's Bank of China. But political reality is more complex than
+legal frameworks suggest.
+
+China has banned cryptocurrency trading and mining on the mainland
+while simultaneously developing the digital yuan as a state-controlled
+digital currency. Hong Kong's embrace of regulated stablecoins appears
+contradictory — unless understood as complementary.
+
+The more plausible interpretation is that Hong Kong serves as China's
+controlled experiment in digital asset regulation. If regulated
+stablecoins prove commercially viable and systemically safe, the
+lessons inform mainland policy. If they prove problematic, the damage
+is contained within Hong Kong's financial system. Experimentation at
+the periphery, control at the center — the approach mirrors the
+broader political framework.
+
+What Comes Next
+---------------
+
+The immediate steps are procedural. The HKMA will formally grant
+licenses, and the first batch of issuers will begin launching —
+establishing reserve accounts, deploying smart contracts, integrating
+with payment networks, and onboarding users. Not all 36 applications
+will result in licenses; the HKMA will process them in batches through
+the remainder of 2026.
+
+The more consequential questions unfold over the following twelve to
+eighteen months. Will institutional users in Asia adopt HKD
+stablecoins for trade settlement, creating genuine demand beyond
+retail speculation? Will the HQLA reserve standard prove commercially
+viable, or will the cost of maintaining exclusively high-quality
+reserves erode margins to the point of unviability?
+
+Hong Kong's licensed stablecoins will initially be a rounding error in
+a global market exceeding $300 billion dominated by Tether and
+Circle's USDC. A HKD-backed stablecoin, regardless of issuer, faces
+the inherent limitation of not being denominated in the global reserve
+currency. But the significance is not in the size of the initial
+market. It is in the precedent. If Hong Kong demonstrates that
+HQLA-backed, bank-issued, fully regulated stablecoins can operate
+commercially, the model will be replicated and issuers operating under
+less stringent regimes will face questions about why their reserves do
+not meet the same standard.
+
+The answer to whether the market values safety over speed will
+determine whether Hong Kong's careful, conservative framework becomes
+the global template — or a regulatory artifact of a moment that has
+already passed.
+
+Tags: Hong Kong, stablecoin, HKMA, HSBC, Standard Chartered, regulation, Asia
+
+Read on full site: https://news.txid.uk/post/hong-kong-stablecoin-license

@@ -1,0 +1,485 @@
+Bitcoin Layer 2 Solutions: Beyond the Lightning Network
+=======================================================
+
+2026-03-21 | en
+
+A comprehensive guide to Bitcoin Layer 2 solutions - Lightning Network, Liquid Network, RGB Protocol, Stacks, Ark, and Statechains. Compare trust models, speed, privacy, and programmability across approaches.
+
+Bitcoin processes approximately seven transactions per second. Visa
+handles around 65,000. This comparison, endlessly repeated by Bitcoin
+skeptics, misunderstands what Bitcoin's base layer is designed to do.
+Bitcoin's blockchain is not a payment network - it is a settlement
+layer, a global monetary court of final appeal where transactions are
+irrevocably recorded and enforced by the most powerful computational
+network in human history. Expecting every coffee purchase to be
+settled on this layer is like expecting the Supreme Court to
+adjudicate parking tickets.
+
+The real question is not whether Bitcoin can scale on its base layer -
+it deliberately chose not to - but how the layers built on top of it
+can extend its capabilities while preserving the security,
+decentralization, and monetary properties that make the base layer
+valuable. This is the domain of Layer 2 solutions.
+
+Why Layer 2? The Scalability Trilemma
+-------------------------------------
+
+Vitalik Buterin articulated the "scalability trilemma" - the
+observation that a blockchain can optimize for at most two of three
+properties: decentralization, security, and scalability. Bitcoin's
+base layer maximizes decentralization and security at the expense of
+throughput.
+
+This is not an engineering failure. It is a deliberate architectural
+choice. Every full node in the Bitcoin network independently validates
+every transaction. This redundancy is what makes Bitcoin
+censorship-resistant and trustless - no single entity can alter the
+rules or reverse transactions. But this same redundancy means that
+increasing throughput requires either larger blocks (which increase
+node hardware requirements and reduce decentralization) or faster
+blocks (which increase orphan rates and reduce security).
+
+The Bitcoin community fought a bitter civil war over this exact
+question during the Blocksize War of 2015-2017. The outcome - SegWit
+activation and commitment to the 1 MB base block size (4 MB weight
+limit) - established the consensus that Bitcoin would scale in layers,
+preserving base layer conservatism while enabling innovation above it.
+
+Layer 2 solutions resolve the trilemma by moving most transactions off
+the base chain while anchoring their security to it. Different Layer 2
+approaches make different trade-offs, and understanding these
+trade-offs is essential for evaluating which solutions will matter
+most.
+
+Lightning Network: The Payment Layer
+------------------------------------
+
+The Lightning Network [/ideas/lightning-network] is Bitcoin's most
+mature and widely deployed Layer 2 solution. Proposed in a 2015
+whitepaper by Joseph Poon and Thaddeus Dryja, it enables instant,
+near-zero-fee payments through a network of bidirectional payment
+channels.
+
+## How It Works
+
+Two parties open a payment channel by creating a 2-of-2 multisig
+transaction on the Bitcoin blockchain. This on-chain transaction locks
+funds into a shared address that requires both parties' signatures to
+spend. Once the channel is open, the parties can exchange an unlimited
+number of payments by updating the channel's balance - each update is
+a new, fully valid Bitcoin transaction that could be broadcast to the
+blockchain but is instead held privately.
+
+When either party wants to close the channel, they broadcast the most
+recent state to the blockchain, which distributes the funds according
+to the final balance.
+
+The critical innovation is routing: payments can traverse multiple
+channels through intermediary nodes using Hash Time-Locked Contracts
+(HTLCs). If Alice has a channel with Bob and Bob has a channel with
+Carol, Alice can pay Carol through Bob without trusting Bob - the HTLC
+mechanism ensures that Bob can only claim his routing fee if he
+faithfully forwards the payment.
+
+## Current State
+
+As of early 2026, the Lightning Network has approximately 15,000
+public nodes, over 60,000 public channels, and a public capacity
+exceeding 5,000 BTC (with substantial private channel capacity not
+reflected in public statistics). Major exchanges including Kraken,
+Bitfinex, and OKX support Lightning deposits and withdrawals. El
+Salvador's Chivo wallet processes Lightning transactions nationally.
+Nostr, the decentralized social protocol, uses Lightning for native
+micropayments through zaps.
+
+## Strengths and Limitations
+
+Strengths: Near-instant settlement (sub-second), extremely low fees
+(typically under 1 satoshi for small payments), excellent privacy
+through onion routing (Sphinx), no new token or trust assumptions
+beyond the Bitcoin blockchain.
+
+Limitations: Requires online presence to receive payments, channel
+liquidity management is complex, routing large payments (>$1,000) can
+be challenging, on-chain footprint for channel opens/closes is still
+limited by base layer throughput. The requirement to monitor channels
+for fraudulent close attempts (or delegate this to watchtowers) adds
+operational complexity.
+
+For a detailed introduction, see Lightning Network Introduction
+[/articles/lightning-network-intro].
+
+Liquid Network: The Federated Sidechain
+---------------------------------------
+
+Liquid Network, developed by Blockstream and launched in 2018, takes a
+fundamentally different approach from Lightning. It is a federated
+sidechain - a separate blockchain with its own block time and
+consensus mechanism, connected to Bitcoin through a two-way peg.
+
+## Architecture
+
+Liquid is operated by a federation of functionally identified entities
+(exchanges, trading desks, financial institutions) that collectively
+manage the peg between Bitcoin and Liquid Bitcoin (L-BTC). To move
+bitcoin onto Liquid, a user sends BTC to a federation-controlled
+address. After 102 Bitcoin confirmations, the equivalent amount of
+L-BTC is issued on the Liquid sidechain. To move back, the reverse
+process occurs: L-BTC is burned, and the federation releases BTC.
+
+The Liquid blockchain produces blocks every 60 seconds (compared to
+Bitcoin's ~10 minutes) through a round-robin consensus mechanism among
+federation members. Transactions achieve final settlement after two
+Liquid confirmations - approximately two minutes.
+
+## Key Features
+
+Confidential Transactions. Liquid implements Confidential Transactions
+(CT), a cryptographic scheme that hides transaction amounts and asset
+types from public view while still allowing network validation. Only
+the sender, receiver, and anyone they choose to share a "blinding key"
+with can see the amounts. This provides significantly stronger privacy
+than Bitcoin's transparent ledger.
+
+Issued Assets. Liquid supports the creation of new assets on its
+network - security tokens, stablecoins, NFTs - that inherit Liquid's
+Confidential Transactions privacy and two-minute settlement. Tether
+(USDt) has issued a significant portion of its stablecoin supply on
+Liquid.
+
+Atomic Swaps. Liquid supports trustless atomic swaps between any
+assets on the network, enabling decentralized peer-to-peer trading
+without an exchange or orderbook intermediary.
+
+## Trust Model
+
+Liquid's primary trade-off is trust. The federation model requires
+trusting that a threshold number of federation members will behave
+honestly. If a supermajority of federation members collude or are
+compromised, they could potentially steal the BTC backing L-BTC. This
+is a fundamentally different security model from Bitcoin's trustless
+proof-of-work and from Lightning's game-theoretic security.
+
+The federation currently consists of over 60 members, and the peg
+requires 11-of-15 functionaries to sign. The members are publicly
+known entities with reputational skin in the game, but the system is
+nonetheless custodial at the peg level.
+
+Best suited for: Traders needing fast settlement, privacy-conscious
+transactions, institutional use cases, asset issuance.
+
+RGB Protocol: Client-Side Validation
+------------------------------------
+
+RGB is perhaps the most ambitious and philosophically aligned Layer 2
+approach for Bitcoin. It implements smart contracts through
+client-side validation - a paradigm where contract state is validated
+by the parties to the contract rather than by every node on a global
+blockchain.
+
+## The Client-Side Validation Paradigm
+
+In traditional smart contract platforms (Ethereum, Solana, etc.),
+every node on the network executes and validates every smart contract.
+This provides universal consensus on contract state but at enormous
+cost: every node must process every contract, creating scaling
+bottlenecks and privacy exposure.
+
+RGB inverts this model. Smart contract state is stored off-chain by
+the parties involved. The Bitcoin blockchain is used only as a
+commitment layer - small cryptographic commitments to state
+transitions are embedded in Bitcoin transactions, anchoring the
+off-chain state to Bitcoin's proof-of-work security without publishing
+the state itself.
+
+When Alice sends an RGB asset to Bob, only Alice and Bob need to
+validate the state transition. They verify the entire history of the
+asset back to its issuance, confirming that every previous transfer
+was valid. This is analogous to how physical property titles work: you
+verify the chain of ownership, not every property transaction that has
+ever occurred globally.
+
+## Technical Architecture
+
+RGB uses several sophisticated cryptographic techniques:
+
+Single-use seals. RGB defines "seals" on Bitcoin UTXOs. When an RGB
+asset is assigned to a UTXO, that UTXO becomes a single-use seal - it
+can only be "opened" (spent) once, and the spending transaction
+defines the next state of the RGB contract. This ties RGB state
+transitions to Bitcoin transactions without bloating the blockchain.
+
+Deterministic Bitcoin Commitments. State transition commitments are
+embedded in Bitcoin transactions using a deterministic commitment
+scheme (Opret or Tapret) that is invisible to observers who do not
+know the RGB contract details.
+
+Schema and Genesis. RGB contracts are defined by schemas (like smart
+contract ABIs) and initialized through genesis operations. The schema
+defines what state the contract can hold and what operations are
+valid.
+
+## Capabilities
+
+RGB can implement:
+* Fungible tokens (RGB20 - similar to ERC-20)
+* NFTs and collectibles (RGB21 - similar to ERC-721)
+* Decentralized identities (RGB22)
+* Complex smart contract logic with Turing-complete scripting (AluVM)
+
+## Trust Model
+
+RGB's trust model is remarkably strong. It inherits Bitcoin's security
+through its use of single-use seals on UTXOs. The client-side
+validation model means there is no global state to attack - an
+attacker would need to compromise the specific parties to a contract.
+Privacy is excellent because contract state is never published to any
+blockchain.
+
+Best suited for: Asset issuance with maximum privacy, smart contracts
+on Bitcoin without bloating the chain, use cases requiring
+programmability without sacrificing Bitcoin's security model.
+
+Stacks: Smart Contracts with Bitcoin Finality
+---------------------------------------------
+
+Stacks (formerly Blockstack) is a Layer 2 blockchain that brings
+general-purpose smart contracts to Bitcoin. Unlike RGB's client-side
+approach, Stacks operates its own blockchain with its own consensus
+mechanism, but anchors its security to Bitcoin.
+
+## Proof of Transfer (PoX)
+
+Stacks uses a unique consensus mechanism called Proof of Transfer
+(PoX). Stacks miners compete for the right to produce blocks by
+spending real BTC - not by burning energy (proof-of-work) or staking
+tokens (proof-of-stake). The spent BTC is distributed to STX holders
+who participate in "stacking" (Stacks' equivalent of staking).
+
+This creates an interesting economic loop: Stacks miners spend bitcoin
+to earn STX block rewards, and STX stackers earn bitcoin as a yield.
+The BTC expenditure anchors Stacks' security to Bitcoin's value.
+
+## Clarity Smart Contracts
+
+Stacks uses Clarity, a decidable smart contract language. Unlike
+Solidity (Ethereum's language), Clarity is intentionally not
+Turing-complete - it is possible to determine exactly what a Clarity
+program will do before executing it, eliminating entire classes of
+bugs and exploits (like reentrancy attacks).
+
+## Nakamoto Release and sBTC
+
+The Nakamoto release (activated in 2024) significantly upgraded Stacks
+by:
+* Achieving 100% Bitcoin finality - Stacks transactions become as
+irreversible as Bitcoin transactions
+* Reducing block times to approximately 5 seconds
+* Introducing sBTC, a decentralized, programmable Bitcoin peg
+
+sBTC is particularly significant. It allows BTC holders to deposit
+bitcoin into the sBTC system and receive a 1:1 pegged representation
+on Stacks, which can then be used in DeFi applications, lending
+protocols, and other smart contracts - all while maintaining a
+trust-minimized peg backed by an open signing set of STX holders.
+
+## Trust Model
+
+Stacks' trust model is intermediate. It is more decentralized than
+Liquid's federation but introduces a new token (STX) and its own
+consensus mechanism, which some Bitcoin purists view as an additional
+trust assumption. The security is anchored to Bitcoin through PoX, but
+the degree to which this anchoring provides Bitcoin-equivalent
+security is debated.
+
+Best suited for: DeFi applications, NFTs, DAOs, and use cases
+requiring general-purpose smart contract functionality with
+Bitcoin-level finality.
+
+Ark Protocol: A New Paradigm for Scalability
+--------------------------------------------
+
+Ark, proposed by Burak Keceli in 2023, is one of the newest Layer 2
+designs. It aims to solve Lightning's UX challenges - particularly the
+requirement for recipients to be online and manage inbound liquidity -
+while achieving similar scalability benefits.
+
+## How Ark Works
+
+Ark introduces the concept of an Ark Service Provider (ASP) - an
+always-online entity that facilitates transactions. Users deposit
+bitcoin with an ASP and receive virtual UTXOs (vTXOs) - off-chain
+representations of bitcoin ownership that can be unilaterally
+withdrawn to the Bitcoin blockchain at any time.
+
+Payments on Ark work through round-based coinjoins. The ASP
+periodically (every few seconds) creates a coinjoin transaction that
+includes all payments from the current round. Users atomically swap
+their existing vTXOs for new ones, and the ASP atomically swaps
+on-chain bitcoin for the spent vTXOs.
+
+## Key Properties
+
+Non-interactive receiving. Unlike Lightning, Ark recipients do not
+need to be online. A sender can pay an Ark address even if the
+recipient is offline - the vTXO will be waiting for them when they
+come online.
+
+Unilateral exit. Users can always exit Ark unilaterally by
+broadcasting their vTXO to the Bitcoin blockchain, without the ASP's
+cooperation. This is a critical property that distinguishes Ark from
+custodial solutions.
+
+No channels or liquidity management. Users do not need to manage
+payment channels, inbound liquidity, or routing - the ASP handles
+these complexities.
+
+## Trust Model
+
+Ark's trust model centers on the ASP. While users can always
+unilaterally exit (a strong property), the ASP is a single point of
+service availability - if the ASP goes offline, users must exit
+on-chain. The ASP cannot steal funds (vTXOs are cryptographically
+locked to their owners), but it can censor transactions or refuse
+service.
+
+Ark is still in early development, with multiple implementations under
+construction. Its practical performance and adoption remain to be
+proven.
+
+Best suited for: Everyday payments, users who find Lightning's channel
+management too complex, scenarios requiring offline receiving.
+
+Statechains: Off-Chain UTXO Transfer
+------------------------------------
+
+Statechains, conceptualized by Ruben Somsen, enable the transfer of
+entire UTXOs off-chain without creating on-chain transactions. The
+concept is elegant in its simplicity.
+
+## How Statechains Work
+
+A statechain entity (SE) and a user jointly create a 2-of-2 multisig
+UTXO on the Bitcoin blockchain. The user holds one key, and the SE
+holds the other. To "transfer" the UTXO to a new owner, the current
+owner and the SE coordinate a key handoff: the SE deletes its old key
+share and generates a new one shared with the new owner. The new owner
+now has a 2-of-2 multisig with the SE, effectively "owning" the UTXO
+without any on-chain transaction.
+
+The security guarantee comes from the SE's commitment to delete old
+key shares (enforced through hardware security modules or similar
+mechanisms) and from time-locked backup transactions that allow users
+to unilaterally claim the UTXO if the SE disappears.
+
+## Properties
+
+Fixed-denomination transfers. Statechains transfer entire UTXOs, not
+arbitrary amounts. This makes them ideal for transferring round
+amounts of bitcoin (like 0.01 BTC or 0.1 BTC) but less suitable for
+precise payment amounts.
+
+Instant settlement. Transfers are near-instant - there is no on-chain
+transaction, no channel to open, no routing to compute.
+
+Privacy. On-chain observers cannot distinguish statechain transfers
+from any other inactive UTXO. The transfer history is invisible on the
+blockchain.
+
+## Trust Model
+
+The SE is a trusted entity in the sense that users must trust it to
+delete old key shares. If the SE retains old key shares, it could
+potentially collude with a previous owner to steal the UTXO. This is
+mitigated through hardware attestation and time-locked backup
+transactions, but the trust assumption is real.
+
+Mercury Layer is the most prominent statechain implementation,
+offering practical UTXO transfers with privacy benefits.
+
+Best suited for: Quick peer-to-peer bitcoin transfers, privacy-focused
+transactions, use cases where fixed denominations are acceptable.
+
+Comparing Layer 2 Approaches
+----------------------------
+
+| Property | Lightning | Liquid | RGB | Stacks | Ark | Statechains |
+|---|---|---|---|---|---|---|
+| Trust model | Trustless | Federated | Trustless | PoX + STX | ASP |
+SE trust |
+| Speed | Sub-second | ~2 min | ~10 min (anchor) | ~5 sec | Seconds |
+Instant |
+| Privacy | Good (onion routing) | Strong (CT) | Excellent
+(client-side) | Low (public chain) | Moderate | Good |
+| Programmability | Limited (HTLCs) | Limited (Elements Script) | High
+(AluVM) | High (Clarity) | Low | None |
+| New token | No | No (L-BTC is pegged) | No | Yes (STX) | No | No |
+| Online requirement | Recipient must be online | No | No | No | No |
+No |
+| Unilateral exit | Yes | No (federation) | Yes | Depends | Yes | Yes
+(time-locked) |
+| Maturity | Production | Production | Early production | Production |
+Development | Early production |
+
+Why Bitcoin Chooses Base Layer Conservatism
+-------------------------------------------
+
+The diversity of Layer 2 approaches illustrates why Bitcoin's base
+layer conservatism is not a limitation but an enabling strategy. By
+keeping the base layer simple, secure, and decentralized, Bitcoin
+provides a neutral foundation on which multiple competing scaling and
+functionality approaches can be built.
+
+If Bitcoin had modified its base layer to accommodate smart contracts
+(as many altcoin proponents suggested), it would have:
+
+* Increased base layer complexity, creating a larger attack surface
+* Picked winners by embedding specific functionality assumptions into
+the protocol
+* Reduced decentralization through larger blocks or more complex
+validation requirements
+* Created governance pressure as competing feature requests demanded
+protocol changes
+
+Instead, Bitcoin's conservative base layer allows Lightning, Liquid,
+RGB, Stacks, Ark, and Statechains to compete and evolve independently.
+If one approach fails, the base layer is unaffected. If a new,
+superior approach is discovered, it can be built without requiring any
+changes to Bitcoin itself.
+
+This is a profoundly Austrian economic insight. Friedrich Hayek's
+concept of spontaneous order - the idea that complex, well-functioning
+systems emerge from decentralized decision-making rather than central
+planning - applies directly. No central authority decided which Layer
+2 approaches Bitcoin should support. Instead, independent teams, each
+with different insights and trade-off preferences, built competing
+solutions. The market - through adoption, investment, and usage -
+determines which ones succeed.
+
+The layered approach also mirrors the architecture of the internet
+itself: TCP/IP provides a simple, stable base layer, and HTTP, SMTP,
+FTP, WebSocket, and countless other protocols build diverse
+functionality on top of it. No one demanded that TCP/IP incorporate
+email functionality or video streaming. The base layer stayed simple,
+and the layers above innovated freely.
+
+Bitcoin's Layer 2 ecosystem is still in its early stages. Lightning is
+increasingly mature but still faces UX challenges. RGB is technically
+ambitious but needs broader tooling and adoption. Stacks has found a
+niche in Bitcoin DeFi. Liquid serves traders and institutional users.
+Ark and Statechains are promising but early. The next decade will
+determine which of these approaches - or which not-yet-invented
+approach - captures the majority of Bitcoin transaction volume.
+
+What seems increasingly clear is that the layered scaling model works.
+Bitcoin does not need to process 65,000 transactions per second on its
+base layer. It needs to process seven per second with absolute
+security and decentralization, while Layer 2 solutions handle the
+rest. The base layer settles disputes, anchors state, and enforces
+final authority. The layers above handle speed, cost, programmability,
+and privacy. This division of labor is not a compromise - it is the
+architecture of sound money for the internet age.
+
+Tags: Bitcoin, Lightning
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-layer-2-solutions/

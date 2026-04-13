@@ -1,0 +1,16 @@
+Your First Bitcoin: A Practical Start
+=====================================
+
+en
+
+Everything you need to know before sending your first transaction - wallet addresses, wallet types, reading transactions, fees, and self-custody.
+
+Ready to use Bitcoin? This course covers the practical essentials -
+from understanding wallet addresses and choosing the right wallet, to
+reading transactions, calculating fees, and securing your coins with
+self-custody.
+
+No theory, no philosophy - just the hands-on knowledge you need to
+send and receive Bitcoin safely.
+
+Read on full site: https://learn.txid.uk/en/learn/bitcoin-practical/

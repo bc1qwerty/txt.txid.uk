@@ -1,0 +1,366 @@
+Bitcoin Governance: How a Network Without a CEO Evolves
+=======================================================
+
+2026-03-18 | en
+
+Bitcoin has no CEO or board of directors, yet it upgrades systematically. The BIP process, node consensus, fork mechanics, and social consensus that make decentralized governance work.
+
+A Protocol Without a CEO
+------------------------
+
+Apple has Tim Cook. Google has Sundar Pichai. Tesla has Elon Musk.
+Conventional wisdom says that running a complex technological system
+requires a decision-maker - someone to set direction, prioritize
+resources, and resolve disputes.
+
+Bitcoin has no such person.
+
+Satoshi Nakamoto disappeared from the community in late 2010. What
+remained was the code, the whitepaper, and tens of thousands of nodes
+comprising the Bitcoin network. No single entity can unilaterally
+change Bitcoin's rules - not the core developers, not the largest
+mining pools, not the exchanges, not any government.
+
+Yet Bitcoin evolves. Features that did not exist in 2009 - multisig,
+Segregated Witness (SegWit), Schnorr signatures, Taproot - have been
+added one by one. Bugs have been fixed, performance improved, and new
+possibilities opened. Without a CEO, without a board of directors,
+without a shareholder meeting.
+
+How is this possible? Understanding Bitcoin's governance is central to
+understanding what makes Bitcoin special.
+
+BIP: Bitcoin Improvement Proposals
+----------------------------------
+
+Changes to Bitcoin follow a formal process called the BIP (Bitcoin
+Improvement Proposal). This structure is similar to the Internet's RFC
+(Request for Comments) system or Python's PEP (Python Enhancement
+Proposal).
+
+## The Lifecycle of a BIP
+
+Anyone can write a BIP. No special qualifications are required. If you
+have an idea, you present it on the Bitcoin development mailing list
+and draft a BIP document following the established format.
+
+A BIP goes through the following stages:
+
+* Draft: The author writes the document and discussion begins on the
+mailing list and GitHub. Most proposals are filtered out at this stage
+- for technical flaws, because existing solutions suffice, or because
+the tradeoffs are too severe.
+
+* Proposed: After sufficient technical discussion, a polished proposal
+with a reference implementation enters the proposed state.
+
+* Implementation: The code is integrated into major software like
+Bitcoin Core. This means the feature is available, not that the
+network enforces it.
+
+* Activation: For consensus rule changes, the entire network must
+accept the new rules. This is the most complex and politically charged
+stage.
+
+## Types of BIPs
+
+There are three categories:
+
+* Standards Track: Changes to network protocol, consensus rules, or
+transaction formats. These affect all participants.
+* Informational: Design issues or general guidelines. Reference
+documents, not consensus changes.
+* Process: Proposals about the Bitcoin development process itself.
+
+Some of the most consequential BIPs include: BIP 32, which defined HD
+(Hierarchical Deterministic) wallets; BIP 39, which standardized
+mnemonic seed phrases; BIP 141, which introduced SegWit; and BIPs
+340-342, which defined Schnorr signatures and Taproot.
+
+The Key Stakeholders
+--------------------
+
+Bitcoin's governance has no entity with formal authority. Instead,
+several stakeholder groups exert their influence, creating a system of
+checks and balances.
+
+## Core Developers
+
+Bitcoin Core is the reference implementation of the Bitcoin protocol.
+Hundreds of developers worldwide contribute to this open-source
+project. A small number of "maintainers" hold merge access, but this
+is not autocratic power. Maintainers only merge changes for which
+rough consensus has been established in the community.
+
+Developers write and propose code, but they have no power to force it
+onto the network. Even if code is merged into Bitcoin Core, it is
+effectively meaningless if node operators do not upgrade to that
+version.
+
+## Miners
+
+Miners produce blocks and process transactions. Historically, miner
+hashpower "voting" was the primary mechanism for soft fork activation
+(BIP 9). Miners would include a signal in their blocks indicating
+support for a new version, and activation would proceed once a
+threshold (usually 95%) was reached.
+
+But miners' authority has clear limits. Miners cannot relax consensus
+rules. If a miner produces an invalid block, full nodes reject it. No
+matter how much hashpower a miner commands, blocks that violate the
+rules are ignored by the network.
+
+## Node Operators
+
+Full node operators are the quiet arbiters of Bitcoin governance.
+Every full node validates every block and every transaction against
+the same set of rules. If node operators do not upgrade their
+software, new rules simply do not apply.
+
+This is a powerful veto. Even if developers write code and miners
+signal support, if economically significant nodes - exchanges, payment
+processors, large wallet services - refuse to upgrade, a change cannot
+take effect.
+
+## Users and Businesses
+
+End users and businesses decide which software to run and which chain
+to recognize as "Bitcoin." As the Blocksize War demonstrated, user
+choice is ultimately the most powerful force in Bitcoin governance.
+
+Soft Forks and Hard Forks
+-------------------------
+
+There are two ways to change Bitcoin's consensus rules.
+
+## Soft Forks: Tightening the Rules
+
+A soft fork makes the rules stricter within the existing framework.
+Because it is backward compatible, nodes that have not upgraded still
+recognize new blocks as valid - they simply cannot perform the
+detailed validation of the new rules.
+
+SegWit (BIP 141) is the canonical soft fork. Non-upgraded nodes see
+SegWit transactions as "anyone-can-spend," while upgraded nodes verify
+the witness data signatures. New functionality is added without
+splitting the network.
+
+The Bitcoin community strongly prefers soft forks. They carry less
+risk of network splits and allow gradual adoption.
+
+## Hard Forks: Expanding the Rules
+
+A hard fork permits something that was previously forbidden. Because
+it is not backward compatible, non-upgraded nodes reject new blocks as
+invalid. This can split the network into two chains.
+
+Bitcoin Cash, born in August 2017, is the textbook example. Increasing
+the block size limit from 1MB to 8MB was not backward compatible, and
+the chain split.
+
+The Blocksize War: Governance Under Stress
+------------------------------------------
+
+The blocksize debate from 2015 to 2017 was the most dramatic test of
+Bitcoin governance in its history. Understanding this conflict is
+essential to understanding how Bitcoin's governance actually works.
+
+## The Problem
+
+Bitcoin's block size was capped at 1MB. As network usage grew, fees
+rose and confirmation times lengthened. The community split over the
+solution.
+
+One camp argued for increasing the block size. It was the direct,
+simple fix. If Bitcoin was to become an everyday payment method, it
+needed higher transaction throughput. Large mining pools and
+businesses aligned with this view.
+
+The other camp argued for maintaining the block size while improving
+efficiency. Soft forks like SegWit could improve transaction
+efficiency, and Layer 2 solutions like the Lightning Network could
+provide scalability. Preserving decentralization - ensuring anyone
+could run a full node - was the priority. Most core developers and
+full node operators held this position.
+
+## SegWit2x and UASF
+
+In 2017, the New York Agreement brought together large businesses and
+miners to push SegWit2x: activate SegWit, then hard fork to double the
+block size to 2MB. Approximately 83% of Bitcoin's hashpower supported
+it.
+
+In response, the User Activated Soft Fork (UASF) emerged. BIP 148
+proposed that node operators would enforce SegWit after a specific
+date, regardless of miner signaling. This was a powerful statement:
+"Miners do not own Bitcoin. Users do."
+
+The result: SegWit activated. The hard fork component of SegWit2x was
+cancelled due to insufficient support. The big-block camp forked off
+as Bitcoin Cash.
+
+## The Lesson
+
+The Blocksize War's lesson is unambiguous. Hashpower alone cannot
+control Bitcoin. Corporate agreements are not enough. Bitcoin's rules
+reside with the users who run full nodes. The software they choose to
+execute defines what Bitcoin is.
+
+Taproot Activation: A Matured Process
+-------------------------------------
+
+After the Blocksize War, the Bitcoin community deeply reconsidered the
+activation mechanism itself. The result was the Taproot activation
+process.
+
+Taproot (BIPs 340-342) introduced Schnorr signatures and MAST
+(Merklized Abstract Syntax Trees), substantially improving Bitcoin's
+privacy and smart contract capabilities. Technical consensus formed
+relatively quickly, but the activation method sparked debate.
+
+A compromise between BIP 8 and BIP 9, called Speedy Trial, was
+adopted. It gave miners a window to signal support, but limited the
+period to minimize delays. In June 2021, miner signaling reached the
+threshold, and Taproot activated in November.
+
+The Taproot activation demonstrated the maturation of Bitcoin
+governance. A major upgrade was achieved through a systematic,
+deliberate process - without the acrimony of the Blocksize War.
+
+Social Consensus: Beyond the Code
+---------------------------------
+
+The most common mistake in understanding Bitcoin governance is looking
+only at the code. "Code is law" is a famous maxim, but reality is more
+nuanced.
+
+Code is the tool that implements consensus rules - it is not the
+consensus itself. Consensus forms among people. On the mailing list,
+in IRC channels (now Nostr and other platforms), at conferences, in
+papers, on podcasts, on social media - ideas are presented,
+scrutinized, challenged, and refined.
+
+The reason Bitcoin maintains its 21 million coin cap is not that the
+code says so. Code can be changed at any time. The cap endures because
+an overwhelming majority of the Bitcoin community believes it is a
+core property of Bitcoin. Any attempt to change it would be rejected
+by social consensus.
+
+This is the power of social consensus.
+
+Rough Consensus: The Wisdom of Approximate Agreement
+----------------------------------------------------
+
+Bitcoin decisions are not made by vote. There is no 51% majority rule.
+Bitcoin follows the "rough consensus" model borrowed from the IETF
+(Internet Engineering Task Force).
+
+Rough consensus means that even if not everyone agrees, the remaining
+objections have been thoroughly considered and reasonably addressed.
+Dissenters may exist, but if their technical concerns have been
+resolved, consensus is considered achieved.
+
+This approach has important characteristics.
+
+First, minority vetoes are respected. If a legitimate technical
+objection exists, it is not overridden by sheer numbers. The objection
+must be addressed, the proposal modified, or the effort abandoned.
+
+Second, unanimity is not required. One person's persistent objection
+does not permanently block a change. If the objection has been
+adequately addressed, the community moves forward.
+
+Third, the process is slow. This is a feature, not a bug.
+
+Why Conservatism Is a Strength
+------------------------------
+
+What fundamentally distinguishes Bitcoin's governance from other
+software projects is its intentional conservatism. Typical software
+projects pursue rapid innovation. "Move fast and break things."
+Bitcoin is the opposite. Change being difficult, slow, and
+conservative is a design goal.
+
+Why?
+
+Bitcoin is money. The most important property of money is
+predictability. People can only trust Bitcoin as a long-term store of
+value if they are confident that the Bitcoin they save today will
+operate under the same rules in ten years.
+
+If the supply cap could change, Bitcoin would be no different from
+fiat currency. If consensus rules were easily modified, Bitcoin could
+not serve as a stable foundation. Bitcoin's resistance to change is
+not a weakness - it is its most critical strength.
+
+For a new feature to be added, its benefits must overwhelmingly
+outweigh its risks. SegWit took approximately four years from proposal
+to activation. Taproot went through years of discussion. This slow
+process is what guarantees Bitcoin's stability and trustworthiness.
+
+How Bitcoin Differs From Other Cryptocurrencies
+-----------------------------------------------
+
+Bitcoin's unique governance model becomes clearer in comparison with
+other cryptocurrencies.
+
+## On-Chain Governance
+
+Tezos, Polkadot, Cosmos, and others employ "on-chain governance."
+Token holders vote directly on protocol changes, and results are
+automatically implemented.
+
+The advantages are clear: fast decision-making, formalized procedures,
+direct stakeholder participation. But there are fundamental problems.
+
+Voting power proportional to token holdings creates plutocracy. A
+small number of large holders determine the protocol's direction. Low
+voter turnout means a minority of active participants can decide the
+fate of the majority. And most critically, if a currency's fundamental
+rules can be easily changed by vote, it is a political instrument -
+not sound money.
+
+## Ethereum's Governance
+
+Ethereum has a far more activist governance model than Bitcoin. The
+Ethereum Foundation and core development teams drive the roadmap,
+upgrading the protocol through relatively frequent hard forks. The
+hard fork following the 2016 DAO hack was controversial but executed.
+The transition to Proof of Stake was orchestrated under central
+coordination.
+
+This is efficient for a software platform. But it is risky for money.
+Rules can change relatively easily.
+
+## Bitcoin's Choice
+
+Bitcoin chose robustness over efficiency. Stability over rapid
+innovation. This choice made Bitcoin slow and conservative, but it
+also made Bitcoin the most trustworthy digital currency.
+
+Money does not need to be innovative. It needs to be predictable,
+immutable, and trustworthy. Bitcoin's governance is designed precisely
+for this.
+
+Conclusion: The Experiment in Decentralized Governance
+------------------------------------------------------
+
+Bitcoin's governance is not perfect. It is slow, sometimes involves
+heated debate, and demands a high level of technical understanding to
+participate. But it is one of the most successful experiments in
+decentralized governance in human history.
+
+A system that has operated for over 17 years without a CEO. That
+produces blocks without interruption. That protects trillions of
+dollars in value. That no individual or organization can control, yet
+necessary changes still happen. This is the essence of Bitcoin
+governance.
+
+Understanding Bitcoin means more than understanding the technology. It
+means understanding this unique governance - a system where code,
+economic incentives, and social consensus converge. That is what
+transforms Bitcoin from mere software into a monetary institution.
+
+Tags: Bitcoin, Liberty
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-governance/

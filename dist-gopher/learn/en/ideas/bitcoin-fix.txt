@@ -1,0 +1,192 @@
+What Bitcoin Fixes
+==================
+
+2026-03-09 | en
+
+Bitcoin is not just an investment asset. It is a fundamental alternative to the structural problems created by the fiat currency system.
+
+"Bitcoin Fixes This"
+--------------------
+
+There is a frequently used expression in the Bitcoin community:
+"Bitcoin fixes this." Whenever inflation, financial censorship, wealth
+inequality, or government fiscal recklessness comes up, this phrase
+appears like a meme, but there is serious logic behind it.
+
+This article outlines specifically what Bitcoin aims to fix and what
+mechanism it uses to fix it.
+
+Problem 1: Unlimited Money Printing
+-----------------------------------
+
+## The Problem with the Current System
+
+In the fiat currency [/ideas/fiat-money/] system, central banks can
+theoretically print unlimited amounts of money. After the 1971 Nixon
+Shock [/ideas/nixon-shock/], the constraint of gold disappeared,
+leaving the central bank's self-restraint as the only limit on money
+creation.
+
+History shows how well that self-restraint has worked. The US dollar
+has lost 86% of its purchasing power since 1971, and the M2 money
+supply has increased more than 30-fold. In 2020, approximately 40% of
+dollars in circulation were newly printed in just two years.
+
+## Bitcoin's Solution
+
+Bitcoin's total supply is fixed at 21 million coins in the code.
+Changing this rule would require agreement from most network
+participants, and no one would agree to a change that reduces the
+value of their holdings.
+
+Through halvings [/ideas/halving/], the rate of new Bitcoin creation
+is cut in half roughly every four years, and after the last Bitcoin is
+issued around 2140, new supply stops completely. This is an extreme
+implementation of sound money [/ideas/sound-money/].
+
+Problem 2: Inflation Tax
+------------------------
+
+## The Problem with the Current System
+
+Inflation tax [/ideas/inflation-tax/] is a tax that exists nowhere in
+law. When the government prints money, the purchasing power of
+existing money declines, effectively transferring the wealth of all
+currency holders to the government. This tax requires no congressional
+approval, sends no notice, and most citizens are unaware of its cause.
+
+The biggest victims are the poor and cash holders. Asset prices rise
+with inflation, protecting the wealthy, but cash savings simply melt
+away.
+
+## Bitcoin's Solution
+
+Bitcoin is a currency where inflation tax is structurally impossible.
+No one can print additional supply, so Bitcoin's scarcity is
+maintained or increases over time (lost Bitcoin cannot be recovered).
+Saving in Bitcoin means the government's money printing cannot erode
+your purchasing power.
+
+Problem 3: The Cantillon Effect and Wealth Inequality
+-----------------------------------------------------
+
+## The Problem with the Current System
+
+Newly created money does not reach everyone simultaneously. According
+to the Cantillon Effect [/ideas/cantillon-effect/], financial
+institutions close to the central bank and the government use new
+money first. When they spend it, prices have not yet risen, so they
+enjoy full purchasing power. By the time new money reaches ordinary
+citizens, prices have already increased.
+
+This is a mechanism that systematically absorbs wealth from the center
+and dilutes it at the periphery, without any intentional
+redistribution.
+
+## Bitcoin's Solution
+
+New Bitcoin issuance (mining rewards) occurs through Proof of Work
+[/ideas/proof-of-work/]. Anyone can participate in mining, and rewards
+are compensation for energy and computing power invested. New currency
+is received proportionally to resources invested, not political
+connections or position in the financial system.
+
+More importantly, the issuance amount itself is severely limited. The
+Cantillon Effect stems from new money creation, so in a system where
+creation is minimized, the effect is also minimized.
+
+Problem 4: Moral Hazard and Bailouts
+------------------------------------
+
+## The Problem with the Current System
+
+When central banks can print unlimited money, large financial
+institutions enjoy "Too Big to Fail" status. In a moral hazard
+structure, profits are privatized and losses are socialized. In the
+2008 financial crisis, banks that took reckless risks were rescued
+with taxpayer money.
+
+## Bitcoin's Solution
+
+Bitcoin has no "lender of last resort." Without a central bank, there
+are no bailouts. In a crisis, it is impossible to print new Bitcoin
+and inject it into failed institutions. This is harsh, but it creates
+healthy incentive structures where those who take risks bear the
+consequences.
+
+The message Satoshi Nakamoto inscribed in Bitcoin's genesis block -
+"Chancellor on brink of second bailout for banks" - declares that
+Bitcoin was born as an answer to exactly this problem.
+
+Problem 5: Financial Censorship
+-------------------------------
+
+## The Problem with the Current System
+
+In the fiat currency system, strictly speaking, your money is not
+yours. A bank account is a debt the bank owes you, and a government
+order can freeze your account. Political opponents, protest
+participants, and citizens of certain countries can be excluded from
+the financial system.
+
+## Bitcoin's Solution
+
+Bitcoin is a permissionless system. Anyone with a private key can send
+funds anywhere in the world to anyone, 24/7, 365 days a year. No
+government, bank, or corporation can stop this transaction.
+
+This is a digital implementation of self-ownership
+[/ideas/self-ownership/]. The principle that you have control over the
+money that is the fruit of your labor.
+
+What Bitcoin Cannot Fix
+-----------------------
+
+For honest discussion, we must acknowledge Bitcoin's limitations.
+
+Bitcoin cannot fix human greed or stupidity. Bad investment decisions,
+fraud, and waste of resources can occur in any currency system.
+
+Bitcoin cannot eliminate all inequality. Inequality stemming from
+differences in ability, effort, and luck is a natural result of free
+markets. What Bitcoin fixes is inequality that the currency system
+artificially creates.
+
+Bitcoin is not a perfect currency. There are challenges to solve like
+price volatility, scalability, and usability. But these are technical
+issues, not design flaws.
+
+Why Say It "Fixes This"
+-----------------------
+
+The expression that Bitcoin "fixes this" does not mean Bitcoin
+magically solves these problems. Bitcoin offers an alternative. To
+those aware of the problems of fiat currency, it provides a choice to
+escape.
+
+Friedrich Hayek [/people/friedrich-hayek/] said:
+
+| "I do not think it is possible for the government to take money out
+of people's hands - unless it is introduced through some cunning
+detour that the government cannot prevent."
+
+Bitcoin is exactly that "cunning detour." An attempt to restore sound
+money not through government permission, but through technology that
+requires no permission.
+
+Connected Concepts
+------------------
+
+* Sound Money [/ideas/sound-money/] - The property of money Bitcoin
+seeks to restore
+* Fiat Money [/ideas/fiat-money/] - The system Bitcoin aims to replace
+* The Nixon Shock [/ideas/nixon-shock/] - The decisive moment when
+sound money was destroyed
+* Inflation Tax [/ideas/inflation-tax/] - The invisible tax Bitcoin
+removes
+* Moral Hazard [/ideas/moral-hazard/] - The bailout incentive Bitcoin
+removes
+
+Tags: Bitcoin, Economics
+
+Read on full site: https://learn.txid.uk/en/ideas/bitcoin-fix/

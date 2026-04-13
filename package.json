@@ -12,10 +12,12 @@
     "clean": "rm -rf dist",
     "dev": "node src/build.mjs && echo 'Serve dist/ with any static server'",
     "health": "node src/health-check.mjs",
-    "deploy": "npm run build && npm run build:gemini && npx wrangler pages deploy dist --project-name=txt-txid-uk --branch=main && npm run deploy:gemini-sync && npm run deploy:ipfs-sync && npm run health && notify-deploy.sh txt.txid.uk",
+    "deploy": "npm run build && npm run build:gemini && npm run build:gopher && npx wrangler pages deploy dist --project-name=txt-txid-uk --branch=main && npm run deploy:gemini-sync && npm run deploy:gopher-sync && npm run deploy:ipfs-sync && npm run health && notify-deploy.sh txt.txid.uk",
     "build:gemini": "node src/build-gemini.mjs",
     "deploy:gemini-sync": "bash scripts/sync-gemini.sh",
-    "deploy:ipfs-sync": "bash scripts/sync-ipfs.sh"
+    "deploy:ipfs-sync": "bash scripts/sync-ipfs.sh",
+    "build:gopher": "node src/build-gopher.mjs",
+    "deploy:gopher-sync": "bash scripts/sync-gopher.sh"
   },
   "dependencies": {}
 }

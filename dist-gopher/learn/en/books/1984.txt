@@ -1,0 +1,69 @@
+1984
+====
+
+2026-02-19 | en
+
+A dystopian novel depicting thought control and surveillance in a totalitarian state. It shows how power manipulates language and truth.
+
+If you've ever wondered why Bitcoiners care so much about privacy,
+censorship resistance, and immutable records, this is the book that
+makes it viscerally clear. George Orwell's 1984 isn't just a classic
+dystopian novel. It's a blueprint for understanding what happens when
+the state controls not just money, but language, history, and thought
+itself.
+
+Why This Book Still Haunts
+--------------------------
+
+In Oceania, the Party watches everything. Telescreens in every room.
+Thought police around every corner. Winston Smith's world shows how
+total surveillance doesn't just destroy privacy - it kills the very
+ability to think independently. Sound dramatic? Consider how modern
+financial surveillance operates on eerily similar logic: track
+everything, and people stop transacting freely.
+
+But Orwell goes deeper. The Party doesn't just watch - it rewrites
+history. Records are altered so the Party is always right. "Who
+controls the past controls the future." This is exactly why immutable
+ledgers matter. A blockchain is a historical record no Ministry of
+Truth can edit. Then there's Newspeak, the Party's project to shrink
+language until dissent becomes literally unthinkable. Orwell
+understood something profound: control the words people use and you
+control what they can conceive. Think about how terms like
+"quantitative easing" and "transitory inflation" obscure what's really
+happening to your purchasing power.
+
+And doublethink - holding two contradictory beliefs at once - is alive
+and well. "Printing money creates prosperity" and "inflation is
+transitory" coexist in mainstream economics without anyone blinking.
+Orwell saw it coming.
+
+Why It Still Matters
+--------------------
+
+Written decades ago, 1984 has only grown more relevant as digital
+surveillance capabilities far surpass anything Orwell imagined. For
+anyone in the Bitcoin space, this book provides the most vivid
+possible answer to "why does financial privacy matter?" It's not about
+secrecy. It's about the fundamental right to autonomy that every
+totalitarian system seeks to destroy.
+
+Related Concepts
+----------------
+
+* Bitcoin Sovereignty [/en/learn/bitcoin-sovereignty/] - The antidote
+to Orwellian financial control
+* Proof of Work [/en/ideas/proof-of-work/] - Creating an immutable
+record that no Party can rewrite
+* Node [/en/ideas/node/] - Individual verification as resistance to
+centralized truth
+* Fiat Money [/en/ideas/fiat-money/] - The financial system Orwell's
+warning applies to
+* Inflation Tax [/en/ideas/inflation-tax/] - The hidden mechanism of
+wealth extraction
+* Individualism [/en/ideas/individualism/] - The value that
+totalitarianism seeks to destroy
+* Money and State [/en/learn/money-and-state/] - The dangerous
+intersection of government and currency
+
+Read on full site: https://learn.txid.uk/en/books/1984/

@@ -1,0 +1,179 @@
+The Bitcoin Whitepaper in Plain Language - 9 Pages That Changed Money Forever
+======================================================================
+
+2026-04-06 | en
+
+A section-by-section breakdown of Satoshi Nakamoto's Bitcoin whitepaper. What problem it solves, how it solves it, and why 9 pages were enough to redesign money.
+
+On October 31, 2008, someone named Satoshi Nakamoto posted a 9-page
+paper to a cryptography mailing list. The subject: "Bitcoin: A
+Peer-to-Peer Electronic Cash System." The email body was one sentence:
+
+"I've been working on a new electronic cash system that's fully
+peer-to-peer, with no trusted third party."
+
+Seventeen years later, those 9 pages created a $1.3 trillion network.
+Yet surprisingly few people have actually read the paper. It is only 9
+pages.
+
+This guide walks through each section, explaining what problem Satoshi
+identified and how the design solves it.
+
+1. Introduction - The Problem
+-----------------------------
+
+| "Commerce on the Internet has come to rely almost exclusively on
+financial institutions serving as trusted third parties."
+
+The core problem is simple: sending money online requires a middleman
+- a bank, Visa, PayPal. These intermediaries can reverse transactions,
+charge fees, collect personal data, and make micropayments
+impractical.
+
+Cash has none of these problems. Hand someone a bill and the
+transaction is final. No reversal, no intermediary, no data
+collection. But cash cannot travel through the internet.
+
+Satoshi's question: Can we build electronic cash that works like
+physical cash - but online?
+
+2. Transactions - A Chain of Digital Signatures
+-----------------------------------------------
+
+In Bitcoin, a "coin" is a chain of digital signatures. When A sends
+bitcoin to B:
+
+* A signs the transaction with their private key
+* The signature includes the hash of the previous transaction and B's
+public key
+* Anyone can verify the signature using A's public key
+
+The unsolved problem: double spending. Digital data can be copied. If
+A sends the same bitcoin to both B and C, who gets it? Banks prevent
+this. Satoshi needed to solve it without a bank.
+
+3. Timestamp Server
+-------------------
+
+First piece of the solution: ordering transactions in time. Satoshi
+proposed grouping transactions into blocks, timestamping each block,
+and having each block include the hash of the previous one.
+
+This is the blockchain. Each block references its predecessor, so
+altering a past block requires remaking every block after it.
+
+4. Proof-of-Work
+----------------
+
+Timestamps alone are insufficient. Who gets to create blocks? If
+anyone can, an attacker could forge the history.
+
+Satoshi's answer: require computational work. To create a block, you
+must find a hash that meets certain conditions. This requires massive
+electricity and computing power. This is mining
+[/en/articles/bitcoin-mining/].
+
+The key insight: because creating blocks costs real resources,
+rewriting history requires redoing all subsequent work. As long as
+honest miners control more computing power than attackers, the honest
+chain wins.
+
+5. Network
+----------
+
+One of the shortest sections, but it defines how Bitcoin operates:
+
+* New transactions are broadcast to all nodes
+* Each node collects transactions into a block
+* Each node works on finding proof-of-work for its block
+* When found, the block is broadcast to the network
+* Nodes accept the block only if all transactions are valid and not
+double-spent
+* Acceptance is expressed by building the next block on top of it
+
+The longest chain wins. If two miners find blocks simultaneously, a
+temporary fork occurs. The next block added determines which branch
+becomes canonical.
+
+6. Incentive
+------------
+
+Why do miners behave honestly? Satoshi's answer is game-theoretic:
+
+* The first transaction in each block creates new bitcoin for the
+miner (block reward)
+* This is Bitcoin's only issuance mechanism - "analogous to gold
+miners expending resources to add gold to circulation"
+* Honest mining is more profitable than attacking, because attacking
+destroys the value of your own rewards
+
+The system is designed so that following the rules pays better than
+breaking them.
+
+7. Reclaiming Disk Space
+------------------------
+
+Satoshi anticipated the blockchain would grow large. Solution: old
+transactions can be compressed using Merkle trees
+[/en/articles/bitcoin-merkle-tree/], preserving only block headers.
+
+This section is the theoretical foundation for SPV wallets - how your
+phone verifies transactions without storing 600+ GB.
+
+8. Simplified Payment Verification (SPV)
+----------------------------------------
+
+Users who do not run full nodes can still verify transactions by
+downloading only block headers and requesting Merkle proofs.
+
+Satoshi acknowledged the limitation: this works only while honest
+nodes control the network. This is why running a full node
+[/en/articles/bitcoin-node/] matters.
+
+9. Combining and Splitting Value
+--------------------------------
+
+Bitcoin transactions can have multiple inputs and outputs. Send 3,000
+sats from a 10,000 sat coin, and 3,000 goes to the recipient while the
+rest returns as change. This is the UTXO model
+[/en/articles/utxo-model/].
+
+10. Privacy
+-----------
+
+Satoshi draws an important distinction. Traditional banking:
+transaction data is held privately by the bank. Bitcoin: transactions
+are public, but privacy is maintained by breaking the link between
+identity and addresses.
+
+Practical advice included: "A new key pair should be used for each
+transaction." This is why Bitcoin wallets generate a fresh address
+every time.
+
+11. Calculations
+----------------
+
+The final technical section is pure math. Satoshi calculates the
+probability of an attacker catching up to the honest chain.
+Conclusion: if the attacker controls less than 50% of hash power,
+their probability of success decreases exponentially with each block
+added.
+
+At 6 confirmations, the probability approaches zero. This is the
+mathematical basis for the "6 confirmations = safe" convention.
+
+12. Conclusion
+--------------
+
+The final paragraph:
+
+| "We have proposed a system for electronic transactions without
+relying on trust."
+
+Nine pages. A few equations. Eight references. No marketing, no
+roadmap, no team page. Problem, solution, mathematical proof. That was
+enough.
+
+Tags: Bitcoin, Basics
+
+Read on full site: https://learn.txid.uk/en/articles/bitcoin-whitepaper-explained/

@@ -1,0 +1,230 @@
+CPFP (Child Pays for Parent): Accelerating Bitcoin Transactions
+===============================================================
+
+2026-03-26 | en
+
+How Child-Pays-for-Parent (CPFP) works in Bitcoin - package relay mechanics, fee calculation, use cases for recipients and senders, comparison with RBF, and practical wallet examples.
+
+You are waiting to receive a Bitcoin payment. The sender set the fee
+too low, and the transaction has been sitting unconfirmed in the
+mempool [/articles/what-is-mempool/] for hours. You cannot use RBF
+[/ideas/replace-by-fee-rbf/] because only the sender can replace a
+transaction. But you are not powerless. You can spend the unconfirmed
+output you are about to receive, attaching a fee high enough to make
+miners want to confirm both transactions together. This technique is
+called Child Pays for Parent (CPFP).
+
+CPFP is the complement to RBF. Where RBF lets a sender replace their
+own stuck transaction, CPFP lets anyone with a spendable output -
+including the recipient - accelerate confirmation. Together, they form
+the two primary tools for fixing stuck Bitcoin transactions
+[/articles/how-to-fix-stuck-bitcoin-transaction/].
+
+How CPFP Works
+--------------
+
+The mechanics of CPFP are rooted in how miners select transactions for
+blocks. Miners do not evaluate transactions in isolation - they
+evaluate transaction packages. If a low-fee parent transaction has a
+high-fee child transaction that depends on it, a rational miner will
+include both, because the combined fee rate of the package exceeds
+what they would earn from alternative transactions.
+
+Here is the sequence:
+
+* Parent transaction exists in the mempool with an insufficient fee
+rate (e.g., 2 sat/vB when the mempool minimum is 8 sat/vB).
+* You create a child transaction that spends one of the parent's
+outputs - either the receiving output (if you are the recipient) or
+the change output (if you are the sender).
+* You set the child's fee high enough that the average fee rate across
+both transactions exceeds the current priority threshold.
+* Miners see that including the parent + child package together yields
+a higher fee rate than skipping them, so they mine both in the same
+block.
+
+The parent must be confirmed before the child can be valid on-chain,
+because the child spends an output that does not exist until the
+parent is confirmed. This dependency is what forces miners to include
+the parent.
+
+Calculating the Required Child Fee
+----------------------------------
+
+The child transaction must compensate for the parent's fee shortfall.
+The formula:
+
+    target_package_fee = desired_rate × (parent_vsize + child_vsize)
+    required_child_fee = target_package_fee - parent_fee
+    child_fee_rate     = required_child_fee / child_vsize
+
+## Worked Example
+
+| Parameter | Value |
+|-----------|-------|
+| Parent virtual size | 225 vB |
+| Parent fee | 450 sats (2 sat/vB) |
+| Child virtual size | 141 vB |
+| Desired package rate | 12 sat/vB |
+
+    target_package_fee = 12 × (225 + 141) = 4,392 sats
+    required_child_fee = 4,392 - 450 = 3,942 sats
+    child_fee_rate     = 3,942 / 141 ≈ 28 sat/vB
+
+The child must pay approximately 28 sat/vB to bring the entire package
+up to 12 sat/vB. This is significantly higher than the target rate,
+because the child is compensating for the parent's underpayment.
+
+Who Can Use CPFP?
+-----------------
+
+Recipients - This is CPFP's primary advantage over RBF. If someone
+sent you bitcoin with a low fee, you can spend that unconfirmed output
+with a high-fee child transaction. You do not need the sender's
+cooperation.
+
+Senders - If your transaction has a change output returning funds to
+your own wallet, you can spend that change output as a CPFP child.
+This is useful when RBF was not signaled on the original transaction.
+
+Anyone with a spendable output - In transactions with multiple
+outputs, any output owner can create a child. In multi-party protocols
+like CoinJoin or Lightning channel closes, any participant with a
+spendable output can use CPFP.
+
+CPFP in Practice
+----------------
+
+## Sparrow Wallet
+
+Right-click an unconfirmed incoming transaction → "Accelerate
+Transaction (CPFP)". Sparrow automatically calculates the required
+child fee and creates the transaction.
+
+## Bitcoin Core
+
+Spend the unconfirmed UTXO to yourself with an elevated fee:
+
+    bitcoin-cli -named sendtoaddress \
+      address="your-address" \
+      amount=0.0009 \
+      fee_rate=30 \
+      include_unsafe=true
+
+The include_unsafe=true flag allows spending unconfirmed outputs.
+
+## Electrum
+
+In the History tab, right-click the unconfirmed transaction → "Child
+pays for parent." Electrum handles the fee calculation automatically.
+
+CPFP vs RBF
+-----------
+
+| | CPFP | RBF |
+|---|---|---|
+| Who can use it | Sender or recipient | Sender only |
+| Mechanism | New child transaction | Replacement transaction |
+| Requires signaling | No | Yes (opt-in RBF) or full RBF |
+| Creates new TXID | Yes (child has its own TXID) | Yes (replacement
+gets new TXID) |
+| Parent TXID changes | No - parent TXID stays the same | Yes -
+original TXID is invalidated |
+| Cost efficiency | Lower (pays for child TX overhead) | Higher
+(single TX, no overhead) |
+| Best for | Recipients, non-RBF transactions | Senders with
+RBF-enabled wallets |
+
+A critical difference: with CPFP, the original parent TXID remains
+valid. The recipient's TXID does not change. With RBF, the original
+TXID is invalidated and replaced with a new one. This matters for
+merchants and payment processors that track transactions by TXID.
+
+Package Relay and Mempool Policy
+--------------------------------
+
+CPFP relies on miners evaluating transactions as packages rather than
+individually. This is implemented through Bitcoin Core's ancestor fee
+rate calculation:
+
+When selecting transactions for a block template, Bitcoin Core
+calculates each transaction's ancestor fee rate - the total fee of the
+transaction plus all its unconfirmed ancestors, divided by their
+combined virtual size. Transactions are sorted by ancestor fee rate,
+ensuring that profitable packages are included together.
+
+## Mempool Acceptance
+
+For a child transaction to be accepted into the mempool, the parent
+must already be in the mempool (or submitted simultaneously via
+package relay). Bitcoin Core enforces limits on ancestor and
+descendant chains:
+
+* Maximum ancestor count: 25 transactions
+* Maximum ancestor size: 101,000 vB
+* Maximum descendant count: 25 transactions
+* Maximum descendant size: 101,000 vB
+
+These limits prevent denial-of-service attacks through excessively
+long transaction chains while still allowing practical CPFP usage.
+
+## Package Relay (BIP 331)
+
+Historically, CPFP had a chicken-and-egg problem: if the parent's fee
+rate was below the mempool minimum, nodes would reject the parent
+before the child could be submitted. Package relay (implemented
+progressively in Bitcoin Core) solves this by allowing parent and
+child to be submitted as a single package, evaluated together.
+
+This is particularly important for Lightning Network force-close
+transactions, which may have pre-signed fees that become insufficient
+during fee spikes.
+
+CPFP for Lightning Network
+--------------------------
+
+CPFP plays a critical role in Lightning Network security. When a
+channel is force-closed, the commitment transaction is broadcast with
+a fee that was set when the channel was last updated - potentially
+days or weeks earlier. If fees have risen since then, the commitment
+transaction may be stuck.
+
+Lightning implementations use anchor outputs - small outputs
+specifically designed to be spent via CPFP. Each party in the channel
+gets an anchor output they can use to bump the commitment
+transaction's effective fee rate. This ensures that channel closes can
+always confirm in a timely manner, even during fee spikes.
+
+Limitations
+-----------
+
+* Cost overhead - The child transaction itself consumes block space,
+making CPFP less fee-efficient than RBF for senders.
+* Requires spendable output - If all outputs are locked (e.g.,
+multisig requiring other signers), CPFP is not possible.
+* Chain limits - The 25-ancestor/descendant limit means CPFP cannot be
+applied indefinitely in a chain of unconfirmed transactions.
+* Dust outputs - If the output you want to spend is below the dust
+threshold (546 sats for P2PKH, 294 sats for P2WSH), you cannot create
+a valid child transaction.
+
+Further Reading
+---------------
+
+* How to Fix a Stuck Bitcoin Transaction
+[/articles/how-to-fix-stuck-bitcoin-transaction/] - Practical guide to
+RBF, CPFP, and re-broadcasting
+* Replace-By-Fee (RBF) [/ideas/replace-by-fee-rbf/] - The sender-side
+counterpart to CPFP
+* Mempool Congestion [/ideas/bitcoin-mempool-congestion/] - Why
+transactions get stuck in the first place
+* Bitcoin Fee Guide [/articles/bitcoin-fee-guide/] - How fee
+calculation works
+* What Is the Mempool? [/articles/what-is-mempool/] - Understanding
+the transaction waiting room
+* Broadcasting a Transaction [/learn/build-tx-09-broadcast/] - How
+transactions enter the network
+
+Tags: Bitcoin, Technical
+
+Read on full site: https://learn.txid.uk/en/ideas/cpfp-child-pays-for-parent/

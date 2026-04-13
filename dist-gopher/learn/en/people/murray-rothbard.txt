@@ -1,0 +1,180 @@
+Murray Rothbard
+===============
+
+2026-03-09 | en
+
+The father of anarcho-capitalism who unified libertarian economics and ethics.
+
+The Most Radical Libertarian of the 20th Century
+------------------------------------------------
+
+Murray Newton Rothbard (1926-1995) was an American economist,
+historian, and political philosopher who established the theoretical
+foundations of anarcho-capitalism (anarchist capitalism) by
+integrating Austrian economics with natural law ethics. As Ludwig von
+Mises' most faithful student, he simultaneously drew conclusions even
+more radical than his mentor's.
+
+Rothbard left behind a vast body of work spanning economics, history,
+and philosophy, and virtually single-handedly constructed the
+intellectual foundations of the modern libertarian movement.
+
+Life
+----
+
+## An Intellectual in New York
+
+Rothbard was born in 1926 in the Bronx, New York, to a family of
+Eastern European Jewish immigrants. He studied mathematics, economics,
+and statistics at Columbia University, specializing in economic
+history in his doctoral studies.
+
+The turning point in Rothbard's intellectual development came when he
+read Mises' Human Action. Subsequently, he participated in Mises' New
+York University seminar and became one of his most important students.
+Mises regarded Rothbard as the person who best understood his system.
+
+## Academic Independence
+
+Rothbard found it difficult to obtain a regular professorship in
+mainstream academia. His radical anti-state position was difficult to
+accept in the academic circles of the time. He taught at Brooklyn
+Polytechnic University for twenty years, and in his later years served
+as an economics professor at the University of Nevada, Las Vegas
+(UNLV).
+
+However, Rothbard's influence outside academia was enormous. He played
+a key role in establishing the academic programs of the Mises
+Institute and published vast amounts of work through libertarian
+magazines and academic journals. Rothbard died of a heart attack in
+New York in 1995.
+
+Core Ideas
+----------
+
+## Economics: Beyond Mises
+
+Man, Economy, and State (1962) is a monumental work that reconstructs
+and expands upon Mises' Human Action. While maintaining Mises'
+praxeological methodology, Rothbard described the entire system of
+free-market economics in a more systematic and clear manner.
+
+Power and Market, originally planned as an appendix to this work, was
+published as an independent volume. Here, Rothbard systematically
+analyzes and critiques all forms of government intervention - taxes,
+regulations, subsidies, price controls, and so forth.
+
+The critical point where Rothbard reached different conclusions from
+Mises is monopoly theory. While Mises believed monopolies could be
+problematic even in a free market, Rothbard argued that "monopoly" in
+a free market is a meaningless concept, and true monopoly is possible
+only through government-granted privileges.
+
+## Ethics: Natural Law and Self-Ownership
+
+Rothbard's most original contribution was combining Austrian economics
+with natural law ethics, systematically developed in The Ethics of
+Liberty (1982).
+
+The starting point is self-ownership [/ideas/self-ownership/]: every
+person possesses absolute ownership of their own body. From this, the
+following logically follows:
+
+* By transforming unowned resources through the labor of one's own
+body, one acquires rightful ownership of them (homesteading)
+* Rightfully acquired property can be transferred only through
+voluntary exchange
+* Coercion against another person's body or rightfully acquired
+property is unjust (non-aggression principle
+[/ideas/non-aggression-principle/])
+
+Consistently applying this principle reveals that all core functions
+of the state are unjust: taxation is coercive confiscation of
+property, conscription is enslavement, and regulation is forced
+restriction on voluntary exchange.
+
+## Anarcho-Capitalism
+
+The ultimate conclusion that Rothbard's ethics reaches is
+anarcho-capitalism. The state is not a necessary evil but an
+unnecessary evil, and all services the state currently provides - law
+enforcement, defense, judiciary - can be provided more efficiently in
+a voluntary market.
+
+In For a New Liberty (1973), Rothbard presents this vision in
+practical terms. He explains, with concrete examples, why market
+mechanisms such as private arbitration, private security, and private
+insurance are superior to the state's coercive monopoly.
+
+This is not merely "small government." Rothbard regarded even minarchy
+[/ideas/minarchy/], which Mises and Hayek accepted, as violating the
+non-aggression principle. Every government funded by taxation,
+regardless of its size, is based on coercion.
+
+## History: A Revisionist Perspective
+
+Rothbard was also an excellent historian. In America's Great
+Depression (1963), he argued in detail that the cause of the Great
+Depression was not the failure of the free market but artificial
+credit expansion by the Federal Reserve. This interpretation
+represents the most important historical application of Austrian
+business cycle theory.
+
+Major Works
+-----------
+
+* Man, Economy, and State (1962) - systematic exposition of
+free-market economics
+* Power and Market (1970) - systematic critique of government
+intervention
+* For a New Liberty (1973) - vision of a libertarian society
+* The Ethics of Liberty (1982) - libertarian ethics based on natural
+law
+* America's Great Depression (1963) - Austrian school analysis of the
+Great Depression
+* What Has Government Done to Our Money? (1963) - a concise
+introduction to money and government
+
+Famous Quotes
+-------------
+
+| "The state is nothing more than an organized band of robbers, merely
+more successful than other criminal organizations."
+
+| "What is taxation? Taxation is, in simple and clear terms, robbery.
+Robbery on the grandest, most successful scale."
+
+| "A libertarian must be against war. Because war is the health of
+state power, and the enemy of freedom."
+
+| "An economist who doesn't believe in the free market is like a
+physicist who doesn't believe in gravity."
+
+Connection to Bitcoin
+---------------------
+
+It is unfortunate that Rothbard did not live to see the age of
+Bitcoin. Yet Bitcoin deeply resonates with his ideas:
+
+* Demonetization of currency: the end of state monopoly on money that
+Rothbard advocated for his entire life
+* Voluntary adoption: currency through market choice rather than
+coercion
+* Censorship resistance: technological defense against state coercion
+of property confiscation
+
+Related Concepts
+----------------
+
+* Non-Aggression Principle [/ideas/non-aggression-principle/] - the
+core of Rothbard's ethics
+* Sound Money [/ideas/sound-money/] - the monetary principle Rothbard
+advocated
+* Austrian Business Cycle Theory [/ideas/abct/] - the theory Rothbard
+applied to the Great Depression
+* What is Libertarianism? [/ideas/libertarianism/] - the political
+philosophy Rothbard systematized
+
+Tags: Austrian Economics, Libertarianism
+
+Read on full site: https://learn.txid.uk/en/people/murray-rothbard/

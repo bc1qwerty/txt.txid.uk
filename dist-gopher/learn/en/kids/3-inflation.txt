@@ -1,0 +1,192 @@
+Step 3: What Happens with Bad Money?
+====================================
+
+2026-04-03 | en
+
+When governments print too much money, something sneaky happens to your savings. Let's find out what inflation is and why it matters.
+
+The Lemonade Stand Experiment
+-----------------------------
+
+Imagine your class has a lemonade stand. There are 10 kids, and each
+kid has 10 play-dollars. That is 100 play-dollars total in your
+classroom economy.
+
+A cup of lemonade costs 1 play-dollar. Everyone can afford 10 cups.
+Life is good.
+
+Now imagine the teacher prints 100 more play-dollars and hands them
+out. Everyone now has 20 play-dollars! You feel richer. But wait - the
+lemonade stand still has the same amount of lemonade.
+
+What happens next? Everyone rushes to buy lemonade. But there is not
+enough for everyone at 1 play-dollar per cup. So the price goes up.
+Now a cup costs 2 play-dollars. You have twice as many dollars, but
+everything costs twice as much. Are you actually richer?
+
+No. You have more paper, but you can buy exactly the same amount of
+stuff. The only thing that changed is the numbers.
+
+This is inflation.
+
+Breaking the Gold Promise
+-------------------------
+
+Remember the gold standard from Step 2? Governments promised that
+their paper money was backed by real gold. Every dollar was a receipt
+for gold.
+
+But governments had a problem. They wanted to spend more money than
+they had - on wars, on programs, on building things. If every dollar
+had to be backed by gold, they could only spend as much as they had
+gold for.
+
+So in 1971, the president of the United States (Richard Nixon) did
+something dramatic. He announced that dollars would no longer be
+exchangeable for gold. The promise was broken.
+
+From that day on, the dollar was just paper. Its value came from the
+government saying "trust us, it is still worth something." And without
+the gold limit, governments could print as much money as they wanted.
+
+And that is exactly what they did.
+
+The Shrinking Dollar
+--------------------
+
+Here is a true story that might surprise you.
+
+In 1970, you could buy a nice house in America for about $25,000.
+Today, that same house costs $400,000 or more. Did the house get 16
+times better? No - it is the same house with the same rooms and the
+same yard.
+
+What changed? The dollar got weaker. The government printed so many
+new dollars that each one buys less and less.
+
+Think of it like this: if your lemonade stand prints too many tickets,
+each ticket is worth less lemonade. That is exactly what happened to
+real money.
+
+Some more examples:
+* A movie ticket in 1970: about $1.50. Today: about $12.
+* A gallon of milk in 1970: about $1.30. Today: about $4.50.
+* A candy bar in 1970: about 10 cents. Today: about $2.
+
+The things did not get more expensive - the money got weaker.
+
+The Invisible Piggy Bank Thief
+------------------------------
+
+Here is the sneaky part. Inflation is like an invisible thief that
+takes a little bit from your piggy bank every year.
+
+Let's say you save 100 dollars in your piggy bank. If inflation is 7%
+per year (which has happened!), after one year, your 100 dollars can
+only buy what 93 dollars could buy before. After 10 years, your 100
+dollars can only buy what 50 dollars could buy. Your money is still
+there - but half its buying power has vanished.
+
+Nobody came and took your dollars. The number on the bills is the
+same. But the value - what you can actually buy - shrank.
+
+This is why some people say inflation is a hidden tax. The government
+does not take money directly from your piggy bank. Instead, it prints
+new money, which makes your existing money worth less. The result is
+the same: you end up poorer.
+
+What About Other Countries?
+---------------------------
+
+Some countries have had much worse inflation. Here are some real
+stories:
+
+Germany (1923) - Prices doubled every few days. People used
+wheelbarrows full of cash to buy bread. Children played with stacks of
+money because it was worth less than toys. A loaf of bread that cost 1
+mark in 1919 cost 100,000,000,000 marks (100 billion!) by November
+1923.
+
+Zimbabwe (2008) - The government printed a 100 trillion dollar bill.
+That sounds like a lot, but it could barely buy a loaf of bread.
+People needed bags of cash for groceries.
+
+Venezuela (2018) - People's life savings became worthless in months. A
+month's salary could not buy a week's groceries. Many people had to
+leave the country.
+
+These are extreme cases, but they all started the same way: a
+government printing too much money.
+
+Why Do Governments Print Money?
+-------------------------------
+
+If printing money causes problems, why do governments do it?
+
+Because in the short term, it feels good. The government can pay for
+things without raising taxes. People feel richer (even though they are
+not). And the problems only show up later.
+
+It is like eating too much candy. The first piece tastes great. The
+stomachache comes later.
+
+Politicians have a strong incentive to print money: the benefits
+happen now (while they are in office), and the costs happen later
+(when someone else is in charge). This is why almost every government
+in history, once freed from the gold standard, has printed more and
+more money.
+
+Is There a Better Way?
+----------------------
+
+What if there was money that nobody could print more of? Money with a
+supply that was fixed - like gold, but even better?
+
+That is exactly the idea behind Bitcoin. And that is what we will
+explore in the next step.
+
+______________________________________________________________________
+
+Quiz Time!
+----------
+
+1. What is inflation?
+<details>
+<summary>Show answer</summary>
+Inflation is when money loses its buying power because too much new
+money is created. Prices go up, but things are not actually more
+valuable - the money is just weaker.
+</details>
+
+2. What happened in 1971?
+<details>
+<summary>Show answer</summary>
+President Nixon ended the gold standard - the US dollar could no
+longer be exchanged for gold. This freed the government to print as
+much money as it wanted.
+</details>
+
+3. Why is inflation called a "hidden tax"?
+<details>
+<summary>Show answer</summary>
+Because the government does not directly take money from you. Instead,
+it prints new money, which makes your existing money worth less. You
+end up poorer, but no one "took" anything from your pocket.
+</details>
+
+4. If you save $100 and inflation is 7% per year, roughly how much can
+your $100 buy after 10 years?
+<details>
+<summary>Show answer</summary>
+About $50 worth of stuff. Half the buying power is gone - even though
+you still have the same 100 dollar bill.
+</details>
+
+______________________________________________________________________
+
+Ready for the exciting part? Step 4: Bitcoin is Born! [../4-bitcoin/]
+- where we meet the invention that might fix money forever.
+
+Tags: Kids, Money, Inflation
+
+Read on full site: https://learn.txid.uk/en/kids/3-inflation/

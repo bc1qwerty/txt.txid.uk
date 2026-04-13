@@ -1,0 +1,413 @@
+CoinJoin
+========
+
+2026-03-18 | en
+
+CoinJoin is a Bitcoin privacy technique that combines multiple users' transactions into one, making it difficult to trace who sent to whom.
+
+CoinJoin is a Bitcoin privacy technique that combines the inputs and
+outputs of multiple users into a single transaction, making it
+difficult for outside observers to determine which inputs correspond
+to which outputs. Since the Bitcoin blockchain is inherently a public
+ledger where every transaction is permanently recorded and visible to
+anyone, intentional obfuscation of fund flows is essential for
+preserving financial privacy. CoinJoin stands as one of the most
+practical and trust-minimized solutions to this fundamental problem.
+
+The Birth of CoinJoin
+---------------------
+
+The CoinJoin concept was first formally proposed in 2013 by Bitcoin
+Core developer Gregory Maxwell in a post on the bitcointalk.org forum.
+Maxwell highlighted the privacy limitations of Bitcoin and argued that
+if multiple users voluntarily combined their transactions, privacy
+could be significantly improved without requiring trust in any third
+party.
+
+The key insight behind this proposal lies in Bitcoin's transaction
+structure. A Bitcoin transaction can have multiple inputs and multiple
+outputs, and there is no protocol-level requirement that all inputs
+belong to the same person. Including inputs from different users in a
+single transaction is a perfectly valid Bitcoin transaction. This
+structural property can be exploited to deliberately obscure ownership
+relationships between inputs and outputs.
+
+Maxwell's proposal was elegant in its simplicity: it required no
+changes to the Bitcoin protocol, no soft forks, and no new opcodes.
+CoinJoin transactions are indistinguishable from regular multi-input
+transactions at the protocol level, leveraging existing Bitcoin
+functionality in a novel way.
+
+Bitcoin's Structural Privacy Problems
+-------------------------------------
+
+Bitcoin is often mistakenly described as anonymous, but it is actually
+a pseudonymous system. Every transaction is permanently recorded on
+the blockchain and can be viewed by anyone. This creates serious
+privacy vulnerabilities that affect all Bitcoin users.
+
+## UTXO Tracking and Chain Analysis
+
+Bitcoin uses the UTXO (Unspent Transaction Output) model. Each bitcoin
+exists as an output from a previous transaction and is consumed as an
+input in a new transaction. This structure creates a traceable chain
+of fund flows from transaction to transaction. Blockchain analysis
+firms such as Chainalysis, Elliptic, and CipherTrace analyze this UTXO
+graph to trace the origins and destinations of funds, building
+comprehensive pictures of users' financial activities.
+
+These firms operate on a massive scale, tracking billions of dollars
+in Bitcoin flows daily. They sell their services to law enforcement
+agencies, financial institutions, and exchanges, creating a
+surveillance infrastructure that can deanonymize Bitcoin users
+retroactively - even analyzing transactions made years ago as new data
+points become available.
+
+## The Common Input Ownership Heuristic
+
+The most fundamental assumption in chain analysis is the Common Input
+Ownership Heuristic (CIOH). This heuristic presumes that all inputs in
+a single transaction belong to the same owner. In typical Bitcoin
+usage, this assumption is usually correct - when a user combines
+multiple UTXOs to make a payment, those inputs all come from the same
+wallet. CoinJoin is specifically designed to break this heuristic.
+
+## Clustering and Identity Linking
+
+Chain analysis firms use CIOH to group addresses into clusters.
+Addresses that appear as inputs in the same transaction are classified
+as belonging to the same entity. Once a single real-world identity is
+linked to any address in a cluster (for example, through a KYC
+exchange withdrawal), the entire transaction history of that cluster
+becomes tied to that identity. A single exchange withdrawal address
+can expose your total Bitcoin holdings, transaction counterparties,
+spending patterns, and financial behavior over time.
+
+How CoinJoin Works
+------------------
+
+The core mechanism of CoinJoin is remarkably simple. Multiple users
+combine their inputs (UTXOs) and outputs (receiving addresses) into a
+single transaction, with each participant signing only their own
+inputs.
+
+## The Basic Process
+
+* Participant gathering: Multiple users register to participate in a
+CoinJoin round.
+* Input and output submission: Each participant submits the UTXO(s)
+they want to spend (inputs) and the new address(es) where they want to
+receive bitcoin (outputs).
+* Transaction construction: A coordinator (or decentralized protocol)
+assembles all inputs and outputs into a single transaction.
+* Verification and signing: Each participant verifies the completed
+transaction, confirming that their output is correctly included. They
+then sign only their own input(s).
+* Broadcasting: Once all signatures are collected, the transaction is
+broadcast to the Bitcoin network.
+
+The critical security property here is that each participant only
+signs their own inputs. Neither the coordinator nor other participants
+can steal your bitcoin. If your output is not included in the
+transaction, you simply refuse to sign.
+
+## The Outside Observer's Perspective
+
+When viewing a completed CoinJoin transaction on a block explorer, an
+observer sees, for example, 5 inputs and 5 outputs. There is no way to
+determine which input corresponds to which output. With 5 inputs and 5
+outputs, there are theoretically 5! = 120 possible mappings. The more
+participants, the exponentially larger the anonymity set becomes.
+
+The Importance of Equal-Amount Outputs
+--------------------------------------
+
+To maximize CoinJoin's privacy effect, equal-amount outputs are
+critical.
+
+If Alice inputs 0.3 BTC and Bob inputs 0.7 BTC, and the outputs are
+0.3 BTC and 0.7 BTC, it becomes trivial to deduce which input
+corresponds to which output based on amounts alone. This completely
+nullifies the privacy benefit of CoinJoin.
+
+To prevent this, effective CoinJoin implementations standardize all
+participant outputs to the same amount. For example, every participant
+receives exactly 0.01 BTC as output. The remaining balance (change)
+returns as a separate change output, which has weaker privacy
+properties and is ideally fed back into subsequent CoinJoin rounds.
+
+This equal-amount approach determines the size of the anonymity set.
+If there are 10 outputs of the same amount, the probability that any
+specific output came from a particular input is 1/10. This is
+precisely why more participants in a CoinJoin round means stronger
+privacy for everyone involved.
+
+Major Implementations
+---------------------
+
+## Wasabi Wallet: From ZeroLink to WabiSabi
+
+Wasabi Wallet is a desktop Bitcoin wallet and one of the most widely
+used CoinJoin implementations. It was originally built on the ZeroLink
+protocol designed by Adam Ficsor (nopara73). ZeroLink employed
+Chaumian blind signatures to ensure that even the coordinator could
+not determine which inputs corresponded to which outputs.
+
+Starting in 2022, Wasabi transitioned to the WabiSabi protocol.
+WabiSabi uses keyed credentials and zero-knowledge proofs to overcome
+ZeroLink's limitations. The most significant improvement is output
+amount flexibility. While ZeroLink required all outputs to be a fixed
+denomination, WabiSabi allows variable output amounts while still
+hiding the input-output mapping. This reduces change outputs and
+further strengthens privacy.
+
+WabiSabi also enables more efficient use of block space, as
+participants can consolidate UTXOs or split them into desired
+denominations within a single CoinJoin round, all without revealing
+their ownership patterns to the coordinator or other participants.
+
+## JoinMarket: The Maker-Taker Model
+
+JoinMarket is a decentralized marketplace for CoinJoin. Its
+distinguishing feature is the maker-taker model, which creates
+economic incentives for liquidity provision.
+
+* Makers: Provide their bitcoin as CoinJoin liquidity and earn fees in
+return. Makers keep their software running and publish orders
+indicating the amounts they are willing to CoinJoin and the fees they
+charge.
+* Takers: Users who want privacy. They utilize makers' liquidity to
+initiate CoinJoin transactions and pay makers a fee for their
+participation.
+
+This model's advantage is its built-in economic incentives. Makers
+earn yield on their bitcoin while simultaneously improving their own
+privacy, and takers can execute CoinJoin transactions on demand
+without waiting for other privacy-seeking users. Furthermore,
+JoinMarket operates peer-to-peer without a centralized coordinator,
+eliminating single points of failure.
+
+JoinMarket also supports PayJoin transactions and tumbler scripts that
+automatically perform multiple sequential CoinJoin rounds with
+randomized timing and amounts, providing a high degree of privacy with
+minimal user intervention.
+
+## Whirlpool (Samourai Wallet)
+
+Whirlpool was a CoinJoin implementation developed by the Samourai
+Wallet team. Its distinguishing features were strict equal-amount
+pools and a free remixes policy.
+
+Whirlpool operated several pool sizes (0.5 BTC, 0.05 BTC, 0.01 BTC,
+0.001 BTC). Users paid a one-time fee when first entering a pool, and
+all subsequent remixes were free. This incentivized users to remix
+their UTXOs multiple times, maximizing their anonymity set over time.
+
+Whirlpool also enforced strict separation between pre-mix, post-mix,
+and unmixed UTXOs, preventing accidental merging that could degrade
+privacy. The Samourai mobile wallet provided a user-friendly interface
+with automatic UTXO management.
+
+However, in April 2024, the Samourai Wallet founders were indicted by
+the U.S. Department of Justice, and the Whirlpool service was shut
+down. This event sparked a major debate about the legal status of
+Bitcoin privacy tools.
+
+CoinJoin vs. Centralized Mixers
+-------------------------------
+
+CoinJoin should not be confused with centralized Bitcoin mixers or
+tumblers. They have fundamentally different trust models.
+
+## Problems with Centralized Mixers
+
+Centralized mixers work by having users send their bitcoin to the
+mixer operator, who then sends different bitcoin back to the user.
+This approach has serious problems:
+
+* Custodial risk: The operator can abscond with the funds. There have
+been numerous cases of mixer exit scams.
+* Log retention: Operators may keep records of input-output mappings.
+These records can be seized by law enforcement or stolen by hackers.
+* Honeypot targets: Centralized services are natural targets for law
+enforcement and hackers alike, concentrating risk in a single point.
+* Regulatory vulnerability: Centralized entities can be shut down,
+subpoenaed, or compelled to implement surveillance.
+
+## CoinJoin's Trust Minimization
+
+CoinJoin is fundamentally different:
+
+* Non-custodial: Users never relinquish control of their bitcoin
+during the CoinJoin process. Each participant signs only their own
+inputs and will not sign a transaction that does not include their
+output.
+* No logging possible: In implementations using blind signatures or
+zero-knowledge proofs, even the coordinator cannot determine
+input-output mappings.
+* Verifiable: CoinJoin transactions are standard Bitcoin transactions,
+so every participant can independently verify the transaction's
+correctness before signing.
+* Censorship resistant: Because CoinJoin is indistinguishable from
+normal multi-input transactions at the protocol level, it cannot be
+selectively censored by miners without rejecting all multi-input
+transactions.
+
+Legal Controversies and the Right to Privacy
+--------------------------------------------
+
+CoinJoin and privacy tools have faced serious legal challenges in
+recent years, raising fundamental questions about the intersection of
+technology, privacy rights, and financial regulation.
+
+## The Tornado Cash Sanctions (2022)
+
+In August 2022, the U.S. Treasury Department's Office of Foreign
+Assets Control (OFAC) added the Ethereum-based privacy protocol
+Tornado Cash to its sanctions list. This was the first instance of
+sanctioning open-source smart contract code rather than a specific
+individual or entity, sending shockwaves through the technology
+community. Subsequent court rulings partially overturned some
+sanctions, and the legal battle continues.
+
+## The Samourai Wallet Indictment (2024)
+
+In April 2024, Samourai Wallet co-founders Keonne Rodriguez and
+William Hill were indicted on charges of operating an unlicensed money
+transmitting business and conspiracy to commit money laundering. The
+U.S. Department of Justice alleged that the Whirlpool CoinJoin service
+and the Ricochet feature facilitated over $100 million in money
+laundering.
+
+## Privacy as a Right, Not a Crime
+
+The Bitcoin community and privacy advocates have strongly opposed
+these legal actions. Their core arguments include:
+
+* Financial privacy is a fundamental human right. Cash transactions
+inherently offer basic privacy, and digital payments should provide
+equivalent protections.
+* Tools are not crimes. Just as a locksmith is not prosecuted for
+selling lock picks that could be used by burglars, software developers
+should not be held liable for users' criminal activities.
+* CoinJoin is a legitimate Bitcoin transaction. Multiple people
+signing a single transaction is a standard feature permitted by the
+Bitcoin protocol, not a special hack or exploit.
+* Money without privacy becomes a surveillance tool. When all
+financial transactions are traceable, authoritarian regimes can freeze
+dissidents' funds, corporations can monitor customers' spending
+patterns, and individuals' economic freedom is fundamentally
+undermined.
+
+The Electronic Frontier Foundation (EFF), Coin Center, and numerous
+other civil liberties organizations have filed amicus briefs and
+public statements defending the right to develop and use
+privacy-preserving technology.
+
+PayJoin: A Special Two-Party CoinJoin
+-------------------------------------
+
+PayJoin (also known as P2EP, Pay-to-Endpoint) is a special form of
+CoinJoin used in actual payment scenarios. Unlike standard CoinJoin
+where multiple users gather solely for privacy, PayJoin constructs a
+CoinJoin between just two parties: the sender and the receiver.
+
+## How It Works
+
+In a typical Bitcoin payment, only the sender provides inputs, and the
+receiver appears only in the outputs. In a PayJoin, the receiver also
+contributes their own UTXO as an input. For example, if Alice pays Bob
+0.5 BTC, Bob also adds his own 0.3 BTC UTXO as an input. The resulting
+transaction contains UTXOs from both Alice and Bob as inputs.
+
+## Breaking CIOH
+
+PayJoin's most powerful effect is directly neutralizing the Common
+Input Ownership Heuristic. When chain analysis tools assume that all
+inputs in a transaction belong to the same owner, they incorrectly
+classify Alice and Bob's funds as belonging to the same person. If
+PayJoin becomes widely adopted, the reliability of this assumption
+erodes, indirectly improving privacy for all Bitcoin users - even
+those who never use PayJoin themselves.
+
+## BIP 78
+
+PayJoin is standardized as BIP 78, which defines the communication
+protocol between sender and receiver. It is already integrated into
+payment processors like BTCPay Server. PayJoin's key advantage is that
+it is indistinguishable from a regular transaction on the blockchain.
+While standard CoinJoin transactions can be identified by their
+equal-amount output patterns, PayJoin looks like a completely ordinary
+payment.
+
+Limitations and the Future
+--------------------------
+
+## Current Limitations
+
+Despite being a powerful privacy tool, CoinJoin has several
+limitations:
+
+* Fee overhead: CoinJoin transactions are larger than regular
+transactions, requiring higher mining fees. During periods of high
+Bitcoin fees, small-denomination CoinJoins can be economically
+irrational.
+* Liquidity requirements: CoinJoin requires multiple participants
+simultaneously. Few participants mean small anonymity sets and long
+waiting times.
+* Change output problem: The change remaining after an equal-amount
+CoinJoin has weaker privacy. Improper change management can
+retroactively degrade CoinJoin's privacy benefits.
+* User experience: Correctly using CoinJoin requires understanding
+UTXO management, change handling, and labeling - creating a barrier
+for average users.
+
+## Synergy with Taproot
+
+The Taproot upgrade, activated in 2021, holds significant implications
+for CoinJoin's future. Taproot's Schnorr signatures enable signature
+aggregation, allowing multiple signatures to be combined into one.
+Applied to CoinJoin, this means multiple participants' signatures can
+be merged into a single signature, dramatically reducing transaction
+size and fees.
+
+Furthermore, Taproot makes complex script conditions indistinguishable
+from regular payments, contributing to CoinJoin transactions appearing
+identical to normal transactions on the blockchain.
+
+## Cross-Input Signature Aggregation (CISA)
+
+CISA (Cross-Input Signature Aggregation), currently under discussion
+in the Bitcoin community, could represent a revolutionary turning
+point for CoinJoin. CISA would compress all input signatures within a
+single transaction into a single signature. This would reduce CoinJoin
+transaction sizes to near-normal transaction levels, eliminating fee
+overhead and potentially enabling mass adoption of CoinJoin.
+
+With CISA, every wallet could automatically perform CoinJoin in the
+background with every transaction, as the fee savings from signature
+aggregation would create a natural economic incentive for
+collaborative transactions - even without considering privacy
+benefits.
+
+## Toward Privacy by Default
+
+The ultimate goal of the Bitcoin privacy community is for privacy to
+become the default, not an opt-in choice. Currently, CoinJoin requires
+active user participation, but the vision is a future where PayJoin is
+integrated into every payment, wallet software automatically performs
+coin selection optimization and privacy routing, and CoinJoin happens
+seamlessly in the background.
+
+CoinJoin is essential technology for Bitcoin to function not merely as
+an investment asset but as freedom money - censorship-resistant and
+privacy-preserving. Despite legal challenges, CoinJoin technology
+continues to evolve, playing an indispensable role in strengthening
+Bitcoin's fungibility and protecting users' financial privacy. The
+fight for financial privacy is not just a technical challenge but a
+fundamental civil liberties issue that will shape the future of money
+itself.
+
+Tags: Bitcoin, Security
+
+Read on full site: https://learn.txid.uk/en/ideas/coinjoin/

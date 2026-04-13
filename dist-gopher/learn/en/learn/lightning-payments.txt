@@ -1,0 +1,13 @@
+Lightning Payments & Running a Node
+===================================
+
+en
+
+How Bitcoin scales for everyday payments - the Lightning Network explained, plus why running your own full node matters.
+
+Bitcoin's base layer processes about 7 transactions per second. The
+Lightning Network scales that to millions. This course explains how
+Lightning works, what running a full node means for your sovereignty,
+and why both matter for Bitcoin's future as everyday money.
+
+Read on full site: https://learn.txid.uk/en/learn/lightning-payments/

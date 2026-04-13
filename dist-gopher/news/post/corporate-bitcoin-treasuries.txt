@@ -1,0 +1,206 @@
+Corporate Bitcoin Treasuries: From MicroStrategy to the Fortune 500
+===================================================================
+
+2026-04-01 | opinion | by txid | en
+
+MicroStrategy started buying Bitcoin in 2020 with $250 million. Five years later, it holds over 500,000 BTC and trades at a perpetual premium to NAV. The playbook is being copied — but the imitators face a market that has already priced in the strategy.
+
+In August 2020, MicroStrategy — a mid-cap business intelligence
+company with flat revenues and a stagnant stock price — converted $250
+million of its treasury reserves from cash to Bitcoin. The CEO,
+Michael Saylor, called it a "capital allocation strategy" and
+predicted that holding dollars was more dangerous than holding a
+volatile digital asset.
+
+The market thought he was crazy. MSTR stock was at $15
+(split-adjusted). The company's enterprise value was under $2 billion.
+Bitcoin was $11,600.
+
+Five years later, MicroStrategy holds 506,137 BTC — roughly 2.4% of
+all bitcoin that will ever exist. The stock trades above $250. The
+company's market cap exceeds $70 billion. Saylor has raised over $20
+billion through a combination of convertible notes, at-the-market
+equity offerings, and preferred stock issuances to fund purchases. The
+strategy has generated a 1,500% return for shareholders.
+
+No corporate treasury decision in the last decade has been more
+consequential — or more widely studied. The question is no longer
+whether the strategy worked. It is whether anyone else can replicate
+it.
+
+The Playbook
+------------
+
+Saylor's approach is simple in concept and radical in execution. The
+thesis rests on three pillars:
+
+Cash is a melting ice cube. Corporate treasury reserves held in
+dollars or short-term Treasuries lose purchasing power to inflation.
+Over a 10-year horizon, a 3% annual inflation rate erodes 26% of the
+real value. Bitcoin, with its fixed supply and declining issuance, is
+a superior long-term store of value.
+
+Bitcoin is digital capital. Unlike gold, real estate, or other
+store-of-value assets, Bitcoin can be acquired in any size, held
+without storage costs, transferred instantly, and verified by anyone.
+It is the most efficient treasury reserve asset ever created.
+
+Leverage the premium. Because MSTR trades at a premium to its Bitcoin
+NAV — meaning the stock market values the company's Bitcoin at more
+than spot price — every share issuance is accretive. Selling $1
+billion in stock when the market values your Bitcoin at 1.5x NAV lets
+you buy $1 billion in Bitcoin while only "spending" $667 million in
+NAV terms. The premium funds the accumulation.
+
+The third pillar is the key innovation. MicroStrategy is not just
+holding Bitcoin. It is operating a perpetual capital machine that
+converts equity market premium into additional Bitcoin exposure. As
+long as the premium persists, the flywheel spins.
+
+The Accounting Unlock
+---------------------
+
+For four years, the biggest barrier to corporate Bitcoin adoption was
+accounting treatment. Under the old rules (ASC 350), Bitcoin was
+classified as an indefinite-lived intangible asset. Companies had to
+write down the value when price fell below purchase cost but could not
+write it up when price recovered. A company that bought Bitcoin at
+$60,000, watched it fall to $30,000, and watched it recover to $90,000
+would show a permanent $30,000 impairment on its books — even though
+it was sitting on a $30,000 gain.
+
+This asymmetry made CFOs allergic to Bitcoin. No finance team wanted
+to explain why the balance sheet showed a loss on an asset that had
+doubled.
+
+In December 2024, FASB's new fair value accounting standard (ASU
+2023-08) took effect. Bitcoin is now marked to market every quarter,
+like any other financial asset. Gains and losses flow through the
+income statement symmetrically. A company holding Bitcoin at $69,000
+today will show a gain next quarter if the price rises and a loss if
+it falls — exactly like holding any other investment.
+
+The accounting change removed the single largest institutional
+objection to corporate Bitcoin treasuries. It did not create a flood
+of adoption — but it opened the door.
+
+Who's Buying
+------------
+
+The corporate treasury landscape in 2026 extends well beyond
+MicroStrategy:
+
+| Company | BTC Holdings | Strategy | Market Cap |
+|---------|-------------|----------|------------|
+| MicroStrategy | ~506,000 | Convertible debt + ATM equity | $70B+ |
+| Tesla | ~10,000 | Strategic reserve (no active buying) | $680B |
+| Block (Square) | ~8,200 | Dollar-cost averaging since 2020 | $38B |
+| Marathon Digital | ~40,000+ | Mine and hold, minimal selling | $4.5B
+|
+| Metaplanet | ~3,400 | Japan's "MicroStrategy" — debt-funded | $1.2B
+|
+| Semler Scientific | ~1,800 | Small-cap medical device, Saylor model
+| $400M |
+
+Dozens of smaller companies — mostly micro-caps and SPACs — have
+announced Bitcoin treasury strategies. The pattern is consistent:
+announce the strategy, watch the stock pop on the Bitcoin proxy
+premium, use the elevated stock price to raise capital, buy more
+Bitcoin.
+
+The strategy works best for companies with two characteristics: low
+organic growth prospects (making Bitcoin appreciation the primary
+value driver) and access to capital markets (enabling the
+leverage-the-premium flywheel).
+
+The Problem With Copycats
+-------------------------
+
+MicroStrategy's advantage is first-mover entrenchment. It has the
+largest corporate Bitcoin position by an order of magnitude. Its stock
+is the most liquid Bitcoin proxy outside of spot ETFs. Its convertible
+notes trade in deep, institutional markets. It has five years of
+execution track record.
+
+A company announcing a Bitcoin treasury strategy today faces a
+different market:
+
+The premium is earned, not given. MSTR trades at a premium because the
+market believes the company will continue to accumulate Bitcoin at
+attractive prices using capital market access. New entrants have no
+track record, no institutional convertible note market, and no proof
+that they can sustain the flywheel. Their stocks may pop on
+announcement but deflate when the premium evaporates.
+
+Bitcoin is no longer cheap. Saylor's average cost basis is
+approximately $66,000 across all purchases. But his early buys were at
+$11,000–$30,000. A company starting today buys every coin at $69,000
+or higher. The asymmetry that made the early strategy so powerful —
+buying a deeply undervalued asset with overvalued cash — is less
+extreme today.
+
+ETF competition. In 2020, there was no easy way for institutional
+investors to get Bitcoin exposure. MSTR served as a de facto Bitcoin
+ETF. Today, eleven spot Bitcoin ETFs trade on US exchanges with $65
+billion in assets. An investor who wants Bitcoin exposure no longer
+needs to buy a software company's stock at a 50% premium. They can buy
+IBIT at NAV.
+
+The Counter-Argument
+--------------------
+
+Saylor's response to the ETF objection is that MSTR offers something
+an ETF cannot: leveraged, actively managed Bitcoin exposure with no
+management fee and no tracking error from fund redemptions. An ETF
+holder owns Bitcoin. An MSTR shareholder owns a call option on Bitcoin
+with a management team actively working to increase the per-share BTC
+holdings.
+
+The data supports this. MSTR has outperformed spot Bitcoin and every
+Bitcoin ETF since the ETFs launched. The premium is not irrational —
+it reflects the value of the capital market flywheel.
+
+But the premium depends on two conditions: Bitcoin's price must
+continue to rise over multi-year horizons, and capital markets must
+remain open for equity and debt issuance. If Bitcoin enters a
+prolonged bear market, the premium compresses, the flywheel stalls,
+and the leverage that amplified gains amplifies losses.
+MicroStrategy's convertible debt does not mature for years, but the
+equity dilution is permanent.
+
+What Comes Next
+---------------
+
+The corporate Bitcoin treasury trend is real but early. The Fortune
+500 — with the exception of Tesla — has not moved. Major banks,
+insurance companies, and industrial conglomerates hold zero Bitcoin on
+their balance sheets. The FASB accounting change removed the biggest
+objection but did not create urgency.
+
+The next catalyst is likely to be a major non-tech company — a
+consumer brand, an energy company, or a financial institution — making
+a significant allocation. When a company with a household name and an
+investment-grade credit rating puts 5% of its treasury in Bitcoin, the
+narrative shifts from "crypto company strategy" to "mainstream
+corporate finance."
+
+Until then, the playbook belongs to Saylor. He built the machine.
+Everyone else is trying to reverse-engineer it in a market that has
+already priced in the blueprint.
+
+Bitcoin at $69,000 is no longer the asymmetric bet it was at $11,600.
+But for a corporate treasurer watching cash lose 3% a year to
+inflation, it remains the most honest answer to a question that gets
+harder to ignore: what do you do with money you don't need for five
+years?
+
+Hold it in dollars and guarantee a slow loss. Or hold it in Bitcoin
+and accept the volatility in exchange for the possibility that sound
+money works exactly as advertised.
+
+Five years in, Saylor's answer has been vindicated. The question is
+whether the rest of corporate America has the conviction to follow.
+
+Tags: bitcoin, corporate treasury, MicroStrategy, MSTR, FASB, accounting, institutional adoption, balance sheet, strategy
+
+Read on full site: https://news.txid.uk/post/corporate-bitcoin-treasuries

@@ -1,0 +1,122 @@
+4월 12, 2026
+===========
+
+2026-04-12 | digest | by txid | en
+
+Daily digest
+
+SpaceX Holds $603M Bitcoin as Corporate Treasury Adoption Accelerates
+---------------------------------------------------------------------
+
+SpaceX maintains a substantial Bitcoin position of 8,285 BTC ($603
+million) despite the broader losses facing Elon Musk's xAI venture.
+The holdings, secured through Coinbase Prime custody, demonstrate that
+leading corporations continue treating Bitcoin as a legitimate
+treasury asset in volatile market conditions.
+
+Why it matters: Corporate adoption of Bitcoin as a store of value
+validates the sound money thesis and signals institutional confidence
+in Bitcoin's role as an alternative to fiat reserves amid economic
+uncertainty.
+
+→ CoinDesk
+[https://www.coindesk.com/markets/2026/04/11/musk-s-spacex-holds-usd603-million-in-bitcoin-despite-usd5-billion-loss-stemming-from-xai]
+
+______________________________________________________________________
+
+Quantum Computing Advances Compress Bitcoin's Protocol Upgrade
+Timeline
+----------------------------------------------------------------------
+
+The Bitcoin Policy Institute warns that accelerating quantum computing
+development is shortening the window for implementing cryptographic
+safeguards to protect Bitcoin's network. Developers are already
+working on post-quantum solutions, but the timeline has become more
+urgent than previously anticipated.
+
+Why it matters: Bitcoin's security against quantum threats ensures the
+network's long-term viability as immutable money, requiring proactive
+protocol innovation to maintain decentralization and trustlessness.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/bitcoin-policy-institute-warns-of-quantum]
+
+______________________________________________________________________
+
+BlackRock Surges Bitcoin ETF Inflows as Morgan Stanley Enters Market
+--------------------------------------------------------------------
+
+BlackRock's IBIT recorded $358.1 million in inflows this week while
+Morgan Stanley debuted its MSBT with strong early demand, signaling
+institutional capital continues flowing into Bitcoin despite market
+volatility. The dual momentum from established financial players
+demonstrates sustained confidence in Bitcoin's institutional role.
+
+Why it matters: Institutional money flowing into Bitcoin validates it
+as a non-correlated asset class and alternative to
+government-controlled monetary systems, accelerating Bitcoin's
+transition from niche technology to mainstream financial
+infrastructure.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/blackrock-massive-bitcoin-etf-inflows]
+
+______________________________________________________________________
+
+Japan Reclassifies Bitcoin as Financial Instrument, Signaling
+Regulatory Maturity
+----------------------------------------------------------------------
+
+Japan is moving to reclassify cryptocurrencies as financial products
+under the Financial Instruments and Exchange Act, shifting Bitcoin
+from a payment-based framework to one aligned with traditional
+securities regulation. This change reflects growing acceptance of
+Bitcoin's role as a financial asset across global markets.
+
+Why it matters: National-level regulatory clarity for Bitcoin as a
+financial instrument legitimizes it as sound money and removes
+arbitrary barriers that previously confined it to alternative
+channels.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/japan-moves-to-classify-bitcoin-and-crypto]
+
+______________________________________________________________________
+
+On-Chain Data Signals Bitcoin Seller Exhaustion as Market Shifts to
+Accumulation
+----------------------------------------------------------------------
+
+Realized losses are declining while spot market data points to
+shifting net buying pressure, suggesting sellers have largely exited
+positions and accumulation phases may be beginning. The pattern
+historically precedes rallies as weak hands clear from the market.
+
+Why it matters: Market structure dominated by long-term holders rather
+than panic sellers demonstrates growing conviction in Bitcoin's
+monetary properties and reduces volatility from emotional trading.
+
+→ CoinDesk
+[https://www.coindesk.com/markets/2026/04/11/bitcoin-signals-potential-seller-exhaustion-as-realized-losses-decline]
+
+______________________________________________________________________
+
+TD Cowen Initiates Coverage on Bitcoin Treasury Companies, Sets $140K
+Price Target
+----------------------------------------------------------------------
+
+TD Cowen began analyst coverage of public Bitcoin treasury firms and
+projected Bitcoin could reach $140,000 this year, framing corporate
+Bitcoin holdings as an investable equity category. The coverage
+signals Wall Street's formal recognition of Bitcoin as a legitimate
+capital allocation strategy.
+
+Why it matters: Professional equity research validating Bitcoin
+treasuries as a core investment thesis accelerates corporate adoption
+and positions Bitcoin as the superior alternative to depreciating fiat
+reserves.
+
+→ Bitcoin Magazine
+[https://bitcoinmagazine.com/news/td-cowen-initiates-coverage-on-bitcoin]
+
+Read on full site: https://news.txid.uk/digest/2026-04-12

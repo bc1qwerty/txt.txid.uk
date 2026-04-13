@@ -1,0 +1,494 @@
+Bitcoin Script: The Programming Language of Money
+=================================================
+
+2026-03-21 | en
+
+A deep technical guide to Bitcoin Script - the stack-based programming language that defines how bitcoin can be spent. Covers opcodes, standard script types (P2PKH, P2SH, P2WPKH, P2TR), execution traces, timelocks, multisig, and Tapscript.
+
+Every bitcoin that exists is locked by a program. Not locked by a
+bank, not locked by a password, not locked by a username - locked by a
+small, deterministic program written in a language called Bitcoin
+Script. To spend that bitcoin, you must provide inputs that make the
+program return TRUE. If the program returns FALSE, or if execution
+fails, the bitcoin cannot be spent. This is the fundamental mechanism
+by which Bitcoin enforces ownership: not through identity, but through
+computation.
+
+Bitcoin Script is one of the most consequential programming languages
+ever created, yet it is remarkably simple. It has no loops, no
+recursion, no floating-point arithmetic, and no access to external
+state. It is intentionally not Turing-complete. These limitations are
+not bugs - they are the core security properties that make Bitcoin's
+$1+ trillion in value possible.
+
+Stack-Based Execution Model
+---------------------------
+
+Bitcoin Script is a stack-based language, similar in philosophy to
+Forth and PostScript. There are no variables, no named functions, no
+objects. There is only a stack - a last-in, first-out (LIFO) data
+structure - and a sequence of operations (opcodes) that push data onto
+the stack, pop data from the stack, and perform computations.
+
+Execution proceeds left to right through the script. Data elements are
+pushed onto the stack. Opcodes pop their arguments from the stack,
+perform their operation, and push their results back onto the stack.
+After all opcodes have been executed, the script succeeds if the top
+element of the stack is a non-zero value (truthy).
+
+Consider this minimal script:
+
+    Script: 2 3 OP_ADD 5 OP_EQUAL
+
+Execution trace:
+
+| Step | Operation | Stack (top → bottom) | Notes |
+|------|-----------|---------------------|-------|
+| 1 | 2 | [2] | Push 2 |
+| 2 | 3 | [3, 2] | Push 3 |
+| 3 | OP_ADD | [5] | Pop 3 and 2, push 2+3=5 |
+| 4 | 5 | [5, 5] | Push 5 |
+| 5 | OP_EQUAL | [TRUE] | Pop 5 and 5, push TRUE (equal) |
+
+The script succeeds because the top of the stack is TRUE.
+
+The Two-Part Script System
+--------------------------
+
+Bitcoin transactions do not contain a single script. They contain two
+complementary scripts that are executed together:
+
+ScriptPubKey (Locking Script): Placed in the transaction output, this
+script defines the conditions that must be met to spend the bitcoin.
+It is sometimes called the "puzzle" - it specifies what proof is
+needed.
+
+ScriptSig (Unlocking Script): Placed in the transaction input that
+spends the output, this script provides the data that satisfies the
+locking script. It is the "solution" to the puzzle.
+
+When a node validates a transaction, it concatenates the unlocking
+script followed by the locking script and executes the combined
+script. If execution succeeds (stack top is truthy), the spend is
+valid.
+
+    Full execution: [ScriptSig] [ScriptPubKey]
+
+This separation is crucial: the locking script is set when bitcoin is
+received, and the unlocking script is provided when the bitcoin is
+spent - potentially years later. The locking script defines the rules;
+the unlocking script proves compliance.
+
+Core Opcodes
+------------
+
+Bitcoin Script contains approximately 100 defined opcodes. Many are
+disabled or reserved, and only a subset is commonly used. Here are the
+most important ones:
+
+## Stack Operations
+* OP_DUP - Duplicates the top stack element
+* OP_DROP - Removes the top stack element
+* OP_SWAP - Swaps the top two stack elements
+* OP_IFDUP - Duplicates top element if non-zero
+
+## Cryptographic Operations
+* OP_HASH160 - Applies SHA-256 then RIPEMD-160 to the top element
+(produces a 20-byte hash)
+* OP_HASH256 - Applies SHA-256 twice
+* OP_SHA256 - Applies SHA-256 once
+* OP_CHECKSIG - Pops a public key and a signature, verifies the
+signature against the transaction, pushes TRUE or FALSE
+* OP_CHECKMULTISIG - Verifies m-of-n signatures against the
+transaction
+
+## Comparison Operations
+* OP_EQUAL - Pops two elements, pushes TRUE if equal, FALSE otherwise
+* OP_EQUALVERIFY - Same as OP_EQUAL but immediately fails the script
+if FALSE (no FALSE is pushed)
+
+## Flow Control
+* OP_IF / OP_ELSE / OP_ENDIF - Conditional execution
+* OP_VERIFY - Fails the script if the top element is FALSE
+* OP_RETURN - Immediately fails the script (used for provably
+unspendable outputs and data embedding)
+
+## Timelock Operations
+* OP_CHECKLOCKTIMEVERIFY (OP_CLTV) - Fails if the transaction's
+locktime is less than the specified value
+* OP_CHECKSEQUENCEVERIFY (OP_CSV) - Fails if the input's sequence
+number is less than the specified value
+
+Standard Script Types
+---------------------
+
+While Bitcoin Script is flexible enough to create arbitrary spending
+conditions, the Bitcoin network enforces "standardness" rules that
+restrict which script patterns are relayed by default. This prevents
+script-based attacks and reduces the risk of funds being locked in
+unspendable scripts.
+
+## P2PKH (Pay-to-Public-Key-Hash)
+
+P2PKH was the original standard script type, used by addresses
+starting with 1 (e.g., 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa).
+
+Locking Script (ScriptPubKey):
+
+    OP_DUP OP_HASH160 <pubKeyHash> OP_EQUALVERIFY OP_CHECKSIG
+
+Unlocking Script (ScriptSig):
+
+    <signature> <publicKey>
+
+Execution trace:
+
+| Step | Operation | Stack | Notes |
+|------|-----------|-------|-------|
+| 1 | <sig> | [sig] | Push signature |
+| 2 | <pubKey> | [pubKey, sig] | Push public key |
+| 3 | OP_DUP | [pubKey, pubKey, sig] | Duplicate public key |
+| 4 | OP_HASH160 | [hash, pubKey, sig] | Hash the duplicated key |
+| 5 | <pubKeyHash> | [expected, hash, pubKey, sig] | Push expected
+hash |
+| 6 | OP_EQUALVERIFY | [pubKey, sig] | Verify hash matches; fail if
+not |
+| 7 | OP_CHECKSIG | [TRUE] | Verify signature with public key |
+
+The logic is elegant: first prove you know the public key that hashes
+to the address (steps 3-6), then prove you possess the corresponding
+private key by providing a valid signature (step 7).
+
+Why hash the public key? This provides an additional layer of
+security. Even if ECDSA (the signature algorithm) is broken, an
+attacker who does not know the public key cannot spend the funds -
+they would also need to reverse the HASH160 operation. This becomes
+relevant only after the first spend from an address (which reveals the
+public key), which is one reason address reuse is discouraged.
+
+## P2SH (Pay-to-Script-Hash)
+
+P2SH, introduced in BIP-16 (2012), allows sending bitcoin to the hash
+of an arbitrary script rather than to a specific public key hash. The
+actual script (called the "redeem script") is revealed only when the
+bitcoin is spent.
+
+Locking Script:
+
+    OP_HASH160 <scriptHash> OP_EQUAL
+
+Unlocking Script:
+
+    <data to satisfy redeemScript> <redeemScript>
+
+The spending transaction includes both the data needed to satisfy the
+redeem script and the redeem script itself. The node first verifies
+that the redeem script's hash matches <scriptHash>, then executes the
+redeem script with the provided data.
+
+Why P2SH matters: It shifts the complexity from the sender to the
+receiver. A sender creating a P2SH output needs only a 20-byte hash -
+they do not need to know whether it encodes a simple signature
+requirement, a 3-of-5 multisig, or a complex timelock. P2SH addresses
+start with 3.
+
+## P2WPKH (Pay-to-Witness-Public-Key-Hash)
+
+P2WPKH is the SegWit (Segregated Witness) version of P2PKH, introduced
+in BIP-141 (2017). It moves the signature data (the "witness") out of
+the traditional ScriptSig and into a separate witness structure.
+
+Locking Script (ScriptPubKey):
+
+    OP_0 <20-byte pubKeyHash>
+
+Witness (replaces ScriptSig):
+
+    <signature> <publicKey>
+
+The locking script is dramatically simpler - just a version byte
+(OP_0) and the public key hash. The witness data is placed in the
+segregated witness field, which does not count toward the traditional
+block size limit (it counts at a 75% discount in the weight
+calculation).
+
+Advantages:
+* Fixes transaction malleability. In legacy transactions, the
+ScriptSig is part of the transaction ID calculation. Since signatures
+can be valid in multiple equivalent forms, third parties could change
+a valid signature to a different valid form, changing the transaction
+ID without invalidating the transaction. SegWit moves signatures out
+of the transaction ID calculation, eliminating this attack vector.
+This fix was essential for the Lightning Network.
+* Block space efficiency. Witness data receives a weight discount,
+effectively increasing block capacity to approximately 2-4 MB of data
+while maintaining the 1 MB base block size limit.
+
+P2WPKH addresses use Bech32 encoding and start with bc1q.
+
+## P2TR (Pay-to-Taproot)
+
+P2TR, introduced with the Taproot upgrade (BIP-341, activated November
+2021), represents the most significant evolution of Bitcoin Script
+since P2SH. It uses Schnorr signatures (BIP-340) and Merkleized
+Abstract Syntax Trees (MAST).
+
+Locking Script:
+
+    OP_1 <32-byte tweaked public key>
+
+Two spending paths:
+
+Key path (common case): The owner provides a Schnorr signature for the
+tweaked public key. This looks identical to a simple single-signature
+spend, regardless of what script conditions might also exist. On the
+blockchain, a key-path spend is indistinguishable from any other
+key-path spend - whether the underlying setup was a simple single-key,
+a 3-of-5 multisig, or a complex timelock contract.
+
+Script path (fallback): If the key-path spend is not possible (e.g.,
+the parties cannot agree to sign cooperatively), the spender reveals a
+specific script from the MAST tree and satisfies it. Only the used
+script branch is revealed; all other possible scripts remain hidden.
+
+Why Taproot is revolutionary:
+
+Privacy through uniformity. In the key-path case (which should be the
+common case for cooperative spends), all Taproot outputs look
+identical on the blockchain. A single-sig transaction, a multisig
+transaction, and a complex smart contract all appear as OP_1 <32-byte
+key>. This dramatically improves privacy because observers cannot
+distinguish script complexity from the output itself.
+
+Efficiency through MAST. Only the executed script path is revealed. If
+you have a script with ten possible conditions, you only reveal the
+one condition you actually use - the other nine remain hidden and do
+not consume block space.
+
+Schnorr signatures. Schnorr signatures enable key aggregation -
+multiple parties can combine their public keys into a single aggregate
+key and produce a single aggregate signature. A 3-of-3 multisig can
+produce a single signature indistinguishable from a solo signature,
+both in size and in appearance.
+
+P2TR addresses use Bech32m encoding and start with bc1p.
+
+Timelock Scripts
+----------------
+
+Timelocks are one of Bitcoin Script's most powerful features, enabling
+time-dependent spending conditions that are fundamental to Lightning
+Network channels, inheritance planning, and advanced smart contracts.
+
+## OP_CHECKLOCKTIMEVERIFY (OP_CLTV)
+
+OP_CLTV (BIP-65) enforces an absolute timelock - the bitcoin cannot be
+spent until a specific block height or Unix timestamp has been
+reached.
+
+Example: Funds locked until block 900,000
+
+    Locking Script:
+900000 OP_CHECKLOCKTIMEVERIFY OP_DROP <pubKeyHash> OP_DUP OP_HASH160
+OP_EQUALVERIFY OP_CHECKSIG
+    
+    Unlocking Script:
+    <signature> <publicKey>
+
+Execution: OP_CLTV checks that the spending transaction's nLockTime
+field is at least 900,000. If the current block height is below
+900,000, the transaction is invalid - not because the script fails,
+but because the transaction itself is not yet valid for inclusion in a
+block. After block 900,000, the script proceeds to verify the
+signature normally.
+
+Use case: Inheritance. Alice creates a UTXO with a CLTV lock of one
+year. If Alice does not move the funds within a year (by spending them
+to a new UTXO with a fresh timelock), her heir can claim them using
+the heir's key. Alice refreshes the lock annually while alive.
+
+## OP_CHECKSEQUENCEVERIFY (OP_CSV)
+
+OP_CSV (BIP-112) enforces a relative timelock - the bitcoin cannot be
+spent until a specified number of blocks (or time) has passed since
+the UTXO was confirmed.
+
+Example: Funds locked for 144 blocks (approximately 1 day) after
+confirmation
+
+    Locking Script:
+144 OP_CHECKSEQUENCEVERIFY OP_DROP <pubKeyHash> OP_DUP OP_HASH160
+OP_EQUALVERIFY OP_CHECKSIG
+
+Use case: Lightning Network. Payment channels use OP_CSV to enforce a
+"dispute period." When one party broadcasts a channel state, the other
+party has a window (typically 144-2016 blocks) to broadcast a penalty
+transaction if the broadcasted state was outdated. This mechanism is
+what makes Lightning channels secure without trust.
+
+## Combined Timelocks
+
+Timelocks can be combined with conditional logic to create
+sophisticated contracts:
+
+    OP_IF
+        <alicePubKey> OP_CHECKSIG
+    OP_ELSE
+        144 OP_CHECKSEQUENCEVERIFY OP_DROP
+        <bobPubKey> OP_CHECKSIG
+    OP_ENDIF
+
+This script says: "Alice can spend immediately with her signature, OR
+Bob can spend after 144 blocks with his signature." This pattern is
+the building block of payment channels - Alice is the cooperative
+close path, and Bob is the timeout refund path.
+
+Multisig Scripts
+----------------
+
+Multisig scripts require m-of-n signatures to spend. The most common
+configurations are 2-of-3 (used in many custody solutions) and 3-of-5
+(used by some exchanges and institutions).
+
+## Legacy Multisig (OP_CHECKMULTISIG)
+
+    Locking Script:
+    OP_2 <pubKey1> <pubKey2> <pubKey3> OP_3 OP_CHECKMULTISIG
+    
+    Unlocking Script:
+    OP_0 <sig1> <sig2>
+
+Note the OP_0: This is a workaround for a long-standing bug in
+OP_CHECKMULTISIG. The opcode pops one extra element from the stack
+beyond what it needs. This bug was discovered early but could never be
+fixed because doing so would be a hard fork. So every multisig unlock
+must include a dummy OP_0 at the beginning.
+
+Execution trace (2-of-3 multisig):
+
+| Step | Operation | Stack | Notes |
+|------|-----------|-------|-------|
+| 1 | OP_0 | [0] | Dummy element (bug workaround) |
+| 2 | <sig1> | [sig1, 0] | Push first signature |
+| 3 | <sig2> | [sig2, sig1, 0] | Push second signature |
+| 4 | OP_2 | [2, sig2, sig1, 0] | Push required sig count |
+| 5 | <pk1> | [pk1, 2, sig2, sig1, 0] | Push public key 1 |
+| 6 | <pk2> | [pk2, pk1, 2, sig2, sig1, 0] | Push public key 2 |
+| 7 | <pk3> | [pk3, pk2, pk1, 2, sig2, sig1, 0] | Push public key 3 |
+| 8 | OP_3 | [3, pk3, pk2, pk1, 2, sig2, sig1, 0] | Push total key
+count |
+| 9 | OP_CHECKMULTISIG | [TRUE] | Verify 2 of 3 sigs valid |
+
+## Taproot Multisig (Key Aggregation)
+
+With Taproot, multisig no longer requires OP_CHECKMULTISIG. Using
+Schnorr key aggregation (MuSig2 protocol), n parties can:
+
+* Combine their individual public keys into a single aggregate public
+key
+* Engage in an interactive signing protocol to produce a single
+aggregate signature
+* The on-chain transaction looks identical to a single-signature spend
+
+The result: a 3-of-3 Taproot multisig produces a 32-byte public key
+and a 64-byte signature - the same size as a single-key spend. For
+m-of-n (where m < n), Taproot uses a script path with the specific
+m-of-n condition, but the key path can be used for the cooperative
+case (where all n parties agree).
+
+Tapscript: The Future of Bitcoin Programmability
+------------------------------------------------
+
+Tapscript (BIP-342) is the updated script system used within Taproot
+script-path spends. It introduces several improvements over legacy
+Script:
+
+OP_CHECKSIGADD. Replaces OP_CHECKMULTISIG with a more efficient
+mechanism. Instead of the batch verification (and the OP_0 bug) of
+OP_CHECKMULTISIG, OP_CHECKSIGADD checks one signature at a time and
+increments a counter. This is more efficient and eliminates the dummy
+element bug.
+
+Signature validation changes. Tapscript requires Schnorr signatures
+(64 bytes, no sighash byte appended) for all signature checks. This
+enables batch validation - verifying multiple signatures
+simultaneously is faster than verifying them individually.
+
+OP_SUCCESS opcodes. Tapscript redefines many previously disabled or
+undefined opcodes as OP_SUCCESS, which unconditionally succeeds. This
+creates a clean upgrade path: future soft forks can redefine
+OP_SUCCESS opcodes to add new functionality without breaking existing
+scripts. This is how future covenant proposals (like OP_CTV, OP_CAT,
+or OP_VAULT) would be activated.
+
+Why Turing-Incompleteness Is a Feature
+--------------------------------------
+
+The most common criticism of Bitcoin Script from developers accustomed
+to Ethereum's Solidity is its lack of Turing completeness - Bitcoin
+Script has no loops and no general recursion. This seems like a
+limitation, but it is one of Bitcoin Script's most important security
+properties.
+
+Guaranteed termination. Every Bitcoin Script will either succeed or
+fail in a bounded number of steps. There is no possibility of infinite
+loops. This means every node can validate every script in predictable
+time, without the risk of denial-of-service attacks through
+computationally expensive scripts.
+
+Static analysis. Because Bitcoin Script is not Turing-complete, it is
+possible to determine exactly what a script does without executing it.
+You can analyze the maximum execution cost, verify that it will
+terminate, and reason about all possible execution paths. This is
+impossible for Turing-complete languages (by the halting problem).
+
+No "gas" needed. Ethereum requires a "gas" mechanism to prevent
+infinite loops - each operation costs gas, and execution halts when
+gas runs out. This introduces complex economics around gas pricing,
+gas limits, and failed transactions that still consume gas. Bitcoin's
+bounded execution eliminates this entire class of complexity.
+
+Smaller attack surface. The simpler the language, the fewer ways it
+can be exploited. Bitcoin Script's limited opcode set has been
+analyzed exhaustively over 15+ years. The complexity of Ethereum's
+EVM, by contrast, has produced numerous exploits - the DAO hack ($60M,
+2016), the Parity multisig bug ($280M frozen, 2017), and countless
+reentrancy attacks.
+
+Satoshi Nakamoto disabled several opcodes (OP_CAT, OP_MUL, etc.) early
+in Bitcoin's history after discovering potential denial-of-service
+vectors. This conservative approach - disabling functionality that
+could be dangerous and only re-enabling it after thorough analysis -
+exemplifies the security-first philosophy of Bitcoin development.
+
+Practical Implications
+----------------------
+
+Understanding Bitcoin Script is not merely academic - it has practical
+implications for anyone using Bitcoin:
+
+Address type selection. Using P2TR (Taproot) addresses provides the
+best privacy and efficiency. Legacy P2PKH addresses are larger and
+more expensive to spend. P2SH-wrapped SegWit (addresses starting with
+3) is an intermediate option for wallets that do not yet support
+native SegWit or Taproot.
+
+Fee estimation. Transaction fees are based on the weight (size) of the
+transaction, which is directly determined by the script types used.
+Taproot key-path spends are among the most efficient; legacy multisig
+spends are among the least efficient.
+
+Security model awareness. Knowing that your bitcoin is protected by a
+cryptographic program - not by a company's security team or a
+government's legal system - fundamentally changes how you think about
+custody, backup, and inheritance. Your private key is not a password
+that can be reset. It is the sole input that makes your locking script
+return TRUE.
+
+For related topics, see our guides on building Bitcoin transactions
+[/articles/how-to-read-bitcoin-transaction], Taproot
+[/articles/taproot], and SegWit [/ideas/segwit].
+
+Tags: Bitcoin, Technical
+
+Read on full site: https://learn.txid.uk/en/ideas/bitcoin-script-explained/

@@ -1,0 +1,31 @@
+Money and the State: Intermediate Course
+========================================
+
+2026-03-05 | en
+
+What happens when the state seizes control of money? An anatomy of monetary power, from the Nixon Shock to Bitcoin.
+
+Money existed long before governments did. People chose gold, silver,
+and other scarce goods as money through centuries of voluntary trade.
+Then the state stepped in - first by stamping coins with a king's
+face, then by replacing gold with paper promises, and finally by
+severing the last link to anything real on August 15, 1971.
+
+What happened next is a story of slow-motion theft. Purchasing power
+evaporates. Wealth silently flows upward. Governments wage wars they
+could never afford with honest money. And most people never notice,
+because the mechanism is invisible.
+
+Nixon Shock"] --> S2["Step 2<br/>Inflation Tax"]
+    S2 --> S3["Step 3<br/>Moral Hazard"]
+    S3 --> S4["Step 4<br/>Capital Controls"]
+    S4 --> S5["Step 5<br/>Payment Censorship"]
+    S5 --> S6["Step 6<br/>Bitcoin Solution"]
+    style S1 fill:#f7931a,stroke:#f7931a,color:#000
+    style S6 fill:#3fb950,stroke:#3fb950,color:#000`} />
+
+This course traces how money became a tool of the state, what that has
+cost ordinary people, and why Bitcoin was designed as a structural
+exit from the whole arrangement.
+
+Read on full site: https://learn.txid.uk/en/learn/money-and-state/

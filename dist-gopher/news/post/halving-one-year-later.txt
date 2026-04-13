@@ -1,0 +1,177 @@
+The Halving Aftermath: One Year of Reduced Supply
+=================================================
+
+2026-03-22 | bitcoin | by txid | en
+
+The fourth halving cut the block reward to 3.125 BTC. One year in: 164,250 fewer BTC created, miners adapted, and the network barely noticed.
+
+On April 17, 2025, at block height 840,000, Bitcoin's fourth halving
+executed without ceremony. The block reward dropped from 6.25 BTC to
+3.125 BTC. No one pushed a button. No committee voted. The code,
+written years before the event, simply ran.
+
+One year later, the consequences are measurable. Exactly 164,250 fewer
+bitcoins exist than would have under the previous issuance schedule.
+Daily issuance fell from approximately 900 BTC to 450 BTC — a supply
+reduction that is small in absolute terms but structurally significant
+in a market where demand has been steadily increasing.
+
+The halving is Bitcoin's most predictable event and its most
+misunderstood. It is not a catalyst. It is a slow compression.
+
+The Supply Mathematics
+----------------------
+
+The numbers are straightforward. At 3.125 BTC per block and an average
+of 144 blocks per day, the network now produces approximately 450 BTC
+daily — about $30 million at current prices, down from roughly 900 BTC
+per day before the halving. Over the past year, that difference
+compounds: 164,250 BTC were mined instead of the 328,500 that would
+have existed under the old schedule, leaving total supply at
+approximately 19,845,000 BTC with roughly 1,155,000 BTC still unmined.
+
+The current annual inflation rate of Bitcoin is approximately 0.83% —
+lower than gold's estimated 1.5–2% annual supply increase. After the
+next halving in 2028, it will drop below 0.5%. Bitcoin is now, by any
+reasonable metric, the hardest money in existence by supply issuance
+rate.
+
+But supply alone does not determine price. What matters is the
+relationship between new supply and new demand — and over the past
+year, the demand side of the equation has been the more interesting
+variable.
+
+The Price Cycle
+---------------
+
+Every halving in Bitcoin's history has preceded a significant price
+appreciation — though the magnitude has diminished with each cycle,
+and the timing has lengthened. The pattern is not a law of nature, but
+it is a pattern.
+
+The first halving in November 2012 launched Bitcoin from $12 to a peak
+of $1,150 — roughly a 96x move reached in about twelve months. The
+second, in July 2016, produced a more modest 30x from $650 to $19,700
+over seventeen months. By the third halving in May 2020, the multiple
+had compressed further: 8x, from $8,600 to $69,000, over eighteen
+months. Each cycle starts from a higher base, and the market
+capitalization required for equivalent percentage moves grows
+exponentially.
+
+The fourth halving began at $64,000. A 30x from that level would imply
+a $1.9 million Bitcoin and a $40 trillion market cap. That is not
+impossible, but it would require a fundamentally different class of
+buyer than previous cycles.
+
+One year in, Bitcoin is trading in the $65,000–72,000 range. By the
+standards of the third cycle's timeline, this would place us roughly
+at the equivalent of late 2021 — the acceleration phase before the
+blow-off top. Whether this cycle follows the same script remains the
+most debated question in crypto markets.
+
+The bull case: ETF inflows, sovereign adoption signals, and the supply
+squeeze create a delayed but powerful move higher. The bear case: the
+market has already priced in the halving, institutional participation
+dampens volatility, and the cycle of diminishing returns continues to
+flatten.
+
+Miner Economics: Survival of the Efficient
+------------------------------------------
+
+The halving's most direct impact falls on miners. Their revenue from
+block rewards was cut in half overnight — a stress test that every
+halving cycle imposes on the mining industry.
+
+The result has been predictable: consolidation. Miners with older
+hardware, expensive electricity, or thin margins have either upgraded,
+shut down, or been acquired. The survivors are more efficient, better
+capitalized, and operating at scale.
+
+The financial pressure is visible in every metric. Daily block reward
+revenue fell from roughly $58 million to $31 million, yet the
+network's hashrate paradoxically climbed from 620 EH/s to 800 EH/s
+over the same period. Revenue per exahash collapsed from about $98,000
+to $46,000 per day. This apparent contradiction is explained by
+hardware efficiency gains. The new generation of ASICs — Bitmain S21
+XP, MicroBT M66S — is so much more efficient than the prior generation
+that miners can remain profitable even with half the block reward,
+provided they have upgraded their equipment and secured electricity
+near $0.04/kWh, which keeps the breakeven price around $22,000
+regardless of the subsidy level.
+
+The most consequential shift, however, is in the fee market.
+Transaction fee revenue has doubled from roughly $3 million to $6
+million per day, pushing fees from 5% to 16% of total miner income.
+This is not yet sufficient to sustain mining in a hypothetical
+zero-subsidy future, but the trend line matters. As block rewards
+continue to halve every four years, fee revenue must eventually
+replace issuance revenue entirely. The transition has begun.
+
+Miners who did not upgrade are gone. The network does not mourn them.
+
+Network Health Through the Transition
+-------------------------------------
+
+One of the most remarkable aspects of the halving is how little the
+network noticed. Block times held steady at roughly 9.7 minutes,
+virtually unchanged from the 9.8-minute pre-halving average. The
+difficulty adjustment — Bitcoin's self-correcting mechanism that
+recalibrates every 2,016 blocks — handled the transition seamlessly,
+averaging +2.8% per epoch compared to +3.2% before the halving. No
+disruption, no drama.
+
+Beneath that stability, usage patterns have shifted. The average
+mempool has swollen from 12 MB to 18 MB, and average fees have climbed
+from 22 sat/vB to 35 sat/vB. This is partly due to Ordinals and BRC-20
+token activity continuing to consume block space, and partly due to
+organic growth — daily transaction throughput has risen from roughly
+620,000 to 680,000 transactions. Whether you view higher fees as a
+problem (more expensive to transact) or a feature (stronger security
+budget) depends on your perspective on what Bitcoin is for.
+
+The throughput gains themselves reflect growing SegWit and Taproot
+adoption, which uses block space more efficiently. The network is
+processing more economic activity per block than at any point in its
+history.
+
+The Stock-to-Flow Question
+--------------------------
+
+No discussion of Bitcoin halvings is complete without addressing the
+stock-to-flow model — the framework popularized by the pseudonymous
+analyst PlanB, which predicted Bitcoin's price based on its scarcity
+ratio (existing supply divided by annual production).
+
+The model predicted a price of roughly $500,000 by this point in the
+cycle. The current price is approximately $68,000. The model has
+failed — not on direction, but on magnitude by an order of magnitude.
+
+This does not invalidate scarcity as a factor in Bitcoin's valuation.
+It simply means that scarcity alone is insufficient to model price.
+Demand, regulation, macroeconomic conditions, and market
+microstructure all matter. The halving reduces supply. It does not
+guarantee a specific price response.
+
+What One Year Tells Us
+----------------------
+
+The fourth halving confirmed several things. Bitcoin's monetary policy
+works as designed — the supply reduction executed perfectly, the
+network self-corrected, and mining remained economically viable for
+efficient operators. The transition from issuance-dependent to
+fee-dependent security is underway, though it remains in early stages.
+
+What it has not yet confirmed is whether this cycle will produce the
+kind of price appreciation that previous cycles did. The structural
+conditions are different — institutional participation via ETFs, a
+more mature derivatives market, and macroeconomic headwinds from tight
+monetary policy globally.
+
+The next twelve months will provide more data. For now, the supply
+compression continues: 450 BTC per day, every day, until the next
+halving in 2028 cuts it to 225. The issuance clock does not wait for
+the market to catch up.
+
+Tags: bitcoin, halving, supply shock, mining economics, market cycle
+
+Read on full site: https://news.txid.uk/post/halving-one-year-later

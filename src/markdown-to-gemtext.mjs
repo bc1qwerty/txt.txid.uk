@@ -13,6 +13,10 @@
 // - Tables → simple prefix `| cell | cell |` lines (preformatted-ish)
 
 function stripJsx(md) {
+  // ESM imports at top of MDX files: `import X from '@components/...';`
+  md = md.replace(/^\s*import\s+[^;\n]+\s+from\s+['"][^'"]+['"];?\s*$/gm, '');
+  md = md.replace(/^\s*import\s+['"][^'"]+['"];?\s*$/gm, '');
+  // JSX self-closing and paired tags
   md = md.replace(/<[A-Z][A-Za-z0-9]*\s*[^>]*\/>/g, '');
   md = md.replace(/<([A-Z][A-Za-z0-9]*)\s*[^>]*>[\s\S]*?<\/\1>/g, '');
   md = md.replace(/<!--[\s\S]*?-->/g, '');

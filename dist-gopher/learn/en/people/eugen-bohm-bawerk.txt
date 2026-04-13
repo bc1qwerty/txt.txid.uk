@@ -1,0 +1,147 @@
+Eugen von Böhm-Bawerk
+=====================
+
+2026-03-09 | en
+
+Theorist of capital and interest. The crucial bridge of the Austrian School connecting Menger to Mises.
+
+The Second Generation of the Austrian School
+--------------------------------------------
+
+Eugen von Böhm-Bawerk (1851-1914) was a student of Carl Menger
+[/people/carl-menger/] and a central figure of the second generation
+of the Austrian School. He established the intellectual standing of
+Austrian economics through his theory of capital and interest and his
+decisive critique of Marx's exploitation theory.
+
+Without Böhm-Bawerk, Menger's subjective theory of value might not
+have been transmitted to the next generation. Ludwig von Mises
+[/people/ludwig-von-mises/] emerged from his seminar, and through this
+lineage, the Austrian School continued into the twentieth century.
+
+Life
+----
+
+## Scholar and Finance Minister
+
+Böhm-Bawerk was born in 1851 in Brünn, Austria (present-day Brno,
+Czech Republic). While studying law at the University of Vienna, he
+read Menger's Principles of Political Economy and became captivated by
+economics. After studying at several German universities, he was
+appointed professor of economics at the University of Innsbruck.
+
+What made Böhm-Bawerk unique was that he was not merely a pure
+scholar. He served as finance minister of Austria-Hungary three times
+(1895, 1897-1898, 1900-1904), attempting to apply his economic
+principles to actual policy. He advocated for balanced budgets and
+sound money, and fought against the expansion of government spending.
+
+After leaving office as finance minister in 1904, he returned to the
+University of Vienna where he conducted a famous seminar. Among its
+participants was the young Mises. Böhm-Bawerk died in 1914 at the age
+of 63, the year World War I began.
+
+Core Ideas
+----------
+
+## Capital and Roundabout Production
+
+Böhm-Bawerk's most important contribution was his theory of capital.
+The core concept is roundabout production.
+
+Catching fish with a net after first making one is more productive
+than catching them with bare hands. The time spent making the net is a
+sacrifice of immediate consumption, but it results in higher
+productivity. This is the essence of capital - investing time to
+create a roundabout path of production.
+
+The longer the production process (the more capital-intensive), the
+greater the final output. However, maintaining this roundabout path
+requires saving to sustain consumption during that period. If
+artificially lengthening the production process without saving-for
+example, through credit expansion by central banks-only unfinished
+projects remain.
+
+This insight became the direct foundation of the Austrian Business
+Cycle Theory [/ideas/abct/] later developed by Mises and Hayek.
+
+## The Nature of Interest: Time Preference
+
+Böhm-Bawerk explained why interest exists. People value present goods
+more highly than future goods. An apple today is worth more than an
+apple a year from now. This difference is the source of interest.
+
+Böhm-Bawerk explained this through three reasons:
+* Overestimation of present desires - People feel present needs more
+acutely than future ones
+* Systematic underestimation of the future - Humans have imperfect
+ability to imagine the future
+* Technical superiority of roundabout production - Starting a
+production process with present goods yields more goods in the future
+
+This time preference [/ideas/time-preference/] theory was further
+refined by Mises and became a cornerstone of Austrian economics.
+
+## Critique of Marx
+
+Böhm-Bawerk's The Close of the Marxian System (1896) is regarded as
+the most powerful theoretical critique of Marxist economics.
+
+Marx's labor theory of value claims that the value of commodities is
+determined by the amount of labor invested. Böhm-Bawerk systematically
+demonstrated that this contradicts reality. The value difference
+between skilled and unskilled labor, the value of natural resources,
+the role of time-there are too many phenomena that the labor theory of
+value cannot explain.
+
+Most notably, he precisely identified how Marx fell into
+self-contradiction between Volume I and Volume III of Capital. This
+critique fundamentally shook the theoretical foundations of Marxist
+economics.
+
+Major Works
+-----------
+
+* Capital and Interest (1884-1889, 3 volumes) - A monumental work on
+capital theory and interest theory
+* The Close of the Marxian System (1896) - A decisive critique of
+Marx's labor theory of value
+
+Famous Quotes
+-------------
+
+| "Present goods are always valued more highly than future goods of
+the same kind and quantity."
+
+| "Capital is the product of time. Capital accumulation begins with
+the restraint of present consumption for the sake of the future."
+
+Legacy
+------
+
+Böhm-Bawerk developed Menger's abstract insights into concrete
+theories of capital and interest. His time preference theory and the
+concept of roundabout production led to Mises's praxeology, Hayek's
+business cycle theory, and ultimately to discussions of sound money
+[/ideas/sound-money/] in the context of Bitcoin.
+
+Bitcoin's fixed supply and halving [/ideas/halving/] every four years
+constitute a structure that rewards savers. This makes technically
+possible the sound time preference that Böhm-Bawerk described-the
+restraint of present consumption for the future.
+
+Connected Concepts
+------------------
+
+* Time Preference [/ideas/time-preference/] - The source of interest
+systematized by Böhm-Bawerk
+* Austrian Business Cycle Theory [/ideas/abct/] - Developed from
+Böhm-Bawerk's capital theory
+* Subjective Theory of Value [/ideas/subjective-value/] - The core
+principle inherited from Menger
+* What is Austrian Economics? [/ideas/austrian-economics/] - Overview
+of the school to which Böhm-Bawerk belonged
+
+Tags: Austrian Economics
+
+Read on full site: https://learn.txid.uk/en/people/eugen-bohm-bawerk/

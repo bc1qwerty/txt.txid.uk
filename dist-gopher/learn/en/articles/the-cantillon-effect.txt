@@ -1,0 +1,185 @@
+The Cantillon Effect: Why Those Who Receive Money First Always Win
+==================================================================
+
+2026-03-05 | en
+
+A detailed explanation of the Cantillon Effect - the structural inequality that arises as newly printed money spreads through the economy - its mechanism, and Bitcoin's solution.
+
+The Monetary Secret Discovered by an 18th-Century Economist
+-----------------------------------------------------------
+
+In the 1730s, Irish-born economist Richard Cantillon observed a
+remarkable phenomenon in France. The French government had injected
+newly minted gold and silver coins into the economy, but the process
+by which this currency spread through society was anything but equal.
+The royal court and the merchants close to it received the new money
+first and purchased land and goods before prices rose. Meanwhile,
+farmers and ordinary workers didn't receive wage increases until
+months later - by which time all prices had already risen.
+
+Based on this observation, Cantillon formulated an important
+principle: New money does not seep into an economy equally. Those who
+receive the money first gain purchasing power, while those who receive
+it later lose purchasing power. This is the "Cantillon Effect." Three
+hundred years later, this concept remains the essential framework for
+explaining the biggest structural problem in the modern monetary
+system.
+
+How the Mechanism Works in the Modern Monetary System
+-----------------------------------------------------
+
+How does the Cantillon Effect operate today? It begins the moment a
+central bank announces it will "increase the money supply" to
+stimulate the economy. For example, newly created money from the Bank
+of Korea or the U.S. Federal Reserve is not distributed directly to
+citizens. Instead, it follows a path like this:
+
+Stage 1 - Financial institutions: The new money is first lent to
+commercial banks, or injected through the central bank purchasing
+bonds from financial institutions. At this point, banks secure funds
+at the cheapest cost.
+
+Stage 2 - Large corporations and the wealthy: Banks lend these funds
+to highly creditworthy large corporations and wealthy individuals.
+These borrowers take out massive loans at low interest rates to
+purchase assets like real estate, stocks, and bonds. Since prices
+haven't risen significantly yet, they can acquire assets at relatively
+low prices.
+
+Stage 3 - Asset price inflation: As massive amounts of capital flow
+into asset markets, stock prices and real estate prices begin to
+surge. The wealth of those who already own assets grows.
+
+Stage 4 - Ordinary consumers: Finally, employment increases and wages
+rise, and ordinary workers see their income grow. But by this point,
+housing prices, stock prices, and the cost of daily necessities have
+already risen. Nominal income has increased, but real purchasing power
+is the same or even diminished.
+
+Throughout this entire process, the gap between those who own assets
+and those who don't widens further. This is the hidden wealth transfer
+mechanism of the modern monetary system.
+
+The Stark Evidence Shown by Post-2008 Quantitative Easing
+---------------------------------------------------------
+
+The Cantillon Effect is not a theory - it is a reality proven by
+actual data. After the 2008 financial crisis, the U.S. Federal Reserve
+injected approximately $3.5 trillion in new money into the financial
+system through three rounds of quantitative easing from 2008 to 2014
+(including post-2020 COVID-era QE, the total exceeds $8 trillion). The
+European Central Bank (ECB) and the Bank of Japan also implemented QE
+on a similar scale. Mainstream economics holds that without
+quantitative easing, the 2008 financial crisis could have led to a
+depression on the scale of the Great Depression. However, asking where
+the costs of that rescue went is the core of the Cantillon Effect.
+
+The results were clear. From 2009 to 2021, the S&P 500 rose
+approximately 430% from its early-2009 baseline. Real estate prices in
+New York and San Francisco more than doubled. Meanwhile, during the
+same period, the median real wage of American workers barely moved.
+According to Oxfam's 2020 report, the wealth owned by the top 1%
+globally was more than double the wealth held by the bottom 50%. This
+gap had widened considerably compared to pre-2008 levels.
+
+Korea was no exception. After the COVID-19 pandemic in 2020, as the
+Bank of Korea lowered its benchmark interest rate to historic lows and
+supplied liquidity, 서울 아파트 prices rose approximately 30-50% between
+2020 and 2022 (with variation depending on the district and
+statistical methodology). Those who already owned real estate enjoyed
+rising asset values, while the younger generation and those without
+homes despaired, coining the neologism '영끌' (yeongkkeul - "scraping
+together everything, even your soul, for a loan"). This is a vivid
+case of how the Cantillon Effect operates in modern society.
+
+Who Receives Money First
+------------------------
+
+The key to the Cantillon Effect is "proximity." The closer you are to
+the central bank and the money-creation system, the higher your
+probability of receiving newly printed money first. Wall Street
+investment banks, hedge funds, and large corporations winning
+government contracts sit at the front of the system. They gain
+immediate access to new liquidity through low-interest loans and bond
+sales.
+
+Meanwhile, ordinary citizens, the self-employed, and small businesses
+are at the very end of the system. By the time they feel the effects
+of wage increases or rising business revenue, the benefits of the
+money supply increase have already been exhausted, and only the cost
+of rising prices remains. It is a structurally unfair game.
+
+The Fundamental Alternative Bitcoin Offers
+------------------------------------------
+
+Bitcoin blocks the Cantillon Effect at the design level. How is this
+possible?
+
+First, transparency of the issuance schedule. Bitcoin's total issuance
+is fixed at 21 million, and new Bitcoin enter the world as mining
+rewards roughly once every 10 minutes. Who receives these rewards?
+Anyone in the world who contributes their computing power to the
+Bitcoin network. Not a specific bank, not a specific corporation, not
+a specific government agency. Anyone can participate in mining and
+receive rewards proportional to their contributed work.
+
+Second, the issuance schedule is fully public. Bitcoin's total supply,
+halving schedule, and issuance rate are specified in the source code
+and can be verified by anyone. Since it's possible to know in advance
+when and how much will be issued, it's impossible to front-run
+issuance information for profit. Central bank QE always involves
+insider information regarding the timing, scale, and beneficiary
+institutions, but in Bitcoin there are no insiders.
+
+Third, the total supply is fixed. The prerequisite for the Cantillon
+Effect is the injection of new money. Bitcoin can never exceed 21
+million, and new issuance decreases with each halving. Since new money
+is not created without limit, the root cause of the Cantillon Effect
+itself is eliminated. In Bitcoin, miners do receive newly issued BTC
+first, so a form of first-mover advantage exists. However, this is
+compensation for physical energy investment, and is fundamentally
+different from the fiat currency Cantillon Effect where money is
+received first through political connections.
+
+The Cantillon Effect and Wealth Inequality
+------------------------------------------
+
+The Cantillon Effect is not merely an economic theory. It is the
+essential key to understanding the wealth inequality that is deepening
+around the world today. The Cantillon Effect is not the sole cause of
+wealth inequality. Technological change, globalization, education
+gaps, tax policy, and various other factors are at play. However, the
+invisible mechanism of money creation structurally deepening
+inequality is a core factor that receives too little attention.
+
+Where did the tens of trillions of dollars in liquidity that
+developed-world central banks poured out after 2008 go? It flowed into
+stock markets, real estate, and bonds, driving up asset prices. Those
+who held assets became wealthier not because they were particularly
+more productive or worked harder, but simply because they were closer
+to the monetary system's pipeline.
+
+Consider Korea's situation from 2020 to 2022. When the Bank of Korea
+lowered its benchmark rate to a historic low (0.5%) and supplied
+massive liquidity, the average price of 서울 아파트 rose approximately
+30-50% between 2020 and 2022 (with variation depending on the district
+and statistical methodology). Those who already owned real estate sat
+and enjoyed asset gains of hundreds of millions of won, while those
+without homes - especially young people - saw the dream of
+homeownership move further away. This is the Korean version of the
+Cantillon Effect.
+
+The phenomenon Richard Cantillon observed 300 years ago is a
+structural problem that will inevitably repeat as long as the fiat
+currency system exists. As long as the power to issue new money
+exists, those close to that power will play a more advantageous game.
+
+Bitcoin rejects this structure from the design stage. A currency with
+no central issuance authority, a public issuance schedule, and a fixed
+total supply. Whether this currency - one Cantillon could never have
+imagined - will become the historical answer to his insight is
+something future history will reveal.
+
+Tags: Economics
+
+Read on full site: https://learn.txid.uk/en/articles/the-cantillon-effect/

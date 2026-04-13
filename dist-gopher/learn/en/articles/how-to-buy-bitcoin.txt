@@ -1,0 +1,176 @@
+How to Buy Bitcoin: A Complete Beginner's Guide
+===============================================
+
+2026-03-29 | en
+
+You can buy as little as $1 worth of Bitcoin. A step-by-step walkthrough of exchanges, your first purchase, and moving to self-custody - no jargon, no affiliate links.
+
+You have read enough to be convinced - or at least curious. But the
+actual mechanics of buying Bitcoin remain oddly opaque. Search results
+are cluttered with exchange affiliate links, YouTube influencers
+shilling altcoins, and leverage trading ads designed to separate
+beginners from their money. This guide cuts through the noise. No
+affiliate links, no sponsored picks - just a clear path from zero to
+your first satoshis.
+
+The One Thing to Know Before You Start
+--------------------------------------
+
+You do not need to buy a whole Bitcoin. This is the single biggest
+misconception that keeps people on the sidelines. Bitcoin is divisible
+to eight decimal places. The smallest unit is called a satoshi
+[/en/ideas/satoshi-unit/] - one hundred millionth of a Bitcoin. You
+can buy $5 worth, $50 worth, or $5,000 worth. There is no minimum unit
+requirement like buying a share of stock. Start with whatever amount
+you are comfortable with.
+
+Choosing an Exchange
+--------------------
+
+In the United States, several reputable exchanges allow you to buy
+Bitcoin with dollars. All of them are registered with FinCEN and
+comply with federal and state regulations.
+
+Coinbase - The largest US exchange by user count. Publicly traded
+(NASDAQ: COIN). Straightforward interface. Higher fees on the basic
+app, but Coinbase Advanced offers lower rates. Good starting point for
+absolute beginners.
+
+River - Bitcoin-only exchange. No altcoins, no distractions. Automatic
+recurring purchases (DCA) built in. Lower fees than Coinbase for
+Bitcoin purchases. Strong self-custody ethos - they actively encourage
+you to withdraw.
+
+Strike - Built on the Lightning Network. Extremely low fees (often
+under 0.1%). Instant purchases linked to your bank account. Also
+allows Lightning payments, useful if you want to actually spend sats.
+
+Kraken - Long-running exchange with a strong security track record.
+More trading features for when you are ready. Competitive fees through
+Kraken Pro.
+
+Cash App - Square's payment app includes Bitcoin purchasing.
+Convenient if you already use it, but limited features. Does allow
+withdrawals to external wallets.
+
+Whichever you choose, remember: an exchange is a tool for buying, not
+a place for storing. The reasons are detailed in our self-custody
+guide [/en/articles/self-custody/].
+
+Five Steps to Your First Bitcoin
+--------------------------------
+
+## Step 1: Create an Account and Verify Identity
+
+Download the exchange app and sign up. US regulations require Know
+Your Customer (KYC) verification - you will need to provide a
+government-issued ID and sometimes a selfie. This typically takes
+minutes but can take a day during busy periods.
+
+## Step 2: Link a Payment Method
+
+Connect your bank account via ACH transfer (free, takes 1-3 days to
+settle) or a debit card (instant, but higher fees). ACH is recommended
+for regular purchases. Wire transfers work for larger amounts.
+
+## Step 3: Deposit Funds
+
+Transfer dollars to the exchange. Start small - $50 to $100 is plenty
+for a first purchase. Only use money you can afford to hold for the
+long term. Bitcoin's short-term volatility means you should never
+invest rent money or emergency funds.
+
+## Step 4: Buy Bitcoin
+
+Navigate to the BTC/USD trading pair. You will see two order types:
+
+* Market order: Buy at the current price, instantly. Recommended for
+beginners. One tap.
+* Limit order: Set a target price and the order executes when the
+market reaches it. Useful when you want to buy at a specific level.
+
+For your first purchase, a market order is simplest. Enter the dollar
+amount, tap buy. Congratulations - you now own Bitcoin.
+
+## Step 5: Withdraw to Self-Custody
+
+Do not leave your Bitcoin on the exchange. Move it to a wallet you
+control. Hardware wallets (Ledger, Trezor, Coldcard) offer the
+strongest security. For smaller amounts, mobile wallets (Sparrow,
+BlueWallet, Nunchuk) are a good start. See our wallet selection guide
+[/en/articles/bitcoin-wallets/] for detailed comparisons.
+
+When withdrawing, double-check the Bitcoin address. Transactions are
+irreversible. Send a small test amount first, confirm receipt, then
+transfer the rest.
+
+The Smart Buying Strategy: DCA
+------------------------------
+
+Bitcoin's price is volatile. Trying to time the bottom is a game most
+people lose. Dollar-Cost Averaging (DCA) [/en/articles/dca-strategy/]
+removes emotion from the equation.
+
+Set a fixed amount - say $50 per week - and buy on a schedule
+regardless of price. When prices are high, you buy less Bitcoin. When
+prices are low, you buy more. Over time, your average cost smooths
+out. River and Strike both offer automatic recurring purchases, making
+this effortless.
+
+Taxes: Keep Records from Day One
+--------------------------------
+
+In the United States, Bitcoin is treated as property by the IRS.
+Selling, trading, or spending Bitcoin triggers a taxable event.
+Short-term gains (held less than one year) are taxed as ordinary
+income. Long-term gains (held over one year) receive preferential
+capital gains rates of 0%, 15%, or 20% depending on your income
+bracket.
+
+The practical takeaway: keep records of every purchase. Note the date,
+amount in USD, and quantity of BTC for each buy. Most exchanges
+provide transaction history exports in CSV format. Download these
+quarterly. You will thank yourself at tax time. For a deeper dive, see
+our Bitcoin tax guide [/en/articles/bitcoin-tax-guide/].
+
+Common Beginner Mistakes
+------------------------
+
+Buying altcoins first. Exchanges list hundreds of tokens. "Bitcoin is
+too expensive, so I will buy a cheaper coin" is a misunderstanding of
+how unit prices work. A low price per token does not mean undervalued.
+Understand the fundamental difference
+[/en/articles/bitcoin-vs-ethereum/] before diversifying into anything.
+
+Using leverage or futures. Exchanges aggressively promote margin
+trading because it generates enormous fee revenue. Beginners using
+leverage can and do lose their entire deposit. Stick to spot purchases
+only.
+
+Storing seed phrases digitally. Your wallet's seed phrase (12-24
+words) is the master key to your Bitcoin. Screenshots, notes apps,
+cloud storage, and email drafts are all vulnerable to hacking. Write
+it on paper and store it in a physically secure location. Our seed
+phrase guide [/en/articles/bitcoin-seed-phrase-explained/] covers
+proper backup practices.
+
+Going all in at once. Bitcoin is a powerful long-term savings
+technology, but 30%+ drawdowns are common in the short term. Use
+discretionary funds only, and start small.
+
+After Your First Purchase
+-------------------------
+
+Buying is just the beginning. To truly understand what you own,
+explore why Bitcoin matters [/en/articles/why-bitcoin-matters/], what
+sound money [/en/ideas/sound-money/] means, and how time preference
+[/en/ideas/time-preference/] shapes your financial life. Bitcoin is
+not an investment product - it is a monetary technology. Understanding
+the technology is what keeps you steady through volatility.
+
+Buying Bitcoin takes five minutes. Understanding why takes much
+longer. That journey is where the real value lies.
+
+Tags: Bitcoin, Beginner
+
+Read on full site: https://learn.txid.uk/en/articles/how-to-buy-bitcoin/

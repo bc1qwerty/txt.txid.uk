@@ -1,0 +1,186 @@
+Frédéric Bastiat
+================
+
+2026-03-09 | en
+
+The seen and the unseen. French economist who expounded free trade and the nature of law.
+
+The Stylist of Liberty
+----------------------
+
+Frédéric Bastiat (1801-1850) was a 19th-century French economist and
+politician, and a master of classical liberalism who championed free
+trade, property rights, and limited government. Bastiat was one of the
+finest writers in the history of economics, with an exceptional
+ability to convey complex economic truths in sharp and witty prose
+that anyone could understand.
+
+Despite his short life of 49 years, the concepts Bastiat left behind -
+"the seen and the unseen," "the broken window fallacy," "legal plunder
+[/ideas/legal-plunder/]" - remain core tools of libertarian thought
+today.
+
+Life
+----
+
+## A Libertarian from Southern France
+
+Bastiat was born in 1801 in Bayonne in southwestern France to a
+merchant family. Having lost his parents early, he was raised by his
+grandparents and gained firsthand experience with the realities of the
+material economy while managing the family farm in his youth.
+
+Bastiat's intellectual turning point came when he encountered the
+English free trade movement, particularly the work of Richard Cobden
+and the Anti-Corn Law League. Witnessing the success of the public
+movement to eliminate protective tariffs in England, Bastiat resolved
+to begin the same fight in France.
+
+## A Crusader in Paris
+
+In 1844, Bastiat gained nationwide attention with his first major
+essay, "The Effect of Tariffs in France and England on Wine Trade." He
+subsequently moved to Paris and became a central figure in the free
+trade movement.
+
+After the 1848 revolution, Bastiat was elected to the National
+Assembly. In parliament, he engaged in fierce debate with socialist
+forces, producing speeches and pamphlets opposing government
+intervention and protectionism.
+
+Despite suffering from tuberculosis, Bastiat never stopped writing. On
+December 24, 1850, he died in Rome at the age of 49. Until his death,
+he continued work on his unfinished masterwork, Economic Harmonies.
+
+Core Ideas
+----------
+
+## The Seen and the Unseen
+
+Bastiat's most famous essay, "That Which Is Seen and That Which Is Not
+Seen" (1850), teaches the essence of economic thinking.
+
+A bad economist sees only the immediate and visible consequences of an
+action. A good economist sees long-term and invisible consequences as
+well.
+
+This principle applies to all areas of government policy. The jobs
+created in a subsidized industry are seen. The jobs that would have
+been created in the private sector from the tax money used for the
+subsidy are unseen. Politicians boast about what is seen and ignore
+what is unseen.
+
+## The Broken Window Fallacy
+
+Bastiat's most famous parable. A boy breaks a baker's window.
+Onlookers say, "This is good for the economy. The glazier has work."
+
+What is seen: The glazier earned 6 francs.
+What is unseen: The baker was planning to buy new shoes with those 6
+francs. Now the shoemaker will not earn 6 francs.
+
+Destruction does not create wealth. Comparing the society before and
+after the window breaks, it is poorer by one window pane. The
+glazier's profit is offset by the shoemaker's loss, leaving only the
+value of the destroyed window as a net loss.
+
+This error repeats today: war stimulates the economy, natural
+disasters boost GDP, demolishing old buildings improves construction.
+All are instances of the broken window fallacy.
+
+## The Law
+
+The 1850 pamphlet The Law is Bastiat's masterwork of political
+philosophy. The core argument is as follows:
+
+The proper purpose of law is to protect individuals' life, liberty,
+and property. These three things exist as natural rights before law,
+and law is merely a tool for their collective defense.
+
+But when law becomes corrupted, it transforms from a tool of
+protection into a tool of plunder. Bastiat called this legal plunder.
+
+| "When law becomes a means of plunder - when certain people can
+legally take the property of others - law becomes injustice itself."
+
+The criterion for identifying legal plunder is simple: Does the law
+take from some and give to others? Is government doing legally what
+individuals would be prosecuted for doing? If so, it is legal plunder.
+
+Protective tariffs, subsidies, minimum wage laws, progressive
+taxation, compulsory education - from Bastiat's perspective, all are
+forms of legal plunder.
+
+## The Candlemakers' Petition
+
+Bastiat's wittiest satire. In this imaginary petition, candlemakers
+petition parliament, asking:
+
+| "The sun competes with us unfairly. The sun provides light for free,
+destroying our industry. We petition parliament to enact a law
+blocking all windows, skylights, and cracks to prevent sunlight from
+entering."
+
+This satire targets protectionism. Blocking imports because foreign
+goods are cheaper is precisely the same logic as blocking windows
+because the sun provides free light. Tariffs forcibly transfer
+consumer interests to inefficient domestic producers.
+
+Major Works
+-----------
+
+* The Law (1850) - A classic pamphlet on the nature of law and legal
+plunder
+* "That Which Is Seen and That Which Is Not Seen" (1850) - An essay
+teaching the essence of economic reasoning
+* Economic Sophisms (1845-1848) - A collection of satirical essays
+dissecting the fallacies of protectionism and government intervention
+* Economic Harmonies (1850, incomplete) - Arguing for the natural
+harmony of interests in a free market
+
+Famous Quotations
+-----------------
+
+| "The state is a great fiction through which everyone tries to live
+at the expense of everyone else."
+
+| "If the law must choose between justice and organized plunder, the
+law all too often chooses plunder."
+
+| "The difference between a good economist and a bad economist is
+this: the bad economist considers only visible effects; the good
+economist considers both the seen and the unseen."
+
+| "If everyone has the right to protect their own property, no one can
+have the right to take the property of others."
+
+Influence on the Austrian School and Bitcoin
+--------------------------------------------
+
+Though Bastiat preceded the Austrian School chronologically, his
+thought deeply influenced Menger, Mises, Hayek, and Rothbard. In
+particular, Henry Hazlitt's [/people/henry-hazlitt/] Economics in One
+Lesson is a modern expansion of Bastiat's "seen and unseen."
+
+In the context of Bitcoin, Bastiat's insights are powerful.
+Quantitative easing by central banks is a classic example of "the seen
+and the unseen." What is seen: financial market stability, bank
+rescues. What is unseen: currency debasement, harm to savers,
+deepening wealth inequality. Bitcoin is a technological defense
+against this invisible plunder.
+
+Connected Concepts
+------------------
+
+* Sound Money [/ideas/sound-money/] - Inflation as legal plunder in
+Bastiat's sense
+* Non-Aggression Principle [/ideas/non-aggression-principle/] - Modern
+expression of Bastiat's theory of law
+* What is Libertarianism? [/ideas/libertarianism/] - Political
+philosophy influenced by Bastiat
+* Legal Plunder [/ideas/legal-plunder/] - The corruption of law as
+named by Bastiat
+
+Tags: Liberalism, Austrian Economics
+
+Read on full site: https://learn.txid.uk/en/people/frederic-bastiat/

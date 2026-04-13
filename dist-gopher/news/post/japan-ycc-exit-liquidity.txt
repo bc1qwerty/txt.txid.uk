@@ -1,0 +1,220 @@
+Japan's YCC Exit and the Global Liquidity Squeeze
+=================================================
+
+2026-03-20 | macro | by txid | en
+
+The Bank of Japan abandoned yield curve control, letting 10-year JGB yields rise to 1.8%. The yen carry trade unwind is draining global liquidity.
+
+For a decade, the Bank of Japan ran one of the most extraordinary
+experiments in monetary history. It fixed the yield on ten-year
+Japanese government bonds at or near zero — literally telling the
+market what the price of money would be, and printing whatever was
+necessary to enforce it.
+
+In January 2026, that experiment ended. The BOJ officially abandoned
+yield curve control, allowing the 10-year JGB yield to float freely.
+Within weeks, it rose to 1.8% — a level not seen since 2008. For
+Japan, this is normalization. For the rest of the world, it is a
+slow-motion earthquake.
+
+The yen carry trade — one of the largest and most leveraged positions
+in global finance — is unwinding. The effects are being felt in bond
+markets, currency markets, equity markets, and yes, in Bitcoin.
+Understanding why requires understanding what YCC was, what the carry
+trade built on top of it, and what happens when the foundation moves.
+
+What Yield Curve Control Was
+----------------------------
+
+Yield curve control, implemented in September 2016, was simple in
+concept and radical in execution. The BOJ committed to buying
+unlimited quantities of Japanese government bonds to keep the 10-year
+yield at approximately 0%. If the market tried to push yields higher
+(by selling bonds), the BOJ would step in and buy — effectively
+overriding the market with an infinite balance sheet.
+
+The purpose was to fight deflation. Japan had been trapped in a
+low-growth, low-inflation, low-rate environment for decades. By
+suppressing long-term yields, the BOJ hoped to encourage borrowing,
+spending, and investment. Whether it succeeded is debatable. What is
+not debatable is the side effects.
+
+YCC created an arbitrage that attracted trillions of dollars in global
+capital. If you could borrow in yen at near-zero rates and invest the
+proceeds in higher-yielding assets elsewhere — US Treasuries, emerging
+market bonds, equities, anything with a positive return — you earned
+the spread. This is the carry trade, and it has been one of the most
+popular and profitable trades in global finance for years.
+
+The Carry Trade: Scale and Mechanics
+------------------------------------
+
+The mechanics are deceptively simple. A hedge fund, bank, or
+institutional investor borrows yen at 0.1%. It converts the yen to US
+dollars and buys US Treasuries yielding 4.5%. The spread — roughly
+4.4% — is the carry. Leverage magnifies the return. At 10:1 leverage,
+a 4.4% carry becomes a 44% annual return.
+
+The risk is straightforward: if the yen strengthens against the
+dollar, the cost of repaying the yen-denominated loan increases,
+potentially wiping out the carry and more. For a decade, that risk
+seemed minimal — the BOJ was actively suppressing rates, which kept
+the yen weak. The carry trade was, in the words of one macro
+strategist, "picking up pennies in front of a steamroller that
+promised never to move."
+
+Estimates of total yen carry trade positions vary, but the most
+credible analyses place the figure between $3.5 trillion and $4.4
+trillion — a staggering sum representing leveraged bets across every
+major asset class.
+
+The largest allocation — an estimated $1.5–1.8 trillion — flowed into
+US Treasuries and bonds. European sovereign debt absorbed roughly
+$0.6–0.8 trillion, and US and global equities another $0.8–1.0
+trillion. Emerging market bonds took in $0.3–0.5 trillion, with the
+remainder — around $0.3 trillion — spread across real estate and other
+alternatives. In total, credible estimates place the yen carry trade
+between $3.5 trillion and $4.4 trillion.
+
+The Unwind
+----------
+
+When the BOJ abandoned YCC, it removed the anchor that kept the trade
+safe. JGB yields rose. The yen strengthened — from 156 per dollar in
+December 2025 to approximately 142 per dollar by mid-March 2026, a 9%
+move. For leveraged carry trade positions, a 9% move in the wrong
+direction is potentially catastrophic.
+
+The unwind has not been a sudden collapse. It has been a grinding,
+multi-month process as institutional investors gradually close
+positions, convert assets back to yen, and repay yen-denominated
+loans. Each stage of this process creates its own market impact:
+
+* Selling foreign assets to raise cash — puts downward pressure on US
+Treasuries, equities, and EM bonds
+* Buying yen to repay loans — further strengthens the yen,
+accelerating the cycle
+* Reducing leverage across portfolios — tightens financial conditions
+globally
+
+This is a liquidity drain operating in slow motion. Every dollar
+converted back to yen is a dollar removed from the asset markets where
+it was deployed. The global financial system is losing a source of
+cheap, leveraged capital that it has relied on for a decade.
+
+Historical Parallels
+--------------------
+
+The yen carry trade has unwound before. Each time, the effects on
+global markets have been significant.
+
+| Event | Year | JPY Move | S&P 500 Impact | BTC Impact |
+|---|---|---|---|---|
+| GFC carry unwind | 2008 | +25% (3 months) | -38% | N/A |
+| BOJ intervention | Oct 2022 | +7% (2 weeks) | -3% | -5% (near $15.5K
+bottom) |
+| Surprise rate hike | Jul 2024 | +12% (3 weeks) | -6% | -18% |
+| YCC exit unwind | Jan–Mar 2026 | +9% (ongoing) | -4% | -6% |
+
+The July 2024 episode is the most instructive recent parallel. The BOJ
+unexpectedly raised rates by 15 basis points — a trivially small move
+by any other central bank's standards — and triggered a global market
+selloff. The Nikkei fell 12% in a single day. The S&P 500 dropped 6%
+over two weeks. Bitcoin fell from $68,000 to $56,000. The carry trade
+unwind was fast, violent, and brief.
+
+The current unwind is different in character — slower, more orderly —
+because the BOJ telegraphed its intentions months in advance. But the
+cumulative magnitude is larger, because this is not a temporary
+disruption. YCC is not coming back. The carry trade must fully reprice
+for a world where yen borrowing costs are rising, not fixed at zero.
+
+The Bitcoin Crossflow
+---------------------
+
+Bitcoin's relationship with the yen carry trade unwind is a study in
+competing forces.
+
+The negative: carry trade unwinds drain global liquidity and increase
+risk aversion. Leveraged capital exits speculative assets first.
+Bitcoin, despite its maturation, still trades partially as a risk
+asset and is vulnerable to liquidity withdrawal. The 6% decline since
+January is consistent with this dynamic.
+
+The positive: Japan is becoming a more significant Bitcoin market.
+JPY-denominated Bitcoin trading volume on major exchanges (bitFlyer,
+Coincheck, bitbank) has increased approximately 40% since the YCC
+exit. Some of this is speculative — Japanese retail traders are
+famously active — but some reflects a genuine hedging impulse.
+Japanese investors watching the yen strengthen against the dollar are
+also watching JGB yields rise from levels they have known their entire
+careers. The fixed-income market they trusted is repricing. Some are
+exploring alternatives.
+
+Japan's regulatory clarity on crypto also matters. The country's
+Payment Services Act provides a legal framework for crypto exchanges,
+and the Financial Services Agency has been progressively updating its
+guidelines. Japan is one of the few major economies where Bitcoin is
+regulated, legal, and actively traded by retail and institutional
+participants. As the domestic financial landscape shifts, Bitcoin is a
+readily accessible alternative.
+
+Global Liquidity: The Bigger Picture
+------------------------------------
+
+The carry trade unwind is not happening in isolation. It is one
+component of a broader global liquidity contraction:
+
+| Liquidity Factor | Direction | Magnitude |
+|---|---|---|
+| Fed quantitative tightening | Draining | ~$60B/month |
+| BOJ carry trade unwind | Draining | ~$200–400B (cumulative, est.) |
+| ECB balance sheet reduction | Draining | ~$30B/month |
+| China PBOC easing | Adding | ~$100B/quarter |
+| US Treasury General Account | Mixed | Volatile quarter to quarter |
+
+The net effect is contractionary. More liquidity is leaving the system
+than entering it. The PBOC is the only major central bank actively
+injecting liquidity, and its efforts are focused domestically on the
+property sector and bank recapitalization — not on assets that benefit
+global risk markets.
+
+For Bitcoin, this creates an environment where price appreciation
+requires strong specific demand to overcome weak macro conditions. The
+ETF flows, corporate treasury programs, and emerging market adoption
+that drove price in 2024 and early 2025 need to continue — or
+accelerate — to offset the liquidity drag.
+
+What Comes Next
+---------------
+
+The BOJ has signaled further rate increases in 2026, with market
+expectations centering on a policy rate of 0.75–1.0% by year-end (up
+from 0.5% currently). Each increase tightens the carry trade further
+and strengthens the yen, extending the unwind timeline.
+
+The critical question is whether the unwind remains orderly. The July
+2024 episode demonstrated that carry trade dynamics can turn
+disorderly quickly — a feedback loop where yen strengthening forces
+liquidations, which forces more yen buying, which strengthens the yen
+further. The BOJ is aware of this risk and has been careful to
+communicate gradually. But communication and market reality do not
+always align.
+
+If the unwind accelerates — triggered by an unexpected BOJ rate hike,
+a geopolitical shock, or a broader market selloff — the liquidity
+impact on all risk assets, including Bitcoin, could be severe and
+sudden. Conversely, if the unwind completes gradually over the next
+twelve to eighteen months, the liquidity drag will fade and one of the
+major macro headwinds for Bitcoin will resolve.
+
+The yen carry trade was global finance's favorite free lunch for a
+decade. The bill has arrived. How it gets paid — gradually or all at
+once — will shape markets through the rest of 2026 and into 2027.
+Bitcoin cannot escape this gravity entirely. But it may, as in
+previous macro disruptions, recover faster than the traditional assets
+the carry trade was built to finance.
+
+Tags: japan, BOJ, yield curve control, yen, carry trade, liquidity, bitcoin
+
+Read on full site: https://news.txid.uk/post/japan-ycc-exit-liquidity

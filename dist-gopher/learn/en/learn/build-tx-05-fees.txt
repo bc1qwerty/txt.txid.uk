@@ -1,0 +1,135 @@
+Calculating Transaction Fees
+============================
+
+2026-03-17 | en
+
+How Bitcoin transaction fees work - the relationship between inputs, outputs, transaction size, and fee rates.
+
+What You'll Learn
+-----------------
+
+* The fundamental fee equation: Inputs - Outputs = Fee
+* How fee rates (sat/vB) determine confirmation priority
+* How to estimate your transaction's size before broadcasting
+
+The Fee Equation
+----------------
+
+Bitcoin transactions have no explicit "fee" field. The fee is implied:
+
+    Fee = Sum of Input Values - Sum of Output Values
+
+If your inputs total 500,000 satoshis and your outputs total 490,000
+satoshis, the fee is 10,000 satoshis. Miners collect this difference
+as their reward for including your transaction in a block.
+
+This is why forgetting a change output is catastrophic. If you have a
+1 BTC input and create only a 0.001 BTC output, you just paid a 0.999
+BTC fee - roughly $60,000 at typical prices.
+
+Fee Rate: sat/vB
+----------------
+
+Miners don't optimize for total fee - they optimize for fee density. A
+transaction paying 10,000 sats that takes 500 vBytes is less
+attractive than one paying 5,000 sats that takes 100 vBytes.
+
+The standard unit is satoshis per virtual byte (sat/vB):
+
+    Fee Rate = Total Fee ÷ Transaction Size (vBytes)
+
+Current fee rates fluctuate with network demand. You can check live
+rates at mempool.space [https://mempool.space]:
+
+| Priority | Typical Range | Use Case |
+|----------|--------------|----------|
+| High | 20-100+ sat/vB | Next-block confirmation |
+| Medium | 5-20 sat/vB | Within a few hours |
+| Low | 1-5 sat/vB | Can wait a day or more |
+
+Transaction Size Estimation
+---------------------------
+
+To calculate the fee before building the transaction, you need to
+estimate its size. Here are the typical sizes for common components:
+
+## Legacy (non-SegWit) Transaction
+
+| Component | Size |
+|-----------|------|
+| Version | 4 bytes |
+| Input count | 1 byte |
+| Each input (P2PKH) | ~148 bytes |
+| Output count | 1 byte |
+| Each output (P2PKH) | 34 bytes |
+| Locktime | 4 bytes |
+
+A typical 1-input, 2-output legacy transaction: ~226 bytes.
+
+## SegWit Transaction
+
+SegWit introduced virtual bytes (vBytes), which apply a discount to
+witness data:
+
+    vBytes = (Weight Units) ÷ 4
+    Weight = (non-witness bytes × 4) + (witness bytes × 1)
+
+| Component | Weight |
+|-----------|--------|
+| Version | 16 WU (4 bytes × 4) |
+| Marker + Flag | 2 WU (2 bytes × 1, witness) |
+| Each input (P2WPKH) | ~164 WU base + ~108 WU witness |
+| Each output (P2WPKH) | 124 WU (31 bytes × 4) |
+| Locktime | 16 WU |
+
+A typical 1-input, 2-output P2WPKH transaction: ~141 vBytes (versus
+226 bytes legacy). SegWit saves roughly 38% in fees.
+
+Practical Fee Calculation
+-------------------------
+
+Let's calculate the fee for our tutorial transaction:
+
+    Transaction: 1 P2WPKH input, 2 P2WPKH outputs
+    Estimated size: ~141 vBytes
+    Target fee rate: 10 sat/vB
+    
+    Fee = 141 × 10 = 1,410 satoshis
+
+Now we can set our change output:
+
+    Input value:     500,000 sats
+    Payment output:  300,000 sats
+    Fee:               1,410 sats
+    Change output:   198,590 sats  (500,000 - 300,000 - 1,410)
+
+Dust Limit
+----------
+
+Outputs below a certain threshold are considered dust - they cost more
+in fees to spend than they are worth. Bitcoin Core's default dust
+limit is 546 satoshis for P2PKH and 294 satoshis for P2WPKH.
+Transactions creating dust outputs are rejected by most nodes.
+
+If your calculated change amount falls below the dust limit, it is
+better to add it to the fee instead of creating a tiny, unspendable
+output.
+
+Fee Bumping with RBF
+--------------------
+
+If you set a fee rate too low and your transaction gets stuck, you can
+use Replace-By-Fee to create a replacement transaction with a higher
+fee. This is why we set the sequence number to 0xfffffffd in Step 3
+[/learn/build-tx-03-inputs/] - it signals RBF eligibility.
+
+Next Step
+---------
+
+Continue to Raw Transaction Serialization
+[/learn/build-tx-06-serialization/] to combine inputs, outputs, and
+metadata into a single hex string.
+
+Tags: bitcoin, transaction, development, tutorial
+
+Read on full site: https://learn.txid.uk/en/learn/build-tx-05-fees/

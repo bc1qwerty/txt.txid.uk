@@ -1,0 +1,121 @@
+Iran Just Put Bitcoin on the Hormuz Strait Toll Booth
+=====================================================
+
+2026-04-09 | bitcoin | by txid | en
+
+Iran is demanding Bitcoin payment from oil tankers transiting the Strait of Hormuz. The world's most critical energy chokepoint is now a live proof-of-concept for censorship-resistant money.
+
+Twenty percent of the world's oil passes through a 33-kilometer gap
+between Iran and Oman. The Strait of Hormuz is, by any measure, the
+single most important chokepoint in global energy infrastructure. This
+week, Iran announced that tankers transiting the strait must pay a
+toll — in Bitcoin.
+
+The toll is $1 per barrel of crude. Empty tankers pass free. The
+procedure, as disclosed by Iranian authorities: ship operators submit
+cargo manifests via email, Iran reviews the submission, and upon
+approval, a Bitcoin payment address and amount are transmitted.
+Settlement is expected within seconds. Ships attempting unauthorized
+passage are warned via radio that they will be fired upon.
+
+This is not a thought experiment. It is not a conference keynote. It
+is a sovereign nation operating a Bitcoin-denominated toll system on
+the world's busiest oil transit route.
+
+The Sanctions Logic
+-------------------
+
+The reasoning is straightforward. Iran has been disconnected from
+SWIFT since 2018. Dollar-denominated payments are subject to immediate
+interception and freezing by the U.S. Treasury. Euro transactions
+carry secondary sanctions risk for European banks. Even yuan
+settlements expose counterparties to potential U.S. enforcement
+actions.
+
+Bitcoin solves each of these problems simultaneously. There is no
+intermediary to pressure. No bank to sanction. No wire transfer to
+intercept. No freeze button. A transaction confirmed on the Bitcoin
+network is final — not because a court says so, but because
+mathematics says so.
+
+Iran did not choose Bitcoin because of ideological alignment with
+cypherpunk principles. It chose Bitcoin because every other payment
+rail has a kill switch controlled by its adversary. When the entire
+traditional financial system can be weaponized against you, the only
+viable settlement layer is the one that cannot be.
+
+The Scale
+---------
+
+Approximately 300 to 400 vessels are currently queued outside the
+strait. Gulf waters hold an estimated 175 million barrels of crude.
+Before the conflict, roughly 135 ships transited daily. Current
+throughput has collapsed to 10-15 per day, creating a bottleneck that
+compounds daily.
+
+At $1 per barrel, the numbers appear modest. They are not. At pre-war
+volume — roughly 21 million barrels per day through Hormuz — the
+annualized toll revenue approaches $7-10 billion. Analysts at Herald
+Economy have modeled the upper bound at $10 billion annually if
+stablecoin alternatives are included.
+
+The entire revenue stream would flow through a payment system that no
+government on earth can block, freeze, or reverse.
+
+What Shipping Lines Are Doing
+-----------------------------
+
+Maersk and other major carriers have adopted a wait-and-see posture,
+seeking clarification on terms before committing to transit. The
+ambiguity is itself a form of leverage — Iran controls the timeline,
+and every day of delay costs the global oil market in spot price
+volatility and tanker demurrage fees.
+
+The operational question is not whether shipping lines are willing to
+pay Bitcoin. The infrastructure exists. Custodial and OTC desks can
+facilitate settlement in minutes. The question is whether governments
+will permit their flagged vessels to comply with an Iranian payment
+demand — and whether the answer matters when the alternative is
+leaving $175 million barrels of crude stranded in the Gulf.
+
+The Proof
+---------
+
+Bitcoin's critics have spent fifteen years arguing it has no
+real-world utility. It's too slow. Too volatile. Too complicated.
+Nobody uses it for actual commerce.
+
+Iran just designated Bitcoin as the mandatory settlement currency for
+transiting the world's most strategically important waterway. Not as
+an option alongside dollars. Not as an experiment. As the primary —
+and only — acceptable payment method.
+
+This happened not because Iran loves Bitcoin. It happened because
+Bitcoin is the only money that works when the most powerful nation on
+earth is actively trying to prevent you from receiving payment. That
+is the definition of censorship resistance, demonstrated at
+nation-state scale, with real oil on real tankers and real military
+consequences for non-compliance.
+
+The property being tested is not speed. It is not throughput. It is
+not user experience. It is the inability of any third party to prevent
+a willing sender and willing receiver from completing a transaction.
+That property — the one Satoshi built the entire system around — just
+proved itself under conditions no testnet could simulate.
+
+Whether you approve of Iran's government is irrelevant to the
+technical observation. The protocol does not care who uses it. That's
+the point. That's what makes it work. And that's what makes it
+valuable.
+
+______________________________________________________________________
+
+Sources: Reuters [https://www.reuters.com/world/middle-east/], CNBC —
+Iran Hormuz toll and oil market impact
+[https://www.cnbc.com/2026/04/09/asia-iran-oil-shock-1997-crisis-comparison-reserves-stagflation-hormuz-trump.html],
+Cointelegraph
+[https://cointelegraph.com/news/bitcoin-tops-dollar72k-after-dollar280m-liquidation-targets-bears-will-the-fragile-truce-hold]
+
+Tags: bitcoin, iran, hormuz, sanctions, oil, censorship-resistance, geopolitics
+
+Read on full site: https://news.txid.uk/post/iran-hormuz-bitcoin-toll
