@@ -171,11 +171,20 @@ function renderBlock(lines) {
 // Strip JSX-looking tags that next-mdx-remote or MDX would render.
 // These are server/client components we can't execute here.
 function stripJsx(md) {
-  // Remove self-closing JSX tags like <Component prop="x" />
+  // ESM imports at top of MDX files
+  md = md.replace(/^\s*import\s+[^;\n]+\s+from\s+['"][^'"]+['"];?\s*$/gm, '');
+  md = md.replace(/^\s*import\s+['"][^'"]+['"];?\s*$/gm, '');
+  // Mermaid JSX with --> arrows in props (our regex [^>]* breaks otherwise)
+  // Mermaid uses template-literal props with <br/> inside — match up to `} />
+  md = md.replace(/<Mermaid\b\s+code=\{`[\s\S]*?`\}\s*\/>/g, '');
+  md = md.replace(/<Mermaid\b[\s\S]*?<\/Mermaid>/g, '');
+  // PascalCase JSX components
   md = md.replace(/<[A-Z][A-Za-z0-9]*\s*[^>]*\/>/g, '');
-  // Remove paired JSX tags like <Component>...</Component>
   md = md.replace(/<([A-Z][A-Za-z0-9]*)\s*[^>]*>[\s\S]*?<\/\1>/g, '');
-  // Remove raw HTML comments
+  // Leaked lowercase HTML: details/summary/br (leak from MDX)
+  md = md.replace(/<br\s*\/?>/gi, '<br>');
+  md = md.replace(/<\/?(?:details|summary)[^>]*>/gi, '');
+  // HTML comments
   md = md.replace(/<!--[\s\S]*?-->/g, '');
   return md;
 }

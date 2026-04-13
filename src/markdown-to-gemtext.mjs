@@ -17,7 +17,8 @@ function stripJsx(md) {
   md = md.replace(/^\s*import\s+[^;\n]+\s+from\s+['"][^'"]+['"];?\s*$/gm, '');
   md = md.replace(/^\s*import\s+['"][^'"]+['"];?\s*$/gm, '');
   // Mermaid JSX components have `-->` arrows inside props; match up to /> or </Mermaid>
-  md = md.replace(/<Mermaid\b[\s\S]*?\/>/g, '');
+  // Mermaid uses template-literal props with <br/> inside — match up to `} />
+  md = md.replace(/<Mermaid\b\s+code=\{`[\s\S]*?`\}\s*\/>/g, '');
   md = md.replace(/<Mermaid\b[\s\S]*?<\/Mermaid>/g, '');
   // JSX self-closing and paired tags (PascalCase components)
   md = md.replace(/<[A-Z][A-Za-z0-9]*\s*[^>]*\/>/g, '');
