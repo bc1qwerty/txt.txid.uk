@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { esc } from './markdown.mjs';
 
 const SITE_URL = 'https://txt.txid.uk';
@@ -33,6 +34,10 @@ img{max-width:100%;height:auto}
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--bg);color:var(--fg);padding:.5em 1em;border:1px solid var(--link);z-index:100}
 .skip-link:focus{left:1em;top:1em}
 `.trim();
+
+// sha256 of the exact inline <style> content, exported so build.mjs can pin
+// it in the Content-Security-Policy without 'unsafe-inline'.
+export const CSS_SHA256 = createHash('sha256').update(CSS).digest('base64');
 
 function nav() {
   return '<nav class="top" aria-label="Primary"><a href="/">txt.txid.uk</a><a href="/news/">News</a><a href="/learn/">Learn</a><a href="/feed.xml">RSS</a></nav>';

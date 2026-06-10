@@ -7,7 +7,7 @@ import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderMarkdown, esc } from './markdown.mjs';
-import { renderPage, fullSiteBanner } from './template.mjs';
+import { renderPage, fullSiteBanner, CSS_SHA256 } from './template.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -503,6 +503,19 @@ Sitemap: ${SITE_URL}/sitemap.xml
   await emit('robots.txt', body);
 }
 
+// ── _headers (Cloudflare Pages security headers) ──
+// CSP pins the single inline <style> block by sha256 — no 'unsafe-inline',
+// matching the ecosystem strict-CSP standard. Keep each line well under the
+// 2KB Cloudflare Pages limit (lines over it are silently dropped).
+async function buildHeaders() {
+  const body = `/*
+  Content-Security-Policy: default-src 'none'; style-src 'sha256-${CSS_SHA256}'; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+`;
+  await emit('_headers', body);
+}
+
 // ── sitemap.xml ──
 async function buildSitemap(newsFeed, learnFeed) {
   const today = new Date().toISOString().slice(0, 10);
@@ -593,6 +606,7 @@ async function main() {
   await buildLanding(newsFeed, learnFeed);
   await buildFeed(newsFeed, learnFeed);
   await buildRobots();
+  await buildHeaders();
   await buildSitemap(newsFeed, learnFeed);
   await build404();
 
