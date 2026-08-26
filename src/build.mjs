@@ -2,7 +2,7 @@
 // txt.txid.uk builder — fetches both feeds and emits plain HTML into dist/.
 // Zero external dependencies.
 
-import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
+import { mkdir, writeFile, rm, readFile, copyFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -493,6 +493,17 @@ async function buildFeed(newsFeed, learnFeed) {
   await emit('feed.xml', rss);
 }
 
+// ── favicon ──
+// 이 빌드는 모든 산출물을 코드로 만들기 때문에 정적 복사 단계가 없다.
+// 브랜드 마크 정본은 Google Drive `AI-Assistant-Archive/Weblog/favicon.ico` 이고
+// 그 사본을 `assets/` 에 두고 여기서 내보낸다.
+// ⚠ 다른 emit 들처럼 함수로 두고 main 흐름에서 부를 것. 모듈 최상위에 두면
+//   아래 `rm(DIST)` 보다 먼저 실행돼 방금 쓴 파일이 지워진다(실제로 그랬다).
+async function buildFavicon() {
+  const src = new URL('../assets/favicon.ico', import.meta.url);
+  await copyFile(src, join(DIST, 'favicon.ico'));
+}
+
 // ── robots.txt ──
 async function buildRobots() {
   const body = `User-agent: *
@@ -605,6 +616,7 @@ async function main() {
 
   await buildLanding(newsFeed, learnFeed);
   await buildFeed(newsFeed, learnFeed);
+  await buildFavicon();
   await buildRobots();
   await buildHeaders();
   await buildSitemap(newsFeed, learnFeed);
