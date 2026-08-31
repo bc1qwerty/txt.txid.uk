@@ -4,6 +4,7 @@
 // Upload target: /var/lib/molly-brown/ on the Gemini host (Oracle VPS).
 
 import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
+import { rewriteLearnLinks } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -228,7 +229,7 @@ async function buildLearn(feed) {
 
       // Individual posts
       for (const p of items) {
-        const body = markdownToGemtext(p.content || '');
+        const body = markdownToGemtext(rewriteLearnLinks(p.content || '', { gemini: true }));
         let doc = `# ${p.title}\n\n`;
         doc += `${fmtDate(p.date)} · ${p.section} · ${p.lang}\n\n`;
         if (p.summary) doc += `${p.summary}\n\n`;

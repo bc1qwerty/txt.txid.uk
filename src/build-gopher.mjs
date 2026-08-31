@@ -4,6 +4,7 @@
 // under dist-gopher/. Upload target: /var/gopher/ on VPS (gophernicus root).
 
 import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
+import { rewriteLearnLinks } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -159,7 +160,8 @@ async function buildLearn(feed) {
   // write all post .txt files
   for (const p of posts) {
     const rel = `learn/${p.lang}/${p.section}/${safeSlug(p.slug)}.txt`;
-    await emit(rel, postText(p));
+    // ⚠ postText 는 news 와 공용이다. learn 링크 재작성은 여기(learn 호출처)에서만.
+    await emit(rel, postText({ ...p, content: rewriteLearnLinks(p.content) }));
   }
 
   // top learn menu

@@ -3,6 +3,7 @@
 // Zero external dependencies.
 
 import { mkdir, writeFile, rm, readFile, copyFile } from 'node:fs/promises';
+import { rewriteLearnLinks, assertNoBareLearnLinks } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -90,8 +91,29 @@ function isDigestPost(p) {
   return p.section === 'digest';
 }
 
+// ⚠ encodeURIComponent 를 쓰면 안 된다. 출력 디렉토리 이름이 리터럴
+//   `bond%20market` 이 되는데, 링크의 `%20` 은 CF Pages 가 공백으로 디코드해
+//   `bond market` 디렉토리를 찾는다 — 그런 디렉토리는 없으니 404 다.
+//   실측: 링크로 등장한 태그 URL 255개 중 92개가 404 였고, 그 92개 전부가
+//   `%` 를 포함했다(상관 100%). URL-safe 슬러그로 만들면 파일명과 링크가
+//   같은 문자열이라 양쪽이 항상 맞는다.
+const _tagSlugSeen = new Map();
+const _tagSlugWarned = new Set();
 function tagSlug(tag) {
-  return encodeURIComponent(String(tag).toLowerCase().trim());
+  const display = String(tag).toLowerCase().trim();
+  let slug = display.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  if (!slug) slug = 'tag-' + Buffer.from(display).toString('hex').slice(0, 8);
+  // 서로 다른 태그가 같은 슬러그로 접히면(예: "bond market" 과 "bond-market")
+  // 페이지가 조용히 합쳐진다. 지금 데이터엔 충돌이 없지만, 생기면 알린다.
+  const prev = _tagSlugSeen.get(slug);
+  if (prev !== undefined && prev !== display && !_tagSlugWarned.has(slug)) {
+    // 실제 사례: "censorship resistance" 와 "censorship-resistance" 가 공존한다 —
+    // 의미가 같은 표기 차이라 합쳐지는 쪽이 오히려 맞다. 그래도 새 충돌은 알린다.
+    console.warn(`[tags] 슬러그 충돌: "${prev}" 와 "${display}" → ${slug} (페이지가 합쳐진다)`);
+    _tagSlugWarned.add(slug);
+  }
+  _tagSlugSeen.set(slug, display);
+  return slug;
 }
 
 function tagPath(tag) {
@@ -340,7 +362,8 @@ ${p.summary ? `<div class="meta">${esc(p.summary)}</div>` : ''}
 
       // Individual posts
       for (const p of items) {
-        const bodyHtml = renderMarkdown(p.content);
+        const bodyHtml = renderMarkdown(rewriteLearnLinks(p.content));
+        assertNoBareLearnLinks(bodyHtml, `learn/${p.lang}/${p.section}/${p.slug}`);
         const body = `
 ${fullSiteBanner(p.canonicalUrl)}
 <h1>${esc(p.title)}</h1>
