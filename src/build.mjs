@@ -331,6 +331,31 @@ ${langSections.join('\n')}`;
     })
   );
 
+  // Per-locale index. ⚠ 이게 없으면 _redirects 의 로케일 루트 규칙
+  // (/en → /learn/en/)이 404 로 착지한다 - 순수 404 가 301→404 체인이 될
+  // 뿐이라 크롤 예산만 더 쓴다(2026-09-07 실측·수정).
+  for (const [lang, sections] of byLang) {
+    const links = [];
+    let total = 0;
+    for (const [section, items] of sections) {
+      total += items.length;
+      links.push(`<li><a href="/learn/${lang}/${section}/">${esc(section)}</a> (${items.length})</li>`);
+    }
+    await emit(
+      `learn/${lang}/index.html`,
+      renderPage({
+        title: `Learn (${lang}) — txt.txid.uk`,
+        description: `Text-only mirror of learn.txid.uk (${lang})`,
+        canonical: `https://learn.txid.uk/${lang}/`,
+        body: `
+${fullSiteBanner(`https://learn.txid.uk/${lang}/`, 'View on learn.txid.uk')}
+<h1>Learn (${esc(lang)})</h1>
+<p class="meta">${total} posts. <a href="/learn/">All languages</a></p>
+<ul>${links.join('')}</ul>`,
+      })
+    );
+  }
+
   // Section list pages and individual posts
   for (const [lang, sections] of byLang) {
     for (const [section, items] of sections) {
