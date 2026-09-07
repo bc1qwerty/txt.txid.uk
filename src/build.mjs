@@ -550,6 +550,18 @@ async function buildHeaders() {
   await emit('_headers', body);
 }
 
+// ── _redirects (Cloudflare Pages) ──
+// learn 미러가 /learn/ 접두사로 이사하기 전의 루트 로케일 경로가 구글에
+// 남아 404 를 낸다(GSC 2026-09-06 경고, 실측 /ja/ideas/self-ownership/).
+// 현 구조에는 루트 /en|/ko|/ja 가 없으므로 전부 접두사 붙여 301.
+async function buildRedirects() {
+  const body = `/en/* /learn/en/:splat 301
+/ko/* /learn/ko/:splat 301
+/ja/* /learn/ja/:splat 301
+`;
+  await emit('_redirects', body);
+}
+
 // ── sitemap.xml ──
 async function buildSitemap(newsFeed, learnFeed) {
   const today = new Date().toISOString().slice(0, 10);
@@ -642,6 +654,7 @@ async function main() {
   await buildFavicon();
   await buildRobots();
   await buildHeaders();
+  await buildRedirects();
   await buildSitemap(newsFeed, learnFeed);
   await build404();
 
