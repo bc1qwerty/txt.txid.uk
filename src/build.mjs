@@ -554,8 +554,13 @@ async function buildHeaders() {
 // learn 미러가 /learn/ 접두사로 이사하기 전의 루트 로케일 경로가 구글에
 // 남아 404 를 낸다(GSC 2026-09-06 경고, 실측 /ja/ideas/self-ownership/).
 // 현 구조에는 루트 /en|/ko|/ja 가 없으므로 전부 접두사 붙여 301.
+// ⚠ `/en/*` 는 리터럴 `/en/` 접두사를 요구해서 슬래시 없는 `/en` 은 안 걸린다
+//   (라이브 404 실측) - 로케일 루트 3줄을 따로 둔다.
 async function buildRedirects() {
-  const body = `/en/* /learn/en/:splat 301
+  const body = `/en /learn/en/ 301
+/ko /learn/ko/ 301
+/ja /learn/ja/ 301
+/en/* /learn/en/:splat 301
 /ko/* /learn/ko/:splat 301
 /ja/* /learn/ja/:splat 301
 `;
