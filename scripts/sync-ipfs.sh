@@ -38,11 +38,30 @@ echo "[ipfs-sync] CID=${CID}"
 echo "[ipfs-sync] clean stage"
 ssh vps "rm -rf ${VPS_STAGE}"
 
+# 이전 루트 CID — publish 성공 후 unpin 한다. 안 하면 배포마다 새 루트가 핀돼
+# VPS 저장소가 단조 증가한다(dell 의 ipfs-mirror-sync.sh 와 동형 정리).
+PREV_CID=$(ssh vps "cat ~/.txt-ipfs-root 2>/dev/null || true")
+
 echo "[ipfs-sync] publish IPNS (background — offline OK)"
-ssh vps "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs ipfs name publish --allow-offline /ipfs/${CID}" 2>&1 | tail -2
+if PUBLISH_OUT=$(ssh vps "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs ipfs name publish --allow-offline /ipfs/${CID}" 2>&1); then
+  PUBLISHED=1
+else
+  PUBLISHED=0
+  echo "  (publish failed — keeping previous pin so IPNS keeps resolving)"
+fi
+echo "$PUBLISH_OUT" | tail -2
 
 echo "[ipfs-sync] pin replica on Dell (fetches from VPS peer, best-effort)"
 ssh swd@dell "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs timeout 180 ipfs pin add -r ${CID}" 2>&1 | tail -2 || echo "  (dell pin failed — not fatal, VPS is still source of truth)"
+
+if [ "$PUBLISHED" = "1" ]; then
+  ssh vps "echo ${CID} > ~/.txt-ipfs-root"
+  if [ -n "$PREV_CID" ] && [ "$PREV_CID" != "$CID" ]; then
+    echo "[ipfs-sync] unpin previous root ${PREV_CID} + repo gc"
+    ssh vps "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs ipfs pin rm ${PREV_CID}" 2>&1 | tail -1 || echo "  (pin rm failed — not fatal)"
+    ssh vps "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs timeout 600 ipfs repo gc >/dev/null" || echo "  (repo gc failed — not fatal)"
+  fi
+fi
 
 echo "[ipfs-sync] done"
 echo "  CID:  ${CID}"

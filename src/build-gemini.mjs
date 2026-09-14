@@ -4,7 +4,7 @@
 // Upload target: /var/lib/molly-brown/ on the Gemini host (Oracle VPS).
 
 import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
-import { rewriteLearnLinks } from './learn-links.mjs';
+import { rewriteLearnLinks, assertNoBareLearnLinks, learnSlug } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -36,17 +36,6 @@ async function fetchFeed(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
   return res.json();
-}
-
-async function fetchFeedSafe(url, label) {
-  try {
-    const feed = await fetchFeed(url);
-    console.log(`  ✓ ${label}: ${feed.posts?.length ?? 0} posts`);
-    return feed;
-  } catch (err) {
-    console.warn(`  ⚠ ${label} unavailable (${err.message}) — skipping`);
-    return null;
-  }
 }
 
 async function emit(relPath, content) {
@@ -117,7 +106,7 @@ function newsPath(p) {
 }
 
 function learnPath(p) {
-  return `/learn/${p.lang}/${p.section}/${encodeURIComponent(p.slug)}.gmi`;
+  return `/learn/${p.lang}/${p.section}/${learnSlug(p.slug)}.gmi`;
 }
 
 // ── News pages ──
@@ -221,7 +210,7 @@ async function buildLearn(feed) {
       let secIdx = `# ${section} (${lang})\n\n`;
       secIdx += `${items.length} entries.\n\n`;
       for (const p of items) {
-        secIdx += `=> /learn/${lang}/${section}/${encodeURIComponent(p.slug)}.gmi ${p.title}\n`;
+        secIdx += `=> /learn/${lang}/${section}/${learnSlug(p.slug)}.gmi ${p.title}\n`;
       }
       secIdx += `\n=> /learn/${lang}/ ${lang} index\n`;
       secIdx += `=> /learn/ Learn index\n`;
@@ -230,6 +219,7 @@ async function buildLearn(feed) {
       // Individual posts
       for (const p of items) {
         const body = markdownToGemtext(rewriteLearnLinks(p.content || '', { gemini: true }));
+        assertNoBareLearnLinks(body, `learn/${p.lang}/${p.section}/${p.slug}`, 'gemini');
         let doc = `# ${p.title}\n\n`;
         doc += `${fmtDate(p.date)} · ${p.section} · ${p.lang}\n\n`;
         if (p.summary) doc += `${p.summary}\n\n`;
@@ -237,7 +227,7 @@ async function buildLearn(feed) {
         doc += `\n=> ${p.canonicalUrl} Read on full site (HTML)\n`;
         doc += `=> /learn/${p.lang}/${p.section}/ Back to ${p.section}\n`;
         doc += `=> /learn/ Learn index\n`;
-        await emit(`learn/${p.lang}/${p.section}/${encodeURIComponent(p.slug)}.gmi`, doc);
+        await emit(`learn/${p.lang}/${p.section}/${learnSlug(p.slug)}.gmi`, doc);
       }
     }
   }
@@ -267,7 +257,7 @@ async function buildLanding(newsFeed, learnFeed) {
   doc += `=> https://txid.uk/ Full-featured txid.uk ecosystem\n\n`;
   doc += '## About\n\n';
   doc += 'Part of the txid.uk ecosystem. Brutalist by design.\n\n';
-  doc += `Rebuilt automatically whenever news.txid.uk or learn.txid.uk redeploys.\n`;
+  doc += `Rebuilt as part of the news.txid.uk / learn.txid.uk deploy chain; may lag until their next deploy.\n`;
   doc += `Last built: ${new Date().toISOString()}\n\n`;
   doc += '=> https://github.com/bc1qwerty/txt.txid.uk Source code\n';
 
@@ -284,8 +274,8 @@ async function main() {
 
   console.log('Fetching feeds...');
   const [newsFeed, learnFeed] = await Promise.all([
-    fetchFeedSafe(NEWS_FEED_URL, 'news'),
-    fetchFeedSafe(LEARN_FEED_URL, 'learn'),
+    fetchFeed(NEWS_FEED_URL),
+    fetchFeed(LEARN_FEED_URL),
   ]);
 
   console.log('Generating gemtext...');

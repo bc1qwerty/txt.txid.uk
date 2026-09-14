@@ -4,7 +4,7 @@
 // under dist-gopher/. Upload target: /var/gopher/ on VPS (gophernicus root).
 
 import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
-import { rewriteLearnLinks } from './learn-links.mjs';
+import { rewriteLearnLinks, assertNoBareLearnLinks } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -36,17 +36,6 @@ async function fetchFeed(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
   return res.json();
-}
-
-async function fetchFeedSafe(url, label) {
-  try {
-    const feed = await fetchFeed(url);
-    console.log(`  \u2713 ${label}: ${feed.posts?.length ?? 0} posts`);
-    return feed;
-  } catch (err) {
-    console.warn(`  \u26a0 ${label} unavailable (${err.message})`);
-    return null;
-  }
 }
 
 async function emit(relPath, content) {
@@ -161,7 +150,9 @@ async function buildLearn(feed) {
   for (const p of posts) {
     const rel = `learn/${p.lang}/${p.section}/${safeSlug(p.slug)}.txt`;
     // ⚠ postText 는 news 와 공용이다. learn 링크 재작성은 여기(learn 호출처)에서만.
-    await emit(rel, postText({ ...p, content: rewriteLearnLinks(p.content) }));
+    const md = rewriteLearnLinks(p.content);
+    assertNoBareLearnLinks(md, rel, 'gopher');
+    await emit(rel, postText({ ...p, content: md }));
   }
 
   // top learn menu
@@ -247,8 +238,8 @@ async function main() {
 
   console.log('Fetching feeds...');
   const [newsFeed, learnFeed] = await Promise.all([
-    fetchFeedSafe(NEWS_FEED_URL, 'news'),
-    fetchFeedSafe(LEARN_FEED_URL, 'learn'),
+    fetchFeed(NEWS_FEED_URL),
+    fetchFeed(LEARN_FEED_URL),
   ]);
 
   console.log('Generating gopher menus + text files...');

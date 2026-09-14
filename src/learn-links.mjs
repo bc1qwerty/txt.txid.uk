@@ -37,9 +37,34 @@ export function rewriteLearnLinks(md, { gemini = false } = {}) {
   return out;
 }
 
-/** 렌더 결과에 미러 기준으로 깨진 learn 링크가 남았는지 검사한다(빌드 가드). */
-export function assertNoBareLearnLinks(html, where) {
-  const m = String(html).match(/href="\/(en|ko|ja)\/[^"]*"/);
+/**
+ * learn 슬러그를 디렉토리명·링크 공용으로 검증해 돌려준다.
+ * ⚠ encodeURIComponent 로 감싸면 안 된다 — 파일명은 리터럴 `%XX` 가 되는데
+ * CF Pages 는 링크의 `%XX` 를 디코드해 다른 이름을 찾는다(태그 92/255 페이지
+ * 404 실사고와 동일 기전, build.mjs tagSlug 주석 참조). URL-safe 가 아닌
+ * 슬러그는 여기서 소리내어 실패시킨다 — 현재 데이터(660개)는 전부 통과한다.
+ */
+export function learnSlug(slug) {
+  const s = String(slug);
+  if (encodeURIComponent(s) !== s) {
+    throw new Error(
+      `[learn-links] URL-unsafe learn slug: "${s}" — 디렉토리명과 링크가 어긋나 ` +
+      `404 가 된다(태그 92페이지 사고와 동일 기전). learn 쪽 슬러그를 고칠 것.`
+    );
+  }
+  return s;
+}
+
+/** 렌더 결과에 미러 기준으로 깨진 learn 링크가 남았는지 검사한다(빌드 가드).
+ *  3,141개 링크 깨짐 실사고는 gemini 미러에서 났다 — 세 출력 경로 모두 검사할 것. */
+const BARE_LEARN_PATTERNS = {
+  html: /href="\/(en|ko|ja)\/[^"]*"/,
+  gemini: /^=> \/(en|ko|ja)\//m,
+  gopher: /\]\(\/(en|ko|ja)\//,
+};
+
+export function assertNoBareLearnLinks(text, where, format = 'html') {
+  const m = String(text).match(BARE_LEARN_PATTERNS[format]);
   if (m) {
     throw new Error(
       `[learn-links] ${where}: 재작성 안 된 learn 내부 링크가 남았다 → ${m[0]}\n` +

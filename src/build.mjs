@@ -3,7 +3,7 @@
 // Zero external dependencies.
 
 import { mkdir, writeFile, rm, readFile, copyFile } from 'node:fs/promises';
-import { rewriteLearnLinks, assertNoBareLearnLinks } from './learn-links.mjs';
+import { rewriteLearnLinks, assertNoBareLearnLinks, learnSlug } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -43,17 +43,6 @@ async function fetchFeed(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
   return res.json();
-}
-
-async function fetchFeedSafe(url, label) {
-  try {
-    const feed = await fetchFeed(url);
-    console.log(`  ✓ ${label}: ${feed.posts?.length ?? 0} posts`);
-    return feed;
-  } catch (err) {
-    console.warn(`  ⚠ ${label} unavailable (${err.message}) — skipping section`);
-    return null;
-  }
 }
 
 // ── File writer ──
@@ -121,7 +110,7 @@ function tagPath(tag) {
 }
 
 function learnPostPath(p) {
-  return `/learn/${p.lang}/${p.section}/${encodeURIComponent(p.slug)}/`;
+  return `/learn/${p.lang}/${p.section}/${learnSlug(p.slug)}/`;
 }
 
 // ── News pages ──
@@ -398,7 +387,7 @@ ${bodyHtml}
 <p class="meta">Read on the full site: <a href="${esc(p.canonicalUrl)}">${esc(p.canonicalUrl)}</a></p>`;
 
         await emit(
-          `learn/${lang}/${section}/${encodeURIComponent(p.slug)}/index.html`,
+          `learn/${lang}/${section}/${learnSlug(p.slug)}/index.html`,
           renderPage({
             title: `${p.title} — txt.txid.uk`,
             description: p.summary,
@@ -478,7 +467,7 @@ ${learnPreview}
 
 <h2>About this mirror</h2>
 <p>Every page here has a <code>&lt;link rel="canonical"&gt;</code> pointing back to the original. Search engines should index the originals; this mirror is a companion, not a replacement.</p>
-<p>Rebuilds automatically whenever either source site redeploys.</p>
+<p>Rebuilt as part of the news.txid.uk / learn.txid.uk deploy chain; may lag the originals until their next deploy.</p>
 <p class="meta">Last built: ${new Date().toISOString()}</p>`;
 
   await emit(
@@ -556,8 +545,6 @@ async function buildFavicon() {
 async function buildRobots() {
   const body = `User-agent: *
 Disallow:
-
-Sitemap: ${SITE_URL}/sitemap.xml
 `;
   await emit('robots.txt', body);
 }
@@ -668,8 +655,8 @@ async function main() {
 
   console.log('Fetching feeds...');
   const [newsFeed, learnFeed] = await Promise.all([
-    fetchFeedSafe(NEWS_FEED_URL, 'news'),
-    fetchFeedSafe(LEARN_FEED_URL, 'learn'),
+    fetchFeed(NEWS_FEED_URL),
+    fetchFeed(LEARN_FEED_URL),
   ]);
 
   console.log('Generating pages...');

@@ -22,7 +22,7 @@ Builds fetch both feeds over HTTPS and generate static HTML. No database, no run
 
 ## Sync
 
-`txt.txid.uk` rebuilds whenever the origin sites redeploy — the `deploy` scripts in news.txid.uk and learn.txid.uk trigger a Cloudflare Pages deploy hook, which runs this build. All edits (new posts, content fixes, slug changes) propagate automatically.
+`txt.txid.uk` rebuilds when news.txid.uk or learn.txid.uk is deployed **locally** — their `npm run deploy` has a `postdeploy` step that runs this repo's `npm run deploy`. There is no Cloudflare Pages deploy hook: origin deploys that go out via push → GitHub Actions do not rebuild this mirror, so it can lag until the next local deploy.
 
 ## Canonical URLs
 
