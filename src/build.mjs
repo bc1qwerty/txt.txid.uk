@@ -579,48 +579,14 @@ async function buildRedirects() {
   await emit('_redirects', body);
 }
 
-// ── sitemap.xml ──
-async function buildSitemap(newsFeed, learnFeed) {
-  const today = new Date().toISOString().slice(0, 10);
-  const urls = [{ loc: `${SITE_URL}/`, lastmod: today }];
-
-  if (newsFeed) {
-    urls.push({ loc: `${SITE_URL}/news/`, lastmod: today });
-    for (const p of newsFeed.posts || []) {
-      urls.push({
-        loc: `${SITE_URL}${newsPostPath(p)}`,
-        lastmod: fmtDate(p.lastModified || p.date),
-      });
-    }
-  }
-
-  if (learnFeed) {
-    urls.push({ loc: `${SITE_URL}/learn/`, lastmod: today });
-    const sectionSet = new Set();
-    for (const p of learnFeed.posts || []) {
-      sectionSet.add(`${p.lang}/${p.section}`);
-      urls.push({
-        loc: `${SITE_URL}${learnPostPath(p)}`,
-        lastmod: fmtDate(p.lastModified || p.date),
-      });
-    }
-    for (const key of sectionSet) {
-      urls.push({ loc: `${SITE_URL}/learn/${key}/`, lastmod: today });
-    }
-  }
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    (u) =>
-      `  <url><loc>${u.loc}</loc>${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ''}</url>`
-  )
-  .join('\n')}
-</urlset>`;
-
-  await emit('sitemap.xml', xml);
-}
+// ── sitemap.xml ── (2026-09-16 제거)
+// ⚠ 다시 만들지 말 것. 이 사이트는 template.mjs 79행에서 **전 페이지에**
+//   `noindex, follow` 를 박는다 — 원본(news/learn)만 색인시키고 이 미러는
+//   색인시키지 않는 것이 방침이다(README). 그런데 사이트맵은 «이 URL 들을
+//   색인해 달라»는 신호라 방침과 정면으로 모순된다. 크롤러가 991개 URL 을
+//   전부 훑고 전부 'noindex 로 제외' 로 쌓이는 낭비만 남았다.
+//   robots 의 `Sitemap:` 줄은 bb118b1(9/14)에서 이미 지웠고, 이번에 산출물
+//   자체를 끊는다. 미러도 색인시키기로 방침이 바뀌면 noindex 를 먼저 걷어낼 것.
 
 // ── 404 page ──
 async function build404() {
@@ -672,11 +638,10 @@ async function main() {
   await buildRobots();
   await buildHeaders();
   await buildRedirects();
-  await buildSitemap(newsFeed, learnFeed);
   await build404();
 
   console.log(
-    `Done. ${newsRes.count} news + ${newsRes.digests} digests + ${learnRes.count} learn + ${tagRes.count} tag pages, plus feed.xml, sitemap.xml, robots.txt, 404.html -> ${DIST}`
+    `Done. ${newsRes.count} news + ${newsRes.digests} digests + ${learnRes.count} learn + ${tagRes.count} tag pages, plus feed.xml, robots.txt, 404.html -> ${DIST}`
   );
 }
 

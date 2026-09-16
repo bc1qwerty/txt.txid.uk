@@ -10,7 +10,6 @@ const URLS = [
   '/news/',
   '/learn/',
   '/feed.xml',
-  '/sitemap.xml',
   '/robots.txt',
 ];
 
