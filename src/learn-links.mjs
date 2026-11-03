@@ -29,8 +29,9 @@ export function rewriteLearnLinks(md, { gemini = false } = {}) {
     // gemini 미러의 개별 글은 디렉토리가 아니라 `<slug>.gmi` **파일**이다
     // (emit: learn/<lang>/<section>/<slug>.gmi). 글 링크(세그먼트 3개)만 확장자로
     // 바꾸고, 섹션 인덱스(세그먼트 2개)는 그대로 둔다 — 서버가 index.gmi 를 찾는다.
+    // dharma 슬러그는 `concepts/anatta` 처럼 세그먼트가 둘이라 슬러그 쪽은 `/` 를 허용한다.
     out = out.replace(
-      /\]\(\/learn\/(en|ko|ja)\/([a-z0-9-]+)\/([^)/\s#]+)\/(#[^)]*)?\)/g,
+      /\]\(\/learn\/(en|ko|ja)\/([a-z0-9-]+)\/([^)\s#]+?)\/(#[^)]*)?\)/g,
       '](/learn/$1/$2/$3.gmi$4)'
     );
   }
@@ -46,7 +47,8 @@ export function rewriteLearnLinks(md, { gemini = false } = {}) {
  */
 export function learnSlug(slug) {
   const s = String(slug);
-  if (encodeURIComponent(s) !== s) {
+  // dharma 는 하위 디렉토리 슬러그(`concepts/anatta`)라 세그먼트별로 검사한다.
+  if (s.split('/').some((seg) => !seg || encodeURIComponent(seg) !== seg)) {
     throw new Error(
       `[learn-links] URL-unsafe learn slug: "${s}" — 디렉토리명과 링크가 어긋나 ` +
       `404 가 된다(태그 92페이지 사고와 동일 기전). learn 쪽 슬러그를 고칠 것.`
