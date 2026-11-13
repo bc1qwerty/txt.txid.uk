@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Unit tests (feed guard, link rewriting, renderers)
+        run: npm test
+
       - name: Build against live feeds
         run: node src/build.mjs
         env:

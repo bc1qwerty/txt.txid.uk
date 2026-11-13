@@ -7,6 +7,10 @@ export const FEED_TIMEOUT_MS = 30_000;
 // 미러를 그대로 비운다. 지금 규모(news 약 400, learn 약 800)보다 한참 아래에 하한을 둔다.
 const MIN_NEWS_POSTS = 100;
 const MIN_LEARN_POSTS = 400;
+// learn 은 세 언어가 같은 편수(지금 각 265)다. 한 언어가 통째로 빠져도 합계는 하한을 넘으므로
+// 언어별로도 본다.
+const LEARN_LANGS = ['en', 'ko', 'ja'];
+const MIN_LEARN_PER_LANG = 130;
 
 export function assertFeedFloor(newsFeed, learnFeed) {
   const news = newsFeed?.posts?.length ?? 0;
@@ -15,5 +19,13 @@ export function assertFeedFloor(newsFeed, learnFeed) {
     throw new Error(
       `피드가 너무 작다: news ${news}(하한 ${MIN_NEWS_POSTS}), learn ${learn}(하한 ${MIN_LEARN_POSTS}) — 미러를 덮어쓰지 않는다`
     );
+  }
+  for (const lang of LEARN_LANGS) {
+    const n = learnFeed.posts.filter((p) => p.lang === lang).length;
+    if (n < MIN_LEARN_PER_LANG) {
+      throw new Error(
+        `learn 피드의 ${lang} 가 너무 작다: ${n}(하한 ${MIN_LEARN_PER_LANG}) — 미러를 덮어쓰지 않는다`
+      );
+    }
   }
 }

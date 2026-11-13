@@ -21,6 +21,9 @@ function renderInline(text) {
   text = esc(text);
   // links [text](url)
   text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, url) => {
+    // 스킴은 http(s)·mailto 와 사이트 안 경로만. 본문은 바깥 글에서 온 것이 섞이므로
+    // `javascript:` 같은 주소는 링크로 만들지 않고 글자로 둔다(CSP 가 막더라도 렌더러에서 끊는다).
+    if (!/^(https?:\/\/|mailto:|\/|#|\.\.?\/)/i.test(url.trim())) return _m;
     const safeUrl = url.replace(/"/g, '&quot;');
     return `<a href="${safeUrl}">${label}</a>`;
   });

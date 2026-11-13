@@ -17,7 +17,7 @@
     "deploy:gemini-sync": "bash scripts/sync-gemini.sh",
     "deploy:ipfs-sync": "bash scripts/sync-ipfs.sh",
     "build:gopher": "node src/build-gopher.mjs",
-    "deploy:gopher-sync": "bash scripts/sync-gopher.sh"
-  },
-  "dependencies": {}
+    "deploy:gopher-sync": "bash scripts/sync-gopher.sh",
+    "test": "node --test"
+  }
 }
