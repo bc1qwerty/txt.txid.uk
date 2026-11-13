@@ -18,12 +18,19 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Build against live feeds
         run: node src/build.mjs
         env:
           # Force live URLs on CI (no local file paths available).
+          NEWS_FEED_URL: https://news.txid.uk/txt-feed.json
+          LEARN_FEED_URL: https://learn.txid.uk/txt-feed.json
+
+      # gemini·gopher 빌더와 그쪽의 링크 가드도 CI 에서 돈다(산출물은 dist 밖이라 아래 검사와 무관).
+      - name: Build gemini and gopher mirrors
+        run: node src/build-gemini.mjs && node src/build-gopher.mjs
+        env:
           NEWS_FEED_URL: https://news.txid.uk/txt-feed.json
           LEARN_FEED_URL: https://learn.txid.uk/txt-feed.json
 

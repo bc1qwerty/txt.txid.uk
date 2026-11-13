@@ -9,6 +9,7 @@ import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { markdownToGemtext } from './markdown-to-gemtext.mjs';
+import { assertFeedFloor, FEED_TIMEOUT_MS } from './feed-guard.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -33,7 +34,7 @@ async function fetchFeed(url) {
     const raw = await readFile(url, 'utf8');
     return JSON.parse(raw);
   }
-  const res = await fetch(url);
+  const res = await fetch(url, { signal: AbortSignal.timeout(FEED_TIMEOUT_MS) });
   if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
   return res.json();
 }
@@ -277,6 +278,7 @@ async function main() {
     fetchFeed(NEWS_FEED_URL),
     fetchFeed(LEARN_FEED_URL),
   ]);
+  assertFeedFloor(newsFeed, learnFeed);
 
   console.log('Generating gemtext...');
   const [newsRes, learnRes] = await Promise.all([

@@ -9,13 +9,15 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderMarkdown, esc } from './markdown.mjs';
 import { renderPage, fullSiteBanner, CSS_SHA256 } from './template.mjs';
+import { assertFeedFloor, FEED_TIMEOUT_MS } from './feed-guard.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = resolve(__dirname, '..');
 const DIST = join(ROOT, 'dist');
 
-// Local file paths — used when txt is built on the same machine as the origin
+// Local file paths (옛 acer 배치 — 맥에는 이 경로가 없어 늘 라이브 URL 로 간다).
+// Used when txt is built on the same machine as the origin
 // sites (always fresher than live URLs since those depend on deploy propagation).
 const LOCAL_NEWS_FEED = '/data/projects/news.txid.uk/public/txt-feed.json';
 const LOCAL_LEARN_FEED = '/data/projects/learn.txid.uk/dist/txt-feed.json';
@@ -40,7 +42,7 @@ async function fetchFeed(url) {
     const raw = await readFile(url, 'utf8');
     return JSON.parse(raw);
   }
-  const res = await fetch(url);
+  const res = await fetch(url, { signal: AbortSignal.timeout(FEED_TIMEOUT_MS) });
   if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
   return res.json();
 }
@@ -210,10 +212,13 @@ async function buildNewsTags(feed) {
   for (const p of posts) {
     if (isDigestPost(p)) continue;
     for (const tag of p.tags || []) {
-      const key = String(tag).toLowerCase().trim();
-      if (!key) continue;
+      if (!String(tag).trim()) continue;
+      // 키는 슬러그다 — 표기만 다른 태그("censorship resistance" / "censorship-resistance")는
+      // 같은 주소로 나가므로 여기서 합쳐야 한다. 표기별로 두면 뒤 것이 앞 페이지를 덮어쓴다.
+      const key = tagSlug(tag);
       if (!tagMap.has(key)) tagMap.set(key, { display: tag, posts: [] });
-      tagMap.get(key).posts.push(p);
+      const entry = tagMap.get(key);
+      if (!entry.posts.includes(p)) entry.posts.push(p);
     }
   }
 
@@ -624,6 +629,7 @@ async function main() {
     fetchFeed(NEWS_FEED_URL),
     fetchFeed(LEARN_FEED_URL),
   ]);
+  assertFeedFloor(newsFeed, learnFeed);
 
   console.log('Generating pages...');
   const [newsRes, learnRes, tagRes] = await Promise.all([
