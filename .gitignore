@@ -5,3 +5,6 @@ node_modules/
 dist-gemini/
 dist-gopher/
 .wrangler/
+dist.build/
+dist-gemini.build/
+dist-gopher.build/

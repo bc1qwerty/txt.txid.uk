@@ -2,7 +2,7 @@
 // txt.txid.uk builder — fetches both feeds and emits plain HTML into dist/.
 // Zero external dependencies.
 
-import { mkdir, writeFile, rm, readFile, copyFile } from 'node:fs/promises';
+import { mkdir, writeFile, rm, readFile, copyFile, rename } from 'node:fs/promises';
 import { rewriteLearnLinks, assertNoBareLearnLinks, learnSlug } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -14,7 +14,9 @@ import { assertFeedFloor, FEED_TIMEOUT_MS } from './feed-guard.mjs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = resolve(__dirname, '..');
-const DIST = join(ROOT, 'dist');
+// 옆 디렉토리에 짓고 끝에서 바꿔 끼운다 — 빌드가 중간에 죽어도 반쯤 찬 산출물이 배포·동기화 대상이 되지 않는다.
+const FINAL = join(ROOT, 'dist');
+const DIST = FINAL + '.build';
 
 // Local file paths (옛 acer 배치 — 맥에는 이 경로가 없어 늘 라이브 URL 로 간다).
 // Used when txt is built on the same machine as the origin
@@ -647,8 +649,11 @@ async function main() {
   await buildRedirects();
   await build404();
 
+  await rm(FINAL, { recursive: true, force: true });
+  await rename(DIST, FINAL);
+
   console.log(
-    `Done. ${newsRes.count} news + ${newsRes.digests} digests + ${learnRes.count} learn + ${tagRes.count} tag pages, plus feed.xml, robots.txt, 404.html -> ${DIST}`
+    `Done. ${newsRes.count} news + ${newsRes.digests} digests + ${learnRes.count} learn + ${tagRes.count} tag pages, plus feed.xml, robots.txt, 404.html -> ${FINAL}`
   );
 }
 

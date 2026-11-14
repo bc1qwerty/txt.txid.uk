@@ -1,3 +1,4 @@
+import { unwrapComponents } from './unwrap-components.mjs';
 // Minimal markdown-to-HTML renderer. Zero dependencies.
 // Handles: headings, paragraphs, bold/italic, inline code, code blocks,
 // links, lists (ul/ol), blockquotes, horizontal rules, tables (basic).
@@ -182,6 +183,7 @@ function stripJsx(md) {
   md = md.replace(/<Mermaid\b\s+code=\{`[\s\S]*?`\}\s*\/>/g, '');
   md = md.replace(/<Mermaid\b[\s\S]*?<\/Mermaid>/g, '');
   // PascalCase JSX components
+  md = unwrapComponents(md);
   md = md.replace(/<[A-Z][A-Za-z0-9]*\s*[^>]*\/>/g, '');
   md = md.replace(/<([A-Z][A-Za-z0-9]*)\s*[^>]*>[\s\S]*?<\/\1>/g, '');
   // Leaked lowercase HTML: details/summary/br (leak from MDX)

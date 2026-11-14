@@ -10,10 +10,14 @@ if [ ! -d "$DIST_GEMINI" ]; then
   exit 1
 fi
 
-echo "[gemini-sync] rsync stage -> vps:/tmp/gemini-stage/"
-rsync -a --delete "${DIST_GEMINI}/" vps:/tmp/gemini-stage/
+# 실행마다 다른 스테이지를 쓴다(sync-gopher.sh 와 같은 이유).
+VPS_STAGE="$(ssh vps 'mktemp -d /tmp/gemini-stage.XXXXXX')"
+case "$VPS_STAGE" in /tmp/gemini-stage.*) ;; *) echo "error: bad stage path: $VPS_STAGE"; exit 1 ;; esac
+
+echo "[gemini-sync] rsync stage -> vps:${VPS_STAGE}/"
+rsync -a --delete "${DIST_GEMINI}/" "vps:${VPS_STAGE}/"
 
 echo "[gemini-sync] move stage -> /var/lib/molly-brown/ (sudo)"
-ssh vps 'sudo rsync -a --delete /tmp/gemini-stage/ /var/lib/molly-brown/ && sudo chmod -R a+rX /var/lib/molly-brown && rm -rf /tmp/gemini-stage'
+ssh vps "sudo rsync -a --delete ${VPS_STAGE}/ /var/lib/molly-brown/ && sudo chmod -R a+rX /var/lib/molly-brown; rc=\$?; rm -rf ${VPS_STAGE}; exit \$rc"
 
 echo "[gemini-sync] done"

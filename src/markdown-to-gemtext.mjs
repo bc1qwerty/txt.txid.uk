@@ -1,3 +1,4 @@
+import { unwrapComponents } from './unwrap-components.mjs';
 // Minimal markdown -> gemtext converter. Zero dependencies.
 // Gemtext spec: https://gemini.circumlunar.space/docs/gemtext.gmi
 //
@@ -21,6 +22,7 @@ function stripJsx(md) {
   md = md.replace(/<Mermaid\b\s+code=\{`[\s\S]*?`\}\s*\/>/g, '');
   md = md.replace(/<Mermaid\b[\s\S]*?<\/Mermaid>/g, '');
   // JSX self-closing and paired tags (PascalCase components)
+  md = unwrapComponents(md);
   md = md.replace(/<[A-Z][A-Za-z0-9]*\s*[^>]*\/>/g, '');
   md = md.replace(/<([A-Z][A-Za-z0-9]*)\s*[^>]*>[\s\S]*?<\/\1>/g, '');
   // HTML inline tags that leak through MDX: details/summary/br

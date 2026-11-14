@@ -77,3 +77,45 @@ test('gopher: 코드 블록은 접지 않고, 홀로 선 마침표는 무해하�
   assert.ok(out.includes('    ' + code), out);
   assert.ok(!/^\.$/m.test(out), out);
 });
+
+test('컴포넌트 안 본문은 세 미러 모두에 남는다(껍데기만 벗긴다)', () => {
+  const md = [
+    '<InfoBox type="info">', 'Read the original: [bitcoin.org](https://bitcoin.org/bitcoin.pdf) nine pages.', '</InfoBox>', '',
+    '<CompareTable>', '| A | B |', '|---|---|', '| gold | bitcoin |', '</CompareTable>', '',
+    '<AdultQuiz id="x" courseId="y">', 'q: Is the supply capped?', 'a: O', 'explain: Twenty-one million.', '</AdultQuiz>', '',
+    '<ChartLine data={[1,2]} />',
+  ].join('\n');
+  for (const out of [renderMarkdown(md), markdownToGemtext(md), markdownToGopherText(md)]) {
+    assert.match(out, /Read the original/);
+    assert.match(out, /bitcoin\.org\/bitcoin\.pdf/);
+    assert.match(out, /gold/);
+    assert.match(out, /Q\. Is the supply capped\?.*A\. O.*Twenty-one million/);
+    assert.doesNotMatch(out, /InfoBox|CompareTable|AdultQuiz|ChartLine/);
+  }
+});
+
+test('링크 주소의 &amp; 는 한 번만 이스케이프된다', () => {
+  const md = '[src](https://e.x/a?b=1&amp;c=2)';
+  assert.match(renderMarkdown(md), /href="https:\/\/e\.x\/a\?b=1&amp;c=2"/);
+  assert.match(markdownToGopherText(md), /\[https:\/\/e\.x\/a\?b=1&c=2\]/);
+  assert.match(markdownToGemtext(md), /=> https:\/\/e\.x\/a\?b=1&c=2/);
+});
+
+test('markdown → HTML: 코드 스팬·코드 블록 안의 HTML 은 이스케이프된다', () => {
+  assert.match(renderMarkdown('a `<script>x</script>` b'), /&lt;script&gt;x&lt;\/script&gt;/);
+  const block = renderMarkdown('```\n<img src=x onerror=1>\n```');
+  assert.match(block, /&lt;img src=x onerror=1&gt;/);
+  assert.doesNotMatch(block, /<img/);
+});
+
+test('gopher: 사이트 안 글 링크는 .txt 선택자로, 인용·목록의 이어지는 줄은 머리를 지킨다', () => {
+  assert.match(markdownToGopherText('see [pow](/learn/ja/ideas/pow/) and [x](/learn/ko/glossary/)'), /\[\/learn\/ja\/ideas\/pow\.txt\]/);
+  const quote = markdownToGopherText('intro\n\n> ' + 'word '.repeat(40));
+  const qLines = quote.split('\n').filter((l) => l.trim()).slice(1);
+  assert.ok(qLines.length > 1);
+  for (const l of qLines) assert.match(l, /^  \| /);
+  const list = markdownToGopherText('- top\n  - ' + 'nested '.repeat(30)).split('\n').filter((l) => l.trim());
+  assert.match(list[1], /^  \* nested/);
+  for (const l of list.slice(2)) assert.match(l, /^    nested/);
+  for (const l of [...qLines, ...list]) assert.ok(l.length <= 70, l);
+});

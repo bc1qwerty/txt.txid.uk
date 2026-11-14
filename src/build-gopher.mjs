@@ -3,7 +3,7 @@
 // Reads txt-feed.json (news + learn) and emits Gopher menus + text files
 // under dist-gopher/. Upload target: /var/gopher/ on VPS (gophernicus root).
 
-import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
+import { mkdir, writeFile, rm, readFile, rename } from 'node:fs/promises';
 import { rewriteLearnLinks, assertNoBareLearnLinks } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -14,7 +14,9 @@ import { assertFeedFloor, FEED_TIMEOUT_MS } from './feed-guard.mjs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = resolve(__dirname, '..');
-const DIST = join(ROOT, 'dist-gopher');
+// 옆 디렉토리에 짓고 끝에서 바꿔 끼운다 — 빌드가 중간에 죽어도 반쯤 찬 산출물이 배포·동기화 대상이 되지 않는다.
+const FINAL = join(ROOT, 'dist-gopher');
+const DIST = FINAL + '.build';
 
 const HOST = 'gopher.txid.uk';
 const PORT = 70;
@@ -92,7 +94,7 @@ function postText(p) {
   if (meta) doc += meta + '\n\n';
   if (p.summary) doc += wrap(p.summary, 70) + '\n\n';
   doc += body;
-  if (p.tags && p.tags.length) doc += '\nTags: ' + p.tags.join(', ') + '\n';
+  if (p.tags && p.tags.length) doc += '\n' + wrap('Tags: ' + p.tags.join(', '), 70) + '\n';
   if (p.canonicalUrl) doc += '\nRead on full site: ' + p.canonicalUrl + '\n';
   return doc;
 }
@@ -257,8 +259,11 @@ async function main() {
   // robots.txt — allow Veronica-2 and all Gopher crawlers
   await emit('robots.txt', 'User-agent: *\nAllow: /\n\nUser-agent: veronica\nAllow: /\n');
 
+  await rm(FINAL, { recursive: true, force: true });
+  await rename(DIST, FINAL);
+
   console.log(
-    `Done. ${newsStats.count} news + ${newsStats.digests} digests + ${learnStats.count} learn plain-text files -> ${DIST}`
+    `Done. ${newsStats.count} news + ${newsStats.digests} digests + ${learnStats.count} learn plain-text files -> ${FINAL}`
   );
 }
 

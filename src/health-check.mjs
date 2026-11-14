@@ -20,7 +20,7 @@ async function checkWithRetry(path) {
   const url = `${SITE}${path}`;
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     try {
-      const res = await fetch(url, { redirect: 'follow' });
+      const res = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(15_000) });
       if (res.ok) {
         return { url, status: res.status, ok: true, attempts: attempt };
       }

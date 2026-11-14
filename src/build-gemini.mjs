@@ -3,7 +3,7 @@
 // Reads txt-feed.json (news + learn) and emits .gmi files under dist-gemini/.
 // Upload target: /var/lib/molly-brown/ on the Gemini host (Oracle VPS).
 
-import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
+import { mkdir, writeFile, rm, readFile, rename } from 'node:fs/promises';
 import { rewriteLearnLinks, assertNoBareLearnLinks, learnSlug } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -14,7 +14,9 @@ import { assertFeedFloor, FEED_TIMEOUT_MS } from './feed-guard.mjs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = resolve(__dirname, '..');
-const DIST = join(ROOT, 'dist-gemini');
+// 옆 디렉토리에 짓고 끝에서 바꿔 끼운다 — 빌드가 중간에 죽어도 반쯤 찬 산출물이 배포·동기화 대상이 되지 않는다.
+const FINAL = join(ROOT, 'dist-gemini');
+const DIST = FINAL + '.build';
 
 const LOCAL_NEWS_FEED = '/data/projects/news.txid.uk/public/txt-feed.json';
 const LOCAL_LEARN_FEED = '/data/projects/learn.txid.uk/dist/txt-feed.json';
@@ -70,14 +72,14 @@ function escapeXml(str) {
 }
 
 function buildAtomFeed(posts) {
-  const updated = posts[0]?.date
-    ? new Date(posts[0].date).toISOString()
-    : new Date().toISOString();
+  // 날짜가 깨진 글 하나가 toISOString() 예외로 gemini 빌드 전체를 죽이지 않게.
+  const iso = (d) => { const t = new Date(d); return isNaN(t.getTime()) ? null : t.toISOString(); };
+  const updated = iso(posts[0]?.date) || new Date().toISOString();
   const entries = posts
     .slice(0, 30)
     .map((p) => {
       const url = `${SITE_URL}${newsPath(p)}`;
-      const date = p.date ? new Date(p.date).toISOString() : updated;
+      const date = iso(p.date) || updated;
       const summary = p.summary || p.title;
       return `  <entry>
     <title>${escapeXml(p.title)}</title>
@@ -289,8 +291,11 @@ async function main() {
 
   await buildLanding(newsFeed, learnFeed);
 
+  await rm(FINAL, { recursive: true, force: true });
+  await rename(DIST, FINAL);
+
   console.log(
-    `Done. ${newsRes.count} news + ${newsRes.digests} digests + ${learnRes.count} learn gemtext files -> ${DIST}`
+    `Done. ${newsRes.count} news + ${newsRes.digests} digests + ${learnRes.count} learn gemtext files -> ${FINAL}`
   );
 }
 

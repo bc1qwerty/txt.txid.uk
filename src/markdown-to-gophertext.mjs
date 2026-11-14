@@ -1,3 +1,4 @@
+import { unwrapComponents } from './unwrap-components.mjs';
 // Minimal markdown -> plain text converter for Gopher.
 // Unlike gemtext, Gopher text files are just plain text (type 0).
 // Strip all formatting. Preserve paragraphs and code blocks as-is.
@@ -8,6 +9,7 @@ function stripJsx(md) {
   // Mermaid uses template-literal props with <br/> inside — match up to `} />
   md = md.replace(/<Mermaid\b\s+code=\{`[\s\S]*?`\}\s*\/>/g, '');
   md = md.replace(/<Mermaid\b[\s\S]*?<\/Mermaid>/g, '');
+  md = unwrapComponents(md);
   md = md.replace(/<[A-Z][A-Za-z0-9]*\s*[^>]*\/>/g, '');
   md = md.replace(/<([A-Z][A-Za-z0-9]*)\s*[^>]*>[\s\S]*?<\/\1>/g, '');
   md = md.replace(/<br\s*\/?>/gi, '\n');
@@ -29,7 +31,9 @@ function stripInline(text) {
   text = text.replace(/(^|[\s(])_([^_\n]+)_/g, '$1$2');
   text = text.replace(/`([^`]+)`/g, '$1');
   text = text.replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1');
-  text = text.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g, '$1 [$2]');
+  // 사이트 안 글 링크는 gopher 선택자(.txt)로 — HTML 미러 경로(/learn/ja/…/slug/)는 gopher 에서 따라갈 수 없다.
+  text = text.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g, (_m, label, url) =>
+    `${label} [${url.replace(/^(\/learn\/[a-z]{2}\/[^/#?]+\/[^/#?]+)\/?(?=$|[#?])/, '$1.txt')}]`);
   return text;
 }
 
@@ -168,7 +172,15 @@ export function markdownToGopherText(md) {
   }
 
   // 코드 블록 줄은 접지 않는다(들여쓰기와 명령이 쪼개진다).
-  const wrapped = out.map((l) => (typeof l === 'string' ? wrap(l, WRAP) : l.code));
+  // 인용(`  | `)과 목록의 이어지는 줄은 머리·들여쓰기를 잃지 않게 한다.
+  const wrapped = out.map((l) => {
+    if (typeof l !== 'string') return l.code;
+    const m = /^(\s*\| |\s*\* |\s+)(.*)$/.exec(l);
+    if (!m || !m[2]) return wrap(l, WRAP);
+    const head = m[1];
+    const cont = head.includes('|') ? head : ' '.repeat(head.length);
+    return wrap(m[2], WRAP - head.length).split('\n').map((w, i) => (i ? cont : head) + w).join('\n');
+  });
   const text = wrapped.join('\n').replace(/\n{3,}/g, '\n\n').trim();
   return guardLoneDot(text) + '\n';
 }
