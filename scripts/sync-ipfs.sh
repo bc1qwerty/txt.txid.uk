@@ -6,13 +6,28 @@ set -e
 DIST="$(dirname "$0")/../dist"
 DIST_GEMINI="$(dirname "$0")/../dist-gemini"
 DIST_GOPHER="$(dirname "$0")/../dist-gopher"
-VPS_STAGE="/tmp/ipfs-stage"
 IPNS_NAME="k51qzi5uqu5djaf06lbcq4kmw5hzrhkhrvpuqvpynq0jlgeic8kq1mzmt0mhb2"
 
 if [ ! -d "$DIST" ]; then
   echo "error: $DIST does not exist — run build first"
   exit 1
 fi
+
+# news·learn 배포가 겹치면 두 실행이 같은 PREV_CID 를 읽어, 먼저 게시된 쪽의 루트가 영구히 핀으로 남았다
+# (2026-11-14 감사). 이 맥에서 한 번에 하나만 돌게 줄 세운다 — 죽은 실행의 잠금은 pid 로 알아보고 치운다.
+LOCK="${TMPDIR:-/tmp}/txt-ipfs-sync.lock"
+for _ in $(seq 1 300); do
+  if mkdir "$LOCK" 2>/dev/null; then echo $$ > "$LOCK/pid"; break; fi
+  holder=$(cat "$LOCK/pid" 2>/dev/null || true)
+  if [ -n "$holder" ] && ! kill -0 "$holder" 2>/dev/null; then rm -rf "$LOCK"; continue; fi
+  sleep 2
+done
+[ "$(cat "$LOCK/pid" 2>/dev/null)" = "$$" ] || { echo "error: $LOCK 를 10분 넘게 다른 실행이 쥐고 있다"; exit 1; }
+
+# 스테이지도 실행마다 따로 — 고정 경로면 겹친 실행의 rsync --delete·rm -rf 가 서로의 ipfs add 도중에 끼어든다.
+VPS_STAGE="$(ssh vps 'mktemp -d /tmp/ipfs-stage.XXXXXX')"
+case "$VPS_STAGE" in /tmp/ipfs-stage.*) ;; *) echo "error: bad stage path: $VPS_STAGE"; rm -rf "$LOCK"; exit 1 ;; esac
+trap 'ssh vps "rm -rf ${VPS_STAGE}" 2>/dev/null; rm -rf "$LOCK"' EXIT
 
 echo "[ipfs-sync] rsync dist/ -> vps:${VPS_STAGE}/ (HTML at root)"
 rsync -a --delete --exclude='gemini/' --exclude='gopher/' "${DIST}/" "vps:${VPS_STAGE}/"
@@ -48,11 +63,17 @@ if PUBLISH_OUT=$(ssh vps "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs ipfs name p
 else
   PUBLISHED=0
   echo "  (publish failed — keeping previous pin so IPNS keeps resolving)"
+  # 게시되지 않은 새 루트는 어디에도 기록되지 않는다 — 핀으로 남기면 다음 정리에서도 빠져 저장소만 늘어난다.
+  if [ "$CID" != "$PREV_CID" ]; then
+    ssh vps "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs ipfs pin rm ${CID}" 2>&1 | tail -1 || echo "  (pin rm of unpublished root failed — not fatal)"
+  fi
 fi
 echo "$PUBLISH_OUT" | tail -2
 
-echo "[ipfs-sync] pin replica on Dell (fetches from VPS peer, best-effort)"
-ssh swd@dell "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs timeout 180 ipfs pin add -r ${CID}" 2>&1 | tail -2 || echo "  (dell pin failed — not fatal, VPS is still source of truth)"
+if [ "$PUBLISHED" = "1" ]; then
+  echo "[ipfs-sync] pin replica on Dell (fetches from VPS peer, best-effort)"
+  ssh swd@dell "sudo -u ipfs IPFS_PATH=/var/lib/ipfs/.ipfs timeout 180 ipfs pin add -r ${CID}" 2>&1 | tail -2 || echo "  (dell pin failed — not fatal, VPS is still source of truth)"
+fi
 
 if [ "$PUBLISHED" = "1" ]; then
   ssh vps "echo ${CID} > ~/.txt-ipfs-root"

@@ -221,3 +221,37 @@ test('swapIn: 동시에 끝난 두 빌드가 교체에서 서로 죽이지 않�
   assert.match(await readFile(join(final, 'v'), 'utf8'), /^[ab]$/);
   assert.deepEqual((await readdir(root)).sort(), ['dist']); // 잠금·옛 디렉토리가 남지 않는다
 });
+
+// 2026-11-14 6회차 감사: 막 만들어 아직 빈 잠금 파일을 «죽은 잠금» 으로 보고 지워 배타가 깨졌고(10×60×3 스트레스에서 2번),
+// 교체 중에 죽은 빌드의 `dist.old.<pid>` 는 치우지 않아 쌓였다.
+test('swapIn: 빈 잠금 파일은 살아 있는 것으로 보고 기다린다(유예가 지난 빈 잠금만 치운다)', async () => {
+  const { mkdtemp, mkdir, writeFile, readFile, utimes } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { swapIn } = await import('../src/build-dir.mjs');
+  const root = await mkdtemp(join(tmpdir(), 'txt-swap-empty-'));
+  const final = join(root, 'dist');
+  await mkdir(join(root, 'b')); await writeFile(join(root, 'b', 'v'), 'new');
+  await writeFile(`${final}.swap-lock`, ''); // 방금 만든(아직 pid 를 안 쓴) 잠금
+  await assert.rejects(swapIn(join(root, 'b'), final, { waitMs: 300 }), /swap-lock/);
+  const old = new Date(Date.now() - 10_000);
+  await utimes(`${final}.swap-lock`, old, old); // 만들고 쓰는 사이에 죽은 잠금
+  await swapIn(join(root, 'b'), final, { waitMs: 300 });
+  assert.equal(await readFile(join(final, 'v'), 'utf8'), 'new');
+});
+
+test('sweepStaleBuildDirs: 죽은 빌드의 dist.old.<pid> 도 치운다', async () => {
+  const { sweepStaleBuildDirs } = await import('../src/build-dir.mjs');
+  const fs = await import('node:fs');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'txt-old-'));
+  try {
+    for (const n of ['dist', 'dist.old.11', 'dist.old.22']) fs.mkdirSync(path.join(root, n));
+    const removed = await sweepStaleBuildDirs(path.join(root, 'dist'), { isAlive: (pid) => pid === 22 });
+    assert.deepEqual(removed, ['dist.old.11']);
+    assert.deepEqual(fs.readdirSync(root).sort(), ['dist', 'dist.old.22']);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
