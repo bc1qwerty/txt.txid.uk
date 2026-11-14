@@ -234,15 +234,16 @@ async function main() {
   console.log('  NEWS_FEED_URL =', NEWS_FEED_URL);
   console.log('  LEARN_FEED_URL =', LEARN_FEED_URL);
 
-  await rm(DIST, { recursive: true, force: true });
-  await mkdir(DIST, { recursive: true });
-
   console.log('Fetching feeds...');
   const [newsFeed, learnFeed] = await Promise.all([
     fetchFeed(NEWS_FEED_URL),
     fetchFeed(LEARN_FEED_URL),
   ]);
   assertFeedFloor(newsFeed, learnFeed);
+
+  // 하한 검사 뒤에 비운다 — 피드가 비어 실패한 빌드가 옛 산출물을 지우면 단독 rsync --delete 가 미러를 비운다.
+  await rm(DIST, { recursive: true, force: true });
+  await mkdir(DIST, { recursive: true });
 
   console.log('Generating gopher menus + text files...');
   const [newsStats, learnStats] = await Promise.all([
