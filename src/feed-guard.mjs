@@ -28,4 +28,25 @@ export function assertFeedFloor(newsFeed, learnFeed) {
       );
     }
   }
+  assertFeedShape(newsFeed, learnFeed);
+}
+
+// slug·lang·section 은 그대로 파일 경로와 링크가 된다. 자기 피드라 믿되, `..`·슬래시·빈 값이 섞이면
+// 산출 디렉토리 밖에 쓰거나 깨진 링크를 낸다 — 짓기 전에 소리 내어 멈춘다.
+const SAFE_SEG = /^[A-Za-z0-9][A-Za-z0-9._-]*$/;
+export function assertFeedShape(newsFeed, learnFeed) {
+  for (const p of newsFeed.posts) {
+    if (!SAFE_SEG.test(String(p.slug)) || String(p.slug).includes('..')) {
+      throw new Error(`news 피드의 slug 가 경로로 쓸 수 없다: ${JSON.stringify(p.slug)}`);
+    }
+  }
+  for (const p of learnFeed.posts) {
+    if (!LEARN_LANGS.includes(p.lang) || !/^[a-z0-9][a-z0-9-]*$/.test(String(p.section))) {
+      throw new Error(`learn 피드의 lang·section 이 경로로 쓸 수 없다: ${JSON.stringify([p.lang, p.section, p.slug])}`);
+    }
+    // 슬러그는 dharma 처럼 하위 디렉토리를 가질 수 있다(`concepts/anatta`) — 세그먼트별로 본다.
+    if (String(p.slug).split('/').some((seg) => !SAFE_SEG.test(seg) || seg.includes('..'))) {
+      throw new Error(`learn 피드의 slug 가 경로로 쓸 수 없다: ${JSON.stringify(p.slug)}`);
+    }
+  }
 }

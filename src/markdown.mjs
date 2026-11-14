@@ -91,40 +91,11 @@ function renderBlock(lines) {
       continue;
     }
 
-    // unordered list (with GFM task list support)
-    if (/^[-*+]\s+/.test(line)) {
-      const items = [];
-      while (i < lines.length && /^[-*+]\s+/.test(lines[i])) {
-        items.push(lines[i].replace(/^[-*+]\s+/, ''));
-        i++;
-      }
-      out.push(
-        '<ul>' +
-          items
-            .map((it) => {
-              // GFM task list: "- [x] done" or "- [ ] todo"
-              const checked = it.match(/^\[[xX]\]\s+(.*)/);
-              if (checked) return `<li>☑ ${renderInline(checked[1])}</li>`;
-              const unchecked = it.match(/^\[ \]\s+(.*)/);
-              if (unchecked) return `<li>☐ ${renderInline(unchecked[1])}</li>`;
-              return `<li>${renderInline(it)}</li>`;
-            })
-            .join('') +
-          '</ul>'
-      );
-      continue;
-    }
-
-    // ordered list
-    if (/^\d+\.\s+/.test(line)) {
-      const items = [];
-      while (i < lines.length && /^\d+\.\s+/.test(lines[i])) {
-        items.push(lines[i].replace(/^\d+\.\s+/, ''));
-        i++;
-      }
-      out.push(
-        '<ol>' + items.map((it) => `<li>${renderInline(it)}</li>`).join('') + '</ol>'
-      );
+    // list (ul/ol, GFM task list, 들여쓴 하위 목록)
+    if (/^([-*+]|\d+\.)\s+/.test(line)) {
+      const r = renderList(lines, i);
+      out.push(r.html);
+      i = r.next;
       continue;
     }
 
@@ -170,6 +141,46 @@ function renderBlock(lines) {
     out.push(`<p>${renderInline(p.join(' '))}</p>`);
   }
   return out;
+}
+
+const LIST_ITEM = /^(\s*)([-*+]|\d+\.)\s+(.*)$/;
+
+// lines[i] 에서 시작하는 목록 하나. 더 들여쓴 항목은 바로 앞 항목의 하위 목록이 된다 —
+// 예전엔 들여쓴 `-` 가 문단으로 뭉개지고, 그 뒤 번호 목록이 1 부터 다시 시작했다.
+function renderList(lines, i) {
+  const first = lines[i].match(LIST_ITEM);
+  const base = first[1].length;
+  const ordered = /\d/.test(first[2]);
+  const start = ordered ? parseInt(first[2], 10) : 1;
+  const items = [];
+  while (i < lines.length) {
+    const m = lines[i].match(LIST_ITEM);
+    if (!m || m[1].length < base) break;
+    if (m[1].length === base) {
+      if (/\d/.test(m[2]) !== ordered) break;
+      items.push({ text: m[3], kids: [] });
+    } else {
+      items[items.length - 1].kids.push(lines[i]);
+    }
+    i++;
+  }
+  const li = items.map((it) => {
+    let inner;
+    const checked = !ordered && it.text.match(/^\[[xX]\]\s+(.*)/);
+    const unchecked = !ordered && it.text.match(/^\[ \]\s+(.*)/);
+    if (checked) inner = `☑ ${renderInline(checked[1])}`;
+    else if (unchecked) inner = `☐ ${renderInline(unchecked[1])}`;
+    else inner = renderInline(it.text);
+    let sub = '';
+    for (let j = 0; j < it.kids.length;) {
+      const r = renderList(it.kids, j);
+      sub += r.html;
+      j = r.next;
+    }
+    return `<li>${inner}${sub}</li>`;
+  }).join('');
+  const open = ordered ? (start > 1 ? `<ol start="${start}">` : '<ol>') : '<ul>';
+  return { html: open + li + (ordered ? '</ol>' : '</ul>'), next: i };
 }
 
 // Strip JSX-looking tags that next-mdx-remote or MDX would render.

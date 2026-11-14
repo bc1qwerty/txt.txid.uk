@@ -31,9 +31,10 @@ function stripInline(text) {
   text = text.replace(/(^|[\s(])_([^_\n]+)_/g, '$1$2');
   text = text.replace(/`([^`]+)`/g, '$1');
   text = text.replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1');
+  // ⚠ 슬러그의 `/`(dharma 의 `concepts/anatta`)는 build-gopher 의 safeSlug 와 같은 규칙으로 `_` 가 된다 — 파일 이름이 그렇다.
   // 사이트 안 글 링크는 gopher 선택자(.txt)로 — HTML 미러 경로(/learn/ja/…/slug/)는 gopher 에서 따라갈 수 없다.
   text = text.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g, (_m, label, url) =>
-    `${label} [${url.replace(/^(\/learn\/[a-z]{2}\/[^/#?]+\/[^/#?]+)\/?(?=$|[#?])/, '$1.txt')}]`);
+    `${label} [${url.replace(/^(\/learn\/[a-z]{2}\/[^/#?]+\/)([^#?]*[^/#?])\/?(?=$|[#?])/, (m, head, slug) => `${head}${slug.replace(/[^A-Za-z0-9._-]/g, '_')}.txt`)}]`);
   return text;
 }
 

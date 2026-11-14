@@ -149,8 +149,9 @@ export function markdownToGemtext(md) {
 
     // Unordered or ordered list
     if (/^([-*+]|\d+\.)\s+/.test(line)) {
-      while (i < lines.length && /^([-*+]|\d+\.)\s+/.test(lines[i])) {
-        const itemText = lines[i].replace(/^([-*+]|\d+\.)\s+/, '');
+      // 들여쓴 하위 항목도 같은 목록으로 편다(gemtext 는 중첩이 없다) — 안 그러면 문단으로 뭉개진다.
+      while (i < lines.length && /^\s*([-*+]|\d+\.)\s+/.test(lines[i])) {
+        const itemText = lines[i].replace(/^\s*([-*+]|\d+\.)\s+/, '');
         // Task list checkbox
         const checked = itemText.match(/^\[[xX]\]\s+(.*)/);
         const unchecked = itemText.match(/^\[ \]\s+(.*)/);

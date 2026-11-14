@@ -1,7 +1,7 @@
 // 세 빌더가 같이 쓰는 순수 모듈의 최소 벡터. 빌더 본체는 CI 가 라이브 피드로 돌린다.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { assertFeedFloor } from '../src/feed-guard.mjs';
+import { assertFeedFloor, assertFeedShape } from '../src/feed-guard.mjs';
 import { rewriteLearnLinks, learnSlug, assertNoBareLearnLinks } from '../src/learn-links.mjs';
 import { renderMarkdown, esc } from '../src/markdown.mjs';
 import { markdownToGemtext } from '../src/markdown-to-gemtext.mjs';
@@ -118,4 +118,29 @@ test('gopher: 사이트 안 글 링크는 .txt 선택자로, 인용·목록의 �
   assert.match(list[1], /^  \* nested/);
   for (const l of list.slice(2)) assert.match(l, /^    nested/);
   for (const l of [...qLines, ...list]) assert.ok(l.length <= 70, l);
+});
+
+test('feed shape: slug·lang·section 이 경로를 벗어나면 거절', () => {
+  const ok = { posts: [{ slug: 'a-b.c' }] };
+  const lok = { posts: [{ lang: 'ko', section: 'ideas', slug: 'concepts/anatta' }] };
+  assert.doesNotThrow(() => assertFeedShape(ok, lok));
+  for (const slug of ['../x', 'a/b', '', '.hidden', 'a b']) assert.throws(() => assertFeedShape({ posts: [{ slug }] }, lok), /slug/);
+  assert.throws(() => assertFeedShape(ok, { posts: [{ lang: 'xx', section: 'ideas', slug: 'a' }] }), /lang/);
+  assert.throws(() => assertFeedShape(ok, { posts: [{ lang: 'ko', section: '../x', slug: 'a' }] }), /section/);
+  assert.throws(() => assertFeedShape(ok, { posts: [{ lang: 'ko', section: 'ideas', slug: 'a/../b' }] }), /slug/);
+});
+
+test('markdown → HTML: 들여쓴 항목은 하위 목록, 끊긴 번호 목록은 번호를 잇는다', () => {
+  const html = renderMarkdown('1. 하나\n   - 가\n   - 나\n2. 둘\n\n문단\n\n3. 셋');
+  assert.match(html, /<ol><li>하나<ul><li>가<\/li><li>나<\/li><\/ul><\/li><li>둘<\/li><\/ol>/);
+  assert.match(html, /<ol start="3"><li>셋<\/li><\/ol>/);
+  assert.match(renderMarkdown('- [x] 끝\n- [ ] 남음'), /<ul><li>☑ 끝<\/li><li>☐ 남음<\/li><\/ul>/);
+});
+
+test('gemtext: 들여쓴 항목도 목록 줄로 / gopher: 깊은 슬러그 링크는 파일 이름 규칙(_)으로', () => {
+  const g = markdownToGemtext('1. 하나\n   - 가\n2. 둘');
+  assert.deepEqual(g.split('\n').filter((l) => l.startsWith('* ')), ['* 하나', '* 가', '* 둘']);
+  const t = markdownToGopherText('[무아](/learn/ko/dharma/concepts/anatta/) 와 [목록](/learn/ko/ideas/)');
+  assert.match(t, /\[\/learn\/ko\/dharma\/concepts_anatta\.txt\]/);
+  assert.match(t, /\[\/learn\/ko\/ideas\/\]/);
 });
