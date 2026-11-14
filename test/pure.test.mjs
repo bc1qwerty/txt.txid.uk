@@ -197,3 +197,27 @@ test('빌드 디렉토리는 pid 마다 따로이고, 죽은 빌드의 잔재만
     fs.rmSync(root, { recursive: true, force: true });
   }
 });
+
+// 2026-11-14 5회차 감사: gemini 표는 미리 서식된 블록이라 칸 안의 `**…**`·`[x](/…)` 가 글자 그대로 보였다(gopher 는 이미 정리).
+test('gemtext 표 칸: 굵게·링크 문법을 걷고 링크는 표 뒤 => 줄로', () => {
+  const gmi = markdownToGemtext('| 항목 | 값 |\n|---|---|\n| **합계** | [시간선호](/learn/ko/ideas/time-preference/) |\n| `code` | ~~x~~ |\n');
+  assert.doesNotMatch(gmi, /\*\*|\]\(|`code`|~~/);
+  assert.match(gmi, /^\| 합계 \| 시간선호 \|$/m);
+  assert.match(gmi, /^=> \/learn\/ko\/ideas\/time-preference\/ 시간선호$/m);
+  // 표 블록이 닫힌 뒤에 링크 줄이 온다
+  assert.ok(gmi.indexOf('=> ') > gmi.lastIndexOf('```'));
+});
+
+test('swapIn: 동시에 끝난 두 빌드가 교체에서 서로 죽이지 않는다', async () => {
+  const { mkdtemp, mkdir, writeFile, readFile, readdir } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { swapIn } = await import('../src/build-dir.mjs');
+  const root = await mkdtemp(join(tmpdir(), 'txt-swap-'));
+  const final = join(root, 'dist');
+  await mkdir(final); await writeFile(join(final, 'v'), 'old');
+  for (const n of ['a', 'b']) { await mkdir(join(root, `b-${n}`)); await writeFile(join(root, `b-${n}`, 'v'), n); }
+  await Promise.all([swapIn(join(root, 'b-a'), final), swapIn(join(root, 'b-b'), final)]);
+  assert.match(await readFile(join(final, 'v'), 'utf8'), /^[ab]$/);
+  assert.deepEqual((await readdir(root)).sort(), ['dist']); // 잠금·옛 디렉토리가 남지 않는다
+});

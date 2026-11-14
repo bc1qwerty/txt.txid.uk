@@ -180,15 +180,27 @@ export function markdownToGemtext(md) {
       i + 1 < lines.length &&
       /^[\s|:\-]+$/.test(lines[i + 1])
     ) {
-      const header = line;
+      // 미리 서식된 블록 안에서는 굵게·링크 문법이 글자 그대로 보인다 — 칸은 글자만 남기고 링크는 표 뒤 `=>` 줄로.
+      const tableLinks = [];
+      const row = (l) => {
+        const { text, links } = extractLinks(l);
+        tableLinks.push(...links);
+        return stripInlineFormatting(text);
+      };
       i += 2; // skip header and separator
       out.push('```');
-      out.push(header);
+      out.push(row(line));
       while (i < lines.length && /\|/.test(lines[i]) && lines[i].trim()) {
-        out.push(lines[i]);
+        out.push(row(lines[i]));
         i++;
       }
       out.push('```');
+      const seen = new Set();
+      for (const { label, url } of tableLinks) {
+        if (seen.has(url)) continue;
+        seen.add(url);
+        out.push(`=> ${url} ${stripInlineFormatting(label)}`);
+      }
       continue;
     }
 

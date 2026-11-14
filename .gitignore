@@ -9,3 +9,5 @@ dist.build/
 dist*.build.*/
 dist-gemini.build/
 dist-gopher.build/
+dist*.swap-lock
+dist*.old.*/

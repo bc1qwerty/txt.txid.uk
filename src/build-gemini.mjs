@@ -3,8 +3,8 @@
 // Reads txt-feed.json (news + learn) and emits .gmi files under dist-gemini/.
 // Upload target: /var/lib/molly-brown/ on the Gemini host (Oracle VPS).
 
-import { mkdir, writeFile, rm, readFile, rename } from 'node:fs/promises';
-import { buildDirFor, sweepStaleBuildDirs } from './build-dir.mjs';
+import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
+import { buildDirFor, swapIn, sweepStaleBuildDirs } from './build-dir.mjs';
 import { rewriteLearnLinks, assertNoBareLearnLinks, learnSlug } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -293,8 +293,7 @@ async function main() {
 
   await buildLanding(newsFeed, learnFeed);
 
-  await rm(FINAL, { recursive: true, force: true });
-  await rename(DIST, FINAL);
+  await swapIn(DIST, FINAL);
 
   console.log(
     `Done. ${newsRes.count} news + ${newsRes.digests} digests + ${learnRes.count} learn gemtext files -> ${FINAL}`

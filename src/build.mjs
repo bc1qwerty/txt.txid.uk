@@ -2,8 +2,8 @@
 // txt.txid.uk builder — fetches both feeds and emits plain HTML into dist/.
 // Zero external dependencies.
 
-import { mkdir, writeFile, rm, readFile, copyFile, rename } from 'node:fs/promises';
-import { buildDirFor, sweepStaleBuildDirs } from './build-dir.mjs';
+import { mkdir, writeFile, rm, readFile, copyFile } from 'node:fs/promises';
+import { buildDirFor, swapIn, sweepStaleBuildDirs } from './build-dir.mjs';
 import { rewriteLearnLinks, assertNoBareLearnLinks, learnSlug } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -651,8 +651,7 @@ async function main() {
   await buildRedirects();
   await build404();
 
-  await rm(FINAL, { recursive: true, force: true });
-  await rename(DIST, FINAL);
+  await swapIn(DIST, FINAL);
 
   console.log(
     `Done. ${newsRes.count} news + ${newsRes.digests} digests + ${learnRes.count} learn + ${tagRes.count} tag pages, plus feed.xml, robots.txt, 404.html -> ${FINAL}`

@@ -3,8 +3,8 @@
 // Reads txt-feed.json (news + learn) and emits Gopher menus + text files
 // under dist-gopher/. Upload target: /var/gopher/ on VPS (gophernicus root).
 
-import { mkdir, writeFile, rm, readFile, rename } from 'node:fs/promises';
-import { buildDirFor, sweepStaleBuildDirs } from './build-dir.mjs';
+import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
+import { buildDirFor, swapIn, sweepStaleBuildDirs } from './build-dir.mjs';
 import { rewriteLearnLinks, assertNoBareLearnLinks } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -261,8 +261,7 @@ async function main() {
   // robots.txt — allow Veronica-2 and all Gopher crawlers
   await emit('robots.txt', 'User-agent: *\nAllow: /\n\nUser-agent: veronica\nAllow: /\n');
 
-  await rm(FINAL, { recursive: true, force: true });
-  await rename(DIST, FINAL);
+  await swapIn(DIST, FINAL);
 
   console.log(
     `Done. ${newsStats.count} news + ${newsStats.digests} digests + ${learnStats.count} learn plain-text files -> ${FINAL}`
