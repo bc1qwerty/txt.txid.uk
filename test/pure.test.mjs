@@ -57,3 +57,23 @@ test('markdown → gemtext·gophertext', () => {
   assert.match(markdownToGopherText('# T\n\ntext [l](https://a.b)'), /^T\n=+\n\ntext l \[https:\/\/a\.b\]\n$/);
   for (const line of wrap('aa '.repeat(20), 20).split('\n')) assert.ok(line.length <= 21);
 });
+
+test('gopher: CJK 줄바꿈이 URL·영단어를 쪼개지 않고 마침표를 줄 머리에 두지 않는다', () => {
+  const url = 'https://txid.uk/some/long/path';
+  const line = '가'.repeat(30) + ' ' + url + ' 를 본다' + '나'.repeat(33) + '.';
+  const out = markdownToGopherText(line);
+  assert.ok(out.includes(url), out);
+  for (const l of out.split('\n')) {
+    assert.ok(!/^[.,)。、]/.test(l), JSON.stringify(l));
+    assert.notEqual(l, '.');
+  }
+  // 폭 70 을 정확히 채운 뒤의 마침표는 앞줄에 붙는다
+  assert.equal(markdownToGopherText('가'.repeat(35) + '.'), '가'.repeat(35) + '.\n');
+  assert.equal(wrap('한' + ' abcdefghij'.repeat(8)).split('\n').every((l) => !/^ /.test(l) && /^(한|abcdefghij)( abcdefghij)*$/.test(l)), true);
+});
+test('gopher: 코드 블록은 접지 않고, 홀로 선 마침표는 무해하게', () => {
+  const code = 'bitcoin-cli -named createrawtransaction inputs=\'[{"txid":"abc","vout":0}]\' outputs=\'{"bc1q":0.001}\' 한글주석';
+  const out = markdownToGopherText('글\n\n```\n' + code + '\n```\n\n.\n');
+  assert.ok(out.includes('    ' + code), out);
+  assert.ok(!/^\.$/m.test(out), out);
+});

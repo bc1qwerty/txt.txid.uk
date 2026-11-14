@@ -42,23 +42,27 @@ function visualWidth(s) {
   return w;
 }
 
+// 줄 머리에 올 수 없는 글자(금칙). 마침표가 홀로 줄에 서면 RFC 1436 의 «본문 끝» 이 된다.
+const NO_LINE_START = /^[.,!?:;)\]}%\u3001\u3002\uFF0C\uFF0E\uFF01\uFF1F\uFF1A\uFF1B\uFF09\u300D\u300F\u3011\u3009\u300B\u2019\u201D\u2026\u30FB]/;
+
 function wrapCJK(line, width) {
-  // CJK lines: break at character boundary, counting CJK as width 2
+  // CJK 는 글자 단위(폭 2)로 끊되, ASCII 연속 구간(URL·영단어·숫자)은 한 덩어리로 넘긴다.
   const out = [];
   let buf = '';
   let vw = 0;
-  for (const ch of line) {
-    const cw = CJK_RE.test(ch) ? 2 : 1;
-    if (vw + cw > width && buf) {
-      out.push(buf);
-      buf = ch;
-      vw = cw;
+  for (const tok of line.match(/[\x21-\x7e]+|[\s\S]/gu) || []) {
+    const tw = visualWidth(tok);
+    if (vw + tw > width && buf && !NO_LINE_START.test(tok)) {
+      out.push(buf.trimEnd());
+      if (tok === ' ') { buf = ''; vw = 0; continue; }
+      buf = tok;
+      vw = tw;
     } else {
-      buf += ch;
-      vw += cw;
+      buf += tok;
+      vw += tw;
     }
   }
-  if (buf) out.push(buf);
+  if (buf.trim()) out.push(buf.trimEnd());
   return out;
 }
 
@@ -91,6 +95,11 @@ export function wrap(text, width = WRAP) {
   return out.join('\n');
 }
 
+// 홀로 선 `.` 줄은 gopher 에서 본문 끝이다 — 앞에 공백을 둬 무해하게.
+export function guardLoneDot(text) {
+  return text.replace(/^\.$/gm, ' .');
+}
+
 export function markdownToGopherText(md) {
   let s = stripFrontmatter(md || '');
   s = stripJsx(s);
@@ -106,7 +115,7 @@ export function markdownToGopherText(md) {
       continue;
     }
     if (inCode) {
-      out.push('    ' + line);
+      out.push({ code: '    ' + line });
       continue;
     }
 
@@ -158,7 +167,8 @@ export function markdownToGopherText(md) {
     out.push(stripInline(line));
   }
 
-  let text = out.join('\n').replace(/\n{3,}/g, '\n\n').trim();
-  text = wrap(text, WRAP);
-  return text + '\n';
+  // 코드 블록 줄은 접지 않는다(들여쓰기와 명령이 쪼개진다).
+  const wrapped = out.map((l) => (typeof l === 'string' ? wrap(l, WRAP) : l.code));
+  const text = wrapped.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+  return guardLoneDot(text) + '\n';
 }

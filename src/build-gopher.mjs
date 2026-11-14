@@ -42,6 +42,8 @@ async function fetchFeed(url) {
 async function emit(relPath, content) {
   const full = join(DIST, relPath);
   await mkdir(dirname(full), { recursive: true });
+  // 홀로 선 `.` 줄은 RFC 1436 의 본문 끝 — 글이 거기서 잘린다.
+  if (relPath.endsWith('.txt') && /^\.\r?$/m.test(content)) throw new Error(`gopher: 홀로 선 '.' 줄 — ${relPath}`);
   await writeFile(full, content);
 }
 
