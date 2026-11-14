@@ -13,6 +13,8 @@ fi
 # 실행마다 다른 스테이지를 쓴다(sync-gopher.sh 와 같은 이유).
 VPS_STAGE="$(ssh vps 'mktemp -d /tmp/gemini-stage.XXXXXX')"
 case "$VPS_STAGE" in /tmp/gemini-stage.*) ;; *) echo "error: bad stage path: $VPS_STAGE"; exit 1 ;; esac
+# 중간에 실패해도(로컬 rsync 등) VPS 의 스테이지를 남기지 않는다.
+trap 'ssh vps "rm -rf ${VPS_STAGE}" 2>/dev/null || true' EXIT
 
 echo "[gemini-sync] rsync stage -> vps:${VPS_STAGE}/"
 rsync -a --delete "${DIST_GEMINI}/" "vps:${VPS_STAGE}/"

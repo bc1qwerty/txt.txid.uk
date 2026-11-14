@@ -14,6 +14,8 @@ fi
 # 다른 쪽이 반쯤 채운 스테이지를 기준으로 돈다.
 VPS_STAGE="$(ssh vps 'mktemp -d /tmp/gopher-stage.XXXXXX')"
 case "$VPS_STAGE" in /tmp/gopher-stage.*) ;; *) echo "error: bad stage path: $VPS_STAGE"; exit 1 ;; esac
+# 중간에 실패해도(로컬 rsync 등) VPS 의 스테이지를 남기지 않는다.
+trap 'ssh vps "rm -rf ${VPS_STAGE}" 2>/dev/null || true' EXIT
 
 echo "[gopher-sync] rsync dist-gopher/ -> vps:${VPS_STAGE}/"
 rsync -a --delete "${DIST}/" "vps:${VPS_STAGE}/"

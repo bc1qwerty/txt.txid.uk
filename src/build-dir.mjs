@@ -41,10 +41,10 @@ export async function swapIn(build, final, { isAlive = pidAlive, waitMs = 60_000
       const text = await readFile(lock, 'utf8').catch((err) => (err.code === 'ENOENT' ? null : ''));
       if (text === null) continue; // 그새 풀렸다
       const holder = Number(text);
-      if (text === '') {
-        const age = await stat(lock).then((st) => Date.now() - st.mtimeMs, () => 0);
-        if (age > EMPTY_LOCK_GRACE_MS) { await rm(lock, { force: true }); continue; }
-      } else if (!(holder > 0) || !isAlive(holder)) { await rm(lock, { force: true }); continue; } // 죽은 빌드의 잠금
+      const dead = text === ''
+        ? (await stat(lock).then((st) => Date.now() - st.mtimeMs, () => 0)) > EMPTY_LOCK_GRACE_MS
+        : !(holder > 0) || !isAlive(holder);
+      if (dead) { await reapLock(lock, text, isAlive); continue; } // 죽은 빌드의 잠금
       if (Date.now() > deadline) throw new Error(`swapIn: ${lock} 를 pid ${holder} 가 ${waitMs}ms 넘게 쥐고 있다`);
       await new Promise((r) => setTimeout(r, 100));
     }
@@ -57,6 +57,29 @@ export async function swapIn(build, final, { isAlive = pidAlive, waitMs = 60_000
     if (moved) await rm(old, { recursive: true, force: true });
   } finally {
     await rm(lock, { force: true });
+  }
+}
+
+/**
+ * 죽은 잠금을 치운다. «읽고 나서 지우기» 사이에 다른 대기자가 먼저 치우고 새로 잡았으면 그 산 잠금을
+ * 지우게 된다(2026-11-14 감사: 죽은 잠금으로 시작한 스트레스에서 600회당 0~2번 배타가 깨짐) —
+ * 치우는 쪽끼리 `.reap` 잠금으로 줄 세우고, 그 안에서 내용이 아까 본 그대로일 때만 지운다.
+ */
+async function reapLock(lock, seen, isAlive) {
+  const reap = `${lock}.reap`;
+  try { await writeFile(reap, String(process.pid), { flag: 'wx' }); } catch (e) {
+    if (e.code !== 'EEXIST') throw e;
+    // 치우던 쪽이 죽었으면 그 표시도 치운다(잠깐 쥐는 것이라 오래 남았으면 죽은 것).
+    const age = await stat(reap).then((st) => Date.now() - st.mtimeMs, () => 0);
+    const owner = Number(await readFile(reap, 'utf8').catch(() => ''));
+    if (age > EMPTY_LOCK_GRACE_MS || (owner > 0 && !isAlive(owner))) await rm(reap, { force: true });
+    return;
+  }
+  try {
+    const now = await readFile(lock, 'utf8').catch((err) => (err.code === 'ENOENT' ? null : undefined));
+    if (now === seen) await rm(lock, { force: true });
+  } finally {
+    await rm(reap, { force: true });
   }
 }
 

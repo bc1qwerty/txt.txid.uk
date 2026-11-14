@@ -15,14 +15,25 @@ fi
 
 # news·learn 배포가 겹치면 두 실행이 같은 PREV_CID 를 읽어, 먼저 게시된 쪽의 루트가 영구히 핀으로 남았다
 # (2026-11-14 감사). 이 맥에서 한 번에 하나만 돌게 줄 세운다 — 죽은 실행의 잠금은 pid 로 알아보고 치운다.
+# 대기 상한은 앞 실행이 가장 오래 걸리는 경우(ipfs add·rsync 몇 분 + 핀 180초 + repo gc 600초)보다 길게 — 25분.
+# 죽은 잠금을 치울 때는 치우는 쪽끼리 `.reap` 으로 줄 세우고, 그 안에서 pid 가 아까 본 그대로일 때만 지운다
+# (읽고 지우는 사이에 다른 대기자가 먼저 치우고 새로 잡은 산 잠금을 지우지 않게).
 LOCK="${TMPDIR:-/tmp}/txt-ipfs-sync.lock"
-for _ in $(seq 1 300); do
+for _ in $(seq 1 750); do
   if mkdir "$LOCK" 2>/dev/null; then echo $$ > "$LOCK/pid"; break; fi
   holder=$(cat "$LOCK/pid" 2>/dev/null || true)
-  if [ -n "$holder" ] && ! kill -0 "$holder" 2>/dev/null; then rm -rf "$LOCK"; continue; fi
+  if [ -n "$holder" ] && ! kill -0 "$holder" 2>/dev/null; then
+    if mkdir "$LOCK.reap" 2>/dev/null; then
+      [ "$(cat "$LOCK/pid" 2>/dev/null || true)" = "$holder" ] && rm -rf "$LOCK"
+      rmdir "$LOCK.reap"
+      continue
+    fi
+    # 치우던 쪽이 죽어 `.reap` 만 남았으면 1분 뒤 치운다.
+    [ -n "$(find "$LOCK.reap" -maxdepth 0 -mmin +1 2>/dev/null)" ] && rmdir "$LOCK.reap" 2>/dev/null
+  fi
   sleep 2
 done
-[ "$(cat "$LOCK/pid" 2>/dev/null)" = "$$" ] || { echo "error: $LOCK 를 10분 넘게 다른 실행이 쥐고 있다"; exit 1; }
+[ "$(cat "$LOCK/pid" 2>/dev/null)" = "$$" ] || { echo "error: $LOCK 를 25분 넘게 다른 실행이 쥐고 있다"; exit 1; }
 
 # 스테이지도 실행마다 따로 — 고정 경로면 겹친 실행의 rsync --delete·rm -rf 가 서로의 ipfs add 도중에 끼어든다.
 VPS_STAGE="$(ssh vps 'mktemp -d /tmp/ipfs-stage.XXXXXX')"
@@ -88,3 +99,9 @@ echo "[ipfs-sync] done"
 echo "  CID:  ${CID}"
 echo "  IPNS: ${IPNS_NAME}"
 echo "  Gateway: https://ipfs.io/ipns/${IPNS_NAME}/"
+
+# 게시가 실패했으면 성공으로 끝내지 않는다 — 배포 알림이 «성공» 으로 나가면 IPNS 가 옛 내용을 가리키는 줄 모른다.
+if [ "$PUBLISHED" != "1" ]; then
+  echo "error: IPNS publish failed — IPNS still points at the previous root (${PREV_CID:-none})"
+  exit 1
+fi

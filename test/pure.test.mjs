@@ -240,6 +240,27 @@ test('swapIn: 빈 잠금 파일은 살아 있는 것으로 보고 기다린다(�
   assert.equal(await readFile(join(final, 'v'), 'utf8'), 'new');
 });
 
+// 2026-11-14 7회차: 죽은 잠금을 여럿이 동시에 치우면, 늦은 쪽이 앞선 쪽이 막 새로 잡은 산 잠금까지 지웠다.
+test('swapIn: 죽은 잠금에 대기자가 몰려도 모두 끝나고 잠금·회수 표시가 남지 않는다', async () => {
+  const { mkdtemp, mkdir, writeFile, readdir } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { swapIn } = await import('../src/build-dir.mjs');
+  const root = await mkdtemp(join(tmpdir(), 'txt-swap-reap-'));
+  const final = join(root, 'dist');
+  await mkdir(final); await writeFile(join(final, 'v'), 'old');
+  await writeFile(`${final}.swap-lock`, '999999'); // 죽은 빌드가 남긴 잠금
+  const isAlive = (pid) => pid === process.pid; // 999999 는 죽은 것으로
+  const runs = Array.from({ length: 8 }, async (_, i) => {
+    const b = join(root, `b-${i}`); await mkdir(b); await writeFile(join(b, 'v'), String(i));
+    await swapIn(b, final, { isAlive, waitMs: 10_000 });
+  });
+  // 프로세스 사이의 배타는 여러 프로세스 스트레스 리그로 본다 — 여기서는 모두 끝나고 잠금·회수 표시가 남지 않는지.
+  await Promise.all(runs);
+  const left = (await readdir(root)).filter((n) => n.startsWith('dist'));
+  assert.deepEqual(left, ['dist']);
+});
+
 test('sweepStaleBuildDirs: 죽은 빌드의 dist.old.<pid> 도 치운다', async () => {
   const { sweepStaleBuildDirs } = await import('../src/build-dir.mjs');
   const fs = await import('node:fs');
