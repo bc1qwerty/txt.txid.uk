@@ -1,9 +1,14 @@
-import { unwrapComponents } from './unwrap-components.mjs';
+import { outsideCode, unwrapComponents } from './unwrap-components.mjs';
 // Minimal markdown -> plain text converter for Gopher.
 // Unlike gemtext, Gopher text files are just plain text (type 0).
 // Strip all formatting. Preserve paragraphs and code blocks as-is.
 
+// 코드 블록·인라인 코드 안은 건드리지 않는다(outsideCode).
 function stripJsx(md) {
+  return outsideCode(md, stripJsxOutsideCode);
+}
+
+function stripJsxOutsideCode(md) {
   md = md.replace(/^\s*import\s+[^;\n]+\s+from\s+['"][^'"]+['"];?\s*$/gm, '');
   md = md.replace(/^\s*import\s+['"][^'"]+['"];?\s*$/gm, '');
   // Mermaid uses template-literal props with <br/> inside — match up to `} />

@@ -6,5 +6,6 @@ dist-gemini/
 dist-gopher/
 .wrangler/
 dist.build/
+dist*.build.*/
 dist-gemini.build/
 dist-gopher.build/

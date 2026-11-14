@@ -1,4 +1,4 @@
-import { unwrapComponents } from './unwrap-components.mjs';
+import { outsideCode, unwrapComponents } from './unwrap-components.mjs';
 // Minimal markdown-to-HTML renderer. Zero dependencies.
 // Handles: headings, paragraphs, bold/italic, inline code, code blocks,
 // links, lists (ul/ol), blockquotes, horizontal rules, tables (basic).
@@ -185,7 +185,12 @@ function renderList(lines, i) {
 
 // Strip JSX-looking tags that next-mdx-remote or MDX would render.
 // These are server/client components we can't execute here.
+// 코드 블록·인라인 코드 안은 건드리지 않는다(outsideCode).
 function stripJsx(md) {
+  return outsideCode(md, stripJsxOutsideCode);
+}
+
+function stripJsxOutsideCode(md) {
   // ESM imports at top of MDX files
   md = md.replace(/^\s*import\s+[^;\n]+\s+from\s+['"][^'"]+['"];?\s*$/gm, '');
   md = md.replace(/^\s*import\s+['"][^'"]+['"];?\s*$/gm, '');

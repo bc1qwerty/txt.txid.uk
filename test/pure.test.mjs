@@ -144,3 +144,56 @@ test('gemtext: 들여쓴 항목도 목록 줄로 / gopher: 깊은 슬러그 링�
   assert.match(t, /\[\/learn\/ko\/dharma\/concepts_anatta\.txt\]/);
   assert.match(t, /\[\/learn\/ko\/ideas\/\]/);
 });
+
+test('컴포넌트 제거는 코드 블록·인라인 코드 안을 건드리지 않는다', () => {
+  const md = [
+    'Use `<InfoBox type="tip">` to wrap a note, or `<Chart />`.',
+    '',
+    '```mdx',
+    "import Foo from './foo';",
+    '<InfoBox>',
+    'inside code',
+    '</InfoBox>',
+    '<Mermaid code={`a --> b`} />',
+    '```',
+    '',
+    '<InfoBox>',
+    'real `code` note',
+    '</InfoBox>',
+    '<ChartLine data={x} />',
+  ].join('\n');
+  for (const out of [renderMarkdown(md), markdownToGemtext(md), markdownToGopherText(md)]) {
+    assert.match(out, /InfoBox type=(&quot;|")tip/, '인라인 코드의 태그 이름이 남아야 한다');
+    assert.match(out, /import Foo from/, '코드 블록의 import 가 남아야 한다');
+    assert.match(out, /inside code/);
+    assert.match(out, /a --(&gt;|>) b/, '코드 블록의 Mermaid 예시가 남아야 한다');
+    assert.match(out, /real/);
+    assert.doesNotMatch(out, /ChartLine/, '본문의 그림 컴포넌트는 종전대로 지운다');
+    assert.doesNotMatch(out, /\u0000/, '자리표가 새지 않는다');
+  }
+});
+
+test('링크 주소의 이중 인코딩(&amp;amp;)도 & 하나로 푼다', () => {
+  const md = '[src](https://e.x/a?b=1&amp;amp;c=2&amp;d=3)';
+  assert.match(renderMarkdown(md), /href="https:\/\/e\.x\/a\?b=1&amp;c=2&amp;d=3"/);
+  assert.match(markdownToGopherText(md), /\[https:\/\/e\.x\/a\?b=1&c=2&d=3\]/);
+  assert.match(markdownToGemtext(md), /=> https:\/\/e\.x\/a\?b=1&c=2&d=3/);
+});
+
+test('빌드 디렉토리는 pid 마다 따로이고, 죽은 빌드의 잔재만 치운다', async () => {
+  const { buildDirFor, sweepStaleBuildDirs } = await import('../src/build-dir.mjs');
+  const fs = await import('node:fs');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'txt-build-'));
+  try {
+    const final = path.join(root, 'dist');
+    assert.notEqual(buildDirFor(final, 11), buildDirFor(final, 22));
+    for (const n of ['dist', 'dist.build', 'dist.build.11', 'dist.build.22', `dist.build.${process.pid}`, 'dist-gemini.build.11']) fs.mkdirSync(path.join(root, n));
+    const removed = await sweepStaleBuildDirs(final, { isAlive: (pid) => pid === 22 });
+    assert.deepEqual(removed.sort(), ['dist.build', 'dist.build.11']);
+    assert.deepEqual(fs.readdirSync(root).sort(), ['dist', `dist.build.${process.pid}`, 'dist.build.22', 'dist-gemini.build.11'].sort());
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});

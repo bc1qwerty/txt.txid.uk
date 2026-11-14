@@ -1,4 +1,4 @@
-import { unwrapComponents } from './unwrap-components.mjs';
+import { outsideCode, unwrapComponents } from './unwrap-components.mjs';
 // Minimal markdown -> gemtext converter. Zero dependencies.
 // Gemtext spec: https://gemini.circumlunar.space/docs/gemtext.gmi
 //
@@ -13,7 +13,12 @@ import { unwrapComponents } from './unwrap-components.mjs';
 // - JSX-ish components stripped entirely
 // - Tables → simple prefix `| cell | cell |` lines (preformatted-ish)
 
+// 코드 블록·인라인 코드 안은 건드리지 않는다(outsideCode).
 function stripJsx(md) {
+  return outsideCode(md, stripJsxOutsideCode);
+}
+
+function stripJsxOutsideCode(md) {
   // ESM imports at top of MDX files: `import X from '@components/...';`
   md = md.replace(/^\s*import\s+[^;\n]+\s+from\s+['"][^'"]+['"];?\s*$/gm, '');
   md = md.replace(/^\s*import\s+['"][^'"]+['"];?\s*$/gm, '');

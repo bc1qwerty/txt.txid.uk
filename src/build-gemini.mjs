@@ -4,6 +4,7 @@
 // Upload target: /var/lib/molly-brown/ on the Gemini host (Oracle VPS).
 
 import { mkdir, writeFile, rm, readFile, rename } from 'node:fs/promises';
+import { buildDirFor, sweepStaleBuildDirs } from './build-dir.mjs';
 import { rewriteLearnLinks, assertNoBareLearnLinks, learnSlug } from './learn-links.mjs';
 import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -16,7 +17,7 @@ const __dirname = dirname(__filename);
 const ROOT = resolve(__dirname, '..');
 // 옆 디렉토리에 짓고 끝에서 바꿔 끼운다 — 빌드가 중간에 죽어도 반쯤 찬 산출물이 배포·동기화 대상이 되지 않는다.
 const FINAL = join(ROOT, 'dist-gemini');
-const DIST = FINAL + '.build';
+const DIST = buildDirFor(FINAL);
 
 const LOCAL_NEWS_FEED = '/data/projects/news.txid.uk/public/txt-feed.json';
 const LOCAL_LEARN_FEED = '/data/projects/learn.txid.uk/dist/txt-feed.json';
@@ -280,6 +281,7 @@ async function main() {
   assertFeedFloor(newsFeed, learnFeed);
 
   // 하한 검사 뒤에 비운다 — 피드가 비어 실패한 빌드가 옛 산출물을 지우면 단독 rsync --delete 가 미러를 비운다.
+  await sweepStaleBuildDirs(FINAL);
   await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
 
